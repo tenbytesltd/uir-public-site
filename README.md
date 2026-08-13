@@ -1,100 +1,96 @@
-# vinext-starter
+# UIR public site
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+The product and adoption site for [UIR](https://github.com/tenbytesltd/uir),
+created and stewarded by Tenbytes Ltd.
 
-## Prerequisites
+The page is itself a UIR implementation. Its visible content, semantic
+structure, design decisions, provenance, and explicit gaps live in one checked
+UIR package. The React code renders that package and adds an inspector; it is
+not a second content authority.
 
-- Node.js `>=22.13.0`
+## Requirements
 
-## Quick Start
+- Node.js 22
+- Python 3.12 for UIR authoring and verification
+- Access to the private Tenbytes UIR repository when running the full package
+  workflow
+
+## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
-npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+The development server prints its local URL. The main implementation is under
+`app/`; the checked package is under `app/uir-package/`.
 
-## Included Shape
+## Verification
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+Run the implementation checks:
 
-## Workspace Auth Headers
-
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
-
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+npm run lint
+npm test
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+`npm test` creates a production build and verifies the rendered HTML,
+including the package identity, all rendered Nodes, creator provenance, and the
+self-inspector boundary.
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+The repository CI additionally invokes the commit-pinned UIR action in
+`.github/workflows/uir-site-ci.yml`. That action:
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+1. regenerates a candidate from `uir/author_site.py`;
+2. checks it with the official UIR compiler;
+3. byte-compares it with `app/uir-package/`;
+4. runs the official UIR site audit;
+5. rejects failing gates, ungated errors, or an unreviewed change to the
+   unchecked/deferred boundary in `uir/ci-baseline.json`.
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+The resulting audit is retained as a CI artifact.
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+## Updating the UIR package
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+Do not edit emitted files under `app/uir-package/` by hand. Change the
+versioned authoring source, build a checked candidate with the UIR tooling, and
+activate that candidate through the official transport.
 
-## Useful Commands
+Assuming the UIR repository is checked out next to this one:
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+```bash
+mkdir -p .uir-session
 
-## Learn More
+python3 uir/author_site.py \
+  --output .uir-session/site.changeset.json
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+python3 ../uir/tool/compile_uir.py candidate \
+  --changes .uir-session/site.changeset.json \
+  --candidate app/.uir-package-candidate \
+  --inputs-root .
+
+python3 ../uir/tool/compile_uir.py activate \
+  --candidate app/.uir-package-candidate \
+  --target app/uir-package \
+  --backup app/.uir-package-backup
+```
+
+Move the backup out of `app/` after verification. Before committing, run the
+same site CI command locally or rely on the pull-request check.
+
+## Repository map
+
+- `uir/author_site.py` — deterministic, versioned authoring source
+- `uir/ci-baseline.json` — reviewed unchecked gates and compiler deferrals
+- `app/uir-package/` — checked application authority consumed at runtime
+- `app/uir.tsx` — generic package-to-page renderer
+- `app/Inspector.tsx` — inspector derived from the same package
+- `tests/rendered-html.test.mjs` — rendered contract tests
+- `UIR-FLOW-REVIEW.md` — Flow 2 findings and improvement proposals
+
+## Release policy
+
+The GitHub repository is private, organization forking is disabled, and write
+access is limited to Tenbytes members. Releases are published only from a
+committed package that passes the pinned UIR action and the implementation
+checks.

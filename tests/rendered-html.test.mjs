@@ -45,6 +45,8 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(html, new RegExp(`data-uir-version="${manifest.packageVersion}"`));
   assert.equal((html.match(/data-node=/g) ?? []).length, nodeCount);
   assert.match(html, /Make the interface explicit before code gets the final word\./);
+  assert.match(html, /CREATED BY TENBYTES LTD/);
+  assert.match(html, /Created and stewarded by Tenbytes Ltd\./);
   assert.match(html, /The public install artifact is not published yet/);
   assert.match(html, /Inspect this page/);
   assert.match(html, new RegExp(`data-inspection-count="${nodeCount}"`));
@@ -63,6 +65,8 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
     "Make the interface explicit before code gets the final word.",
     "Start with the interface you already ship.",
     "Alpha, with the unfinished parts in view.",
+    "CREATED BY TENBYTES LTD",
+    "Created and stewarded by Tenbytes Ltd.",
   ]) {
     assert.doesNotMatch(renderer, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
     assert.doesNotMatch(page, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
@@ -73,6 +77,33 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
   await access(new URL("../public/og.png", import.meta.url));
   await access(new URL("../app/uir-package/package.json", import.meta.url));
   await access(projectRoot);
+});
+
+test("records Tenbytes as the creator source in UIR provenance", async () => {
+  const provenanceModel = JSON.parse(
+    await readFile(new URL("../app/uir-package/model/provenance.json", import.meta.url), "utf8"),
+  );
+  const source = provenanceModel.records.find(
+    (record) => record.id === "uir-site:source:tenbytes",
+  );
+  const description = provenanceModel.records.find(
+    (record) => record.id === "uir-site:source:tenbytes:description",
+  );
+
+  assert.deepEqual(
+    {
+      kind: source?.kind,
+      originId: source?.originId,
+      sourceKind: source?.sourceKind,
+    },
+    {
+      kind: "Source",
+      originId: "https://github.com/tenbytesltd",
+      sourceKind: "organization",
+    },
+  );
+  assert.equal(description?.value?.name, "Tenbytes Ltd");
+  assert.equal(description?.value?.summary, "Creator and steward of UIR.");
 });
 
 test("builds the inspector from UIR facts instead of a parallel demo model", async () => {

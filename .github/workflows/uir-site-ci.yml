@@ -1,0 +1,55 @@
+name: UIR site CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: uir-site-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Reproduce, audit, and render
+    runs-on: self-hosted
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Verify UIR source and package
+        uses: tenbytesltd/uir/.github/actions/check-site@3317c7cd540d201b8c95c6336cc0c7372110c275
+        with:
+          author: uir/author_site.py
+          package: app/uir-package
+          baseline: uir/ci-baseline.json
+          audit-output: .uir-ci/audit.json
+
+      - name: Preserve the official UIR audit
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: uir-site-audit
+          path: .uir-ci/audit.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Rendered output tests
+        run: npm test

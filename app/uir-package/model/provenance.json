@@ -2888,6 +2888,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -2899,6 +2900,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -2943,6 +2945,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -3966,6 +3969,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -3977,6 +3981,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4021,6 +4026,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4890,6 +4896,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4901,6 +4908,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4912,6 +4920,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4945,6 +4954,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4956,6 +4966,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -5737,6 +5748,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -5748,6 +5760,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -5792,6 +5805,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -6815,6 +6829,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -6826,6 +6841,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -6870,6 +6886,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -7893,6 +7910,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -7904,6 +7922,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -7948,6 +7967,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -8745,12 +8765,12 @@
       ]
     },
     {
-      "derivation": "direct transcription from the named source",
       "id": "uir-site:fact:package-metadata:provenance",
-      "mode": "derived",
-      "rationale": "Combines the confirmed adoption job with the repository's authoritative product name.",
+      "mode": "declared",
+      "rationale": "The user declared Tenbytes Ltd as UIR's creator; the repository supplies the authoritative product name.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -18173,6 +18193,7 @@
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -18184,6 +18205,7 @@
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -18228,6 +18250,7 @@
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -23054,10 +23077,64 @@
       ]
     },
     {
+      "id": "uir-site:source:tenbytes",
+      "kind": "Source",
+      "locator": "https://github.com/tenbytesltd",
+      "originId": "https://github.com/tenbytesltd",
+      "owner": "uir-site:package",
+      "recordType": "Entity",
+      "sourceKind": "organization"
+    },
+    {
+      "id": "uir-site:source:tenbytes:description",
+      "kind": "source.description",
+      "plane": "invisible",
+      "provenance": "uir-site:source:tenbytes:description:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:source:tenbytes",
+      "value": {
+        "name": "Tenbytes Ltd",
+        "revision": "2026-08-13",
+        "summary": "Creator and steward of UIR."
+      }
+    },
+    {
+      "derivation": "direct transcription from the named source",
+      "id": "uir-site:source:tenbytes:description:provenance",
+      "mode": "derived",
+      "rationale": "Describes the explicitly named source.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:tenbytes"
+      ]
+    },
+    {
+      "id": "uir-site:source:tenbytes:integrity",
+      "kind": "source.integrity",
+      "plane": "invisible",
+      "provenance": "uir-site:source:tenbytes:integrity:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:source:tenbytes",
+      "value": {
+        "algorithm": "sha256",
+        "digest": "474257648ade6ee930ad37145ec8afc884e2df3e4d6e80f995907d0b1e5bc421"
+      }
+    },
+    {
+      "derivation": "direct transcription from the named source",
+      "id": "uir-site:source:tenbytes:integrity:provenance",
+      "mode": "derived",
+      "rationale": "Digest of the stable source identity used in this session.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:tenbytes"
+      ]
+    },
+    {
       "id": "uir-site:source:uir-repository",
       "kind": "Source",
       "locator": "https://github.com/tenbytesltd/uir",
-      "originId": "https://github.com/tenbytesltd/uir@6187377",
+      "originId": "https://github.com/tenbytesltd/uir@3317c7cd540d201b8c95c6336cc0c7372110c275",
       "owner": "uir-site:package",
       "recordType": "Entity",
       "sourceKind": "repository"
@@ -23070,7 +23147,7 @@
       "recordType": "Fact",
       "subject": "uir-site:source:uir-repository",
       "value": {
-        "name": "UIR repository at the session baseline",
+        "name": "UIR repository at the site release",
         "revision": "2026-08-13",
         "summary": "Authoritative product definition, vocabulary, compiler, checker, prototype, gaps, and status for this run."
       }
@@ -23094,7 +23171,7 @@
       "subject": "uir-site:source:uir-repository",
       "value": {
         "algorithm": "sha256",
-        "digest": "af46629cc26277543c49dfeae1cb62d5b2f41fcd231753717e3a1826f6434242"
+        "digest": "7864dddb9710b6812e7b96de4dd156db968c4aef473bf6cc0b8e9bcc1276d3f5"
       }
     },
     {

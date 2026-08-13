@@ -220,6 +220,43 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Remaining risk: bounded/content growth remains intentionally responsive but this board cannot compute it; four compiler deferrals keep six gates unchecked; `largestTextScale` and reading order are still load-bearing claims with no implemented semantic predicate.
 
 
+### F19 — reproducibility and semantic debt were local knowledge, not CI contracts
+
+- Status: fixed
+- Flow step: authoring, checking, and release
+- Candidate revision: `3e219ffb2b8ed0518a654512c93bc016ff1c83dbf03ea585483d4aacf31924a7`
+- Evidence: before this change the newest authoring source lived under ignored `.uir-session/`, the website had no GitHub workflow, and a hand-edited package could pass site lint/build without being regenerated.
+- User impact: a clean-start contributor could change emitted shards directly, omit the official UIR audit, or introduce a seventh unchecked gate while the implementation CI stayed green.
+- Root cause: the workflow shipped an audit command but no reusable CI action, no committed authoring source, and no explicit unchecked/deferred boundary.
+- Change made: versioned `uir/author_site.py`; added `tool/uir_site_ci.py` and `.github/actions/check-site` in the UIR repository; pinned the website workflow to exact UIR commit `3317c7cd540d201b8c95c6336cc0c7372110c275`; added `uir/ci-baseline.json` and an uploaded audit artifact.
+- Verification: CI regenerates a candidate with the official compiler, byte-compares every package file, runs the official site audit, refuses failing gates and ungated errors, and refuses any change to the named six unchecked gates or four deferral codes until the baseline is explicitly reviewed.
+- Remaining risk: the four deferrals are language/tooling work, not waived product quality. GitHub branch protection for this private repository requires a paid organization plan; current access control is private organization membership with forking disabled.
+
+
+### F20 — dependency caching kept a finished CI job pending
+
+- Status: fixed
+- Flow step: continuous integration and release
+- Evidence: two pull-request runs completed UIR reproduction, audit upload, dependency install, lint, build, and rendered tests, then remained `in_progress` in `Post Run actions/setup-node@v4`. The measured uncached `npm ci` step on the same self-hosted runner completed in about four seconds.
+- User impact: a valid website change could not merge or publish because the runner was occupied after every meaningful assertion had already passed.
+- Root cause: the generic starter enabled the setup-node npm cache without evidence that this small repository benefited on the organization runner.
+- Change made: removed the cache input while retaining Node 22 setup and deterministic `npm ci`.
+- Verification: the superseding PR run completed every step successfully in 36 seconds, including all action cleanup steps.
+- Remaining risk: the self-hosted runner remains shared infrastructure; queue time is still external to UIR.
+
+
+### F21 — the generated workflow started with deprecated action runtimes
+
+- Status: fixed
+- Flow step: continuous integration
+- Evidence: the first complete PR run was green but GitHub annotated checkout v4, setup-python v5, setup-node v4, and upload-artifact v4 because their Node 20 action runtime was deprecated and forcibly upgraded by the runner.
+- User impact: every green run carried avoidable warning noise, making material annotations harder to see and leaving future runner compatibility implicit.
+- Root cause: the workflow began from older starter-era action major pins.
+- Change made: verified the current official releases through the GitHub API and moved all four actions to their current v7 major.
+- Verification: the superseding PR run completed successfully in 32 seconds with v7 actions and no deprecated-runtime annotation.
+- Remaining risk: major tags are maintained upstream references rather than immutable SHAs; the UIR action itself remains pinned to an immutable commit because it defines the product contract.
+
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
