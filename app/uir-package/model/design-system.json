@@ -446,69 +446,267 @@
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-block-max",
+      "id": "uir-site:fact:design-binding:measure-collection-block-max",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-block-max:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-block-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-max",
+      "subject": "uir-site:value:measure-collection-block-max",
       "value": {
-        "groundRole": "uir-site:role:measure-block-max"
+        "groundRole": "uir-site:role:measure-collection-block-max"
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-block-min",
+      "id": "uir-site:fact:design-binding:measure-collection-block-min",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-block-min:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-block-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-min",
+      "subject": "uir-site:value:measure-collection-block-min",
       "value": {
-        "groundRole": "uir-site:role:measure-block-min"
+        "groundRole": "uir-site:role:measure-collection-block-min"
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-block-pref",
+      "id": "uir-site:fact:design-binding:measure-collection-block-pref",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-block-pref:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-block-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-pref",
+      "subject": "uir-site:value:measure-collection-block-pref",
       "value": {
-        "groundRole": "uir-site:role:measure-block-pref"
+        "groundRole": "uir-site:role:measure-collection-block-pref"
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-inline-max",
+      "id": "uir-site:fact:design-binding:measure-collection-inline-max",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-inline-max:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-inline-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-max",
+      "subject": "uir-site:value:measure-collection-inline-max",
       "value": {
-        "groundRole": "uir-site:role:measure-inline-max"
+        "groundRole": "uir-site:role:measure-collection-inline-max"
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-inline-min",
+      "id": "uir-site:fact:design-binding:measure-collection-inline-min",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-inline-min:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-inline-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-min",
+      "subject": "uir-site:value:measure-collection-inline-min",
       "value": {
-        "groundRole": "uir-site:role:measure-inline-min"
+        "groundRole": "uir-site:role:measure-collection-inline-min"
       }
     },
     {
-      "id": "uir-site:fact:design-binding:measure-inline-pref",
+      "id": "uir-site:fact:design-binding:measure-collection-inline-pref",
       "kind": "design.binding",
       "plane": "invisible",
-      "provenance": "uir-site:fact:design-binding:measure-inline-pref:provenance",
+      "provenance": "uir-site:fact:design-binding:measure-collection-inline-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-pref",
+      "subject": "uir-site:value:measure-collection-inline-pref",
       "value": {
-        "groundRole": "uir-site:role:measure-inline-pref"
+        "groundRole": "uir-site:role:measure-collection-inline-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-block-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-block-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-block-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-block-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-block-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-block-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-inline-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-inline-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-inline-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-inline-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-container-inline-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-container-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-container-inline-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-block-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-block-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-block-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-block-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-block-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-block-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-inline-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-inline-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-inline-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-inline-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-content-inline-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-content-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-content-inline-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-block-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-block-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-block-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-block-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-block-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-block-pref"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-inline-max",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-max",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-inline-max"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-inline-min",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-min",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-inline-min"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:measure-control-inline-pref",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:measure-control-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-pref",
+      "value": {
+        "groundRole": "uir-site:role:measure-control-inline-pref"
       }
     },
     {
@@ -1037,98 +1235,386 @@
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-block-max",
+      "id": "uir-site:fact:ground-role:measure-collection-block-max",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-block-max:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-block-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-max",
+      "subject": "uir-site:role:measure-collection-block-max",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Maximum inspectable block extent.",
+        "meaning": "The max block extent for collection realizations.",
         "scopes": []
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-block-min",
+      "id": "uir-site:fact:ground-role:measure-collection-block-min",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-block-min:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-block-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-min",
+      "subject": "uir-site:role:measure-collection-block-min",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Minimum visible block extent.",
+        "meaning": "The min block extent for collection realizations.",
         "scopes": []
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-block-pref",
+      "id": "uir-site:fact:ground-role:measure-collection-block-pref",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-block-pref:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-block-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-pref",
+      "subject": "uir-site:role:measure-collection-block-pref",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Preferred block extent.",
+        "meaning": "The pref block extent for collection realizations.",
         "scopes": []
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-inline-max",
+      "id": "uir-site:fact:ground-role:measure-collection-inline-max",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-inline-max:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-inline-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-max",
+      "subject": "uir-site:role:measure-collection-inline-max",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Maximum readable inline extent.",
+        "meaning": "The max inline extent for collection realizations.",
         "scopes": []
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-inline-min",
+      "id": "uir-site:fact:ground-role:measure-collection-inline-min",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-inline-min:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-inline-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-min",
+      "subject": "uir-site:role:measure-collection-inline-min",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Minimum reflow-safe inline extent.",
+        "meaning": "The min inline extent for collection realizations.",
         "scopes": []
       }
     },
     {
-      "id": "uir-site:fact:ground-role:measure-inline-pref",
+      "id": "uir-site:fact:ground-role:measure-collection-inline-pref",
       "kind": "ground.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:ground-role:measure-inline-pref:provenance",
+      "provenance": "uir-site:fact:ground-role:measure-collection-inline-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-pref",
+      "subject": "uir-site:role:measure-collection-inline-pref",
       "value": {
         "acceptedTypes": [
           "dimension"
         ],
         "family": "frame",
-        "meaning": "Preferred inline extent.",
+        "meaning": "The pref inline extent for collection realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-block-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max block extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-block-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min block extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-block-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref block extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-inline-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max inline extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-inline-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min inline extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-container-inline-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-container-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref inline extent for container realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-block-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max block extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-block-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min block extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-block-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref block extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-inline-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max inline extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-inline-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min inline extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-content-inline-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-content-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref inline extent for content realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-block-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max block extent for control realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-block-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min block extent for control realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-block-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref block extent for control realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-inline-max",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-max",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The max inline extent for control realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-inline-min",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-min",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The min inline extent for control realizations.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:measure-control-inline-pref",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:measure-control-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-pref",
+      "value": {
+        "acceptedTypes": [
+          "dimension"
+        ],
+        "family": "frame",
+        "meaning": "The pref inline extent for control realizations.",
         "scopes": []
       }
     },
@@ -1381,7 +1867,12 @@
       "subject": "uir-site:piece:code",
       "value": {
         "layout": {
-          "mode": "leaf"
+          "alignBlock": "center",
+          "alignInline": "start",
+          "axis": "inline",
+          "distribution": "start",
+          "mode": "flow",
+          "wrap": "allow"
         },
         "outcome": "layout",
         "target": {
@@ -1442,7 +1933,12 @@
       "subject": "uir-site:piece:heading",
       "value": {
         "layout": {
-          "mode": "leaf"
+          "alignBlock": "center",
+          "alignInline": "start",
+          "axis": "inline",
+          "distribution": "start",
+          "mode": "flow",
+          "wrap": "allow"
         },
         "outcome": "layout",
         "target": {
@@ -1459,7 +1955,12 @@
       "subject": "uir-site:piece:link",
       "value": {
         "layout": {
-          "mode": "leaf"
+          "alignBlock": "center",
+          "alignInline": "start",
+          "axis": "inline",
+          "distribution": "start",
+          "mode": "flow",
+          "wrap": "allow"
         },
         "outcome": "layout",
         "target": {
@@ -1498,7 +1999,12 @@
       "subject": "uir-site:piece:listitem",
       "value": {
         "layout": {
-          "mode": "leaf"
+          "alignBlock": "center",
+          "alignInline": "start",
+          "axis": "inline",
+          "distribution": "start",
+          "mode": "flow",
+          "wrap": "allow"
         },
         "outcome": "layout",
         "target": {
@@ -1537,7 +2043,12 @@
       "subject": "uir-site:piece:paragraph",
       "value": {
         "layout": {
-          "mode": "leaf"
+          "alignBlock": "center",
+          "alignInline": "start",
+          "axis": "inline",
+          "distribution": "start",
+          "mode": "flow",
+          "wrap": "allow"
         },
         "outcome": "layout",
         "target": {
@@ -1580,13 +2091,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:code:slot"
+        ],
         "role": "code",
         "stateExposure": []
       }
@@ -1604,13 +2117,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:document:slot"
+        ],
         "role": "document",
         "stateExposure": []
       }
@@ -1628,13 +2143,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:group:slot"
+        ],
         "role": "group",
         "stateExposure": []
       }
@@ -1652,14 +2169,16 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "literal",
           "value": "heading content"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:heading:slot"
+        ],
         "role": "heading",
         "stateExposure": []
       }
@@ -1679,14 +2198,16 @@
           "type": "none"
         },
         "focus": "single",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "literal",
           "value": "link content"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:link:slot"
+        ],
         "role": "link",
         "stateExposure": []
       }
@@ -1704,13 +2225,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:list:slot"
+        ],
         "role": "list",
         "stateExposure": []
       }
@@ -1728,13 +2251,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:listitem:slot"
+        ],
         "role": "listitem",
         "stateExposure": []
       }
@@ -1752,13 +2277,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:navigation:slot"
+        ],
         "role": "navigation",
         "stateExposure": []
       }
@@ -1776,13 +2303,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:paragraph:slot"
+        ],
         "role": "paragraph",
         "stateExposure": []
       }
@@ -1800,13 +2329,15 @@
           "type": "none"
         },
         "focus": "none",
-        "largestTextScale": "uir-site:value:opacity-full",
+        "largestTextScale": "uir-site:value:text-scale-200",
         "localizedRange": "English-language product and technical prose.",
         "mode": "independent",
         "name": {
           "type": "none"
         },
-        "readingOrder": [],
+        "readingOrder": [
+          "uir-site:fact:piece-anatomy:region:slot"
+        ],
         "role": "region",
         "stateExposure": []
       }
@@ -2896,16 +3427,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -2927,16 +3458,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -2959,16 +3490,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-container-block-max",
+          "minimum": "uir-site:role:measure-container-block-min",
+          "preferred": "uir-site:role:measure-container-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-container-inline-max",
+          "minimum": "uir-site:role:measure-container-inline-min",
+          "preferred": "uir-site:role:measure-container-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -2990,16 +3521,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-container-block-max",
+          "minimum": "uir-site:role:measure-container-block-min",
+          "preferred": "uir-site:role:measure-container-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-container-inline-max",
+          "minimum": "uir-site:role:measure-container-inline-min",
+          "preferred": "uir-site:role:measure-container-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3022,16 +3553,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3053,16 +3584,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3085,16 +3616,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3116,16 +3647,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3148,16 +3679,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-control-block-max",
+          "minimum": "uir-site:role:measure-control-block-min",
+          "preferred": "uir-site:role:measure-control-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-control-inline-max",
+          "minimum": "uir-site:role:measure-control-inline-min",
+          "preferred": "uir-site:role:measure-control-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3179,16 +3710,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-control-block-max",
+          "minimum": "uir-site:role:measure-control-block-min",
+          "preferred": "uir-site:role:measure-control-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-control-inline-max",
+          "minimum": "uir-site:role:measure-control-inline-min",
+          "preferred": "uir-site:role:measure-control-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3211,16 +3742,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3242,16 +3773,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3274,16 +3805,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3305,16 +3836,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3337,16 +3868,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3368,16 +3899,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-collection-block-max",
+          "minimum": "uir-site:role:measure-collection-block-min",
+          "preferred": "uir-site:role:measure-collection-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-collection-inline-max",
+          "minimum": "uir-site:role:measure-collection-inline-min",
+          "preferred": "uir-site:role:measure-collection-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3400,16 +3931,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3431,16 +3962,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-content-block-max",
+          "minimum": "uir-site:role:measure-content-block-min",
+          "preferred": "uir-site:role:measure-content-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-content-inline-max",
+          "minimum": "uir-site:role:measure-content-inline-min",
+          "preferred": "uir-site:role:measure-content-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3463,16 +3994,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-container-block-max",
+          "minimum": "uir-site:role:measure-container-block-min",
+          "preferred": "uir-site:role:measure-container-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-container-inline-max",
+          "minimum": "uir-site:role:measure-container-inline-min",
+          "preferred": "uir-site:role:measure-container-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -3494,16 +4025,16 @@
       "value": {
         "block": {
           "growth": "content",
-          "maximum": "uir-site:role:measure-block-max",
-          "minimum": "uir-site:role:measure-block-min",
-          "preferred": "uir-site:role:measure-block-pref"
+          "maximum": "uir-site:role:measure-container-block-max",
+          "minimum": "uir-site:role:measure-container-block-min",
+          "preferred": "uir-site:role:measure-container-block-pref"
         },
         "distribution": "start",
         "inline": {
           "growth": "bounded",
-          "maximum": "uir-site:role:measure-inline-max",
-          "minimum": "uir-site:role:measure-inline-min",
-          "preferred": "uir-site:role:measure-inline-pref"
+          "maximum": "uir-site:role:measure-container-inline-max",
+          "minimum": "uir-site:role:measure-container-inline-min",
+          "preferred": "uir-site:role:measure-container-inline-pref"
         },
         "overflow": "reflow",
         "target": {
@@ -8230,80 +8761,314 @@
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-block-max",
+      "id": "uir-site:fact:role-definition:measure-collection-block-max",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-block-max:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-block-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-max",
+      "subject": "uir-site:role:measure-collection-block-max",
       "value": {
-        "name": "Piece block maximum",
-        "purpose": "Maximum inspectable block extent.",
+        "name": "Collection block max",
+        "purpose": "The max block extent for collection realizations.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-block-min",
+      "id": "uir-site:fact:role-definition:measure-collection-block-min",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-block-min:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-block-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-min",
+      "subject": "uir-site:role:measure-collection-block-min",
       "value": {
-        "name": "Piece block minimum",
-        "purpose": "Minimum visible block extent.",
+        "name": "Collection block min",
+        "purpose": "The min block extent for collection realizations.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-block-pref",
+      "id": "uir-site:fact:role-definition:measure-collection-block-pref",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-block-pref:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-block-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-block-pref",
+      "subject": "uir-site:role:measure-collection-block-pref",
       "value": {
-        "name": "Piece block preference",
-        "purpose": "Preferred block extent.",
+        "name": "Collection block pref",
+        "purpose": "The pref block extent for collection realizations.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-inline-max",
+      "id": "uir-site:fact:role-definition:measure-collection-inline-max",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-inline-max:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-inline-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-max",
+      "subject": "uir-site:role:measure-collection-inline-max",
       "value": {
-        "name": "Piece inline maximum",
-        "purpose": "Maximum readable inline extent.",
+        "name": "Collection inline max",
+        "purpose": "The max inline extent for collection realizations.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-inline-min",
+      "id": "uir-site:fact:role-definition:measure-collection-inline-min",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-inline-min:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-inline-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-min",
+      "subject": "uir-site:role:measure-collection-inline-min",
       "value": {
-        "name": "Piece inline minimum",
-        "purpose": "Minimum reflow-safe inline extent.",
+        "name": "Collection inline min",
+        "purpose": "The min inline extent for collection realizations.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:role-definition:measure-inline-pref",
+      "id": "uir-site:fact:role-definition:measure-collection-inline-pref",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:role-definition:measure-inline-pref:provenance",
+      "provenance": "uir-site:fact:role-definition:measure-collection-inline-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:role:measure-inline-pref",
+      "subject": "uir-site:role:measure-collection-inline-pref",
       "value": {
-        "name": "Piece inline preference",
-        "purpose": "Preferred inline extent.",
+        "name": "Collection inline pref",
+        "purpose": "The pref inline extent for collection realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-max",
+      "value": {
+        "name": "Container block max",
+        "purpose": "The max block extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-min",
+      "value": {
+        "name": "Container block min",
+        "purpose": "The min block extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-block-pref",
+      "value": {
+        "name": "Container block pref",
+        "purpose": "The pref block extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-max",
+      "value": {
+        "name": "Container inline max",
+        "purpose": "The max inline extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-min",
+      "value": {
+        "name": "Container inline min",
+        "purpose": "The min inline extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-container-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-container-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-container-inline-pref",
+      "value": {
+        "name": "Container inline pref",
+        "purpose": "The pref inline extent for container realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-max",
+      "value": {
+        "name": "Content block max",
+        "purpose": "The max block extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-min",
+      "value": {
+        "name": "Content block min",
+        "purpose": "The min block extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-block-pref",
+      "value": {
+        "name": "Content block pref",
+        "purpose": "The pref block extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-max",
+      "value": {
+        "name": "Content inline max",
+        "purpose": "The max inline extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-min",
+      "value": {
+        "name": "Content inline min",
+        "purpose": "The min inline extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-content-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-content-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-content-inline-pref",
+      "value": {
+        "name": "Content inline pref",
+        "purpose": "The pref inline extent for content realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-max",
+      "value": {
+        "name": "Control block max",
+        "purpose": "The max block extent for control realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-min",
+      "value": {
+        "name": "Control block min",
+        "purpose": "The min block extent for control realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-block-pref",
+      "value": {
+        "name": "Control block pref",
+        "purpose": "The pref block extent for control realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-max",
+      "value": {
+        "name": "Control inline max",
+        "purpose": "The max inline extent for control realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-min",
+      "value": {
+        "name": "Control inline min",
+        "purpose": "The min inline extent for control realizations.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:measure-control-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:measure-control-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:measure-control-inline-pref",
+      "value": {
+        "name": "Control inline pref",
+        "purpose": "The pref inline extent for control realizations.",
         "type": "dimension"
       }
     },
@@ -9180,80 +9945,314 @@
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-block-max",
+      "id": "uir-site:fact:value-definition:measure-collection-block-max",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-block-max:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-block-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-max",
+      "subject": "uir-site:value:measure-collection-block-max",
       "value": {
-        "name": "Maximum piece block size",
-        "purpose": "Sourced dimensional decision for maximum piece block size.",
+        "name": "Collection block maximum",
+        "purpose": "Sourced dimensional decision for collection block maximum.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-block-min",
+      "id": "uir-site:fact:value-definition:measure-collection-block-min",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-block-min:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-block-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-min",
+      "subject": "uir-site:value:measure-collection-block-min",
       "value": {
-        "name": "Minimum piece block size",
-        "purpose": "Sourced dimensional decision for minimum piece block size.",
+        "name": "Collection block minimum",
+        "purpose": "Sourced dimensional decision for collection block minimum.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-block-pref",
+      "id": "uir-site:fact:value-definition:measure-collection-block-pref",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-block-pref:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-block-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-pref",
+      "subject": "uir-site:value:measure-collection-block-pref",
       "value": {
-        "name": "Preferred piece block size",
-        "purpose": "Sourced dimensional decision for preferred piece block size.",
+        "name": "Collection block preference",
+        "purpose": "Sourced dimensional decision for collection block preference.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-inline-max",
+      "id": "uir-site:fact:value-definition:measure-collection-inline-max",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-inline-max:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-inline-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-max",
+      "subject": "uir-site:value:measure-collection-inline-max",
       "value": {
-        "name": "Maximum piece inline size",
-        "purpose": "Sourced dimensional decision for maximum piece inline size.",
+        "name": "Collection inline maximum",
+        "purpose": "Sourced dimensional decision for collection inline maximum.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-inline-min",
+      "id": "uir-site:fact:value-definition:measure-collection-inline-min",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-inline-min:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-inline-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-min",
+      "subject": "uir-site:value:measure-collection-inline-min",
       "value": {
-        "name": "Minimum piece inline size",
-        "purpose": "Sourced dimensional decision for minimum piece inline size.",
+        "name": "Collection inline minimum",
+        "purpose": "Sourced dimensional decision for collection inline minimum.",
         "type": "dimension"
       }
     },
     {
-      "id": "uir-site:fact:value-definition:measure-inline-pref",
+      "id": "uir-site:fact:value-definition:measure-collection-inline-pref",
       "kind": "design-value.definition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:value-definition:measure-inline-pref:provenance",
+      "provenance": "uir-site:fact:value-definition:measure-collection-inline-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-pref",
+      "subject": "uir-site:value:measure-collection-inline-pref",
       "value": {
-        "name": "Preferred piece inline size",
-        "purpose": "Sourced dimensional decision for preferred piece inline size.",
+        "name": "Collection inline preference",
+        "purpose": "Sourced dimensional decision for collection inline preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-max",
+      "value": {
+        "name": "Container block maximum",
+        "purpose": "Sourced dimensional decision for container block maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-min",
+      "value": {
+        "name": "Container block minimum",
+        "purpose": "Sourced dimensional decision for container block minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-pref",
+      "value": {
+        "name": "Container block preference",
+        "purpose": "Sourced dimensional decision for container block preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-max",
+      "value": {
+        "name": "Container inline maximum",
+        "purpose": "Sourced dimensional decision for container inline maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-min",
+      "value": {
+        "name": "Container inline minimum",
+        "purpose": "Sourced dimensional decision for container inline minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-container-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-container-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-pref",
+      "value": {
+        "name": "Container inline preference",
+        "purpose": "Sourced dimensional decision for container inline preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-max",
+      "value": {
+        "name": "Content block maximum",
+        "purpose": "Sourced dimensional decision for content block maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-min",
+      "value": {
+        "name": "Content block minimum",
+        "purpose": "Sourced dimensional decision for content block minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-pref",
+      "value": {
+        "name": "Content block preference",
+        "purpose": "Sourced dimensional decision for content block preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-max",
+      "value": {
+        "name": "Content inline maximum",
+        "purpose": "Sourced dimensional decision for content inline maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-min",
+      "value": {
+        "name": "Content inline minimum",
+        "purpose": "Sourced dimensional decision for content inline minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-content-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-content-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-pref",
+      "value": {
+        "name": "Content inline preference",
+        "purpose": "Sourced dimensional decision for content inline preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-block-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-max",
+      "value": {
+        "name": "Control block maximum",
+        "purpose": "Sourced dimensional decision for control block maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-block-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-min",
+      "value": {
+        "name": "Control block minimum",
+        "purpose": "Sourced dimensional decision for control block minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-block-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-pref",
+      "value": {
+        "name": "Control block preference",
+        "purpose": "Sourced dimensional decision for control block preference.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-inline-max",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-max",
+      "value": {
+        "name": "Control inline maximum",
+        "purpose": "Sourced dimensional decision for control inline maximum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-inline-min",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-min",
+      "value": {
+        "name": "Control inline minimum",
+        "purpose": "Sourced dimensional decision for control inline minimum.",
+        "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:measure-control-inline-pref",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:measure-control-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-pref",
+      "value": {
+        "name": "Control inline preference",
+        "purpose": "Sourced dimensional decision for control inline preference.",
         "type": "dimension"
       }
     },
@@ -9463,6 +10462,19 @@
         "name": "Muted evidence surface",
         "purpose": "Sourced page colour for muted evidence surface.",
         "type": "color"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:text-scale-200",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:text-scale-200:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:text-scale-200",
+      "value": {
+        "name": "Two-times text scale",
+        "purpose": "Text remains usable when enlarged to twice its authored size.",
+        "type": "number"
       }
     },
     {
@@ -10033,44 +11045,28 @@
       }
     },
     {
-      "id": "uir-site:fact:value-variant:measure-block-max",
+      "id": "uir-site:fact:value-variant:measure-collection-block-max",
       "kind": "design-value.variant",
       "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-block-max:provenance",
+      "provenance": "uir-site:fact:value-variant:measure-collection-block-max:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-max",
+      "subject": "uir-site:value:measure-collection-block-max",
       "value": {
         "form": "literal",
         "literal": {
           "type": "dimension",
           "unit": "px",
-          "value": 4000
+          "value": 2000
         }
       }
     },
     {
-      "id": "uir-site:fact:value-variant:measure-block-min",
+      "id": "uir-site:fact:value-variant:measure-collection-block-min",
       "kind": "design-value.variant",
       "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-block-min:provenance",
+      "provenance": "uir-site:fact:value-variant:measure-collection-block-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-min",
-      "value": {
-        "form": "literal",
-        "literal": {
-          "type": "dimension",
-          "unit": "px",
-          "value": 1
-        }
-      }
-    },
-    {
-      "id": "uir-site:fact:value-variant:measure-block-pref",
-      "kind": "design-value.variant",
-      "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-block-pref:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:value:measure-block-pref",
+      "subject": "uir-site:value:measure-collection-block-min",
       "value": {
         "form": "literal",
         "literal": {
@@ -10081,12 +11077,124 @@
       }
     },
     {
-      "id": "uir-site:fact:value-variant:measure-inline-max",
+      "id": "uir-site:fact:value-variant:measure-collection-block-pref",
       "kind": "design-value.variant",
       "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-inline-max:provenance",
+      "provenance": "uir-site:fact:value-variant:measure-collection-block-pref:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-max",
+      "subject": "uir-site:value:measure-collection-block-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 320
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-collection-inline-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-collection-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-collection-inline-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 1180
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-collection-inline-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-collection-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-collection-inline-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 280
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-collection-inline-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-collection-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-collection-inline-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 960
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-container-block-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-container-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 4000
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-container-block-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-container-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 160
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-container-block-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-container-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-block-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 720
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-container-inline-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-container-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-max",
       "value": {
         "form": "literal",
         "literal": {
@@ -10097,34 +11205,226 @@
       }
     },
     {
-      "id": "uir-site:fact:value-variant:measure-inline-min",
+      "id": "uir-site:fact:value-variant:measure-container-inline-min",
       "kind": "design-value.variant",
       "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-inline-min:provenance",
+      "provenance": "uir-site:fact:value-variant:measure-container-inline-min:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-min",
-      "value": {
-        "form": "literal",
-        "literal": {
-          "type": "dimension",
-          "unit": "px",
-          "value": 1
-        }
-      }
-    },
-    {
-      "id": "uir-site:fact:value-variant:measure-inline-pref",
-      "kind": "design-value.variant",
-      "plane": "visible",
-      "provenance": "uir-site:fact:value-variant:measure-inline-pref:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:value:measure-inline-pref",
+      "subject": "uir-site:value:measure-container-inline-min",
       "value": {
         "form": "literal",
         "literal": {
           "type": "dimension",
           "unit": "px",
           "value": 320
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-container-inline-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-container-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-container-inline-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 1180
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-block-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 800
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-block-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 24
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-block-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-block-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 96
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-inline-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 920
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-inline-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 40
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-content-inline-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-content-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-content-inline-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 760
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-block-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-block-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 160
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-block-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-block-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 40
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-block-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-block-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-block-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 48
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-inline-max",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-inline-max:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-max",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 480
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-inline-min",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-inline-min:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-min",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 80
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:measure-control-inline-pref",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:measure-control-inline-pref:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:measure-control-inline-pref",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "dimension",
+          "unit": "px",
+          "value": 240
         }
       }
     },
@@ -10405,6 +11705,21 @@
           ],
           "space": "srgb",
           "type": "color"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:text-scale-200",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:text-scale-200:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:text-scale-200",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "number",
+          "value": 2
         }
       }
     },
@@ -11045,45 +12360,171 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-block-max",
+      "id": "uir-site:role:measure-collection-block-max",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-block-max:provenance",
+      "provenance": "uir-site:role:measure-collection-block-max:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-block-min",
+      "id": "uir-site:role:measure-collection-block-min",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-block-min:provenance",
+      "provenance": "uir-site:role:measure-collection-block-min:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-block-pref",
+      "id": "uir-site:role:measure-collection-block-pref",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-block-pref:provenance",
+      "provenance": "uir-site:role:measure-collection-block-pref:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-inline-max",
+      "id": "uir-site:role:measure-collection-inline-max",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-inline-max:provenance",
+      "provenance": "uir-site:role:measure-collection-inline-max:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-inline-min",
+      "id": "uir-site:role:measure-collection-inline-min",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-inline-min:provenance",
+      "provenance": "uir-site:role:measure-collection-inline-min:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:role:measure-inline-pref",
+      "id": "uir-site:role:measure-collection-inline-pref",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
-      "provenance": "uir-site:role:measure-inline-pref:provenance",
+      "provenance": "uir-site:role:measure-collection-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-container-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-container-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-content-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-content-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:measure-control-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:measure-control-inline-pref:provenance",
       "recordType": "Entity"
     },
     {
@@ -11353,45 +12794,171 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-block-max",
+      "id": "uir-site:value:measure-collection-block-max",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-block-max:provenance",
+      "provenance": "uir-site:value:measure-collection-block-max:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-block-min",
+      "id": "uir-site:value:measure-collection-block-min",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-block-min:provenance",
+      "provenance": "uir-site:value:measure-collection-block-min:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-block-pref",
+      "id": "uir-site:value:measure-collection-block-pref",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-block-pref:provenance",
+      "provenance": "uir-site:value:measure-collection-block-pref:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-inline-max",
+      "id": "uir-site:value:measure-collection-inline-max",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-inline-max:provenance",
+      "provenance": "uir-site:value:measure-collection-inline-max:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-inline-min",
+      "id": "uir-site:value:measure-collection-inline-min",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-inline-min:provenance",
+      "provenance": "uir-site:value:measure-collection-inline-min:provenance",
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:value:measure-inline-pref",
+      "id": "uir-site:value:measure-collection-inline-pref",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
-      "provenance": "uir-site:value:measure-inline-pref:provenance",
+      "provenance": "uir-site:value:measure-collection-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-container-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-container-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-content-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-content-inline-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-block-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-block-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-block-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-block-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-block-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-block-pref:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-inline-max",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-inline-max:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-inline-min",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-inline-min:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:measure-control-inline-pref",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:measure-control-inline-pref:provenance",
       "recordType": "Entity"
     },
     {
@@ -11504,6 +13071,13 @@
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
       "provenance": "uir-site:value:surface-muted:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:text-scale-200",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:text-scale-200:provenance",
       "recordType": "Entity"
     },
     {

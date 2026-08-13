@@ -164,6 +164,62 @@ Impact: every target that wants embedded inspection must recreate a subtle read 
 
 Proposed improvement: publish an official `inspection_dto(snapshot, surface, context)` projection containing stable target handles, resolved Piece identity, visible/invisible Facts, effective bindings, provenance summary, explicit gaps, and attestation state. Define a small DOM/embed convention such as `data-uir-node-id` so viewers can select target elements without target-specific key translation.
 
+### F15 — a clean gate summary can hide weak authored decisions
+
+The page report has no failing gate, 4,007 decided member positions and no undecided member position, but several statements are intentionally generic: all 98 Node descriptions state none, 70 Node names state none, all 10 Piece descriptions state none, and the authored measures reuse broad placeholder-like bounds. The report correctly refuses to turn those statements into a quality percentage.
+
+Impact: optimizing the page by adding more records would improve no honest measure. The valuable work is to improve the meaning of the existing decisions, make measures role-specific, add real reading order and state exposure, and establish an independent implementation-versus-system conformance run.
+
+Proposed improvement: make the review UI place `statesNothing`, repeated-claim uniformity, vacuous gates and blocked coverage beside the clean gate summary. Present them as review signals, never as deductions from a score.
+
+### F16 — site review was a convention, not a tooling-owned workflow
+
+- Status: fixed
+- Flow step: baseline, measurement, board, and review
+- Evidence: the first score-improvement pass required manually composing `uir_report.py`, two `uir_board.py` readings, ad hoc JSON inspection, and review-note conventions.
+- User impact: a clean-start agent could repeat the package checks but omit the board target's own counts, overwrite the baseline, calculate an authored-package ratio, or forget to record Flow 2 friction.
+- Root cause: UIR shipped the individual official readers but no product-owned orchestration and no reusable clean-start procedure for a UIR-backed site.
+- Change made: added `tool/uir_site_workflow.py`, `skills/improve-uir-site/`, a review-entry template, three unit tests, skill metadata, validation, and a README entry in the UIR tooling repository.
+- Verification: `python3 -m unittest discover -s tests -t tests -p test_uir_site_workflow.py` passes three tests; the skill validator reports `Skill is valid!`; the new command produced both site audit artifacts.
+- Remaining risk: the workflow captures evidence but deliberately does not judge semantic quality or compare artifacts automatically.
+
+### F17 — a named container Node cannot honestly inherit its name through a reusable Piece
+
+- Status: deferred
+- Flow step: authoring and candidate build
+- Candidate revision: rejected staging candidate before `c58d6cad091acbc734095b23d1436c01025b1d587d6549b9532371fafe9bdad0`
+- Contexts: desktop and mobile
+- Evidence: adding truthful names to navigation and region Nodes made the checker reject all three reachable region/navigation Resolution families because their independent Pieces declared `name: none`. `NameSource` can name one literal or one concrete Node, but cannot state “take the name from the Node resolved at this occurrence.”
+- User impact: the author must either leave container names as explicit `none`, hard-code a reusable placeholder literal, point every occurrence at one unrelated Node, or lie about contribution mode.
+- Root cause: the vocabulary has no occurrence-relative or content-derived `NameSource` for a reusable Piece.
+- Change made: rolled back only the unsupported names; no placeholder was used and the checker returned to accepted-draft state.
+- Proposed tooling or workflow improvement: add a generic resolved-Node/content name source and check that an independent Piece carrying a named Node preserves that source.
+- Verification: the rejected candidate named `UIR-SEM-RESOLUTION` at navigation→document, region→document, and region→group; the rebuilt candidate has no failing or ungated error.
+- Remaining risk: 70 Node names and 8 Piece names still honestly state nothing.
+
+### F18 — better authored decisions can reveal more target limitations
+
+- Status: fixed
+- Flow step: authoring, measurement, and board
+- Candidate revision: `c58d6cad091acbc734095b23d1436c01025b1d587d6549b9532371fafe9bdad0`
+- Contexts: desktop and mobile
+- Evidence: baseline and after artifacts are `.uir-session/uir-audit-baseline.json` and `.uir-session/uir-audit-after.json`.
+- Change made: replaced generic Piece bounds with container, collection, content, and control measure profiles; replaced five false atomic `leaf` layouts with explicit content flows; declared the one-slot reading order; changed the claimed largest text scale from 1× to 2×; narrowed Node-related provenance instead of crediting every research source.
+
+| Signal | Baseline | After | Interpretation |
+|---|---|---|---|
+| Gate verdicts | 11 pass, 2 vacuous, 6 unchecked | unchanged | No green gate was manufactured. |
+| `piece.accessibility.readingOrder` | 10 state nothing; 1 distinct value | 0 state nothing; 10 distinct slot references | Each Piece now states its own one-slot order; the global reading-order predicate remains deferred. |
+| Board arrangements not expressible | 9 | 4 | Five content-carrying atomic Pieces no longer claim to be leaves. |
+| Board parts not placed | 10 | 7 | The board can place three more parts after the layout and measure changes. |
+| Total board limitations | 36 | 33 | Fewer limitations, but not a completeness claim. |
+| Board conflicts / measure fields not expressible / slots reaching no pixel | 2 / 25 / 38 | 3 / 26 / 47 | More content is drawn and exposes additional responsive-measure conflicts; these are retained, not hidden. |
+| Provenance records citing all 9 sources | 210 | 15 | Node claims now default to the user session and UIR repository instead of every market source. |
+| External install Gap | 1 | 1 | Public distribution remains honestly external. |
+
+- Remaining risk: bounded/content growth remains intentionally responsive but this board cannot compute it; four compiler deferrals keep six gates unchecked; `largestTextScale` and reading order are still load-bearing claims with no implemented semantic predicate.
+
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
@@ -175,14 +231,17 @@ Proposed improvement: publish an official `inspection_dto(snapshot, surface, con
 ## Evidence log
 
 - The UIR repository was clean and synchronized at the start of the run.
-- The current local suite passed 1,331 tests with 66 skips caused by the absent styling framework in that checkout.
+- The current local suite passed 1,334 tests with 66 skips caused by the absent styling framework in that checkout.
 - Fourteen contract checkers passed locally.
 - The browser paint checker measured 141 boxes over 8 witness boards successfully.
 - The public page project was created in a separate clean workspace and its development surface started successfully.
-- The checked page candidate contains 98 Nodes and has package fingerprint `a42600e063a9f26e05cc9d25412682910976bdfbefcbe3630934a95e880e1a53`.
+- The baseline checked page candidate contains 98 Nodes and has package fingerprint `a42600e063a9f26e05cc9d25412682910976bdfbefcbe3630934a95e880e1a53`.
+- The revised checked draft keeps 98 Nodes and has compiler fingerprint `c58d6cad091acbc734095b23d1436c01025b1d587d6549b9532371fafe9bdad0`.
+- The reproducible workflow artifacts identify runtime revisions `28e099a819ea6eeedbd03d8270ee4e2d8a9b538f64736a3bb1a0988d3c04dca3` and `adc657da06a2e98214c0750315076f70bd369a8e56f18761e8d0cf5e30c8f1ed`.
+- The repository-owned site workflow is unit-tested, skill-validated, and documented in the UIR tooling repository.
 - The official checker accepted the candidate structurally and named four global semantic closures as deferred.
 - Official desktop and mobile board runs completed but were blocked from attestation and reached only 20 parts.
-- The experimental web target passed lint, production build, and two rendered-HTML contract tests. The tests assert that all 98 Nodes render and that representative marketing copy exists only in UIR, not in the React target source.
+- The experimental web target passed lint, production build, and three rendered-HTML contract tests. The tests assert that all 98 Nodes render and that representative marketing copy exists only in UIR, not in the React target source.
 - One bespoke 1200×630 social preview was generated and stored as a project asset.
 - The self-inspection iteration derives a compact manifest for all 98 Nodes from the same checked package. No mock or parallel demo model is used.
 
