@@ -1510,7 +1510,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The interface is the source. Code is a derived artifact."
+        "value": "Created and stewarded by Tenbytes Ltd. The interface is the source. Code is a derived artifact."
       }
     },
     {
@@ -1524,7 +1524,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR"
+        "value": "UIR by Tenbytes Ltd"
       }
     },
     {
@@ -1574,7 +1574,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "USER INTERFACE REPRESENTATION · PRIVATE ALPHA"
+        "value": "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PRIVATE ALPHA"
       }
     },
     {
@@ -6187,7 +6187,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "UIR"
+          "value": "UIR by Tenbytes Ltd"
         },
         "operations": []
       }

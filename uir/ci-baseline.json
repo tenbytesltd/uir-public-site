@@ -1,0 +1,17 @@
+{
+  "deferredCodes": [
+    "UIR-SEM-CONTRAST-DEFERRED",
+    "UIR-SEM-PARENT-ROLE-DEFERRED",
+    "UIR-SEM-RESOLUTION-DEFERRED",
+    "UIR-SEM-SLOT-CARDINALITY-DEFERRED"
+  ],
+  "schemaVersion": "uir.site-ci-baseline/v1",
+  "uncheckedGates": [
+    "applicability",
+    "contrast",
+    "measures",
+    "reading-order",
+    "slot-bounds",
+    "state-exposure"
+  ]
+}

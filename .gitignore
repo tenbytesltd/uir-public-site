@@ -42,3 +42,4 @@ yarn-error.log*
 # Disposable clean-start session compiler glue. The checked package is the
 # only application authority and remains committed under app/uir-package.
 /.uir-session/
+/.uir-ci/

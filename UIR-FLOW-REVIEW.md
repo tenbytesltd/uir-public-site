@@ -220,6 +220,19 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Remaining risk: bounded/content growth remains intentionally responsive but this board cannot compute it; four compiler deferrals keep six gates unchecked; `largestTextScale` and reading order are still load-bearing claims with no implemented semantic predicate.
 
 
+### F19 — reproducibility and semantic debt were local knowledge, not CI contracts
+
+- Status: fixed
+- Flow step: authoring, checking, and release
+- Candidate revision: `94340d0181bfaabc249c5fad4f4bfd10214f876f261f32f60a84cb4090b25a73`
+- Evidence: before this change the newest authoring source lived under ignored `.uir-session/`, the website had no GitHub workflow, and a hand-edited package could pass site lint/build without being regenerated.
+- User impact: a clean-start contributor could change emitted shards directly, omit the official UIR audit, or introduce a seventh unchecked gate while the implementation CI stayed green.
+- Root cause: the workflow shipped an audit command but no reusable CI action, no committed authoring source, and no explicit unchecked/deferred boundary.
+- Change made: versioned `uir/author_site.py`; added `tool/uir_site_ci.py` and `.github/actions/check-site` in the UIR repository; pinned the website workflow to exact UIR commit `3317c7cd540d201b8c95c6336cc0c7372110c275`; added `uir/ci-baseline.json` and an uploaded audit artifact.
+- Verification: CI regenerates a candidate with the official compiler, byte-compares every package file, runs the official site audit, refuses failing gates and ungated errors, and refuses any change to the named six unchecked gates or four deferral codes until the baseline is explicitly reviewed.
+- Remaining risk: the four deferrals are language/tooling work, not waived product quality. GitHub branch protection for this private repository requires a paid organization plan; current access control is private organization membership with forking disabled.
+
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
