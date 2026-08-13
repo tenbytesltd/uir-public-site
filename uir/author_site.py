@@ -49,6 +49,7 @@ SHARDS = {
 SRC_USER = "uir-site:source:user-session"
 SRC_TENBYTES = "uir-site:source:tenbytes"
 SRC_REPO = "uir-site:source:uir-repository"
+SRC_SITE_REPO = "uir-site:source:site-repository"
 SRC_STORYBOOK = "uir-site:source:storybook"
 SRC_DTCG = "uir-site:source:dtcg"
 SRC_OTEL = "uir-site:source:opentelemetry"
@@ -255,6 +256,12 @@ add_source(
     "UIR repository at the site release",
     "Authoritative product definition, vocabulary, compiler, checker, prototype, gaps, and status for this run.",
     "https://github.com/tenbytesltd/uir",
+)
+add_source(
+    SRC_SITE_REPO, "repository", "https://github.com/tenbytesltd/uir-public-site",
+    "Public UIR site repository",
+    "Public source for this page: its UIR authoring program, checked package, generic renderer, inspector, CI evidence, and Flow 2 review log.",
+    "https://github.com/tenbytesltd/uir-public-site",
 )
 add_source(SRC_STORYBOOK, "web", "https://storybook.js.org/", "Storybook", "OSS developer-tool adoption and live-product demonstration reference.", "https://storybook.js.org/")
 add_source(SRC_DTCG, "web", "https://www.designtokens.org/", "Design Tokens Community Group", "Open standard positioning, specification, adopter, and community reference.", "https://www.designtokens.org/")
@@ -577,7 +584,7 @@ axis_rows = (
     ("surface-kind", "surface-kind", "symbol", ["marketing-page"]),
     ("surface-frame", "surface-frame", "symbol", ["responsive-web"]),
     ("surface-body", "surface-body", "symbol", ["adoption-landing"]),
-    ("surface-part", "surface-part", "symbol", ["$no-part", "footer", "hero", "mechanism", "navigation", "problem", "quickstart", "standard", "status"]),
+    ("surface-part", "surface-part", "symbol", ["$no-part", "build", "footer", "hero", "mechanism", "navigation", "problem", "quickstart", "showcase", "standard", "status"]),
     ("parent-role", "parent-role", "role", ["$surface-root", *ROLE_SYMBOLS]),
 )
 for suffix, kind, typ, values_ in axis_rows:
@@ -629,11 +636,11 @@ m.fact(
     "interface", "uir-site:fact:surface-definition", "surface.definition", SURFACE,
     "invisible",
     {
-        "purpose": "Explain UIR, prove the extraction-first value path, and invite installation and adoption without overstating alpha maturity.",
+        "purpose": "Explain UIR, prove the extraction-first value path, expose this page as a public UIR implementation, and invite adoption without overstating alpha maturity.",
         "kind": "marketing-page",
         "frame": "responsive-web",
         "body": "adoption-landing",
-        "parts": sorted(("navigation", "hero", "problem", "mechanism", "quickstart", "standard", "status", "footer")),
+        "parts": sorted(("navigation", "hero", "problem", "mechanism", "showcase", "quickstart", "build", "standard", "status", "footer")),
         "contexts": sorted(CONTEXTS),
     },
     sources=(SRC_USER, SRC_REPO, *SRC_RESEARCH),
@@ -964,12 +971,13 @@ node("brand", "heading", "UIR", parent=NAV, salience="primary", overrides={"type
 NAV_EXTRACT = node("nav-extract", "link", "Extract", parent=NAV, salience="secondary")
 NAV_BUILD = node("nav-build", "link", "Build from zero", parent=NAV, salience="secondary")
 NAV_STANDARD = node("nav-standard", "link", "Why a standard", parent=NAV, salience="secondary")
+NAV_SOURCE = node("nav-source", "link", "View source", parent=NAV, salience="secondary")
 
 HERO = node(
     "hero", "region", None, parent=ROOT_NODE, salience="primary",
     overrides={"surface": "surface-ink", "ink": "ink-inverse", "inset-block": "inset-hero-block"},
 )
-node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PRIVATE ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
+node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PUBLIC SOURCE · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
 node("hero-title", "heading", "Make the interface explicit before code gets the final word.", parent=HERO, salience="primary", overrides={"ink": "ink-inverse", "type": "type-display"})
 node("hero-lead", "paragraph", "UIR is one self-contained source for what an interface looks like, what it means, which design decisions realize it, and what remains unresolved.", parent=HERO, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"})
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
@@ -1005,6 +1013,27 @@ for key, title, copy in (
     card = node(key, "region", None, parent=FLOW)
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
+
+SHOWCASE = node(
+    "showcase", "region", None, parent=ROOT_NODE, salience="primary",
+    overrides={"surface": "surface-ink", "ink": "ink-inverse"},
+    sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO),
+)
+node("showcase-kicker", "paragraph", "OPEN SOURCE · LIVING PROOF", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-title", "heading", "Do not take the standard on trust. Inspect the site that runs on it.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-copy", "paragraph", "This page is not a hand-built illustration of UIR. Its content, structure, design bindings, provenance, and gaps are authored as one versioned UIR package. The generic renderer and inspector consume that package; CI checks that the public source still reproduces it.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+SHOWCASE_GRID = node("showcase-grid", "group", None, parent=SHOWCASE, sources=(SRC_USER, SRC_SITE_REPO))
+for key, title, copy in (
+    ("showcase-source", "01 · Read the source", "Follow the authoring program into the checked package, then into the generic renderer. Marketing copy never becomes a second authority."),
+    ("showcase-review", "02 · Review the evidence", "Every pull request publishes a readable UIR review: reproducibility, exact gate verdicts, declared deferrals, gaps, contexts, and board limits."),
+    ("showcase-inspect", "03 · Trace this page", "Use “Inspect this page” to select any visible Node and read its role, Piece, bindings, provenance, controls, and explicit gap."),
+):
+    card = node(key, "region", None, parent=SHOWCASE_GRID, salience="secondary", sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+    node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+    node(f"{key}-copy", "paragraph", copy, parent=card, overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+SHOWCASE_ACTIONS = node("showcase-actions", "group", None, parent=SHOWCASE, salience="secondary", sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-repository", "link", "Explore the public site repository", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
+node("showcase-path", "code", "github.com/tenbytesltd/uir-public-site", parent=SHOWCASE_ACTIONS, salience="supporting", sources=(SRC_SITE_REPO,))
 
 QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-ink", "ink": "ink-inverse"})
 node("quickstart-kicker", "paragraph", "THE SHORTEST PATH TO VALUE", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"})
@@ -1052,7 +1081,7 @@ for key, title, copy in (
 STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary")
 node("status-kicker", "paragraph", "CURRENT STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
 node("status-title", "heading", "Alpha, with the unfinished parts in view.", parent=STATUS, salience="primary")
-node("status-copy", "paragraph", "The Step 1 toolchain, checker, renderer, inspector, conformance measurement, and CI gates exist. UIR v0.1 is not frozen, the public distribution seam is not open, and production lowering remains later work.", parent=STATUS, salience="secondary", overrides={"type": "type-lead"})
+node("status-copy", "paragraph", "The Step 1 toolchain, checker, renderer, inspector, conformance measurement, and CI gates exist. This site's source and review evidence are public. UIR v0.1 is not frozen, the general install distribution seam is not open, and production lowering remains later work.", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 STATUS_LIST = node("status-list", "list", None, parent=STATUS)
 for index, copy in enumerate((
     "Working now — deterministic package checking, extraction, live boards, semantic inspection, and measured findings.",
@@ -1067,7 +1096,7 @@ node("footer-copy", "paragraph", "Created and stewarded by Tenbytes Ltd. The int
 FOOTER_ACTION = node("footer-action", "link", "Return to extraction", parent=FOOTER, salience="secondary")
 
 controls.extend((
-    (NAV_EXTRACT, QUICKSTART), (NAV_BUILD, BUILD), (NAV_STANDARD, STANDARD),
+    (NAV_EXTRACT, QUICKSTART), (NAV_BUILD, BUILD), (NAV_STANDARD, STANDARD), (NAV_SOURCE, SHOWCASE),
     (HERO_PRIMARY, QUICKSTART), (HERO_SECONDARY, MECHANISM),
     (FOOTER_ACTION, QUICKSTART),
 ))

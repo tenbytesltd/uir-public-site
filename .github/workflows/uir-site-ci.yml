@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: uir-site-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -15,7 +16,7 @@ permissions:
 jobs:
   verify:
     name: Reproduce, audit, and render
-    runs-on: self-hosted
+    runs-on: ${{ github.event.repository.private && 'self-hosted' || 'ubuntu-latest' }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
@@ -24,13 +25,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Verify UIR source and package
-        uses: tenbytesltd/uir/.github/actions/check-site@2370d95291acfc56773cea97e029e6256c01cb19
+      - name: Verify the public UIR showcase
+        uses: ./.github/actions/check-site
         with:
           author: uir/author_site.py
           package: app/uir-package
           baseline: uir/ci-baseline.json
-          audit-output: .uir-ci/audit.json
+          evidence: uir/evidence.json
+          audit: uir/official-audit.json
           review-output: .uir-ci/review.md
 
       - name: Preserve the UIR review evidence
@@ -40,7 +42,8 @@ jobs:
           name: uir-site-review
           path: |
             .uir-ci/review.md
-            .uir-ci/audit.json
+            uir/official-audit.json
+            uir/evidence.json
           if-no-files-found: warn
           retention-days: 14
 

@@ -270,6 +270,32 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Remaining risk: the review is a workflow summary rather than an automated pull-request comment. This avoids granting write permission to the action and keeps the PR conversation free of bot comment churn.
 
 
+
+### F23 — a public showcase cannot depend on a private UIR action
+
+- Status: fixed with an explicit alpha trust boundary
+- Flow step: public distribution, continuous integration, and adoption proof
+- Candidate revision: 983c84e62ab8887a87a2e1da25f5c80dcd9bfcd340168dffccc188a21b520da2
+- Evidence: GitHub permits private actions to be shared only with private repositories. Making the site repository public would therefore break the previously pinned "tenbytesltd/uir" action. A self-hosted runner would also be the wrong default execution boundary for untrusted public pull requests.
+- User impact: the supposed open showcase would either fail for every fork, require hidden Tenbytes credentials, or expose a misleading green check that outsiders could not reproduce.
+- Root cause: the first CI integration assumed the website and tooling repository would share one private organization boundary.
+- Change made: replaced the cross-repository action with a local public composite action and an independently authored verifier; moved CI to a GitHub-hosted runner; added a restricted public package builder; committed the machine-readable official audit and a digest binding to the exact package; made the Job Summary distinguish public reproduction from maintainer-generated semantic evidence.
+- Verification: a credential-free local run reproduces all 5 shards and 4,148 records exactly, verifies the package fingerprint 8f59110bdab6ec1f3a2d0ce1365c4aa3b9a72bb8344a43b6454b3f514bc835af, and publishes the same 11 pass / 2 vacuous / 6 unchecked / 0 fail ledger plus four deferrals and both board contexts.
+- Proposed tooling improvement: publish a stable, public UIR verifier/action distribution. That would let public adopters refresh official semantic evidence themselves instead of stopping at the maintainer-review seam.
+- Remaining risk: until that distribution exists, package-changing public contributions require a Tenbytes maintainer to refresh the official audit; CI states this explicitly and blocks stale evidence.
+
+### F24 — the Surface parts axis silently lagged the authored page
+
+- Status: fixed
+- Flow step: authoring and candidate checking
+- Evidence: the Surface definition originally omitted the already-rendered "build" part. Adding the public "showcase" part exposed both omissions because the official compiler rejected them as undeclared "surface-part" symbols.
+- User impact: authoring could produce a visually complete section while the closed context vocabulary did not admit that section as part of the Surface.
+- Root cause: the part list and the axis symbol declaration were maintained separately.
+- Change made: declared both "build" and "showcase" in the "surface-part" axis and kept the Surface definition complete.
+- Proposed tooling improvement: derive declared surface-part symbols from the Surface definitions, or add an authoring helper that updates both ledgers atomically.
+- Verification: the official compiler accepts the 116-Node candidate with no failing gate or ungated error.
+- Remaining risk: other authoring helpers can still duplicate closed-vocabulary declarations unless the model API owns this synchronization.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?

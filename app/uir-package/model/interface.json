@@ -516,6 +516,18 @@
       }
     },
     {
+      "id": "uir-site:fact:node-composition:nav-source",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:nav-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:nav-source",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
       "id": "uir-site:fact:node-composition:nav-standard",
       "kind": "node.composition",
       "plane": "invisible",
@@ -921,6 +933,210 @@
       "value": {
         "kind": "ordered-group",
         "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-actions",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-actions:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-actions",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-copy",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-grid",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-grid:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-grid",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-inspect",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-inspect:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-inspect-copy",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-inspect-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-inspect-title",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-inspect-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-kicker",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-kicker:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-path",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-path:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-path",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-repository",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-repository:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-repository",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-review",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-review:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-review-copy",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-review-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-review-title",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-review-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-source",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source",
+      "value": {
+        "kind": "ordered-group",
+        "ownsChildren": true
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-source-copy",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-source-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-source-title",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-source-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
+      }
+    },
+    {
+      "id": "uir-site:fact:node-composition:showcase-title",
+      "kind": "node.composition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-composition:showcase-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
+      "value": {
+        "kind": "leaf",
+        "ownsChildren": false
       }
     },
     {
@@ -1574,7 +1790,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PRIVATE ALPHA"
+        "value": "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PUBLIC SOURCE · ALPHA"
       }
     },
     {
@@ -1723,6 +1939,20 @@
         "language": "en",
         "type": "text",
         "value": "Extract"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:nav-source",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:nav-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:nav-source",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "View source"
       }
     },
     {
@@ -2166,6 +2396,226 @@
       }
     },
     {
+      "id": "uir-site:fact:node-content:showcase",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-actions",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-actions:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-actions",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-copy",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "This page is not a hand-built illustration of UIR. Its content, structure, design bindings, provenance, and gaps are authored as one versioned UIR package. The generic renderer and inspector consume that package; CI checks that the public source still reproduces it."
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-grid",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-grid:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-grid",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-inspect",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-inspect:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-inspect-copy",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-inspect-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "Use “Inspect this page” to select any visible Node and read its role, Piece, bindings, provenance, controls, and explicit gap."
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-inspect-title",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-inspect-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "03 · Trace this page"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-kicker",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-kicker:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "OPEN SOURCE · LIVING PROOF"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-path",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-path:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-path",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "github.com/tenbytesltd/uir-public-site"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-repository",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-repository:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-repository",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "Explore the public site repository"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-review",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-review:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-review-copy",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-review-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "Every pull request publishes a readable UIR review: reproducibility, exact gate verdicts, declared deferrals, gaps, contexts, and board limits."
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-review-title",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-review-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "02 · Review the evidence"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-source",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source",
+      "value": {
+        "type": "empty"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-source-copy",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-source-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "Follow the authoring program into the checked package, then into the generic renderer. Marketing copy never becomes a second authority."
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-source-title",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-source-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "01 · Read the source"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-content:showcase-title",
+      "kind": "node.content",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-content:showcase-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
+      "value": {
+        "direction": "ltr",
+        "language": "en",
+        "type": "text",
+        "value": "Do not take the standard on trust. Inspect the site that runs on it."
+      }
+    },
+    {
       "id": "uir-site:fact:node-content:standard",
       "kind": "node.content",
       "plane": "visible",
@@ -2407,7 +2857,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The Step 1 toolchain, checker, renderer, inspector, conformance measurement, and CI gates exist. UIR v0.1 is not frozen, the public distribution seam is not open, and production lowering remains later work."
+        "value": "The Step 1 toolchain, checker, renderer, inspector, conformance measurement, and CI gates exist. This site's source and review evidence are public. UIR v0.1 is not frozen, the general install distribution seam is not open, and production lowering remains later work."
       }
     },
     {
@@ -3340,6 +3790,262 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:showcase-copy:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-copy:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-copy:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-copy:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-inspect-copy:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-inspect-copy:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-inspect-title:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-inspect-title:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-inspect-title:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-inspect-title:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-kicker:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-kicker:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "groundRole": "uir-site:role:ink-accent",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-kicker:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-kicker:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "groundRole": "uir-site:role:type-label",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-review-copy:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-review-copy:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-review-title:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-review-title:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-review-title:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-review-title:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-source-copy:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-source-copy:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-source-title:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-source-title:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-source-title:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-source-title:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase-title:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase-title:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:showcase:surface",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:showcase:surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "groundRole": "uir-site:role:surface-ink",
+        "outcome": "role",
+        "slot": "surface",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:standard-copy:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3984,6 +4690,18 @@
       }
     },
     {
+      "id": "uir-site:fact:node-role:nav-source",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:nav-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:nav-source",
+      "value": {
+        "primary": true,
+        "role": "link"
+      }
+    },
+    {
       "id": "uir-site:fact:node-role:nav-standard",
       "kind": "node.role",
       "plane": "invisible",
@@ -4389,6 +5107,210 @@
       "value": {
         "primary": true,
         "role": "document"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "primary": true,
+        "role": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-actions",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-actions:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-actions",
+      "value": {
+        "primary": true,
+        "role": "group"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-copy",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "primary": true,
+        "role": "paragraph"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-grid",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-grid:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-grid",
+      "value": {
+        "primary": true,
+        "role": "group"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-inspect",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-inspect:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect",
+      "value": {
+        "primary": true,
+        "role": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-inspect-copy",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-inspect-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "primary": true,
+        "role": "paragraph"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-inspect-title",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-inspect-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "primary": true,
+        "role": "heading"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-kicker",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-kicker:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "primary": true,
+        "role": "paragraph"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-path",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-path:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-path",
+      "value": {
+        "primary": true,
+        "role": "code"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-repository",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-repository:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-repository",
+      "value": {
+        "primary": true,
+        "role": "link"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-review",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-review:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review",
+      "value": {
+        "primary": true,
+        "role": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-review-copy",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-review-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "primary": true,
+        "role": "paragraph"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-review-title",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-review-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "primary": true,
+        "role": "heading"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-source",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source",
+      "value": {
+        "primary": true,
+        "role": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-source-copy",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-source-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "primary": true,
+        "role": "paragraph"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-source-title",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-source-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "primary": true,
+        "role": "heading"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-role:showcase-title",
+      "kind": "node.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-role:showcase-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
+      "value": {
+        "primary": true,
+        "role": "heading"
       }
     },
     {
@@ -5121,6 +6043,17 @@
       }
     },
     {
+      "id": "uir-site:fact:node-salience:nav-source",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:nav-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:nav-source",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
       "id": "uir-site:fact:node-salience:nav-standard",
       "kind": "node.salience",
       "plane": "visible",
@@ -5490,6 +6423,193 @@
       "provenance": "uir-site:fact:node-salience:root:provenance",
       "recordType": "Fact",
       "subject": "uir-site:node:root",
+      "value": {
+        "level": "primary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "level": "primary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-actions",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-actions:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-actions",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-copy",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-grid",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-grid:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-grid",
+      "value": {
+        "level": "supporting"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-inspect",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-inspect:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-inspect-copy",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-inspect-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "level": "supporting"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-inspect-title",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-inspect-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-kicker",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-kicker:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "level": "quiet"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-path",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-path:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-path",
+      "value": {
+        "level": "supporting"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-repository",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-repository:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-repository",
+      "value": {
+        "level": "primary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-review",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-review:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-review-copy",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-review-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "level": "supporting"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-review-title",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-review-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-source",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-source-copy",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-source-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "level": "supporting"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-source-title",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-source-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "level": "secondary"
+      }
+    },
+    {
+      "id": "uir-site:fact:node-salience:showcase-title",
+      "kind": "node.salience",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-salience:showcase-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
       "value": {
         "level": "primary"
       }
@@ -6495,6 +7615,27 @@
       }
     },
     {
+      "id": "uir-site:fact:node-semantics:nav-source",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:nav-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:nav-source",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "single",
+        "name": {
+          "type": "literal",
+          "value": "View source"
+        },
+        "operations": [
+          "navigate"
+        ]
+      }
+    },
+    {
       "id": "uir-site:fact:node-semantics:nav-standard",
       "kind": "node.semantics",
       "plane": "invisible",
@@ -7113,6 +8254,319 @@
         "focus": "none",
         "name": {
           "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-actions",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-actions:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-actions",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-copy",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-copy",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-grid",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-grid:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-grid",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-inspect",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-inspect:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-inspect-copy",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-inspect-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-copy",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-inspect-title",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-inspect-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-inspect-title",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "literal",
+          "value": "03 · Trace this page"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-kicker",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-kicker:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-kicker",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-path",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-path:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-path",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-repository",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-repository:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-repository",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "single",
+        "name": {
+          "type": "literal",
+          "value": "Explore the public site repository"
+        },
+        "operations": [
+          "navigate"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-review",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-review:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-review-copy",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-review-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-copy",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-review-title",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-review-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-review-title",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "literal",
+          "value": "02 · Review the evidence"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-source",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-source:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-source-copy",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-source-copy:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-copy",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "none"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-source-title",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-source-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-source-title",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "literal",
+          "value": "01 · Read the source"
+        },
+        "operations": []
+      }
+    },
+    {
+      "id": "uir-site:fact:node-semantics:showcase-title",
+      "kind": "node.semantics",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:node-semantics:showcase-title:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:showcase-title",
+      "value": {
+        "description": {
+          "type": "none"
+        },
+        "focus": "none",
+        "name": {
+          "type": "literal",
+          "value": "Do not take the standard on trust. Inspect the site that runs on it."
         },
         "operations": []
       }
@@ -7829,16 +9283,18 @@
         "frame": "responsive-web",
         "kind": "marketing-page",
         "parts": [
+          "build",
           "footer",
           "hero",
           "mechanism",
           "navigation",
           "problem",
           "quickstart",
+          "showcase",
           "standard",
           "status"
         ],
-        "purpose": "Explain UIR, prove the extraction-first value path, and invite installation and adoption without overstating alpha maturity."
+        "purpose": "Explain UIR, prove the extraction-first value path, expose this page as a public UIR implementation, and invite adoption without overstating alpha maturity."
       }
     },
     {
@@ -8125,6 +9581,13 @@
       "recordType": "Entity"
     },
     {
+      "id": "uir-site:node:nav-source",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:nav-source:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:node:nav-standard",
       "kind": "Node",
       "owner": "uir-site:package",
@@ -8363,6 +9826,125 @@
       "recordType": "Entity"
     },
     {
+      "id": "uir-site:node:showcase",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-actions",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-actions:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-copy",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-copy:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-grid",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-grid:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-inspect",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-inspect:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-inspect-copy",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-inspect-copy:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-inspect-title",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-inspect-title:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-kicker",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-kicker:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-path",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-path:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-repository",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-repository:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-review",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-review:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-review-copy",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-review-copy:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-review-title",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-review-title:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-source",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-source:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-source-copy",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-source-copy:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-source-title",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-source-title:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:node:showcase-title",
+      "kind": "Node",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:node:showcase-title:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:node:standard",
       "kind": "Node",
       "owner": "uir-site:package",
@@ -8560,7 +10142,7 @@
     {
       "id": "uir-site:relation:contains:build",
       "kind": "contains",
-      "order": 5,
+      "order": 6,
       "provenance": "uir-site:relation:contains:build:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:root",
@@ -8920,7 +10502,7 @@
     {
       "id": "uir-site:relation:contains:footer",
       "kind": "contains",
-      "order": 8,
+      "order": 9,
       "provenance": "uir-site:relation:contains:footer:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:root",
@@ -9318,6 +10900,26 @@
       }
     },
     {
+      "id": "uir-site:relation:contains:nav-source",
+      "kind": "contains",
+      "order": 4,
+      "provenance": "uir-site:relation:contains:nav-source:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:navigation",
+      "target": "uir-site:node:nav-source"
+    },
+    {
+      "id": "uir-site:relation:contains:nav-source:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:nav-source:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:nav-source",
+      "value": {
+        "meaning": "navigation contains nav-source at this semantic reading position."
+      }
+    },
+    {
       "id": "uir-site:relation:contains:nav-standard",
       "kind": "contains",
       "order": 3,
@@ -9640,7 +11242,7 @@
     {
       "id": "uir-site:relation:contains:quickstart",
       "kind": "contains",
-      "order": 4,
+      "order": 5,
       "provenance": "uir-site:relation:contains:quickstart:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:root",
@@ -9978,9 +11580,349 @@
       }
     },
     {
+      "id": "uir-site:relation:contains:showcase",
+      "kind": "contains",
+      "order": 4,
+      "provenance": "uir-site:relation:contains:showcase:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:root",
+      "target": "uir-site:node:showcase"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-actions",
+      "kind": "contains",
+      "order": 4,
+      "provenance": "uir-site:relation:contains:showcase-actions:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase",
+      "target": "uir-site:node:showcase-actions"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-actions:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-actions:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-actions",
+      "value": {
+        "meaning": "showcase contains showcase-actions at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-copy",
+      "kind": "contains",
+      "order": 2,
+      "provenance": "uir-site:relation:contains:showcase-copy:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase",
+      "target": "uir-site:node:showcase-copy"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-copy:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-copy:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-copy",
+      "value": {
+        "meaning": "showcase contains showcase-copy at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-grid",
+      "kind": "contains",
+      "order": 3,
+      "provenance": "uir-site:relation:contains:showcase-grid:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase",
+      "target": "uir-site:node:showcase-grid"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-grid:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-grid:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-grid",
+      "value": {
+        "meaning": "showcase contains showcase-grid at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect",
+      "kind": "contains",
+      "order": 2,
+      "provenance": "uir-site:relation:contains:showcase-inspect:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-grid",
+      "target": "uir-site:node:showcase-inspect"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect-copy",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-inspect-copy:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-inspect",
+      "target": "uir-site:node:showcase-inspect-copy"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect-copy:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-inspect-copy:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-inspect-copy",
+      "value": {
+        "meaning": "showcase-inspect contains showcase-inspect-copy at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect-title",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-inspect-title:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-inspect",
+      "target": "uir-site:node:showcase-inspect-title"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect-title:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-inspect-title:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-inspect-title",
+      "value": {
+        "meaning": "showcase-inspect contains showcase-inspect-title at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-inspect:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-inspect:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-inspect",
+      "value": {
+        "meaning": "showcase-grid contains showcase-inspect at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-kicker",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-kicker:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase",
+      "target": "uir-site:node:showcase-kicker"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-kicker:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-kicker:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-kicker",
+      "value": {
+        "meaning": "showcase contains showcase-kicker at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-path",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-path:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-actions",
+      "target": "uir-site:node:showcase-path"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-path:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-path:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-path",
+      "value": {
+        "meaning": "showcase-actions contains showcase-path at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-repository",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-repository:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-actions",
+      "target": "uir-site:node:showcase-repository"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-repository:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-repository:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-repository",
+      "value": {
+        "meaning": "showcase-actions contains showcase-repository at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-review:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-grid",
+      "target": "uir-site:node:showcase-review"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review-copy",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-review-copy:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-review",
+      "target": "uir-site:node:showcase-review-copy"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review-copy:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-review-copy:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-review-copy",
+      "value": {
+        "meaning": "showcase-review contains showcase-review-copy at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review-title",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-review-title:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-review",
+      "target": "uir-site:node:showcase-review-title"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review-title:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-review-title:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-review-title",
+      "value": {
+        "meaning": "showcase-review contains showcase-review-title at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-review:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-review:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-review",
+      "value": {
+        "meaning": "showcase-grid contains showcase-review at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-source:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-grid",
+      "target": "uir-site:node:showcase-source"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source-copy",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-source-copy:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-source",
+      "target": "uir-site:node:showcase-source-copy"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source-copy:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-source-copy:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-source-copy",
+      "value": {
+        "meaning": "showcase-source contains showcase-source-copy at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source-title",
+      "kind": "contains",
+      "order": 0,
+      "provenance": "uir-site:relation:contains:showcase-source-title:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase-source",
+      "target": "uir-site:node:showcase-source-title"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source-title:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-source-title:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-source-title",
+      "value": {
+        "meaning": "showcase-source contains showcase-source-title at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-source:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-source:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-source",
+      "value": {
+        "meaning": "showcase-grid contains showcase-source at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-title",
+      "kind": "contains",
+      "order": 1,
+      "provenance": "uir-site:relation:contains:showcase-title:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:showcase",
+      "target": "uir-site:node:showcase-title"
+    },
+    {
+      "id": "uir-site:relation:contains:showcase-title:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase-title:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase-title",
+      "value": {
+        "meaning": "showcase contains showcase-title at this semantic reading position."
+      }
+    },
+    {
+      "id": "uir-site:relation:contains:showcase:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:contains:showcase:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:contains:showcase",
+      "value": {
+        "meaning": "root contains showcase at this semantic reading position."
+      }
+    },
+    {
       "id": "uir-site:relation:contains:standard",
       "kind": "contains",
-      "order": 6,
+      "order": 7,
       "provenance": "uir-site:relation:contains:standard:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:root",
@@ -10320,7 +12262,7 @@
     {
       "id": "uir-site:relation:contains:status",
       "kind": "contains",
-      "order": 7,
+      "order": 8,
       "provenance": "uir-site:relation:contains:status:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:root",
@@ -10570,6 +12512,25 @@
       "subject": "uir-site:relation:controls:nav-extract:quickstart",
       "value": {
         "meaning": "The Extract action navigates to the quickstart section inside this Surface."
+      }
+    },
+    {
+      "id": "uir-site:relation:controls:nav-source:showcase",
+      "kind": "controls",
+      "provenance": "uir-site:relation:controls:nav-source:showcase:provenance",
+      "recordType": "Relation",
+      "source": "uir-site:node:nav-source",
+      "target": "uir-site:node:showcase"
+    },
+    {
+      "id": "uir-site:relation:controls:nav-source:showcase:meaning",
+      "kind": "relation.meaning",
+      "plane": "invisible",
+      "provenance": "uir-site:relation:controls:nav-source:showcase:meaning:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:relation:controls:nav-source:showcase",
+      "value": {
+        "meaning": "The View source action navigates to the showcase section inside this Surface."
       }
     },
     {

@@ -46,6 +46,10 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.equal((html.match(/data-node=/g) ?? []).length, nodeCount);
   assert.match(html, /Make the interface explicit before code gets the final word\./);
   assert.match(html, /CREATED BY TENBYTES LTD/);
+  assert.match(html, /PUBLIC SOURCE · ALPHA/);
+  assert.match(html, /Do not take the standard on trust\. Inspect the site that runs on it\./);
+  assert.match(html, /href="https:\/\/github\.com\/tenbytesltd\/uir-public-site"/);
+  assert.match(html, /Explore the public site repository/);
   assert.match(html, /Created and stewarded by Tenbytes Ltd\./);
   assert.match(html, /The public install artifact is not published yet/);
   assert.match(html, /Inspect this page/);
@@ -66,6 +70,8 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
     "Start with the interface you already ship.",
     "Alpha, with the unfinished parts in view.",
     "CREATED BY TENBYTES LTD",
+    "Do not take the standard on trust. Inspect the site that runs on it.",
+    "Explore the public site repository",
     "Created and stewarded by Tenbytes Ltd.",
   ]) {
     assert.doesNotMatch(renderer, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
@@ -116,6 +122,8 @@ test("builds the inspector from UIR facts instead of a parallel demo model", asy
   assert.match(renderer, /resolutionPiece\(node\.role\)/);
   assert.match(renderer, /inspectionBindings\(subject, piece\)/);
   assert.match(renderer, /fact\(source\.id, "source\.description"\)/);
+  assert.match(renderer, /sourceHref\(subject\)/);
+  assert.doesNotMatch(renderer, /github\.com\/tenbytesltd\/uir-public-site/);
   assert.match(inspector, /\.uir-target \[data-node\]/);
   assert.match(inspector, /Viewer chrome — outside the inspected Surface/);
   assert.doesNotMatch(inspector, /mock|fixture|sampleNode|demoData/i);

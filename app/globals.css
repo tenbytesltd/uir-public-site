@@ -200,6 +200,7 @@ a {
 
 #problem-grid > [data-role="region"],
 #mechanism-flow > [data-role="region"],
+#showcase-grid > [data-role="region"],
 #quickstart-steps > [data-role="region"],
 #standard-grid > [data-role="region"] {
   min-height: 100%;
@@ -210,6 +211,35 @@ a {
 
 #problem-grid > [data-role="region"] {
   min-height: 220px;
+}
+
+#showcase {
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--uir-accent, #c8ff3d) 22%, transparent) 0 1px, transparent 2px);
+  background-size: 18px 18px;
+}
+
+#showcase-copy {
+  max-width: 820px;
+}
+
+#showcase-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#showcase-grid > [data-role="region"] {
+  min-height: 250px;
+  border-color: color-mix(in srgb, currentColor 42%, transparent);
+}
+
+#showcase-actions {
+  grid-template-columns: minmax(240px, max-content) minmax(280px, 1fr);
+  align-items: stretch;
+}
+
+#showcase-path {
+  max-width: none;
 }
 
 #mechanism-flow > [data-role="region"]::after {
@@ -317,6 +347,8 @@ a {
     font-size: clamp(2.65rem, 13vw, 4.25rem) !important;
   }
 
+  #showcase-grid,
+  #showcase-actions,
   #quickstart-steps,
   #standard-grid {
     grid-template-columns: 1fr;
