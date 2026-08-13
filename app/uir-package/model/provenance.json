@@ -5491,6 +5491,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:hero-lead:surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-projection:hero-lead:type:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -5503,6 +5514,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-projection:hero-title:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:hero-title:surface:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",

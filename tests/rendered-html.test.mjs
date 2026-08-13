@@ -50,7 +50,11 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(heroTag, /data-uir-surface="radial-gradient"/);
   assert.match(heroTag, /data-uir-motion="motion-ambient-surface"/);
   assert.match(heroTag, /background-image:radial-gradient\(/);
-  assert.match(heroTag, /animation-duration:12s/);
+  assert.match(heroTag, /animation-duration:4s/);
+  const heroTitleTag = html.match(/<div id="hero-title"[^>]*>/)?.[0] ?? "";
+  const heroLeadTag = html.match(/<p id="hero-lead"[^>]*>/)?.[0] ?? "";
+  assert.match(heroTitleTag, /background-color:rgb\(21 23 19 \/ 1\)/);
+  assert.match(heroLeadTag, /background-color:rgb\(21 23 19 \/ 1\)/);
   const showcaseTag = html.match(/<section id="showcase"[^>]*>/)?.[0] ?? "";
   assert.doesNotMatch(showcaseTag, /data-uir-surface=/);
   assert.doesNotMatch(showcaseTag, /data-uir-motion=/);
