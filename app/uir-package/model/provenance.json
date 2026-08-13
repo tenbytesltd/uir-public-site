@@ -25351,7 +25351,7 @@
       "value": {
         "name": "Confirmed UIR public-page session",
         "revision": "2026-08-13",
-        "summary": "The user confirmed installation and adoption as the job, extraction as the primary path, and build-from-zero as the secondary path."
+        "summary": "The user asked the public page to explain UIR accurately, lead with the representation itself, and keep implementation and tooling claims secondary."
       }
     },
     {

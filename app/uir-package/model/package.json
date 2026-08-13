@@ -467,7 +467,7 @@
       "subject": "uir-site:package",
       "value": {
         "name": "UIR — User Interface Representation",
-        "summary": "UIR by Tenbytes Ltd makes extraction the shortest path to seeing interface decisions, drift, and silence."
+        "summary": "UIR is a framework-independent representation of what an interface means, with the design system as the realization backend."
       }
     },
     {
