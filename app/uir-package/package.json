@@ -25,7 +25,7 @@
     {
       "collection": "provenance",
       "path": "model/provenance.json",
-      "sha256": "b449d490b62402546d6bdc3eef014de8c257bbd3136a6c5c2073a4c990b341d9"
+      "sha256": "69a964ab9ec8ac762368fef53a30bb7089f1cfda9595bc2d032fdddfcb72f276"
     }
   ],
   "packageId": "uir-site:package",

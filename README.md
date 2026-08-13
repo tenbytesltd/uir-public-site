@@ -45,10 +45,13 @@ The repository CI additionally invokes the commit-pinned UIR action in
 2. checks it with the official UIR compiler;
 3. byte-compares it with `app/uir-package/`;
 4. runs the official UIR site audit;
-5. rejects failing gates, ungated errors, or an unreviewed change to the
+5. publishes a readable UIR review in the GitHub Job Summary with gate
+   verdicts, deferrals, Gaps, contexts, and board limitations;
+6. rejects failing gates, ungated errors, or an unreviewed change to the
    unchecked/deferred boundary in `uir/ci-baseline.json`.
 
-The resulting audit is retained as a CI artifact.
+The Markdown review and complete JSON audit are retained together as a CI
+artifact. The review uses exact ledgers and never invents a quality percentage.
 
 ## Updating the UIR package
 

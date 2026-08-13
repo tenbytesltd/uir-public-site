@@ -251,7 +251,7 @@ add_source(
     "https://github.com/tenbytesltd",
 )
 add_source(
-    SRC_REPO, "repository", "https://github.com/tenbytesltd/uir@3317c7cd540d201b8c95c6336cc0c7372110c275",
+    SRC_REPO, "repository", "https://github.com/tenbytesltd/uir@2370d95291acfc56773cea97e029e6256c01cb19",
     "UIR repository at the site release",
     "Authoritative product definition, vocabulary, compiler, checker, prototype, gaps, and status for this run.",
     "https://github.com/tenbytesltd/uir",

@@ -228,7 +228,7 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Evidence: before this change the newest authoring source lived under ignored `.uir-session/`, the website had no GitHub workflow, and a hand-edited package could pass site lint/build without being regenerated.
 - User impact: a clean-start contributor could change emitted shards directly, omit the official UIR audit, or introduce a seventh unchecked gate while the implementation CI stayed green.
 - Root cause: the workflow shipped an audit command but no reusable CI action, no committed authoring source, and no explicit unchecked/deferred boundary.
-- Change made: versioned `uir/author_site.py`; added `tool/uir_site_ci.py` and `.github/actions/check-site` in the UIR repository; pinned the website workflow to exact UIR commit `3317c7cd540d201b8c95c6336cc0c7372110c275`; added `uir/ci-baseline.json` and an uploaded audit artifact.
+- Change made: versioned `uir/author_site.py`; added `tool/uir_site_ci.py` and `.github/actions/check-site` in the UIR repository; pinned the website workflow to exact UIR commit `2370d95291acfc56773cea97e029e6256c01cb19`; added `uir/ci-baseline.json` and an uploaded audit artifact.
 - Verification: CI regenerates a candidate with the official compiler, byte-compares every package file, runs the official site audit, refuses failing gates and ungated errors, and refuses any change to the named six unchecked gates or four deferral codes until the baseline is explicitly reviewed.
 - Remaining risk: the four deferrals are language/tooling work, not waived product quality. GitHub branch protection for this private repository requires a paid organization plan; current access control is private organization membership with forking disabled.
 
@@ -255,6 +255,19 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Change made: verified the current official releases through the GitHub API and moved all four actions to their current v7 major.
 - Verification: the superseding PR run completed successfully in 32 seconds with v7 actions and no deprecated-runtime annotation.
 - Remaining risk: major tags are maintained upstream references rather than immutable SHAs; the UIR action itself remains pinned to an immutable commit because it defines the product contract.
+
+
+### F22 — a green check hid the actual UIR review
+
+- Status: fixed
+- Flow step: continuous integration and review
+- Candidate revision: `62c27e1ed0769685f9438a3433c0b5dedcec716f08637c8f6a7b1d5df58dfcbf`
+- Evidence: the first action printed one compact success line and uploaded only the full JSON audit. Reviewers had to download and interpret the machine artifact to discover 11 passing gates, 2 vacuous gates, 6 unchecked gates, 4 compiler deferrals, 1 external Gap, and the board limitations for both contexts.
+- User impact: the pull request looked simply green even though semantic readiness was false and material target limitations remained.
+- Root cause: the CI entry point enforced the boundary but had no human review projection.
+- Change made: added an official Markdown review renderer to `tool/uir_site_ci.py`; the composite action always appends `review.md` to the GitHub Job Summary; the website retains `review.md` and `audit.json` together as one evidence artifact.
+- Verification: local integration generates an accepted-with-declared-limits review from the real site package and still fails closed on reproducibility drift, failing gates, ungated errors, or baseline changes; the UIR suite passes 1,339 tests with no skipped-tool residue.
+- Remaining risk: the review is a workflow summary rather than an automated pull-request comment. This avoids granting write permission to the action and keeps the PR conversation free of bot comment churn.
 
 
 ## Open review questions

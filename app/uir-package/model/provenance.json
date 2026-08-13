@@ -23134,7 +23134,7 @@
       "id": "uir-site:source:uir-repository",
       "kind": "Source",
       "locator": "https://github.com/tenbytesltd/uir",
-      "originId": "https://github.com/tenbytesltd/uir@3317c7cd540d201b8c95c6336cc0c7372110c275",
+      "originId": "https://github.com/tenbytesltd/uir@2370d95291acfc56773cea97e029e6256c01cb19",
       "owner": "uir-site:package",
       "recordType": "Entity",
       "sourceKind": "repository"
@@ -23171,7 +23171,7 @@
       "subject": "uir-site:source:uir-repository",
       "value": {
         "algorithm": "sha256",
-        "digest": "7864dddb9710b6812e7b96de4dd156db968c4aef473bf6cc0b8e9bcc1276d3f5"
+        "digest": "f4ce8f384b8b06e1fbb36ac0d76ae37f3633ec3f8539e34f07c2ebe90bdd5580"
       }
     },
     {
