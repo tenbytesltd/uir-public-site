@@ -380,6 +380,18 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: the emitted node.content value is exactly UIR · ALPHA; the removed phrases do not appear in the hero kicker.
 - Remaining risk: alpha remains a product-state claim and should be updated from one release authority when the public distribution changes.
 
+### F32 — the Vite security update exposed future config-loader incompatibilities
+
+- Status: fixed
+- Flow step: dependency maintenance and target build
+- Evidence: after merging the Vite 8.2.1 Dependabot update, both runtime and Pages builds warned that the fallback hosting config imported JSON without an attribute and imported a TypeScript module without its extension.
+- User impact: green builds gained avoidable warning noise and were not ready for Vite native config loading to become the default.
+- Root cause: the legacy fallback config relied on transform-loader resolution rules that native module loading does not provide.
+- Change made: added the JSON import attribute and explicit TypeScript extension while preserving the existing fallback host behavior.
+- Proposed tooling improvement: dependency-update CI should treat newly introduced build warnings as review evidence, even when the required command exits successfully.
+- Verification: both build modes complete on Vite 8.2.1 without the native config-loader warning.
+- Remaining risk: the fallback Worker and D1 scaffold remains intentionally preserved until its host is retired explicitly.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
