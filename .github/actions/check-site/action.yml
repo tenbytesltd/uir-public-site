@@ -1,0 +1,65 @@
+name: Check public UIR showcase
+description: Reproduce the public UIR package and verify its reviewed evidence boundary
+inputs:
+  author:
+    description: Versioned site authoring program
+    required: false
+    default: uir/author_site.py
+  package:
+    description: Committed UIR package
+    required: false
+    default: app/uir-package
+  baseline:
+    description: Reviewed semantic boundary
+    required: false
+    default: uir/ci-baseline.json
+  evidence:
+    description: Binding to the maintainer-generated official audit
+    required: false
+    default: uir/evidence.json
+  audit:
+    description: Maintainer-generated official audit snapshot
+    required: false
+    default: uir/official-audit.json
+  review-output:
+    description: Markdown Job Summary and artifact
+    required: false
+    default: .uir-ci/review.md
+runs:
+  using: composite
+  steps:
+    - name: Reproduce package and verify evidence
+      shell: bash
+      env:
+        UIR_SITE_AUTHOR: ${{ inputs.author }}
+        UIR_SITE_PACKAGE: ${{ inputs.package }}
+        UIR_SITE_BASELINE: ${{ inputs.baseline }}
+        UIR_SITE_EVIDENCE: ${{ inputs.evidence }}
+        UIR_SITE_AUDIT: ${{ inputs.audit }}
+        UIR_SITE_REVIEW: ${{ inputs.review-output }}
+      run: |
+        python3 tool/public_site_ci.py \
+          --site-root "$GITHUB_WORKSPACE" \
+          --author "$UIR_SITE_AUTHOR" \
+          --package "$UIR_SITE_PACKAGE" \
+          --baseline "$UIR_SITE_BASELINE" \
+          --evidence "$UIR_SITE_EVIDENCE" \
+          --audit "$UIR_SITE_AUDIT" \
+          --review-output "$UIR_SITE_REVIEW"
+
+    - name: Publish readable UIR review
+      if: ${{ always() }}
+      shell: bash
+      env:
+        UIR_SITE_REVIEW: ${{ inputs.review-output }}
+      run: |
+        if test -f "$UIR_SITE_REVIEW"; then
+          cat "$UIR_SITE_REVIEW" >> "$GITHUB_STEP_SUMMARY"
+        else
+          {
+            echo "# UIR public showcase review"
+            echo
+            echo "> [!CAUTION]"
+            echo "> **Review generation failed.** Read the verifier log above."
+          } >> "$GITHUB_STEP_SUMMARY"
+        fi

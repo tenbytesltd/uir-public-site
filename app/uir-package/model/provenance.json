@@ -3,6 +3,17 @@
   "records": [
     {
       "confidence": 0.88,
+      "id": "uir-site:condition:resolution:code:group:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:condition:resolution:code:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -377,6 +388,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:axis:surface-part:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:condition:resolution:code:group:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -2945,6 +2967,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -3085,6 +3108,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-composition:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -3469,6 +3503,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-composition:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-composition:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -3661,6 +3891,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4026,6 +4257,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -4155,6 +4387,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-content:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -4539,6 +4782,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-content:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-content:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -4731,6 +5170,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -4954,6 +5394,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -4966,6 +5407,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -5402,6 +5844,195 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-copy:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-copy:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-inspect-copy:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-inspect-title:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-inspect-title:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-kicker:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-kicker:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-review-copy:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-review-title:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-review-title:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-source-copy:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-source-title:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-source-title:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase-title:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase:ink:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:showcase:surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-projection:standard-copy:type:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -5495,6 +6126,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -5805,6 +6437,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -5945,6 +6578,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-role:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -6329,6 +6973,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-role:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-role:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -6521,6 +7361,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -6886,6 +7727,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -7026,6 +7868,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-salience:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -7410,6 +8263,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-salience:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-salience:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -7602,6 +8651,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -7967,6 +9017,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -8107,6 +9158,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:node-semantics:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -8491,6 +9553,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-semantics:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-semantics:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -8683,6 +9941,7 @@
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -15182,6 +16441,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:selector:parent:code:group:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:selector:parent:code:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -15326,6 +16596,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:selector:parent:region:group:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:selector:role:code:group:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -18250,6 +19531,7 @@
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:tenbytes",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
@@ -18390,6 +19672,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:node:nav-extract:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:nav-source:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -18774,6 +20067,202 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:node:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:node:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:node:standard-copy:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -18966,6 +20455,7 @@
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:site-repository",
         "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
@@ -20220,6 +21710,26 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:relation:contains:nav-source:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:nav-source:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:relation:contains:nav-standard:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -20880,6 +22390,346 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-actions:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-actions:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-copy:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-grid:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-grid:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect-copy:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect-title:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect-title:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-inspect:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-kicker:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-kicker:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-path:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-path:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-repository:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-repository:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review-copy:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review-title:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review-title:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-review:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source-copy:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source-copy:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source-title:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source-title:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-source:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-title:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase-title:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:contains:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:relation:contains:standard-copy:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -21480,6 +23330,26 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:relation:controls:nav-source:showcase:meaning:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:relation:controls:nav-source:showcase:provenance",
+      "mode": "inferred",
+      "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:relation:controls:nav-standard:standard:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -21515,6 +23385,24 @@
       "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
       "recordType": "Provenance",
       "sources": [
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:resolution:code:group:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook",
+        "uir-site:source:uir-repository",
         "uir-site:source:user-session"
       ]
     },
@@ -23020,6 +24908,60 @@
       "recordType": "Provenance",
       "sources": [
         "uir-site:source:opentelemetry"
+      ]
+    },
+    {
+      "id": "uir-site:source:site-repository",
+      "kind": "Source",
+      "locator": "https://github.com/tenbytesltd/uir-public-site",
+      "originId": "https://github.com/tenbytesltd/uir-public-site",
+      "owner": "uir-site:package",
+      "recordType": "Entity",
+      "sourceKind": "repository"
+    },
+    {
+      "id": "uir-site:source:site-repository:description",
+      "kind": "source.description",
+      "plane": "invisible",
+      "provenance": "uir-site:source:site-repository:description:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:source:site-repository",
+      "value": {
+        "name": "Public UIR site repository",
+        "revision": "2026-08-13",
+        "summary": "Public source for this page: its UIR authoring program, checked package, generic renderer, inspector, CI evidence, and Flow 2 review log."
+      }
+    },
+    {
+      "derivation": "direct transcription from the named source",
+      "id": "uir-site:source:site-repository:description:provenance",
+      "mode": "derived",
+      "rationale": "Describes the explicitly named source.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
+      ]
+    },
+    {
+      "id": "uir-site:source:site-repository:integrity",
+      "kind": "source.integrity",
+      "plane": "invisible",
+      "provenance": "uir-site:source:site-repository:integrity:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:source:site-repository",
+      "value": {
+        "algorithm": "sha256",
+        "digest": "ceafa8d5b6db0c4b1d60c8444bc0d2aeb622553adf8d3e8fdf14d613338e025e"
+      }
+    },
+    {
+      "derivation": "direct transcription from the named source",
+      "id": "uir-site:source:site-repository:integrity:provenance",
+      "mode": "derived",
+      "rationale": "Digest of the stable source identity used in this session.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:site-repository"
       ]
     },
     {

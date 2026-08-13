@@ -9268,6 +9268,21 @@
       }
     },
     {
+      "id": "uir-site:fact:selector:parent:code:group",
+      "kind": "resolution.selector",
+      "plane": "visible",
+      "provenance": "uir-site:fact:selector:parent:code:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:resolution:code:group",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "dimension": "parent-role",
+        "values": [
+          "group"
+        ]
+      }
+    },
+    {
       "id": "uir-site:fact:selector:parent:code:region",
       "kind": "resolution.selector",
       "plane": "visible",
@@ -9475,6 +9490,18 @@
         "values": [
           "group"
         ]
+      }
+    },
+    {
+      "id": "uir-site:fact:selector:role:code:group",
+      "kind": "resolution.selector",
+      "plane": "visible",
+      "provenance": "uir-site:fact:selector:role:code:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:resolution:code:group",
+      "value": {
+        "dimension": "role",
+        "role": "code"
       }
     },
     {
@@ -12099,6 +12126,15 @@
       "owner": "uir-site:design-system",
       "provenance": "uir-site:piece:region:provenance",
       "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:resolution:code:group",
+      "kind": "Resolution",
+      "outcome": "uir-site:piece:code",
+      "owner": "uir-site:design-system",
+      "provenance": "uir-site:resolution:code:group:provenance",
+      "recordType": "Entity",
+      "when": "uir-site:condition:resolution:code:group"
     },
     {
       "id": "uir-site:resolution:code:region",

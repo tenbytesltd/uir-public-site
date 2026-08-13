@@ -2,6 +2,13 @@
   "collection": "package",
   "records": [
     {
+      "id": "uir-site:condition:resolution:code:group",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:code:group:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:condition:resolution:code:region",
       "kind": "Condition",
       "owner": "uir-site:package",
@@ -207,15 +214,30 @@
         "valueType": "symbol",
         "values": [
           "$no-part",
+          "build",
           "footer",
           "hero",
           "mechanism",
           "navigation",
           "problem",
           "quickstart",
+          "showcase",
           "standard",
           "status"
         ]
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:code:group",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:code:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:code:group",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "group"
       }
     },
     {

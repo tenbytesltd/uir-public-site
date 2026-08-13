@@ -20,6 +20,7 @@ type UIRRecord = {
   provenance?: string;
   mode?: string;
   sources?: string[];
+  locator?: string;
   value?: Record<string, unknown>;
 };
 
@@ -99,6 +100,20 @@ const controls = new Map(
     .map((record) => [record.source as string, record.target as string]),
 );
 
+function sourceHref(subject: string) {
+  const locators = [byId.get(subject), ...facts.filter((record) => record.subject === subject)]
+    .flatMap((record) => {
+      const provenance = record?.provenance ? byId.get(record.provenance) : undefined;
+      return provenance?.sources ?? [];
+    })
+    .map((source) => byId.get(source)?.locator)
+    .filter((locator): locator is string =>
+      typeof locator === "string" && locator.startsWith("https://"),
+    );
+  const unique = [...new Set(locators)];
+  return unique.length === 1 ? unique[0] : undefined;
+}
+
 const gaps = records.filter(
   (record) => record.recordType === "Entity" && record.kind === "Gap",
 );
@@ -114,7 +129,7 @@ function view(subject: string): NodeView {
     salience: nodeSalience(subject),
     children: childrenByParent.get(subject) ?? [],
     parent: parentByNode.get(subject),
-    href: controlled ? `#${nodeKey(controlled)}` : undefined,
+    href: controlled ? `#${nodeKey(controlled)}` : sourceHref(subject),
     gap: gap?.rationale,
   };
 }
@@ -428,8 +443,19 @@ function RenderNode({ subject }: { subject: string }) {
       return <div {...common}>{renderHeading(node, body)}</div>;
     case "paragraph":
       return <p {...common} data-gap={node.gap ? "true" : undefined}>{body}</p>;
-    case "link":
-      return <a {...common} href={node.href}>{body}</a>;
+    case "link": {
+      const external = node.href?.startsWith("https://");
+      return (
+        <a
+          {...common}
+          href={node.href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noreferrer" : undefined}
+        >
+          {body}
+        </a>
+      );
+    }
     case "code":
       return <pre {...common}><code>{body}</code></pre>;
     case "list":
