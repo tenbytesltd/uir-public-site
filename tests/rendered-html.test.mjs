@@ -49,8 +49,11 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   const heroTag = html.match(/<section id="hero"[^>]*>/)?.[0] ?? "";
   assert.match(heroTag, /data-uir-surface="radial-gradient"/);
   assert.match(heroTag, /data-uir-motion="motion-ambient-surface"/);
+  assert.match(heroTag, /data-uir-motion-event="pointer-dot-field"/);
+  assert.match(heroTag, /data-uir-surface-field="points"/);
   assert.match(heroTag, /background-image:radial-gradient\(/);
   assert.match(heroTag, /animation-duration:4s/);
+  assert.match(html, /<canvas[^>]*class="uir-surface-field"[^>]*><\/canvas>/);
   const heroTitleTag = html.match(/<div id="hero-title"[^>]*>/)?.[0] ?? "";
   const heroLeadTag = html.match(/<p id="hero-lead"[^>]*>/)?.[0] ?? "";
   assert.match(heroTitleTag, /background-color:rgb\(21 23 19 \/ 1\)/);
@@ -101,10 +104,11 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
 });
 
 test("authors the hero pattern and motion in UIR", async () => {
-  const [designSystemText, interfaceText, stylesheet] = await Promise.all([
+  const [designSystemText, interfaceText, stylesheet, surfaceField] = await Promise.all([
     readFile(new URL("../app/uir-package/model/design-system.json", import.meta.url), "utf8"),
     readFile(new URL("../app/uir-package/model/interface.json", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/SurfaceField.tsx", import.meta.url), "utf8"),
   ]);
   const designSystem = JSON.parse(designSystemText);
   const interfaceModel = JSON.parse(interfaceText);
@@ -128,17 +132,17 @@ test("authors the hero pattern and motion in UIR", async () => {
   const dress = facts.find((record) => record.kind === "dress.definition");
   assert.deepEqual(dress?.value?.motionEvents, [
     {
-      symbol: "ambient-surface-drift",
+      symbol: "pointer-dot-field",
       meaning:
-        "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
+        "A decorative field of points moves by a small amount around pointer or touch proximity while preserving reading comfort.",
     },
   ]);
   assert.doesNotMatch(stylesheet, /#showcase\s*\{[^}]*background-image/s);
-  assert.match(stylesheet, /\[data-uir-surface="radial-gradient"\]\[data-uir-motion\]/);
-  assert.match(
-    stylesheet,
-    /prefers-reduced-motion:[^}]+reduce[\s\S]*\[data-uir-surface="radial-gradient"\]\[data-uir-motion\][\s\S]*animation: none/,
-  );
+  assert.match(stylesheet, /\[data-uir-surface-field="points"\]/);
+  assert.doesNotMatch(stylesheet, /@keyframes uir-surface-drift/);
+  assert.match(surfaceField, /POINTER_TWIST_PX = 8/);
+  assert.match(surfaceField, /prefers-reduced-motion: reduce/);
+  assert.doesNotMatch(surfaceField, /createRadialGradient|shadowBlur|drawCore|drawOrbital/);
 });
 
 test("records Tenbytes as the creator source in UIR provenance", async () => {

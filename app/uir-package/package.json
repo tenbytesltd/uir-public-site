@@ -10,7 +10,7 @@
     {
       "collection": "design-system",
       "path": "model/design-system.json",
-      "sha256": "49d72a372f11a78b69d5eb34a786ed7cff517e40453361a36f66c1b77d079495"
+      "sha256": "6d4b7776dddeae40d7442dc3d8202cd25edbf02d794c9b50b3e1ea7b543f5e4c"
     },
     {
       "collection": "interface",
@@ -25,7 +25,7 @@
     {
       "collection": "provenance",
       "path": "model/provenance.json",
-      "sha256": "31a1aac41d704d6486efc2ab01db1779801e2dd8cf8cd2384cb33f41f8814f2a"
+      "sha256": "7136d336198d91648bfa72b555858ed85c68ee7150de7d25557979a11086730e"
     }
   ],
   "packageId": "uir-site:package",
