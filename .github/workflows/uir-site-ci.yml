@@ -3,8 +3,8 @@ name: UIR site CI
 on:
   pull_request:
   push:
-  workflow_dispatch:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: uir-site-ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
