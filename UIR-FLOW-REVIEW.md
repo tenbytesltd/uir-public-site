@@ -392,6 +392,18 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: both build modes complete on Vite 8.2.1 without the native config-loader warning.
 - Remaining risk: the fallback Worker and D1 scaffold remains intentionally preserved until its host is retired explicitly.
 
+### F33 — automated dependency PRs did not close the full advisory boundary
+
+- Status: partially fixed with explicit residual risk
+- Flow step: dependency maintenance and public release
+- Evidence: all open Dependabot pull requests passed the UIR/site gate and were merged, but a clean npm audit still reported a directly fixable high-severity React Server Components advisory plus advisories whose only proposed fixes are breaking dependency downgrades.
+- User impact: treating an empty Dependabot queue as a clean security state would overstate the release evidence.
+- Root cause: pull-request state and resolved advisory state are different ledgers; the bot had not yet proposed every safe transitive or direct update.
+- Change made: synchronized React, React DOM, and react-server-dom-webpack at 19.2.8, applied the non-forcing npm audit fix, and refused the breaking force path.
+- Proposed tooling improvement: the readable CI review should publish runtime and development advisory counts separately and distinguish safe fixes, breaking-only fixes, and no-fix-yet dependencies.
+- Verification: the direct React Server Components advisory and the low advisory are gone; lint, both build modes, render contracts, Pages export contracts, and the UIR verifier are rerun after the lockfile update.
+- Remaining risk: six development/build-time advisories remain: two high findings through image-size in the Vinext beta line and four moderate findings through the preserved Drizzle fallback. npm proposes only breaking downgrades for them, so they remain visible rather than being force-fixed.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
