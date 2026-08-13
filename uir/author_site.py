@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compile the confirmed and sourced UIR site decisions into one changeset.
 
-The checked package produced through UIR.s official transport remains the only
+The checked package produced through UIR's official transport remains the only
 application authority. Keeping this authoring source versioned lets CI prove
 that the committed package is a reproducible product of those decisions.
 """
@@ -272,7 +272,7 @@ m.fact(
         "summary": "UIR by Tenbytes Ltd makes extraction the shortest path to seeing interface decisions, drift, and silence.",
     },
     sources=(SRC_USER, SRC_TENBYTES, SRC_REPO), mode="declared",
-    rationale="The user declared Tenbytes Ltd as UIR.s creator; the repository supplies the authoritative product name.",
+    rationale="The user declared Tenbytes Ltd as UIR's creator; the repository supplies the authoritative product name.",
 )
 
 m.entity(

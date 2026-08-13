@@ -224,7 +224,7 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 
 - Status: fixed
 - Flow step: authoring, checking, and release
-- Candidate revision: `94340d0181bfaabc249c5fad4f4bfd10214f876f261f32f60a84cb4090b25a73`
+- Candidate revision: `3e219ffb2b8ed0518a654512c93bc016ff1c83dbf03ea585483d4aacf31924a7`
 - Evidence: before this change the newest authoring source lived under ignored `.uir-session/`, the website had no GitHub workflow, and a hand-edited package could pass site lint/build without being regenerated.
 - User impact: a clean-start contributor could change emitted shards directly, omit the official UIR audit, or introduce a seventh unchecked gate while the implementation CI stayed green.
 - Root cause: the workflow shipped an audit command but no reusable CI action, no committed authoring source, and no explicit unchecked/deferred boundary.

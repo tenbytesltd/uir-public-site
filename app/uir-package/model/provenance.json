@@ -8767,7 +8767,7 @@
     {
       "id": "uir-site:fact:package-metadata:provenance",
       "mode": "declared",
-      "rationale": "The user declared Tenbytes Ltd as UIR.s creator; the repository supplies the authoritative product name.",
+      "rationale": "The user declared Tenbytes Ltd as UIR's creator; the repository supplies the authoritative product name.",
       "recordType": "Provenance",
       "sources": [
         "uir-site:source:tenbytes",
