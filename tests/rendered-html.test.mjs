@@ -45,8 +45,10 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(html, new RegExp(`data-uir-version="${manifest.packageVersion}"`));
   assert.equal((html.match(/data-node=/g) ?? []).length, nodeCount);
   assert.match(html, /Make the interface explicit before code gets the final word\./);
-  assert.match(html, /CREATED BY TENBYTES LTD/);
-  assert.match(html, /PUBLIC SOURCE · ALPHA/);
+  assert.match(html, /id="hero-kicker"[^>]*>USER INTERFACE REPRESENTATION · ALPHA<\/p>/);
+  assert.match(html, /<nav id="navigation"[^>]*background-color:rgb\(255 254 248 \/ 1\)/);
+  assert.match(html, /<section id="showcase"[^>]*background-color:rgb\(21 23 19 \/ 1\)/);
+  assert.match(html, /<section id="quickstart"[^>]*background-color:rgb\(255 254 248 \/ 1\)/);
   assert.match(html, /Do not take the standard on trust\. Inspect the site that runs on it\./);
   assert.match(html, /href="https:\/\/github\.com\/tenbytesltd\/uir-public-site"/);
   assert.match(html, /Explore the public site repository/);
@@ -69,7 +71,7 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
     "Make the interface explicit before code gets the final word.",
     "Start with the interface you already ship.",
     "Alpha, with the unfinished parts in view.",
-    "CREATED BY TENBYTES LTD",
+    "USER INTERFACE REPRESENTATION · ALPHA",
     "Do not take the standard on trust. Inspect the site that runs on it.",
     "Explore the public site repository",
     "Created and stewarded by Tenbytes Ltd.",

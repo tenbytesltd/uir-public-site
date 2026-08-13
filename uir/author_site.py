@@ -859,7 +859,7 @@ piece(
 piece(
     "navigation", container=True,
     layout={"mode": "flow", "axis": "inline", "wrap": "allow", "alignInline": "center", "alignBlock": "center", "distribution": "space-between"},
-    bindings={**base_bindings, "type": "type-label", "inter-item-inline": "space-inline", "rule": "rule"},
+    bindings={**base_bindings, "surface": "surface", "type": "type-label", "inter-item-inline": "space-inline", "rule": "rule"},
 )
 piece(
     "region", container=True,
@@ -977,7 +977,7 @@ HERO = node(
     "hero", "region", None, parent=ROOT_NODE, salience="primary",
     overrides={"surface": "surface-ink", "ink": "ink-inverse", "inset-block": "inset-hero-block"},
 )
-node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · CREATED BY TENBYTES LTD · PUBLIC SOURCE · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
+node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
 node("hero-title", "heading", "Make the interface explicit before code gets the final word.", parent=HERO, salience="primary", overrides={"ink": "ink-inverse", "type": "type-display"})
 node("hero-lead", "paragraph", "UIR is one self-contained source for what an interface looks like, what it means, which design decisions realize it, and what remains unresolved.", parent=HERO, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"})
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
@@ -1035,19 +1035,19 @@ SHOWCASE_ACTIONS = node("showcase-actions", "group", None, parent=SHOWCASE, sali
 node("showcase-repository", "link", "Explore the public site repository", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
 node("showcase-path", "code", "github.com/tenbytesltd/uir-public-site", parent=SHOWCASE_ACTIONS, salience="supporting", sources=(SRC_SITE_REPO,))
 
-QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-ink", "ink": "ink-inverse"})
-node("quickstart-kicker", "paragraph", "THE SHORTEST PATH TO VALUE", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"})
-node("quickstart-title", "heading", "Start with the interface you already ship.", parent=QUICKSTART, salience="primary", overrides={"ink": "ink-inverse"})
-node("quickstart-copy", "paragraph", "The reader uses your own compiler and styling framework. It records what it could observe, refuses silent fallbacks, and separates decided work from unchecked silence.", parent=QUICKSTART, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"})
+QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary")
+node("quickstart-kicker", "paragraph", "THE SHORTEST PATH TO VALUE", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
+node("quickstart-title", "heading", "Start with the interface you already ship.", parent=QUICKSTART, salience="primary")
+node("quickstart-copy", "paragraph", "The reader uses your own compiler and styling framework. It records what it could observe, refuses silent fallbacks, and separates decided work from unchecked silence.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
 STEPS = node("quickstart-steps", "group", None, parent=QUICKSTART)
 for key, title, copy, command in (
     ("quickstart-read", "1 · Read", "Point UIR at the app and the design-system sources you authorize for this run.", "python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"),
     ("quickstart-see", "2 · See", "Render the checklist, findings, and explicit remainder without turning silence into a pass.", "python3 tool/uir_report.py --change-set .uir/reading.json"),
     ("quickstart-adopt", "3 · Adopt", "Put the same measurement at the pull request, where design conformance is already being judged.", "# CI integration is alpha and remains an explicit adoption task"),
 ):
-    card = node(key, "region", None, parent=STEPS, salience="secondary", overrides={"surface": "surface-code", "ink": "ink-inverse"})
-    node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"})
-    node(f"{key}-copy", "paragraph", copy, parent=card, overrides={"ink": "ink-inverse"})
+    card = node(key, "region", None, parent=STEPS, salience="secondary")
+    node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
+    node(f"{key}-copy", "paragraph", copy, parent=card)
     node(f"{key}-command", "code", command, parent=card)
 
 BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary")

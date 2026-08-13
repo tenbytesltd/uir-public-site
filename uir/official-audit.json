@@ -183,8 +183,8 @@
           "partsUndecided": 7,
           "piecesReachedFromTheSurface": 0,
           "slots": 300,
-          "slotsDrawn": 102,
-          "slotsStatedNone": 198,
+          "slotsDrawn": 104,
+          "slotsStatedNone": 196,
           "slotsUndecided": 0,
           "unplaceable": 0
         },
@@ -204,7 +204,7 @@
           }
         ],
         "lowered": true,
-        "revision": "983c84e62ab8887a87a2e1da25f5c80dcd9bfcd340168dffccc188a21b520da2",
+        "revision": "01f2cb6edf809af994414d40a5f8a062795b7eb74cc719215ca5fc3da2e565c0",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -214,7 +214,7 @@
           "partsThisBoardCouldNotPlace": 7,
           "slotsThatReachNoPixelHere": 47,
           "slotsThisBoardCannotExpress": 0,
-          "slotsThisBoardDrew": 13,
+          "slotsThisBoardDrew": 14,
           "textFillsBoundedByThisBoard": 0
         }
       }
@@ -402,8 +402,8 @@
           "partsUndecided": 7,
           "piecesReachedFromTheSurface": 0,
           "slots": 300,
-          "slotsDrawn": 102,
-          "slotsStatedNone": 198,
+          "slotsDrawn": 104,
+          "slotsStatedNone": 196,
           "slotsUndecided": 0,
           "unplaceable": 0
         },
@@ -423,7 +423,7 @@
           }
         ],
         "lowered": true,
-        "revision": "983c84e62ab8887a87a2e1da25f5c80dcd9bfcd340168dffccc188a21b520da2",
+        "revision": "01f2cb6edf809af994414d40a5f8a062795b7eb74cc719215ca5fc3da2e565c0",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -433,7 +433,7 @@
           "partsThisBoardCouldNotPlace": 7,
           "slotsThatReachNoPixelHere": 47,
           "slotsThisBoardCannotExpress": 0,
-          "slotsThisBoardDrew": 13,
+          "slotsThisBoardDrew": 14,
           "textFillsBoundedByThisBoard": 0
         }
       }
@@ -574,7 +574,7 @@
         "failuresByCode": 0,
         "gateId": "projection",
         "half": "structure",
-        "sites": 256,
+        "sites": 240,
         "statement": "Every Surface and Piece decides a complete presentation base: every slot bound, and one layout.",
         "uncheckedBy": [],
         "verdict": "pass"
@@ -997,7 +997,7 @@
       "accessibilityPositions": 14,
       "checklist": [
         {
-          "address": "record #2010",
+          "address": "record #1994",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1013,7 +1013,7 @@
           "subject": "Dress|InterfaceState|Package|Piece|PieceState"
         },
         {
-          "address": "record #2011",
+          "address": "record #1995",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1029,7 +1029,7 @@
           "subject": "Dress|InterfaceState|Package|Piece|PieceState"
         },
         {
-          "address": "record #2012",
+          "address": "record #1996",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1045,7 +1045,7 @@
           "subject": "Dress|InterfaceState|Package|Piece|PieceState"
         },
         {
-          "address": "record #2013",
+          "address": "record #1997",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1061,7 +1061,7 @@
           "subject": "Dress|InterfaceState|Package|Piece|PieceState"
         },
         {
-          "address": "record #2014",
+          "address": "record #1998",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1077,7 +1077,7 @@
           "subject": "Dress|InterfaceState|Package|Piece|PieceState"
         },
         {
-          "address": "record #2015",
+          "address": "record #1999",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 4,
           "factKind": "context.axis",
@@ -1141,7 +1141,7 @@
           "subject": "Ground"
         },
         {
-          "address": "record #2031",
+          "address": "record #2015",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 2,
           "factKind": "package.context",
@@ -1157,7 +1157,7 @@
           "subject": "Package"
         },
         {
-          "address": "record #2045",
+          "address": "record #2029",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 3,
           "factKind": "package.scope",
@@ -1173,7 +1173,7 @@
           "subject": "Package"
         },
         {
-          "address": "record #2035",
+          "address": "record #2019",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 3,
           "factKind": "role.symbol",
@@ -1189,7 +1189,7 @@
           "subject": "Package"
         },
         {
-          "address": "record #2034",
+          "address": "record #2018",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 3,
           "factKind": "role.vocabulary",
@@ -1205,7 +1205,7 @@
           "subject": "Package"
         },
         {
-          "address": "record #1630",
+          "address": "record #1614",
           "countsOver": "LANGUAGE-FIXED: the width here is stated by the language before any package is opened \u2014 how many demanded member positions one Fact of this kind carries, how many Facts of a kind the reference profile expects, and how many gates this contract declares in one half. No record this package holds can add to it, take from it, or be credited at it twice, and a profile layer may never lower it. It is the one denominator in this report that two design systems, or two readings of one, can be read against; what stands over it is still only what was STATED, never what a statement means.",
           "demandedPositionsOfOneFact": 6,
           "factKind": "surface.definition",
@@ -1291,7 +1291,7 @@
         "piece.rank": 10,
         "piece.state-decision": 100,
         "piece.variant-dimension": 10,
-        "presentation.binding": 245,
+        "presentation.binding": 229,
         "relation.meaning": 123,
         "resolution.selector": 30,
         "role.symbol": 10,
@@ -2413,8 +2413,8 @@
           "factKind": "presentation.binding",
           "half": "structure",
           "member": "groundRole",
-          "positionsAnswered": 139,
-          "records": 139,
+          "positionsAnswered": 124,
+          "records": 124,
           "subject": "Node|Piece|PieceState|Surface"
         },
         {
@@ -2423,8 +2423,8 @@
           "factKind": "presentation.binding",
           "half": "structure",
           "member": "outcome",
-          "positionsAnswered": 245,
-          "records": 245,
+          "positionsAnswered": 229,
+          "records": 229,
           "subject": "Node|Piece|PieceState|Surface"
         },
         {
@@ -2433,8 +2433,8 @@
           "factKind": "presentation.binding",
           "half": "structure",
           "member": "rationale",
-          "positionsAnswered": 106,
-          "records": 106,
+          "positionsAnswered": 105,
+          "records": 105,
           "subject": "Node|Piece|PieceState|Surface"
         },
         {
@@ -2443,8 +2443,8 @@
           "factKind": "presentation.binding",
           "half": "structure",
           "member": "slot",
-          "positionsAnswered": 245,
-          "records": 245,
+          "positionsAnswered": 229,
+          "records": 229,
           "subject": "Node|Piece|PieceState|Surface"
         },
         {
@@ -2453,8 +2453,8 @@
           "factKind": "presentation.binding",
           "half": "structure",
           "member": "target",
-          "positionsAnswered": 245,
-          "records": 245,
+          "positionsAnswered": 229,
+          "records": 229,
           "subject": "Node|Piece|PieceState|Surface"
         },
         {
@@ -2628,7 +2628,7 @@
           "subject": "Surface"
         }
       ],
-      "membersDecided": 4541,
+      "membersDecided": 4477,
       "membersRejected": 0,
       "membersUndecided": 0,
       "notReadForOptOut": [
@@ -2768,7 +2768,7 @@
           "countsOver": "AUTHOR-RAISED: every count here stands over this package's OWN population, over a minimum written in a profile layer the same author owns, or over what the READING that travels with the package declared about itself. Editing the records MOVES it, with no design decision changing: writing them raises what they answer, and deleting one lowers the counts it raised while RAISING the debt the records left behind now carry \u2014 and where what is counted is that declaration, no record moves it and rewriting the reading does. A count of DEBT stands over no population and is bounded by none: a package holding no record can still owe, and this one owes what the language demands of any package at all. Nothing outside this package and the reading of it fixes any width here. A ratio composed from these counts therefore measures this package against itself: it is comparable to no other package, and to no later reading of this one. They are published because both sides of a ledger must be, and this limit is published beside them rather than in a preamble.",
           "heldOpenByReference": 0,
           "population": 140,
-          "positionsAnswered": 1013,
+          "positionsAnswered": 949,
           "positionsUndecided": 0,
           "subject": "Node|Piece|PieceState|Surface"
         },
@@ -2907,8 +2907,8 @@
       }
     ],
     "errorCount": 0,
-    "recordCount": 4148,
-    "revision": "983c84e62ab8887a87a2e1da25f5c80dcd9bfcd340168dffccc188a21b520da2",
+    "recordCount": 4116,
+    "revision": "01f2cb6edf809af994414d40a5f8a062795b7eb74cc719215ca5fc3da2e565c0",
     "semanticExtension": "T2.5-executable-vocabulary",
     "semanticsReady": false,
     "structurallyValid": true,

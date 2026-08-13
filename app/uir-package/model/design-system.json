@@ -8009,8 +8009,8 @@
       "recordType": "Fact",
       "subject": "uir-site:piece:navigation",
       "value": {
-        "outcome": "none",
-        "rationale": "piece-navigation contributes no surface presentation.",
+        "groundRole": "uir-site:role:surface",
+        "outcome": "role",
         "slot": "surface",
         "target": {
           "kind": "self"

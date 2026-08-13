@@ -320,6 +320,90 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: npm run test:pages now prerenders the homepage with zero skipped routes and validates the complete staged out directory.
 - Remaining risk: the project currently uses a beta Vinext release, so the export contract remains an explicit CI gate instead of an assumed framework guarantee.
 
+### F27 — shell interpolation corrupted the public pull-request narrative
+
+- Status: fixed
+- Flow step: review publication
+- Evidence: pull request 4 displayed literal backslash-n sequences and embedded complete command output inside the verification list.
+- User impact: the review looked broken and made the concise deployment evidence difficult to scan, despite the underlying checks being green.
+- Root cause: Markdown containing command delimiters was passed through a shell-escaped CLI argument; the shell executed those fragments and injected their output into the pull-request body.
+- Change made: replaced the body with native multiline Markdown through the GitHub API and verified the stored body contains real line breaks, compact verdicts, the live URL, and a link to the successful run.
+- Proposed tooling improvement: review publishers should pass structured API fields or a body file directly, never interpolate Markdown through a command shell.
+- Verification: GitHub now returns the corrected structured body for pull request 4 with no literal newline escapes or embedded logs.
+- Remaining risk: this safeguard belongs to the publishing workflow rather than the UIR model; other automation can reproduce the defect unless it follows the same transport rule.
+
+### F28 — the default scaffold favicon contradicted the UIR identity
+
+- Status: fixed
+- Flow step: public presentation and brand recognition
+- Evidence: the published tab used a generic blue four-tile scaffold mark that appeared nowhere in the UIR page and carried none of its lime, ink, container, or inspectable-fact language.
+- User impact: the browser chrome made the OSS showcase look templated at the smallest but most persistent brand touchpoint.
+- Root cause: the initial target retained its starter favicon after the page developed a distinct visual system.
+- Change made: replaced it with a compact SVG mark: an ink interface field, a lime U-shaped frame, and one light addressable node.
+- Proposed tooling improvement: UIR target review should include browser-chrome assets such as favicon, title, theme color, and social card in the visible identity evidence.
+- Verification: the SVG has an opaque high-contrast background and remains legible when rasterized to 16 by 16 pixels.
+- Remaining risk: the mark is now consistent and functional but has not yet been tested as a broader product identity beyond the website favicon.
+
+### F29 — the sticky navigation inherited the background behind it
+
+- Status: fixed
+- Flow step: UIR authoring and target projection
+- Evidence: the navigation Piece declared ink, type, spacing, and rule but no surface. Its sticky target therefore remained transparent and black navigation text became unreadable while crossing the dark hero and showcase sections.
+- User impact: primary navigation disappeared precisely while the user scrolled through the highest-salience sections.
+- Root cause: transparency was an unstated omission in the design-system Piece, not an intentional target effect.
+- Change made: bound the navigation Piece to the opaque surface ground role in UIR and regenerated the package; no CSS color override was added.
+- Proposed tooling improvement: contrast checking for sticky or overlaying Pieces must evaluate every surface they can traverse, not only their initial document position.
+- Verification: the generated design-system shard now carries the navigation surface binding and the renderer consumes it through the existing generic binding path.
+- Remaining risk: the current checker does not simulate sticky overlap across scroll positions.
+
+### F30 — two adjacent dark sections collapsed the page rhythm
+
+- Status: fixed
+- Flow step: UIR authoring and visual hierarchy
+- Evidence: the dark showcase region was immediately followed by a second full-width dark quickstart region, making two different product arguments read as one uninterrupted block.
+- User impact: section boundaries and narrative pacing weakened at the transition from proof to adoption.
+- Root cause: both region Nodes independently overrode the same dark surface without a sequence-level contrast review.
+- Change made: returned quickstart and its step text to the default light surface and ink roles while preserving only the three command blocks as dark local anchors.
+- Proposed tooling improvement: add a surface-sequence reading that reports adjacent primary regions with indistinguishable ground roles unless continuity is explicitly authored.
+- Verification: the regenerated interface shard contains no dark surface or inverse ink override on quickstart or its step cards; only the code Pieces retain their dark bindings.
+- Remaining risk: sequence rhythm is still reviewed visually rather than enforced by a formal gate.
+
+### F31 — the hero provenance line competed with the product state
+
+- Status: fixed
+- Flow step: marketing hierarchy and content authoring
+- Evidence: the highest section opened with four labels: the expanded product name, creator credit, public-source status, and alpha state.
+- User impact: creator and repository context diluted the shortest recognition signal at the primary entry point even though both are explained elsewhere on the page.
+- Root cause: provenance and distribution facts were promoted into hero copy instead of remaining available in the showcase and inspector.
+- Change made: authored the hero kicker as USER INTERFACE REPRESENTATION · ALPHA and regenerated the package.
+- Proposed tooling improvement: distinguish visible marketing copy from inspectable provenance so evidence can remain available without occupying the primary content hierarchy.
+- Verification: the emitted node.content value is exactly USER INTERFACE REPRESENTATION · ALPHA; the removed phrases do not appear in the hero kicker.
+- Remaining risk: alpha remains a product-state claim and should be updated from one release authority when the public distribution changes.
+
+### F32 — the Vite security update exposed future config-loader incompatibilities
+
+- Status: fixed
+- Flow step: dependency maintenance and target build
+- Evidence: after merging the Vite 8.2.1 Dependabot update, both runtime and Pages builds warned that the fallback hosting config imported JSON without an attribute and imported a TypeScript module without its extension.
+- User impact: green builds gained avoidable warning noise and were not ready for Vite native config loading to become the default.
+- Root cause: the legacy fallback config relied on transform-loader resolution rules that native module loading does not provide.
+- Change made: added the JSON import attribute and explicit TypeScript extension while preserving the existing fallback host behavior.
+- Proposed tooling improvement: dependency-update CI should treat newly introduced build warnings as review evidence, even when the required command exits successfully.
+- Verification: both build modes complete on Vite 8.2.1 without the native config-loader warning.
+- Remaining risk: the fallback Worker and D1 scaffold remains intentionally preserved until its host is retired explicitly.
+
+### F33 — automated dependency PRs did not close the full advisory boundary
+
+- Status: partially fixed with explicit residual risk
+- Flow step: dependency maintenance and public release
+- Evidence: all open Dependabot pull requests passed the UIR/site gate and were merged, but a clean npm audit still reported a directly fixable high-severity React Server Components advisory plus advisories whose only proposed fixes are breaking dependency downgrades.
+- User impact: treating an empty Dependabot queue as a clean security state would overstate the release evidence.
+- Root cause: pull-request state and resolved advisory state are different ledgers; the bot had not yet proposed every safe transitive or direct update.
+- Change made: synchronized React, React DOM, and react-server-dom-webpack at 19.2.8, applied the non-forcing npm audit fix, and refused the breaking force path.
+- Proposed tooling improvement: the readable CI review should publish runtime and development advisory counts separately and distinguish safe fixes, breaking-only fixes, and no-fix-yet dependencies.
+- Verification: the direct React Server Components advisory and the low advisory are gone; lint, both build modes, render contracts, Pages export contracts, and the UIR verifier are rerun after the lockfile update.
+- Remaining risk: six development/build-time advisories remain: two high findings through image-size in the Vinext beta line and four moderate findings through the preserved Drizzle fallback. npm proposes only breaking downgrades for them, so they remain visible rather than being force-fixed.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
