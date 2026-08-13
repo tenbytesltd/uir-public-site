@@ -320,6 +320,18 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: npm run test:pages now prerenders the homepage with zero skipped routes and validates the complete staged out directory.
 - Remaining risk: the project currently uses a beta Vinext release, so the export contract remains an explicit CI gate instead of an assumed framework guarantee.
 
+### F27 — shell interpolation corrupted the public pull-request narrative
+
+- Status: fixed
+- Flow step: review publication
+- Evidence: pull request 4 displayed literal backslash-n sequences and embedded complete command output inside the verification list.
+- User impact: the review looked broken and made the concise deployment evidence difficult to scan, despite the underlying checks being green.
+- Root cause: Markdown containing command delimiters was passed through a shell-escaped CLI argument; the shell executed those fragments and injected their output into the pull-request body.
+- Change made: replaced the body with native multiline Markdown through the GitHub API and verified the stored body contains real line breaks, compact verdicts, the live URL, and a link to the successful run.
+- Proposed tooling improvement: review publishers should pass structured API fields or a body file directly, never interpolate Markdown through a command shell.
+- Verification: GitHub now returns the corrected structured body for pull request 4 with no literal newline escapes or embedded logs.
+- Remaining risk: this safeguard belongs to the publishing workflow rather than the UIR model; other automation can reproduce the defect unless it follows the same transport rule.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
