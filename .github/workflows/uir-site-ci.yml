@@ -16,7 +16,7 @@ permissions:
 jobs:
   verify:
     name: Reproduce, audit, and render
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.repository.private && 'self-hosted' || 'ubuntu-latest' }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
