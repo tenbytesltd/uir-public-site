@@ -1,0 +1,35 @@
+{
+  "assets": [],
+  "formatVersion": "1.0",
+  "model": [
+    {
+      "collection": "assets",
+      "path": "model/assets.json",
+      "sha256": "9df5b8a98e56dbfbcb1f8184ca742d879261770abac1ce3f68da56a3b4b00d7b"
+    },
+    {
+      "collection": "design-system",
+      "path": "model/design-system.json",
+      "sha256": "a900258ddd1e252f0af1b4094161d0415d28386139c314798f9bc33ea93f303b"
+    },
+    {
+      "collection": "interface",
+      "path": "model/interface.json",
+      "sha256": "30fb2327739ff05b697562a8f76f6e17160654d6ac1a641f3089d33e17f19558"
+    },
+    {
+      "collection": "package",
+      "path": "model/package.json",
+      "sha256": "b6c2f50a9b22b5754f60d17bb3455ac9ca40c647ddae9a5747c3b561f701bc65"
+    },
+    {
+      "collection": "provenance",
+      "path": "model/provenance.json",
+      "sha256": "0d3b5e17222114b8976562616028548fe7d8ea047369cc39c27571102b5785d8"
+    }
+  ],
+  "packageId": "uir-site:package",
+  "packageVersion": "0.1.0-draft.1",
+  "readingProfile": "authoring",
+  "vocabularyVersion": "0.1"
+}

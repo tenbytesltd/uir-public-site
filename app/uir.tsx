@@ -1,0 +1,368 @@
+import type { CSSProperties, ReactNode } from "react";
+import designSystemModel from "./uir-package/model/design-system.json";
+import interfaceModel from "./uir-package/model/interface.json";
+import packageModel from "./uir-package/model/package.json";
+import manifest from "./uir-package/package.json";
+
+type UIRRecord = {
+  id: string;
+  kind?: string;
+  recordType: string;
+  subject?: string;
+  source?: string;
+  target?: string;
+  order?: number;
+  outcome?: string;
+  rationale?: string;
+  value?: Record<string, unknown>;
+};
+
+type NodeView = {
+  id: string;
+  key: string;
+  role: string;
+  content: string;
+  salience: string;
+  children: string[];
+  parent?: string;
+  href?: string;
+  gap?: string;
+};
+
+const records = [
+  ...designSystemModel.records,
+  ...interfaceModel.records,
+  ...packageModel.records,
+] as UIRRecord[];
+
+const byId = new Map(records.map((record) => [record.id, record]));
+const facts = records.filter((record) => record.recordType === "Fact");
+const relations = records.filter((record) => record.recordType === "Relation");
+
+function fact(subject: string, kind: string) {
+  return facts.find((record) => record.subject === subject && record.kind === kind);
+}
+
+function factsOf(subject: string, kind: string) {
+  return facts.filter((record) => record.subject === subject && record.kind === kind);
+}
+
+function textValue(subject: string) {
+  const value = fact(subject, "node.content")?.value;
+  return value?.type === "text" && typeof value.value === "string"
+    ? value.value
+    : "";
+}
+
+function nodeRole(subject: string) {
+  const value = fact(subject, "node.role")?.value;
+  return typeof value?.role === "string" ? value.role : "group";
+}
+
+function nodeSalience(subject: string) {
+  const value = fact(subject, "node.salience")?.value;
+  return typeof value?.level === "string" ? value.level : "supporting";
+}
+
+function nodeKey(subject: string) {
+  return subject.split(":").at(-1) ?? subject;
+}
+
+const contains = relations
+  .filter((record) => record.kind === "contains")
+  .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+const parentByNode = new Map(
+  contains
+    .filter((record) => record.source?.includes(":node:"))
+    .map((record) => [record.target as string, record.source as string]),
+);
+
+const childrenByParent = new Map<string, string[]>();
+for (const relation of contains) {
+  if (!relation.source || !relation.target) continue;
+  const current = childrenByParent.get(relation.source) ?? [];
+  current.push(relation.target);
+  childrenByParent.set(relation.source, current);
+}
+
+const controls = new Map(
+  relations
+    .filter((record) => record.kind === "controls" && record.source && record.target)
+    .map((record) => [record.source as string, record.target as string]),
+);
+
+const gaps = records.filter(
+  (record) => record.recordType === "Entity" && record.kind === "Gap",
+);
+
+function view(subject: string): NodeView {
+  const controlled = controls.get(subject);
+  const gap = gaps.find((record) => record.target === subject);
+  return {
+    id: subject,
+    key: nodeKey(subject),
+    role: nodeRole(subject),
+    content: textValue(subject),
+    salience: nodeSalience(subject),
+    children: childrenByParent.get(subject) ?? [],
+    parent: parentByNode.get(subject),
+    href: controlled ? `#${nodeKey(controlled)}` : undefined,
+    gap: gap?.rationale,
+  };
+}
+
+function resolutionPiece(role: string) {
+  for (const selector of facts.filter(
+    (record) =>
+      record.kind === "resolution.selector" &&
+      record.value?.dimension === "role" &&
+      record.value?.role === role,
+  )) {
+    if (!selector.subject) continue;
+    const resolution = byId.get(selector.subject);
+    if (resolution?.recordType === "Entity" && typeof resolution.outcome === "string") {
+      return resolution.outcome;
+    }
+  }
+  return undefined;
+}
+
+function bindingMap(subject: string | undefined) {
+  const result = new Map<string, string>();
+  if (!subject) return result;
+  for (const binding of factsOf(subject, "presentation.binding")) {
+    const value = binding.value;
+    if (
+      typeof value?.slot === "string" &&
+      value.outcome === "role" &&
+      typeof value.groundRole === "string"
+    ) {
+      result.set(value.slot, value.groundRole);
+    }
+  }
+  return result;
+}
+
+function boundValue(groundRole: string) {
+  const binding = facts.find(
+    (record) =>
+      record.kind === "design.binding" &&
+      record.value?.groundRole === groundRole &&
+      typeof record.subject === "string",
+  );
+  return binding?.subject;
+}
+
+function literal(valueId: string | undefined): Record<string, unknown> | undefined {
+  if (!valueId) return undefined;
+  const variant = fact(valueId, "design-value.variant")?.value;
+  return variant?.form === "literal" &&
+    variant.literal &&
+    typeof variant.literal === "object"
+    ? (variant.literal as Record<string, unknown>)
+    : undefined;
+}
+
+function cssScalar(valueId: string | undefined): string | undefined {
+  const value = literal(valueId);
+  if (!value || typeof value.type !== "string") return undefined;
+  if (value.type === "color" && Array.isArray(value.channels)) {
+    const [r, g, b] = value.channels.map((channel) =>
+      Math.round(Number(channel) * 255),
+    );
+    return `rgb(${r} ${g} ${b} / ${String(value.alpha ?? 1)})`;
+  }
+  if (value.type === "dimension") {
+    return `${String(value.value)}${String(value.unit)}`;
+  }
+  if (value.type === "number" || value.type === "font-weight") {
+    return String(value.value);
+  }
+  if (value.type === "stroke-style") {
+    return typeof value.style === "string" ? value.style : undefined;
+  }
+  if (value.type === "font-family" && Array.isArray(value.families)) {
+    return value.families
+      .map((entry) => {
+        const family = entry as { family?: string };
+        return family.family;
+      })
+      .filter(Boolean)
+      .join(", ");
+  }
+  if (value.type === "border") {
+    return [
+      cssScalar(typeof value.width === "string" ? value.width : undefined),
+      cssScalar(typeof value.style === "string" ? value.style : undefined),
+      cssScalar(typeof value.color === "string" ? value.color : undefined),
+    ]
+      .filter(Boolean)
+      .join(" ");
+  }
+  return undefined;
+}
+
+function typography(valueId: string | undefined): CSSProperties {
+  const value = literal(valueId);
+  if (value?.type !== "typography") return {};
+  return {
+    fontFamily: cssScalar(typeof value.family === "string" ? value.family : undefined),
+    fontSize: cssScalar(typeof value.size === "string" ? value.size : undefined),
+    fontWeight: cssScalar(typeof value.weight === "string" ? value.weight : undefined),
+    lineHeight: cssScalar(
+      typeof value.lineHeight === "string" ? value.lineHeight : undefined,
+    ),
+    letterSpacing: cssScalar(
+      typeof value.tracking === "string" ? value.tracking : undefined,
+    ),
+  };
+}
+
+function nodeStyle(node: NodeView): CSSProperties {
+  const bindings = bindingMap(resolutionPiece(node.role));
+  for (const [slot, role] of bindingMap(node.id)) bindings.set(slot, role);
+
+  const token = (slot: string) => cssScalar(boundValue(bindings.get(slot) ?? ""));
+  const typeValue = boundValue(bindings.get("type") ?? "");
+  return {
+    ...typography(typeValue),
+    backgroundColor: token("surface"),
+    color: token("ink"),
+    paddingInline: token("inset-inline"),
+    paddingBlock: token("inset-block"),
+    gap: token("inter-item-block") ?? token("inter-item-inline"),
+    borderRadius: token("corner"),
+    opacity: token("opacity"),
+    "--uir-rule": token("rule"),
+    "--uir-outline": token("outline"),
+  } as CSSProperties;
+}
+
+function themeStyle(): CSSProperties {
+  const token = (name: string) =>
+    cssScalar(boundValue(`uir-site:role:${name}`));
+  return {
+    "--uir-canvas": token("canvas"),
+    "--uir-surface": token("surface"),
+    "--uir-surface-muted": token("surface-muted"),
+    "--uir-surface-ink": token("surface-ink"),
+    "--uir-ink": token("ink"),
+    "--uir-ink-muted": token("ink-muted"),
+    "--uir-accent": token("surface-action"),
+    "--uir-rule-color": cssScalar(boundValue("uir-site:role:rule")),
+    "--uir-content": token("frame-desktop-content"),
+    "--uir-mobile-content": token("frame-mobile-content"),
+    "--uir-page-inline": token("inset-page-inline"),
+  } as CSSProperties;
+}
+
+function ancestorRoles(subject: string) {
+  const roles: string[] = [];
+  let current = parentByNode.get(subject);
+  while (current) {
+    roles.push(nodeRole(current));
+    current = parentByNode.get(current);
+  }
+  return roles;
+}
+
+const discoveredRootId = contains.find(
+  (relation) => relation.source === "uir-site:surface:home",
+)?.target;
+
+if (!discoveredRootId) {
+  throw new Error("The checked UIR Surface has no contained document root.");
+}
+
+const rootId = discoveredRootId;
+
+function walk(subject: string): string[] {
+  return [subject, ...(childrenByParent.get(subject) ?? []).flatMap(walk)];
+}
+
+const firstPrimaryHeading = walk(rootId).find((subject) => {
+  const node = view(subject);
+  return (
+    node.role === "heading" &&
+    node.salience === "primary" &&
+    !ancestorRoles(subject).includes("navigation")
+  );
+});
+
+function renderHeading(node: NodeView, body: ReactNode) {
+  const ancestors = ancestorRoles(node.id);
+  if (ancestors.includes("navigation")) return <div className="brand">{body}</div>;
+  if (node.id === firstPrimaryHeading) return <h1>{body}</h1>;
+  if (ancestors.filter((role) => role === "region").length > 1) {
+    return <h3>{body}</h3>;
+  }
+  return <h2>{body}</h2>;
+}
+
+function RenderNode({ subject }: { subject: string }) {
+  const node = view(subject);
+  const childNodes = node.children.map((child) => (
+    <RenderNode key={child} subject={child} />
+  ));
+  const body = node.gap ?? node.content;
+  const common = {
+    id: node.key,
+    "data-node": node.key,
+    "data-role": node.role,
+    "data-salience": node.salience,
+    style: nodeStyle(node),
+  };
+
+  switch (node.role) {
+    case "document":
+      return <main {...common}>{childNodes}</main>;
+    case "navigation":
+      return <nav {...common}>{childNodes}</nav>;
+    case "region":
+      return <section {...common}>{childNodes}</section>;
+    case "group":
+      return <div {...common}>{childNodes}</div>;
+    case "heading":
+      return <div {...common}>{renderHeading(node, body)}</div>;
+    case "paragraph":
+      return <p {...common} data-gap={node.gap ? "true" : undefined}>{body}</p>;
+    case "link":
+      return <a {...common} href={node.href}>{body}</a>;
+    case "code":
+      return <pre {...common}><code>{body}</code></pre>;
+    case "list":
+      return <ul {...common}>{childNodes}</ul>;
+    case "listitem":
+      return <li {...common}>{body}</li>;
+    default:
+      return <div {...common}>{body}{childNodes}</div>;
+  }
+}
+
+export function UIRPage() {
+  return (
+    <div
+      className="uir-target"
+      data-uir-package={manifest.packageId}
+      data-uir-version={manifest.packageVersion}
+      style={themeStyle()}
+    >
+      <RenderNode subject={rootId} />
+    </div>
+  );
+}
+
+export function uirMetadata() {
+  const metadata = fact("uir-site:package", "package.metadata")?.value;
+  if (
+    typeof metadata?.name !== "string" ||
+    typeof metadata?.summary !== "string"
+  ) {
+    throw new Error("The checked UIR package has no complete package.metadata.");
+  }
+  return {
+    title: metadata.name,
+    description: metadata.summary,
+  };
+}

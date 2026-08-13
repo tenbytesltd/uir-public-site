@@ -1,0 +1,618 @@
+{
+  "collection": "package",
+  "records": [
+    {
+      "id": "uir-site:condition:resolution:code:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:code:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:document:surface-root",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:document:surface-root:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:group:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:group:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:heading:navigation",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:heading:navigation:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:heading:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:heading:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:link:group",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:link:group:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:link:navigation",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:link:navigation:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:link:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:link:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:list:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:list:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:listitem:list",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:listitem:list:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:navigation:document",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:navigation:document:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:paragraph:region",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:paragraph:region:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:region:document",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:region:document:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:region:group",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:region:group:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:fact:axis:parent-role",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:parent-role:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:parent-role",
+        "axisKind": "parent-role",
+        "valueType": "role",
+        "values": [
+          "$surface-root",
+          "code",
+          "document",
+          "group",
+          "heading",
+          "link",
+          "list",
+          "listitem",
+          "navigation",
+          "paragraph",
+          "region"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:axis:preview-frame",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:preview-frame:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:preview-frame",
+        "axisKind": "preview-frame",
+        "target": {
+          "kind": "ground.frame",
+          "recordType": "Fact"
+        },
+        "valueType": "record-id",
+        "values": [
+          "uir-site:fact:frame:desktop",
+          "uir-site:fact:frame:mobile"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:axis:surface-body",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:surface-body:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:surface-body",
+        "axisKind": "surface-body",
+        "valueType": "symbol",
+        "values": [
+          "adoption-landing"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:axis:surface-frame",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:surface-frame:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:surface-frame",
+        "axisKind": "surface-frame",
+        "valueType": "symbol",
+        "values": [
+          "responsive-web"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:axis:surface-kind",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:surface-kind:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:surface-kind",
+        "axisKind": "surface-kind",
+        "valueType": "symbol",
+        "values": [
+          "marketing-page"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:axis:surface-part",
+      "kind": "context.axis",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:axis:surface-part:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "axisId": "uir-site:axis:surface-part",
+        "axisKind": "surface-part",
+        "valueType": "symbol",
+        "values": [
+          "$no-part",
+          "footer",
+          "hero",
+          "mechanism",
+          "navigation",
+          "problem",
+          "quickstart",
+          "standard",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:code:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:code:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:code:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:document:surface-root",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:document:surface-root:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:document:surface-root",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "$surface-root"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:group:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:group:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:group:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:heading:navigation",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:heading:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:heading:navigation",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "navigation"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:heading:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:heading:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:heading:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:link:group",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:link:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:link:group",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "group"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:link:navigation",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:link:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:link:navigation",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "navigation"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:link:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:link:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:link:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:list:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:list:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:list:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:listitem:list",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:listitem:list:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:listitem:list",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "list"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:navigation:document",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:navigation:document:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:navigation:document",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "document"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:paragraph:region",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:paragraph:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:paragraph:region",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "region"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:region:document",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:region:document:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:region:document",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "document"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:region:group",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:region:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:region:group",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "group"
+      }
+    },
+    {
+      "id": "uir-site:fact:context:desktop",
+      "kind": "package.context",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:context:desktop:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "contextId": "uir-site:context:desktop",
+        "designContext": {
+          "frame": "uir-site:fact:frame:desktop",
+          "interfaceStates": [],
+          "modes": [],
+          "pieceStates": [],
+          "variants": []
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:context:mobile",
+      "kind": "package.context",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:context:mobile:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "contextId": "uir-site:context:mobile",
+        "designContext": {
+          "frame": "uir-site:fact:frame:mobile",
+          "interfaceStates": [],
+          "modes": [],
+          "pieceStates": [],
+          "variants": []
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:package-metadata",
+      "kind": "package.metadata",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:package-metadata:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "name": "UIR — User Interface Representation",
+        "summary": "A public adoption page that makes extraction the shortest path to seeing interface decisions, drift, and silence."
+      }
+    },
+    {
+      "id": "uir-site:fact:role-vocabulary",
+      "kind": "role.vocabulary",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-vocabulary:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "kind": "root",
+        "version": "0.1.0",
+        "vocabularyId": "uir-site:roles"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:code",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:code:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The code semantic obligation used by the UIR public page.",
+        "symbol": "code",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:document",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:document:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The document semantic obligation used by the UIR public page.",
+        "symbol": "document",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:group",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:group:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The group semantic obligation used by the UIR public page.",
+        "symbol": "group",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:heading",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:heading:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The heading semantic obligation used by the UIR public page.",
+        "symbol": "heading",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:link",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:link:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The link semantic obligation used by the UIR public page.",
+        "symbol": "link",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:list",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:list:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The list semantic obligation used by the UIR public page.",
+        "symbol": "list",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:listitem",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:listitem:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The listitem semantic obligation used by the UIR public page.",
+        "symbol": "listitem",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:navigation",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The navigation semantic obligation used by the UIR public page.",
+        "symbol": "navigation",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:paragraph",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:paragraph:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The paragraph semantic obligation used by the UIR public page.",
+        "symbol": "paragraph",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:role:region",
+      "kind": "role.symbol",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role:region:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "meaning": "The region semantic obligation used by the UIR public page.",
+        "symbol": "region",
+        "vocabulary": "uir-site:fact:role-vocabulary"
+      }
+    },
+    {
+      "id": "uir-site:fact:scope",
+      "kind": "package.scope",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:scope:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:package",
+      "value": {
+        "contexts": [
+          "uir-site:fact:context:desktop",
+          "uir-site:fact:context:mobile"
+        ],
+        "designSystem": "uir-site:design-system",
+        "surfaces": [
+          "uir-site:surface:home"
+        ]
+      }
+    },
+    {
+      "id": "uir-site:package",
+      "kind": "Package",
+      "recordType": "Entity"
+    }
+  ]
+}
