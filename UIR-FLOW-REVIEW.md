@@ -241,8 +241,20 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - User impact: a valid website change could not merge or publish because the runner was occupied after every meaningful assertion had already passed.
 - Root cause: the generic starter enabled the setup-node npm cache without evidence that this small repository benefited on the organization runner.
 - Change made: removed the cache input while retaining Node 22 setup and deterministic `npm ci`.
-- Verification: the superseding PR run must finish without the setup-node cache post-step before merge.
+- Verification: the superseding PR run completed every step successfully in 36 seconds, including all action cleanup steps.
 - Remaining risk: the self-hosted runner remains shared infrastructure; queue time is still external to UIR.
+
+
+### F21 — the generated workflow started with deprecated action runtimes
+
+- Status: fixed
+- Flow step: continuous integration
+- Evidence: the first complete PR run was green but GitHub annotated checkout v4, setup-python v5, setup-node v4, and upload-artifact v4 because their Node 20 action runtime was deprecated and forcibly upgraded by the runner.
+- User impact: every green run carried avoidable warning noise, making material annotations harder to see and leaving future runner compatibility implicit.
+- Root cause: the workflow began from older starter-era action major pins.
+- Change made: verified the current official releases through the GitHub API and moved all four actions to their current v7 major.
+- Verification: the superseding PR run must finish without the Node 20 deprecation annotation before merge.
+- Remaining risk: major tags are maintained upstream references rather than immutable SHAs; the UIR action itself remains pinned to an immutable commit because it defines the product contract.
 
 
 ## Open review questions
