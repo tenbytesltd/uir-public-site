@@ -464,6 +464,61 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: the same Pages command passes when run after the runtime build rather than concurrently with it.
 - Remaining risk: local ad-hoc parallel invocations can reproduce the race; GitHub Actions already executes these steps sequentially.
 
+### F39 — pointer-responsive decorative motion has no complete UIR effect contract
+
+- Status: fixed with an explicit projection limit
+- Flow step: authoring, implementation, inspection, and board
+- Candidate revision: `3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: the accepted preview required one field of points to follow pointer and touch proximity with smaller displacement, no visible core, and no glow. UIR v0.1 can name a `motion-event` and bind a `transition`, but that transition carries only duration, curve, delay, and property roles; it cannot state the trigger geometry, displacement extent, influence radius, or particle topology. The official board already refuses to draw transition effects because it has no Ground-role-to-property table.
+- User impact: implementing the approved behavior only in CSS or JavaScript would make the site's most visible self-showcase decision absent from its inspector and contradict the claim that the page is based on UIR.
+- Root cause: UIR deliberately carries framework-independent transition meaning and excludes handlers/effects, while the current web lowerer has no declared target profile for interactive decorative fields.
+- Change made: authored `pointer-dot-field` in the Dress, bound the existing typed radial surface and transition to the hero Node, and made the generic renderer activate a canvas lowering only when that exact UIR event and surface are present. The lowering draws only points, derives both colours, opacity, cycle duration, and motionless permission from UIR, caps the target-policy displacement at 8 px plus two 2 px waves, follows pointer/touch without blocking page scroll, and becomes static for reduced motion.
+- Proposed tooling or workflow improvement: add a target-profile extension for decorative fields with a closed effect kind, interaction trigger, influence measure, displacement measure, density, and reduced-motion result. Until that exists, surface repeat geometry and particle displacement must be disclosed as target policy rather than implied to be fully represented.
+- Verification command and result: `python3 tool/uir_site_ci.py --site-root /home/kvelikov/uir-public-site ...` passed with 11 passing, 2 vacuous, 6 unchanged unchecked, 0 failing gates, 0 ungated errors, and the same four compiler deferrals; mobile and desktop browser runs found one canvas exactly covering the hero, changing pixels over time, distinct results after touch/pointer moves, no runtime errors, and solid inverse title/lead surfaces.
+- Remaining risk: the event identity, colours, opacity, duration, binding, and motionless allowance are inspectable UIR; point spacing, influence radius, displacement coefficients, and canvas realization are still web-target policy and do not appear in the inspector or official board.
+
+| Signal | Baseline | After | Interpretation |
+|---|---|---|---|
+| Gate verdicts | 11 pass / 2 vacuous / 6 unchecked / 0 fail | unchanged | The change did not manufacture a semantic score improvement. |
+| Unchecked reasons | slot bounds, measures, applicability, contrast, state exposure, reading order | unchanged | Existing language/checker debt remains visible. |
+| Package records | 4,202 | 4,202 | Existing Facts were corrected instead of adding records to game a denominator. |
+| Desktop board | 20 parts, 7 undecided, 33 limitations | unchanged | The board can reach the motion binding but cannot depict the interactive effect. |
+| Mobile board | 20 parts, 7 undecided, 33 limitations | unchanged | The target behavior needs runtime evidence in addition to the still board. |
+
+Publish decision: eligible after the sequential public verifier, runtime build, rendered contracts, Pages export, and final browser check pass. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
+
+### F40 — element screenshots were the wrong reduced-motion observable for canvas
+
+- Status: fixed
+- Flow step: implementation verification
+- Candidate revision: `3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1`
+- Contexts: `uir-site:context:mobile`
+- Evidence: two Playwright element screenshots of the reduced-motion canvas produced different file hashes, while three direct `canvas.toDataURL()` samples taken 700 ms apart produced the identical SHA-256 value `77db74eb049683bdd3fa8be69ab80e28e6780a0f37c3409150250a40e4a0c4d4`; normal-motion samples produced three distinct hashes.
+- User impact: a capture artifact could falsely report an accessibility regression and send the implementation back through an unnecessary correction loop.
+- Root cause: the verification compared encoded element screenshots rather than the canvas bitmap that represents the motion state.
+- Change made: verified reduced motion against repeated direct bitmap hashes and kept screenshot comparison only for broader layout review.
+- Proposed tooling or workflow improvement: provide a reusable UIR browser assertion that samples the realized motion property or canvas bitmap under both `no-preference` and `reduce`, and reports the chosen observable in the evidence.
+- Verification command and result: Playwright reported `matchMedia('(prefers-reduced-motion: reduce)').matches === true`; the reduced canvas had one unique bitmap across three samples and normal motion had three.
+- Remaining risk: this runtime assertion is session evidence, not yet a committed cross-browser test; non-canvas lowerings need different property-level observables.
+
+
+### F41 — the dev watcher reacts to the Pages artifact it does not own
+
+- Status: deferred
+- Flow step: implementation verification
+- Candidate revision: `3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: running the required sequential runtime and Pages checks while the local Vinext development preview remained open caused Vite to reload `out/index.html` and print `Detected multiple renderers concurrently rendering the same context provider` repeatedly. The production builds, rendered contracts, Pages contracts, and fresh Playwright pages still completed with no browser console error or overlay.
+- User impact: the clean-start workflow presents a framework warning after otherwise valid checks, making it unclear whether the candidate, dev preview, or exported artifact is broken.
+- Root cause: the development watcher observes the generated Pages `out/` directory while a second Vinext process writes that target; build commands are sequential with each other but still concurrent with the retained dev server.
+- Change made: stopped the dev server after browser acceptance and kept the production artifact verdict tied to the isolated build/test processes rather than the watcher output.
+- Proposed tooling or workflow improvement: exclude generated Pages output from the development watcher or give preview and export isolated roots; document whether this repository permits keeping dev alive during Pages verification.
+- Verification command and result: `npm test`, `python3 tool/public_site_ci.py`, and `npm run test:pages` all passed; the final 390 px, 1,440 px, and reduced-motion browser sessions reported zero console errors and zero framework overlays.
+- Remaining risk: repeating Pages export while `npm run dev` is active can reproduce the warning even though the artifact is valid.
+
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?

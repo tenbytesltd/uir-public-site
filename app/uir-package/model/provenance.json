@@ -563,7 +563,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:constraint:ambient-surface-drift:provenance",
+      "id": "uir-site:fact:constraint:pointer-dot-field:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",

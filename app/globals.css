@@ -74,19 +74,24 @@ a {
   background-size: 18px 18px;
 }
 
-[data-uir-surface="radial-gradient"][data-uir-motion] {
-  animation-name: uir-surface-drift;
-  animation-iteration-count: infinite;
+[data-uir-surface-field="points"] {
+  isolation: isolate;
+  overflow: clip;
 }
 
-@keyframes uir-surface-drift {
-  from {
-    background-position: 0 0;
-  }
+[data-uir-surface-field="points"] > .uir-surface-field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
-  to {
-    background-position: 18px 18px;
-  }
+[data-uir-surface-field="points"] > :not(.uir-surface-field) {
+  position: relative;
+  z-index: 1;
 }
 
 [data-role="group"] {
@@ -380,9 +385,6 @@ a {
     transition: none;
   }
 
-  [data-uir-surface="radial-gradient"][data-uir-motion] {
-    animation: none;
-  }
 }
 
 .uir-target[data-uir-inspecting] {

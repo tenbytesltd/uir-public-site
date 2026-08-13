@@ -303,8 +303,8 @@ m.fact(
         "purpose": "Make the representation feel inspectable, rigorous, and immediately useful without imitating a generic dark developer tool.",
         "motionEvents": [
             {
-                "symbol": "ambient-surface-drift",
-                "meaning": "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
+                "symbol": "pointer-dot-field",
+                "meaning": "A decorative field of points moves by a small amount around pointer or touch proximity while preserving reading comfort.",
             },
         ],
     },
@@ -565,7 +565,7 @@ for args in (
     roles[args[0]] = role(*args)
 
 primitive["duration-ambient"] = value(
-    "duration-ambient", "Ambient drift duration", "A visible but calm decorative drift cycle.",
+    "duration-ambient", "Dot field phase duration", "A calm decorative phase cycle behind the hero content.",
     "duration", {"type": "duration", "value": 4, "unit": "s"}, sources=(SRC_USER, SRC_REPO),
 )
 primitive["duration-zero"] = value(
@@ -578,8 +578,8 @@ primitive["curve-linear"] = value(
     sources=(SRC_USER, SRC_REPO),
 )
 primitive["motion-ambient-surface"] = value(
-    "motion-ambient-surface", "Ambient surface drift",
-    "Slow decorative motion for the hero surface; motionless presentation remains allowed.",
+    "motion-ambient-surface", "Responsive dot field",
+    "Small pointer- and touch-led displacement for the hero points; motionless presentation remains allowed.",
     "transition",
     {
         "type": "transition",
@@ -591,16 +591,16 @@ primitive["motion-ambient-surface"] = value(
     sources=(SRC_USER, SRC_REPO),
 )
 roles["motion-ambient-surface"] = role(
-    "motion-ambient-surface", "Ambient surface motion", "motion", "transition",
-    "The decorative hero surface may drift without changing content or meaning.",
+    "motion-ambient-surface", "Responsive dot field motion", "motion", "transition",
+    "The decorative hero points may respond gently to pointer or touch proximity without changing content or meaning.",
     primitive["motion-ambient-surface"], sources=(SRC_USER, SRC_REPO),
 )
 m.fact(
-    "design-system", "uir-site:fact:constraint:ambient-surface-drift",
+    "design-system", "uir-site:fact:constraint:pointer-dot-field",
     "design.constraint", GROUND, "invisible",
     {
         "kind": "motion-event",
-        "event": "ambient-surface-drift",
+        "event": "pointer-dot-field",
         "allowedTransitions": [primitive["motion-ambient-surface"]],
         "motionlessAllowed": True,
     },

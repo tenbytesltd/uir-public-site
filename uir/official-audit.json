@@ -204,7 +204,7 @@
           }
         ],
         "lowered": true,
-        "revision": "0a5aaa20aebe7ecae671d3776990c1b8ee93244aa107b5afec65a4de42185bd7",
+        "revision": "3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -423,7 +423,7 @@
           }
         ],
         "lowered": true,
-        "revision": "0a5aaa20aebe7ecae671d3776990c1b8ee93244aa107b5afec65a4de42185bd7",
+        "revision": "3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -1490,7 +1490,7 @@
         },
         {
           "countsOver": "AUTHOR-RAISED: every count here stands over this package's OWN population, over a minimum written in a profile layer the same author owns, or over what the READING that travels with the package declared about itself. Editing the records MOVES it, with no design decision changing: writing them raises what they answer, and deleting one lowers the counts it raised while RAISING the debt the records left behind now carry \u2014 and where what is counted is that declaration, no record moves it and rewriting the reading does. A count of DEBT stands over no population and is bounded by none: a package holding no record can still owe, and this one owes what the language demands of any package at all. Nothing outside this package and the reading of it fixes any width here. A ratio composed from these counts therefore measures this package against itself: it is comparable to no other package, and to no later reading of this one. They are published because both sides of a ledger must be, and this limit is published beside them rather than in a preamble.",
-          "example": "uir-site:fact:constraint:ambient-surface-drift",
+          "example": "uir-site:fact:constraint:pointer-dot-field",
           "factKind": "design.constraint",
           "half": "structure",
           "member": "allowedTransitions",
@@ -1500,7 +1500,7 @@
         },
         {
           "countsOver": "AUTHOR-RAISED: every count here stands over this package's OWN population, over a minimum written in a profile layer the same author owns, or over what the READING that travels with the package declared about itself. Editing the records MOVES it, with no design decision changing: writing them raises what they answer, and deleting one lowers the counts it raised while RAISING the debt the records left behind now carry \u2014 and where what is counted is that declaration, no record moves it and rewriting the reading does. A count of DEBT stands over no population and is bounded by none: a package holding no record can still owe, and this one owes what the language demands of any package at all. Nothing outside this package and the reading of it fixes any width here. A ratio composed from these counts therefore measures this package against itself: it is comparable to no other package, and to no later reading of this one. They are published because both sides of a ledger must be, and this limit is published beside them rather than in a preamble.",
-          "example": "uir-site:fact:constraint:ambient-surface-drift",
+          "example": "uir-site:fact:constraint:pointer-dot-field",
           "factKind": "design.constraint",
           "half": "structure",
           "member": "event",
@@ -1510,7 +1510,7 @@
         },
         {
           "countsOver": "AUTHOR-RAISED: every count here stands over this package's OWN population, over a minimum written in a profile layer the same author owns, or over what the READING that travels with the package declared about itself. Editing the records MOVES it, with no design decision changing: writing them raises what they answer, and deleting one lowers the counts it raised while RAISING the debt the records left behind now carry \u2014 and where what is counted is that declaration, no record moves it and rewriting the reading does. A count of DEBT stands over no population and is bounded by none: a package holding no record can still owe, and this one owes what the language demands of any package at all. Nothing outside this package and the reading of it fixes any width here. A ratio composed from these counts therefore measures this package against itself: it is comparable to no other package, and to no later reading of this one. They are published because both sides of a ledger must be, and this limit is published beside them rather than in a preamble.",
-          "example": "uir-site:fact:constraint:ambient-surface-drift",
+          "example": "uir-site:fact:constraint:pointer-dot-field",
           "factKind": "design.constraint",
           "half": "structure",
           "member": "kind",
@@ -1520,7 +1520,7 @@
         },
         {
           "countsOver": "AUTHOR-RAISED: every count here stands over this package's OWN population, over a minimum written in a profile layer the same author owns, or over what the READING that travels with the package declared about itself. Editing the records MOVES it, with no design decision changing: writing them raises what they answer, and deleting one lowers the counts it raised while RAISING the debt the records left behind now carry \u2014 and where what is counted is that declaration, no record moves it and rewriting the reading does. A count of DEBT stands over no population and is bounded by none: a package holding no record can still owe, and this one owes what the language demands of any package at all. Nothing outside this package and the reading of it fixes any width here. A ratio composed from these counts therefore measures this package against itself: it is comparable to no other package, and to no later reading of this one. They are published because both sides of a ledger must be, and this limit is published beside them rather than in a preamble.",
-          "example": "uir-site:fact:constraint:ambient-surface-drift",
+          "example": "uir-site:fact:constraint:pointer-dot-field",
           "factKind": "design.constraint",
           "half": "structure",
           "member": "motionlessAllowed",
@@ -2949,7 +2949,7 @@
     ],
     "errorCount": 0,
     "recordCount": 4202,
-    "revision": "0a5aaa20aebe7ecae671d3776990c1b8ee93244aa107b5afec65a4de42185bd7",
+    "revision": "3af4e504da43b924b119145d2b19f922dbd7dc70044a3c15cc27b277db62c0b1",
     "semanticExtension": "T2.5-executable-vocabulary",
     "semanticsReady": false,
     "structurallyValid": true,

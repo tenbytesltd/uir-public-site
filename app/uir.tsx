@@ -5,6 +5,7 @@ import packageModel from "./uir-package/model/package.json";
 import provenanceModel from "./uir-package/model/provenance.json";
 import manifest from "./uir-package/package.json";
 import { Inspector, type InspectionRecord } from "./Inspector";
+import { SurfaceField, type SurfaceFieldConfig } from "./SurfaceField";
 
 type UIRRecord = {
   id: string;
@@ -231,6 +232,21 @@ function cssScalar(valueId: string | undefined): string | undefined {
   return undefined;
 }
 
+function cssColor(valueId: string | undefined, alphaOverride?: number) {
+  const value = literal(valueId);
+  if (value?.type !== "color" || !Array.isArray(value.channels)) return undefined;
+  const [r, g, b] = value.channels.map((channel) =>
+    Math.round(Number(channel) * 255),
+  );
+  return {
+    color: `rgb(${r} ${g} ${b})`,
+    alpha:
+      typeof alphaOverride === "number"
+        ? alphaOverride
+        : Number(value.alpha ?? 1),
+  };
+}
+
 function normalizedPercent(valueId: string | undefined): string | undefined {
   const value = literal(valueId);
   if (value?.type !== "number" || typeof value.value !== "number") return undefined;
@@ -328,12 +344,67 @@ function nodePresentationData(node: NodeView) {
   const surfaceValue = boundValue(bindings.get("surface") ?? "");
   const surface = literal(surfaceValue);
   const motionValue = boundValue(bindings.get("motion") ?? "");
+  const event = facts.find(
+    (record) =>
+      record.kind === "design.constraint" &&
+      Array.isArray(record.value?.allowedTransitions) &&
+      record.value.allowedTransitions.includes(motionValue),
+  )?.value?.event;
   return {
     "data-uir-surface":
       surface?.type === "gradient" && typeof surface.kind === "string"
         ? surface.kind + "-gradient"
         : undefined,
     "data-uir-motion": motionValue ? nodeKey(motionValue) : undefined,
+    "data-uir-motion-event": typeof event === "string" ? event : undefined,
+    "data-uir-surface-field": event === "pointer-dot-field" ? "points" : undefined,
+  };
+}
+
+function durationMilliseconds(valueId: string | undefined) {
+  const value = literal(valueId);
+  if (value?.type !== "duration" || typeof value.value !== "number") return undefined;
+  if (value.unit === "s") return value.value * 1000;
+  if (value.unit === "ms") return value.value;
+  return undefined;
+}
+
+function surfaceFieldConfig(node: NodeView): SurfaceFieldConfig | undefined {
+  const bindings = resolvedBindings(node);
+  const surfaceValueId = boundValue(bindings.get("surface") ?? "");
+  const motionValueId = boundValue(bindings.get("motion") ?? "");
+  const surface = literal(surfaceValueId);
+  const motion = literal(motionValueId);
+  if (
+    surface?.type !== "gradient" ||
+    surface.kind !== "radial" ||
+    !Array.isArray(surface.stops) ||
+    motion?.type !== "transition"
+  ) {
+    return undefined;
+  }
+  const constraint = facts.find(
+    (record) =>
+      record.kind === "design.constraint" &&
+      Array.isArray(record.value?.allowedTransitions) &&
+      record.value.allowedTransitions.includes(motionValueId),
+  );
+  if (constraint?.value?.event !== "pointer-dot-field") return undefined;
+
+  const first = surface.stops.at(0) as { color?: string } | undefined;
+  const last = surface.stops.at(-1) as { color?: string } | undefined;
+  const dot = cssColor(first?.color);
+  const background = cssColor(last?.color, 1);
+  const cycleMs = durationMilliseconds(
+    typeof motion.duration === "string" ? motion.duration : undefined,
+  );
+  if (!dot || !background || !cycleMs) return undefined;
+  return {
+    backgroundColor: background.color,
+    cycleMs,
+    dotColor: dot.color,
+    dotOpacity: dot.alpha,
+    motionlessAllowed: constraint.value?.motionlessAllowed === true,
   };
 }
 
@@ -486,9 +557,16 @@ function renderHeading(node: NodeView, body: ReactNode) {
 
 function RenderNode({ subject }: { subject: string }) {
   const node = view(subject);
+  const field = surfaceFieldConfig(node);
   const childNodes = node.children.map((child) => (
     <RenderNode key={child} subject={child} />
   ));
+  const children = (
+    <>
+      {field ? <SurfaceField config={field} /> : null}
+      {childNodes}
+    </>
+  );
   const body = node.gap ?? node.content;
   const common = {
     id: node.key,
@@ -501,13 +579,13 @@ function RenderNode({ subject }: { subject: string }) {
 
   switch (node.role) {
     case "document":
-      return <main {...common}>{childNodes}</main>;
+      return <main {...common}>{children}</main>;
     case "navigation":
-      return <nav {...common}>{childNodes}</nav>;
+      return <nav {...common}>{children}</nav>;
     case "region":
-      return <section {...common}>{childNodes}</section>;
+      return <section {...common}>{children}</section>;
     case "group":
-      return <div {...common}>{childNodes}</div>;
+      return <div {...common}>{children}</div>;
     case "heading":
       return <div {...common}>{renderHeading(node, body)}</div>;
     case "paragraph":
@@ -528,7 +606,7 @@ function RenderNode({ subject }: { subject: string }) {
     case "code":
       return <pre {...common}><code>{body}</code></pre>;
     case "list":
-      return <ul {...common}>{childNodes}</ul>;
+      return <ul {...common}>{children}</ul>;
     case "listitem":
       return <li {...common}>{body}</li>;
     default:
