@@ -2,7 +2,9 @@ import type { CSSProperties, ReactNode } from "react";
 import designSystemModel from "./uir-package/model/design-system.json";
 import interfaceModel from "./uir-package/model/interface.json";
 import packageModel from "./uir-package/model/package.json";
+import provenanceModel from "./uir-package/model/provenance.json";
 import manifest from "./uir-package/package.json";
+import { Inspector, type InspectionRecord } from "./Inspector";
 
 type UIRRecord = {
   id: string;
@@ -14,6 +16,10 @@ type UIRRecord = {
   order?: number;
   outcome?: string;
   rationale?: string;
+  plane?: string;
+  provenance?: string;
+  mode?: string;
+  sources?: string[];
   value?: Record<string, unknown>;
 };
 
@@ -33,6 +39,7 @@ const records = [
   ...designSystemModel.records,
   ...interfaceModel.records,
   ...packageModel.records,
+  ...provenanceModel.records,
 ] as UIRRecord[];
 
 const byId = new Map(records.map((record) => [record.id, record]));
@@ -203,6 +210,14 @@ function cssScalar(valueId: string | undefined): string | undefined {
   return undefined;
 }
 
+function valueLabel(valueId: string | undefined) {
+  if (!valueId) return "none";
+  const definition = fact(valueId, "design-value.definition")?.value;
+  const name = typeof definition?.name === "string" ? definition.name : nodeKey(valueId);
+  const scalar = cssScalar(valueId);
+  return scalar ? `${name} · ${scalar}` : name;
+}
+
 function typography(valueId: string | undefined): CSSProperties {
   const value = literal(valueId);
   if (value?.type !== "typography") return {};
@@ -290,6 +305,92 @@ const firstPrimaryHeading = walk(rootId).find((subject) => {
   );
 });
 
+const sourceNames = new Map(
+  records
+    .filter((record) => record.recordType === "Entity" && record.kind === "Source")
+    .map((source) => {
+      const description = fact(source.id, "source.description")?.value;
+      const name =
+        typeof description?.name === "string" ? description.name : nodeKey(source.id);
+      return [source.id, name];
+    }),
+);
+
+function provenanceFor(recordsToInspect: UIRRecord[]) {
+  const provenance = recordsToInspect
+    .map((record) => (record.provenance ? byId.get(record.provenance) : undefined))
+    .filter((record): record is UIRRecord => Boolean(record));
+  const modes = [...new Set(provenance.map((record) => record.mode).filter(Boolean))] as string[];
+  const sources = [
+    ...new Set(
+      provenance
+        .flatMap((record) => record.sources ?? [])
+        .map((source) => sourceNames.get(source) ?? nodeKey(source)),
+    ),
+  ].sort();
+  return { modes: modes.sort(), sources };
+}
+
+function inspectionBindings(subject: string, piece: string | undefined) {
+  const bindings = bindingMap(piece);
+  for (const [slot, role] of bindingMap(subject)) bindings.set(slot, role);
+  return [...bindings.entries()]
+    .map(([slot, groundRole]) => {
+      const definition = fact(groundRole, "design-value.definition")?.value;
+      return {
+        slot,
+        role:
+          typeof definition?.name === "string"
+            ? definition.name
+            : nodeKey(groundRole),
+        value: valueLabel(boundValue(groundRole)),
+      };
+    })
+    .sort((a, b) => a.slot.localeCompare(b.slot));
+}
+
+function inspectionManifest(): InspectionRecord[] {
+  return walk(rootId).map((subject) => {
+    const node = view(subject);
+    const entity = byId.get(subject);
+    const nodeFacts = facts.filter((record) => record.subject === subject);
+    const piece = resolutionPiece(node.role);
+    const pieceIdentity = piece ? fact(piece, "piece.identity")?.value : undefined;
+    const controlled = controls.get(subject);
+    const provenance = provenanceFor([entity, ...nodeFacts].filter(Boolean) as UIRRecord[]);
+    return {
+      key: node.key,
+      id: node.id,
+      label: node.content || node.key,
+      role: node.role,
+      salience: node.salience,
+      content: node.content,
+      parent: node.parent ? nodeKey(node.parent) : undefined,
+      children: node.children.length,
+      controls: controlled ? nodeKey(controlled) : undefined,
+      piece: piece ?? "unresolved",
+      pieceName:
+        typeof pieceIdentity?.name === "string"
+          ? pieceIdentity.name
+          : piece
+            ? nodeKey(piece)
+            : "unresolved",
+      facts: nodeFacts
+        .map((record) => ({
+          kind: record.kind ?? "Fact",
+          plane: record.plane ?? "unclassified",
+        }))
+        .sort((a, b) => a.kind.localeCompare(b.kind)),
+      bindings: inspectionBindings(subject, piece),
+      sources: provenance.sources,
+      modes: provenance.modes,
+      gap: node.gap,
+    };
+  });
+}
+
+const inspectionNodes = inspectionManifest();
+
 function renderHeading(node: NodeView, body: ReactNode) {
   const ancestors = ancestorRoles(node.id);
   if (ancestors.includes("navigation")) return <div className="brand">{body}</div>;
@@ -342,14 +443,22 @@ function RenderNode({ subject }: { subject: string }) {
 
 export function UIRPage() {
   return (
-    <div
-      className="uir-target"
-      data-uir-package={manifest.packageId}
-      data-uir-version={manifest.packageVersion}
-      style={themeStyle()}
-    >
-      <RenderNode subject={rootId} />
-    </div>
+    <>
+      <div
+        className="uir-target"
+        data-uir-package={manifest.packageId}
+        data-uir-version={manifest.packageVersion}
+        style={themeStyle()}
+      >
+        <RenderNode subject={rootId} />
+      </div>
+      <Inspector
+        nodes={inspectionNodes}
+        packageId={manifest.packageId}
+        packageVersion={manifest.packageVersion}
+        recordCount={records.length}
+      />
+    </>
   );
 }
 

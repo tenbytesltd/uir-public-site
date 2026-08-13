@@ -46,6 +46,9 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.equal((html.match(/data-node=/g) ?? []).length, nodeCount);
   assert.match(html, /Make the interface explicit before code gets the final word\./);
   assert.match(html, /The public install artifact is not published yet/);
+  assert.match(html, /Inspect this page/);
+  assert.match(html, new RegExp(`data-inspection-count="${nodeCount}"`));
+  assert.match(html, new RegExp(`data-inspection-package="${manifest.packageId}"`));
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/);
 });
 
@@ -70,4 +73,19 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
   await access(new URL("../public/og.png", import.meta.url));
   await access(new URL("../app/uir-package/package.json", import.meta.url));
   await access(projectRoot);
+});
+
+test("builds the inspector from UIR facts instead of a parallel demo model", async () => {
+  const [inspector, renderer] = await Promise.all([
+    readFile(new URL("../app/Inspector.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/uir.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(renderer, /provenanceModel/);
+  assert.match(renderer, /resolutionPiece\(node\.role\)/);
+  assert.match(renderer, /inspectionBindings\(subject, piece\)/);
+  assert.match(renderer, /fact\(source\.id, "source\.description"\)/);
+  assert.match(inspector, /\.uir-target \[data-node\]/);
+  assert.match(inspector, /Viewer chrome — outside the inspected Surface/);
+  assert.doesNotMatch(inspector, /mock|fixture|sampleNode|demoData/i);
 });

@@ -148,6 +148,22 @@ Impact: the documented clean-start and publish paths fail before product work be
 
 Proposed improvement: ship the helpers with LF line endings and add a release check that invokes every shell entrypoint from its installed path. Keep the root wrapper executable and cover its relative delegation in that check.
 
+### F13 — self-inspection turns the representation claim into visible evidence
+
+Adding an inspector over the generated page made the core model legible without a separate explanatory demo. A visitor can select any of the 98 rendered Nodes and see its semantic Role, salience, containment, resolved Piece, Ground bindings, DesignValues, provenance modes and named sources. The existing install Gap is visible through the same mechanism rather than as special-case marketing copy.
+
+Impact: the system's own site can now demonstrate that UIR is not a static export format. The representation remains addressable and inspectable inside the running target, which is much stronger adoption evidence than a “built with UIR” badge.
+
+Proposed improvement: make self-inspection a first-class adoption pattern and include it in the public proof strategy. The inspector should always identify its own viewer chrome as outside the inspected Surface so the proof does not recursively overclaim.
+
+### F14 — there is no official compact inspection DTO or embed contract
+
+The checked package contains everything needed for the readout, but the target had to create a custom compact manifest, map DOM `data-node` keys back to full Node identities, resolve Pieces, merge Piece and Node presentation bindings, and join Provenance records to Source descriptions.
+
+Impact: every target that wants embedded inspection must recreate a subtle read path, may disagree about resolution, and risks shipping the entire authoring package to the client.
+
+Proposed improvement: publish an official `inspection_dto(snapshot, surface, context)` projection containing stable target handles, resolved Piece identity, visible/invisible Facts, effective bindings, provenance summary, explicit gaps, and attestation state. Define a small DOM/embed convention such as `data-uir-node-id` so viewers can select target elements without target-specific key translation.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
@@ -168,6 +184,7 @@ Proposed improvement: ship the helpers with LF line endings and add a release ch
 - Official desktop and mobile board runs completed but were blocked from attestation and reached only 20 parts.
 - The experimental web target passed lint, production build, and two rendered-HTML contract tests. The tests assert that all 98 Nodes render and that representative marketing copy exists only in UIR, not in the React target source.
 - One bespoke 1200×630 social preview was generated and stored as a project asset.
+- The self-inspection iteration derives a compact manifest for all 98 Nodes from the same checked package. No mock or parallel demo model is used.
 
 ## Review outcome
 
