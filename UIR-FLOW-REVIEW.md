@@ -233,6 +233,18 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Remaining risk: the four deferrals are language/tooling work, not waived product quality. GitHub branch protection for this private repository requires a paid organization plan; current access control is private organization membership with forking disabled.
 
 
+### F20 — dependency caching kept a finished CI job pending
+
+- Status: fixed
+- Flow step: continuous integration and release
+- Evidence: two pull-request runs completed UIR reproduction, audit upload, dependency install, lint, build, and rendered tests, then remained `in_progress` in `Post Run actions/setup-node@v4`. The measured uncached `npm ci` step on the same self-hosted runner completed in about four seconds.
+- User impact: a valid website change could not merge or publish because the runner was occupied after every meaningful assertion had already passed.
+- Root cause: the generic starter enabled the setup-node npm cache without evidence that this small repository benefited on the organization runner.
+- Change made: removed the cache input while retaining Node 22 setup and deterministic `npm ci`.
+- Verification: the superseding PR run must finish without the setup-node cache post-step before merge.
+- Remaining risk: the self-hosted runner remains shared infrastructure; queue time is still external to UIR.
+
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
