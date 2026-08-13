@@ -44,7 +44,7 @@ jobs:
           npm run lint
           npm test
       - name: Remove one-shot helpers
-        run: git rm tool/apply_copy_rewrite.py .github/workflows/one-shot-copy-rewrite.yml
+        run: git rm -f tool/apply_copy_rewrite.py .github/workflows/one-shot-copy-rewrite.yml
       - name: Commit regenerated UIR source and package
         run: |
           git config user.name 'github-actions[bot]'
