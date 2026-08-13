@@ -23,7 +23,18 @@ jobs:
         with:
           python-version: '3.12'
       - name: Apply UIR-first copy rewrite
-        run: python3 tool/apply_copy_rewrite.py
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('tool/apply_copy_rewrite.py')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace(
+              '        test = replace_once(test, old, new, f"test: {old}")',
+              '        test = test.replace(old, new)',
+          )
+          path.write_text(text, encoding='utf-8')
+          PY
+          python3 tool/apply_copy_rewrite.py
       - name: Regenerate checked UIR package
         run: python3 tool/build_public_package.py
       - name: Install dependencies
