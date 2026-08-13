@@ -43,3 +43,4 @@ yarn-error.log*
 # only application authority and remains committed under app/uir-package.
 /.uir-session/
 /.uir-ci/
+__pycache__/
