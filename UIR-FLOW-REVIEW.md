@@ -140,6 +140,14 @@ Impact: the public target can build and test successfully while its starter supp
 
 Proposed improvement: the website starter should publish a current audit baseline, distinguish build-tool-only findings from runtime exposure, and provide a supported upgrade lane rather than asking each clean-start run to interpret raw audit counts.
 
+### F12 — bundled Sites shell helpers are not executable as shipped here
+
+Both the site initializer encountered earlier in the run and the final packaging helper contain CRLF line endings. Bash reads `pipefail\r` as an invalid option; the root packaging wrapper also relies on its original relative location, so moving only that wrapper to a temporary path breaks delegation.
+
+Impact: the documented clean-start and publish paths fail before product work begins or ends, despite the underlying scripts being otherwise usable.
+
+Proposed improvement: ship the helpers with LF line endings and add a release check that invokes every shell entrypoint from its installed path. Keep the root wrapper executable and cover its relative delegation in that check.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
