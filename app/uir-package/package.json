@@ -10,12 +10,12 @@
     {
       "collection": "design-system",
       "path": "model/design-system.json",
-      "sha256": "804dfd3d2074c6edf673dd13ede4ed1b6260d63e4debd62a70a39cf6a3bd9e2e"
+      "sha256": "6c93d1d3f33631904bf0c49d32f0c80901e11321c700090461ce12ea16c64d34"
     },
     {
       "collection": "interface",
       "path": "model/interface.json",
-      "sha256": "380c340cf83dcfc9441ea39a972fe453f6c0c1a48dc25440b144620cc8ea89bf"
+      "sha256": "30f7825cfc1af1238253ade86fc6facf96f8254920bde15471a06f4b39ed466a"
     },
     {
       "collection": "package",
@@ -25,7 +25,7 @@
     {
       "collection": "provenance",
       "path": "model/provenance.json",
-      "sha256": "d43dce483eb3bdde017f3d6647b2f4d40ff8f79ff63f2fde40cf59fa1ff85ca2"
+      "sha256": "792b91be32c95346afd9fd3fca794fea41deb175949191ba5b83fe9901a91f92"
     }
   ],
   "packageId": "uir-site:package",

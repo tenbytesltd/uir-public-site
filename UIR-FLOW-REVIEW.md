@@ -344,6 +344,42 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: the SVG has an opaque high-contrast background and remains legible when rasterized to 16 by 16 pixels.
 - Remaining risk: the mark is now consistent and functional but has not yet been tested as a broader product identity beyond the website favicon.
 
+### F29 — the sticky navigation inherited the background behind it
+
+- Status: fixed
+- Flow step: UIR authoring and target projection
+- Evidence: the navigation Piece declared ink, type, spacing, and rule but no surface. Its sticky target therefore remained transparent and black navigation text became unreadable while crossing the dark hero and showcase sections.
+- User impact: primary navigation disappeared precisely while the user scrolled through the highest-salience sections.
+- Root cause: transparency was an unstated omission in the design-system Piece, not an intentional target effect.
+- Change made: bound the navigation Piece to the opaque surface ground role in UIR and regenerated the package; no CSS color override was added.
+- Proposed tooling improvement: contrast checking for sticky or overlaying Pieces must evaluate every surface they can traverse, not only their initial document position.
+- Verification: the generated design-system shard now carries the navigation surface binding and the renderer consumes it through the existing generic binding path.
+- Remaining risk: the current checker does not simulate sticky overlap across scroll positions.
+
+### F30 — two adjacent dark sections collapsed the page rhythm
+
+- Status: fixed
+- Flow step: UIR authoring and visual hierarchy
+- Evidence: the dark showcase region was immediately followed by a second full-width dark quickstart region, making two different product arguments read as one uninterrupted block.
+- User impact: section boundaries and narrative pacing weakened at the transition from proof to adoption.
+- Root cause: both region Nodes independently overrode the same dark surface without a sequence-level contrast review.
+- Change made: returned quickstart to the default light region surface and default ink roles while preserving its three dark action cards as local contrast anchors.
+- Proposed tooling improvement: add a surface-sequence reading that reports adjacent primary regions with indistinguishable ground roles unless continuity is explicitly authored.
+- Verification: the regenerated interface shard contains no dark surface or inverse ink override on quickstart, while each step card retains its dark surface binding.
+- Remaining risk: sequence rhythm is still reviewed visually rather than enforced by a formal gate.
+
+### F31 — the hero provenance line competed with the product state
+
+- Status: fixed
+- Flow step: marketing hierarchy and content authoring
+- Evidence: the highest section opened with four labels: the expanded product name, creator credit, public-source status, and alpha state.
+- User impact: creator and repository context diluted the shortest recognition signal at the primary entry point even though both are explained elsewhere on the page.
+- Root cause: provenance and distribution facts were promoted into hero copy instead of remaining available in the showcase and inspector.
+- Change made: authored the hero kicker as UIR · ALPHA and regenerated the package.
+- Proposed tooling improvement: distinguish visible marketing copy from inspectable provenance so evidence can remain available without occupying the primary content hierarchy.
+- Verification: the emitted node.content value is exactly UIR · ALPHA; the removed phrases do not appear in the hero kicker.
+- Remaining risk: alpha remains a product-state claim and should be updated from one release authority when the public distribution changes.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
