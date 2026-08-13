@@ -519,6 +519,20 @@ Publish decision: eligible after the sequential public verifier, runtime build, 
 - Remaining risk: repeating Pages export while `npm run dev` is active can reproduce the warning even though the artifact is valid.
 
 
+### F42 — local surface fixes need a sequence-level rhythm check
+
+- Status: fixed
+- Flow step: UIR authoring and responsive visual verification
+- Candidate revision: `bb4b2b476b662b9d400a814fbc1cf25463ede2e04ee284ec7cae5011720f0260`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: calmer 10-percent points made the solid hero title and lead surfaces unnecessary, while the lower page still placed quickstart and build on the same light surface. Fixing only the previously reported pair had moved the duplication instead of validating the full section sequence.
+- User impact: the text blocks looked patched rather than integrated with the field, and two adjacent white bands flattened the page rhythm.
+- Root cause: review checked individual Node bindings and one reported boundary, but had no sequence-level assertion over all sibling region surfaces.
+- Change made: removed the title and lead surface bindings and authored build, standard, and status surface roles so the full page alternates without adjacent duplicates. The React renderer and CSS were not used as visual authorities.
+- Proposed tooling or workflow improvement: add a board or browser rule that emits the realized surface sequence for ordered sibling regions and flags adjacent equivalent surfaces when alternation is an accepted page constraint.
+- Verification command and result: official UIR CI passed with 0 failing gates and 0 ungated errors; public verification reports 4,200 records and fingerprint `7cbe05c616f4cc7e7db612304b08417683c27de102e4e5f6abd14d50fb6eea8c`; mobile and desktop browser runs found no adjacent duplicate backgrounds, transparent hero title and lead backgrounds, no horizontal overflow, no overlays, and no console or page errors. Normal canvas samples changed three times and reduced-motion samples stayed identical.
+- Remaining risk: the official contrast gate remains unchecked, so painted canvas contrast still depends on runtime evidence.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?

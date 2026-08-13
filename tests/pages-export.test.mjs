@@ -19,7 +19,7 @@ test("exports a self-contained GitHub Pages artifact", async () => {
     html,
     /href="https:\/\/github\.com\/tenbytesltd\/uir-public-site"/,
   );
-  assert.match(html, /OPEN SOURCE \u00b7 LIVING PROOF/);
+  assert.match(html, /THIS SITE IS UIR/);
   assert.match(html, /data-uir-surface="radial-gradient"/);
   assert.match(html, /data-uir-motion="motion-ambient-surface"/);
   assert.match(html, /data-uir-motion-event="pointer-dot-field"/);

@@ -15,17 +15,17 @@
     {
       "collection": "interface",
       "path": "model/interface.json",
-      "sha256": "e3cd1727efd3989a6fe53286b7b15f1b3b5e67239d06a0cbe2270635f9414e96"
+      "sha256": "85abb6d1b7e4f6367dd9391afb0d3f7108158d621b0b4baac63207ea75f891c1"
     },
     {
       "collection": "package",
       "path": "model/package.json",
-      "sha256": "0be77721de94c34d5e140a8a8168f65df333ab40a1de7b3ece333014ac6f6c6b"
+      "sha256": "0a6b4da26be61ac3aa84fa456cf5a5a821454524dd05ca2983acfb8c66aecfed"
     },
     {
       "collection": "provenance",
       "path": "model/provenance.json",
-      "sha256": "7136d336198d91648bfa72b555858ed85c68ee7150de7d25557979a11086730e"
+      "sha256": "3987e549252bfa3b00793d3d7512c154e2eb6089862a8fa4b643884fbab5d691"
     }
   ],
   "packageId": "uir-site:package",
