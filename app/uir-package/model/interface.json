@@ -3262,6 +3262,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:hero:motion",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:hero:motion:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:hero",
+      "value": {
+        "groundRole": "uir-site:role:motion-ambient-surface",
+        "outcome": "role",
+        "slot": "motion",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:hero:surface",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3269,9 +3285,25 @@
       "recordType": "Fact",
       "subject": "uir-site:node:hero",
       "value": {
-        "groundRole": "uir-site:role:surface-ink",
+        "groundRole": "uir-site:role:surface-hero-dots",
         "outcome": "role",
         "slot": "surface",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:install-gap:ink",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:install-gap:ink:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:install-gap",
+      "value": {
+        "groundRole": "uir-site:role:ink-inverse",
+        "outcome": "role",
+        "slot": "ink",
         "target": {
           "kind": "self"
         }

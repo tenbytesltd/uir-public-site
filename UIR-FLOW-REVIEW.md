@@ -404,6 +404,42 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: the direct React Server Components advisory and the low advisory are gone; lint, both build modes, render contracts, Pages export contracts, and the UIR verifier are rerun after the lockfile update.
 - Remaining risk: six development/build-time advisories remain: two high findings through image-size in the Vinext beta line and four moderate findings through the preserved Drizzle fallback. npm proposes only breaking downgrades for them, so they remain visible rather than being force-fixed.
 
+### F34 — decorative surface and motion lived outside UIR authority
+
+- Status: fixed with one explicit projection limit
+- Flow step: UIR authoring, motion, and target projection
+- Evidence: the approved dot field existed only in a `#showcase` CSS rule, the Dress declared no motion events, and no Node exposed either decision in the inspector.
+- User impact: moving or animating the pattern required editing the target directly, contradicting the site's claim that its own visual decisions are inspectable UIR.
+- Root cause: the first target lowerer handled scalar colour and spacing bindings but did not lower gradient surfaces or transition values.
+- Change made: authored a radial dot-field DesignValue, a hero surface Ground role, a twelve-second ambient transition, a named motion event, a reduced-motion allowance, and hero surface/motion bindings; the generic renderer now lowers those typed values and the old showcase selector is gone.
+- Proposed tooling improvement: close the v0.1 gradient coordinate domain and add a first-class repeated-pattern or decorative-surface contract. The web projection currently documents its normalized-number and 18-pixel tiling policy because UIR does not yet carry those units or repeat geometry.
+- Verification: the official audit has no failing gates or ungated errors; rendered HTML exposes both UIR bindings, browser tests measure moving background position, and reduced-motion disables the animation.
+- Remaining risk: the animation is UIR-selected and timed, but repeat size and keyframe travel remain projection policy until the language can represent them without inference.
+
+### F35 — reduced-motion intent lost to projection specificity
+
+- Status: fixed
+- Flow step: runtime accessibility verification
+- Evidence: the first browser run with `prefers-reduced-motion: reduce` still computed `uir-surface-drift` because the two-attribute animation selector outranked the one-attribute motionless selector.
+- User impact: people requesting reduced motion would still receive the decorative animation even though the UIR motion-event constraint explicitly allowed a motionless result.
+- Root cause: source order was treated as sufficient without comparing selector specificity in the generated web projection.
+- Change made: the reduced-motion rule now matches the exact UIR surface-plus-motion specificity and suppresses the animation.
+- Proposed tooling improvement: browser verification for every reachable UIR motion should assert computed animation state in both normal and reduced-motion media, not merely search source CSS for a media query.
+- Verification: Playwright reports a changing background position in normal mode and `animation-name: none` under reduced motion.
+- Remaining risk: the current regression is runtime QA rather than a committed browser-test suite because the repository intentionally keeps its required public CI lightweight.
+
+### F36 — the hero gap kept its base Piece ink on the new dark surface
+
+- Status: fixed
+- Flow step: UIR composition and visual verification
+- Evidence: the browser screenshot showed the explicit install-artifact Gap with near-black Paragraph ink over a dark translucent accent plane.
+- User impact: the honest alpha limitation became difficult to read after the dot field moved into the hero.
+- Root cause: each Node resolves its Piece bindings independently, so the child Paragraph's base ink won over the hero region's inverse ink instead of inheriting it.
+- Change made: authored an inverse-ink presentation override on the install-gap Node and regenerated the UIR package.
+- Proposed tooling improvement: contrast evaluation should resolve nested Node bindings against the painted ancestor surface, including translucent target treatments, rather than assume parent colour cascades.
+- Verification: browser computed style now reports inverse ink for the gap on the radial dark hero surface.
+- Remaining risk: the official contrast gate remains one of the six known unchecked areas, so this still depends on browser evidence.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?

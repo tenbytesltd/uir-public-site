@@ -237,6 +237,22 @@
       }
     },
     {
+      "id": "uir-site:fact:constraint:ambient-surface-drift",
+      "kind": "design.constraint",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:constraint:ambient-surface-drift:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:ground",
+      "value": {
+        "allowedTransitions": [
+          "uir-site:value:motion-ambient-surface"
+        ],
+        "event": "ambient-surface-drift",
+        "kind": "motion-event",
+        "motionlessAllowed": true
+      }
+    },
+    {
       "id": "uir-site:fact:design-binding:canvas",
       "kind": "design.binding",
       "plane": "invisible",
@@ -710,6 +726,17 @@
       }
     },
     {
+      "id": "uir-site:fact:design-binding:motion-ambient-surface",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:motion-ambient-surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:motion-ambient-surface",
+      "value": {
+        "groundRole": "uir-site:role:motion-ambient-surface"
+      }
+    },
+    {
       "id": "uir-site:fact:design-binding:opacity-full",
       "kind": "design.binding",
       "plane": "invisible",
@@ -795,6 +822,17 @@
       "subject": "uir-site:value:surface-code",
       "value": {
         "groundRole": "uir-site:role:surface-code"
+      }
+    },
+    {
+      "id": "uir-site:fact:design-binding:surface-hero-dots",
+      "kind": "design.binding",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:design-binding:surface-hero-dots:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:surface-hero-dots",
+      "value": {
+        "groundRole": "uir-site:role:surface-hero-dots"
       }
     },
     {
@@ -893,7 +931,12 @@
       "recordType": "Fact",
       "subject": "uir-site:dress",
       "value": {
-        "motionEvents": [],
+        "motionEvents": [
+          {
+            "meaning": "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
+            "symbol": "ambient-surface-drift"
+          }
+        ],
         "name": "Executable editorial",
         "purpose": "Make the representation feel inspectable, rigorous, and immediately useful without imitating a generic dark developer tool."
       }
@@ -1619,6 +1662,22 @@
       }
     },
     {
+      "id": "uir-site:fact:ground-role:motion-ambient-surface",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:motion-ambient-surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:motion-ambient-surface",
+      "value": {
+        "acceptedTypes": [
+          "transition"
+        ],
+        "family": "motion",
+        "meaning": "The decorative hero surface may drift without changing content or meaning.",
+        "scopes": []
+      }
+    },
+    {
       "id": "uir-site:fact:ground-role:opacity-full",
       "kind": "ground.role",
       "plane": "invisible",
@@ -1743,6 +1802,22 @@
         ],
         "family": "colour",
         "meaning": "The executable example plane.",
+        "scopes": []
+      }
+    },
+    {
+      "id": "uir-site:fact:ground-role:surface-hero-dots",
+      "kind": "ground.role",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:ground-role:surface-hero-dots:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:surface-hero-dots",
+      "value": {
+        "acceptedTypes": [
+          "gradient"
+        ],
+        "family": "colour",
+        "meaning": "The opening surface carries the product's low-contrast dot field.",
         "scopes": []
       }
     },
@@ -9073,6 +9148,19 @@
       }
     },
     {
+      "id": "uir-site:fact:role-definition:motion-ambient-surface",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:motion-ambient-surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:motion-ambient-surface",
+      "value": {
+        "name": "Ambient surface motion",
+        "purpose": "The decorative hero surface may drift without changing content or meaning.",
+        "type": "transition"
+      }
+    },
+    {
       "id": "uir-site:fact:role-definition:opacity-full",
       "kind": "design-value.definition",
       "plane": "invisible",
@@ -9174,6 +9262,19 @@
         "name": "Code surface",
         "purpose": "The executable example plane.",
         "type": "color"
+      }
+    },
+    {
+      "id": "uir-site:fact:role-definition:surface-hero-dots",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:role-definition:surface-hero-dots:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:role:surface-hero-dots",
+      "value": {
+        "name": "Hero dot field",
+        "purpose": "The opening surface carries the product's low-contrast dot field.",
+        "type": "gradient"
       }
     },
     {
@@ -9686,6 +9787,19 @@
       }
     },
     {
+      "id": "uir-site:fact:value-definition:accent-dot",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:accent-dot:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:accent-dot",
+      "value": {
+        "name": "Ambient dot",
+        "purpose": "Low-contrast accent used by the hero's decorative field.",
+        "type": "color"
+      }
+    },
+    {
       "id": "uir-site:fact:value-definition:accent-ink",
       "kind": "design-value.definition",
       "plane": "invisible",
@@ -9735,6 +9849,45 @@
         "name": "Warm paper canvas",
         "purpose": "Sourced page colour for warm paper canvas.",
         "type": "color"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:curve-linear",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:curve-linear:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:curve-linear",
+      "value": {
+        "name": "Continuous drift curve",
+        "purpose": "A constant-speed curve avoids a visible loop seam.",
+        "type": "cubic-bezier"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:duration-ambient",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:duration-ambient:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:duration-ambient",
+      "value": {
+        "name": "Ambient drift duration",
+        "purpose": "One deliberately slow decorative drift cycle.",
+        "type": "duration"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:duration-zero",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:duration-zero:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:duration-zero",
+      "value": {
+        "name": "No motion delay",
+        "purpose": "The ambient drift begins without an artificial wait.",
+        "type": "duration"
       }
     },
     {
@@ -9813,6 +9966,58 @@
         "name": "Display text size",
         "purpose": "Sourced dimensional decision for display text size.",
         "type": "dimension"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:fraction-center",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:fraction-center:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-center",
+      "value": {
+        "name": "Gradient centre",
+        "purpose": "Unitless radial-gradient coordinate for gradient centre.",
+        "type": "number"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:fraction-clear",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:fraction-clear:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-clear",
+      "value": {
+        "name": "Dot fade edge",
+        "purpose": "Unitless radial-gradient coordinate for dot fade edge.",
+        "type": "number"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:fraction-dot",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:fraction-dot:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-dot",
+      "value": {
+        "name": "Dot edge",
+        "purpose": "Unitless radial-gradient coordinate for dot edge.",
+        "type": "number"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:fraction-zero",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:fraction-zero:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-zero",
+      "value": {
+        "name": "Gradient origin",
+        "purpose": "Unitless radial-gradient coordinate for gradient origin.",
+        "type": "number"
       }
     },
     {
@@ -10284,6 +10489,19 @@
       }
     },
     {
+      "id": "uir-site:fact:value-definition:motion-ambient-surface",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:motion-ambient-surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:motion-ambient-surface",
+      "value": {
+        "name": "Ambient surface drift",
+        "purpose": "Slow decorative motion for the hero surface; motionless presentation remains allowed.",
+        "type": "transition"
+      }
+    },
+    {
       "id": "uir-site:fact:value-definition:one",
       "kind": "design-value.definition",
       "plane": "invisible",
@@ -10463,6 +10681,19 @@
         "name": "Code surface",
         "purpose": "Sourced page colour for code surface.",
         "type": "color"
+      }
+    },
+    {
+      "id": "uir-site:fact:value-definition:surface-hero-dots",
+      "kind": "design-value.definition",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:value-definition:surface-hero-dots:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:surface-hero-dots",
+      "value": {
+        "name": "Hero dot field",
+        "purpose": "A low-contrast radial accent field over the inverted hero surface.",
+        "type": "gradient"
       }
     },
     {
@@ -10682,6 +10913,27 @@
       }
     },
     {
+      "id": "uir-site:fact:value-variant:accent-dot",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:accent-dot:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:accent-dot",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "alpha": 0.22,
+          "channels": [
+            0.7843137254901961,
+            1.0,
+            0.23921568627450981
+          ],
+          "space": "srgb",
+          "type": "color"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:value-variant:accent-ink",
       "kind": "design-value.variant",
       "plane": "visible",
@@ -10754,6 +11006,56 @@
           ],
           "space": "srgb",
           "type": "color"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:curve-linear",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:curve-linear:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:curve-linear",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "cubic-bezier",
+          "x1": 0,
+          "x2": 1,
+          "y1": 0,
+          "y2": 1
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:duration-ambient",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:duration-ambient:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:duration-ambient",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "duration",
+          "unit": "s",
+          "value": 12
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:duration-zero",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:duration-zero:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:duration-zero",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "duration",
+          "unit": "ms",
+          "value": 0
         }
       }
     },
@@ -10858,6 +11160,66 @@
           "type": "dimension",
           "unit": "px",
           "value": 64
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:fraction-center",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:fraction-center:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-center",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "number",
+          "value": 0.5
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:fraction-clear",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:fraction-clear:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-clear",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "number",
+          "value": 0.11
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:fraction-dot",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:fraction-dot:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-dot",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "number",
+          "value": 0.06
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:fraction-zero",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:fraction-zero:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:fraction-zero",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "type": "number",
+          "value": 0
         }
       }
     },
@@ -11456,6 +11818,26 @@
       }
     },
     {
+      "id": "uir-site:fact:value-variant:motion-ambient-surface",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:motion-ambient-surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:motion-ambient-surface",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "curve": "uir-site:value:curve-linear",
+          "delay": "uir-site:value:duration-zero",
+          "duration": "uir-site:value:duration-ambient",
+          "propertyRoles": [
+            "uir-site:role:surface-hero-dots"
+          ],
+          "type": "transition"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:value-variant:one",
       "kind": "design-value.variant",
       "plane": "visible",
@@ -11690,6 +12072,37 @@
           ],
           "space": "srgb",
           "type": "color"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:value-variant:surface-hero-dots",
+      "kind": "design-value.variant",
+      "plane": "visible",
+      "provenance": "uir-site:fact:value-variant:surface-hero-dots:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:value:surface-hero-dots",
+      "value": {
+        "form": "literal",
+        "literal": {
+          "centerBlock": "uir-site:value:fraction-center",
+          "centerInline": "uir-site:value:fraction-center",
+          "kind": "radial",
+          "stops": [
+            {
+              "color": "uir-site:value:accent-dot",
+              "position": "uir-site:value:fraction-zero"
+            },
+            {
+              "color": "uir-site:value:accent-dot",
+              "position": "uir-site:value:fraction-dot"
+            },
+            {
+              "color": "uir-site:value:surface-ink",
+              "position": "uir-site:value:fraction-clear"
+            }
+          ],
+          "type": "gradient"
         }
       }
     },
@@ -12564,6 +12977,13 @@
       "recordType": "Entity"
     },
     {
+      "id": "uir-site:role:motion-ambient-surface",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:motion-ambient-surface:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:role:opacity-full",
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
@@ -12617,6 +13037,13 @@
       "kind": "DesignValue",
       "namespace": "uir-site:ground",
       "provenance": "uir-site:role:surface-code:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:role:surface-hero-dots",
+      "kind": "DesignValue",
+      "namespace": "uir-site:ground",
+      "provenance": "uir-site:role:surface-hero-dots:provenance",
       "recordType": "Entity"
     },
     {
@@ -12676,6 +13103,13 @@
       "recordType": "Entity"
     },
     {
+      "id": "uir-site:value:accent-dot",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:accent-dot:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:value:accent-ink",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
@@ -12701,6 +13135,27 @@
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
       "provenance": "uir-site:value:canvas:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:curve-linear",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:curve-linear:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:duration-ambient",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:duration-ambient:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:duration-zero",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:duration-zero:provenance",
       "recordType": "Entity"
     },
     {
@@ -12743,6 +13198,34 @@
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
       "provenance": "uir-site:value:font-64:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:fraction-center",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:fraction-center:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:fraction-clear",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:fraction-clear:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:fraction-dot",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:fraction-dot:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:fraction-zero",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:fraction-zero:provenance",
       "recordType": "Entity"
     },
     {
@@ -12998,6 +13481,13 @@
       "recordType": "Entity"
     },
     {
+      "id": "uir-site:value:motion-ambient-surface",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:motion-ambient-surface:provenance",
+      "recordType": "Entity"
+    },
+    {
       "id": "uir-site:value:one",
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
@@ -13093,6 +13583,13 @@
       "kind": "DesignValue",
       "namespace": "uir-site:dress",
       "provenance": "uir-site:value:surface-code:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:value:surface-hero-dots",
+      "kind": "DesignValue",
+      "namespace": "uir-site:dress",
+      "provenance": "uir-site:value:surface-hero-dots:provenance",
       "recordType": "Entity"
     },
     {

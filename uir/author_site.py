@@ -301,7 +301,12 @@ m.fact(
     {
         "name": "Executable editorial",
         "purpose": "Make the representation feel inspectable, rigorous, and immediately useful without imitating a generic dark developer tool.",
-        "motionEvents": [],
+        "motionEvents": [
+            {
+                "symbol": "ambient-surface-drift",
+                "meaning": "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
+            },
+        ],
     },
     sources=(SRC_USER, *SRC_RESEARCH),
 )
@@ -354,6 +359,12 @@ def rgb(hex_value: str) -> dict:
     }
 
 
+def rgba(hex_value: str, alpha: float) -> dict:
+    result = rgb(hex_value)
+    result["alpha"] = alpha
+    return result
+
+
 def dim(px: float) -> dict:
     return {"type": "dimension", "value": px, "unit": "px"}
 
@@ -375,6 +386,11 @@ for key, label, color in (
     ("rule", "Evidence rule", "#B8B7AE"),
 ):
     primitive[key] = value(key, label, f"Sourced page colour for {label.lower()}.", "color", rgb(color))
+
+primitive["accent-dot"] = value(
+    "accent-dot", "Ambient dot", "Low-contrast accent used by the hero's decorative field.",
+    "color", rgba("#C8FF3D", 0.22), sources=(SRC_USER, SRC_REPO),
+)
 
 for key, label, px in (
     ("zero", "Zero extent", 0),
@@ -447,6 +463,35 @@ primitive["stroke-solid"] = value(
     {"type": "stroke-style", "style": "solid", "lineCap": "butt"},
 )
 
+for key, label, number in (
+    ("fraction-zero", "Gradient origin", 0),
+    ("fraction-dot", "Dot edge", 0.06),
+    ("fraction-clear", "Dot fade edge", 0.11),
+    ("fraction-center", "Gradient centre", 0.5),
+):
+    primitive[key] = value(
+        key, label, f"Unitless radial-gradient coordinate for {label.lower()}.",
+        "number", {"type": "number", "value": number}, sources=(SRC_USER, SRC_REPO),
+    )
+
+primitive["surface-hero-dots"] = value(
+    "surface-hero-dots", "Hero dot field",
+    "A low-contrast radial accent field over the inverted hero surface.",
+    "gradient",
+    {
+        "type": "gradient",
+        "kind": "radial",
+        "centerInline": primitive["fraction-center"],
+        "centerBlock": primitive["fraction-center"],
+        "stops": [
+            {"color": primitive["accent-dot"], "position": primitive["fraction-zero"]},
+            {"color": primitive["accent-dot"], "position": primitive["fraction-dot"]},
+            {"color": primitive["surface-ink"], "position": primitive["fraction-clear"]},
+        ],
+    },
+    sources=(SRC_USER, SRC_REPO),
+)
+
 
 def typography(identity: str, name: str, family: str, size: str, weight: str, line: str, tracking: str) -> str:
     return value(
@@ -485,6 +530,7 @@ for args in (
     ("surface", "Primary surface", "colour", "color", "The normal content plane.", primitive["surface"]),
     ("surface-muted", "Muted surface", "colour", "color", "A secondary evidence plane.", primitive["surface-muted"]),
     ("surface-ink", "Inverted surface", "colour", "color", "A high-contrast explanatory plane.", primitive["surface-ink"]),
+    ("surface-hero-dots", "Hero dot field", "colour", "gradient", "The opening surface carries the product's low-contrast dot field.", primitive["surface-hero-dots"]),
     ("surface-code", "Code surface", "colour", "color", "The executable example plane.", primitive["surface-code"]),
     ("ink", "Primary ink", "colour", "color", "Primary readable content.", primitive["ink"]),
     ("ink-muted", "Muted ink", "colour", "color", "Supporting explanation.", primitive["ink-muted"]),
@@ -517,6 +563,49 @@ for args in (
     ("frame-mobile-content", "Mobile content frame", "frame", "dimension", "Mobile readable content width.", primitive["frame-mobile-content"]),
 ):
     roles[args[0]] = role(*args)
+
+primitive["duration-ambient"] = value(
+    "duration-ambient", "Ambient drift duration", "One deliberately slow decorative drift cycle.",
+    "duration", {"type": "duration", "value": 12, "unit": "s"}, sources=(SRC_USER, SRC_REPO),
+)
+primitive["duration-zero"] = value(
+    "duration-zero", "No motion delay", "The ambient drift begins without an artificial wait.",
+    "duration", {"type": "duration", "value": 0, "unit": "ms"}, sources=(SRC_USER, SRC_REPO),
+)
+primitive["curve-linear"] = value(
+    "curve-linear", "Continuous drift curve", "A constant-speed curve avoids a visible loop seam.",
+    "cubic-bezier", {"type": "cubic-bezier", "x1": 0, "y1": 0, "x2": 1, "y2": 1},
+    sources=(SRC_USER, SRC_REPO),
+)
+primitive["motion-ambient-surface"] = value(
+    "motion-ambient-surface", "Ambient surface drift",
+    "Slow decorative motion for the hero surface; motionless presentation remains allowed.",
+    "transition",
+    {
+        "type": "transition",
+        "duration": primitive["duration-ambient"],
+        "curve": primitive["curve-linear"],
+        "delay": primitive["duration-zero"],
+        "propertyRoles": [roles["surface-hero-dots"]],
+    },
+    sources=(SRC_USER, SRC_REPO),
+)
+roles["motion-ambient-surface"] = role(
+    "motion-ambient-surface", "Ambient surface motion", "motion", "transition",
+    "The decorative hero surface may drift without changing content or meaning.",
+    primitive["motion-ambient-surface"], sources=(SRC_USER, SRC_REPO),
+)
+m.fact(
+    "design-system", "uir-site:fact:constraint:ambient-surface-drift",
+    "design.constraint", GROUND, "invisible",
+    {
+        "kind": "motion-event",
+        "event": "ambient-surface-drift",
+        "allowedTransitions": [primitive["motion-ambient-surface"]],
+        "motionlessAllowed": True,
+    },
+    sources=(SRC_USER, SRC_REPO),
+)
 
 for profile in ("container", "collection", "content", "control"):
     for axis in ("inline", "block"):
@@ -975,7 +1064,10 @@ NAV_SOURCE = node("nav-source", "link", "View source", parent=NAV, salience="sec
 
 HERO = node(
     "hero", "region", None, parent=ROOT_NODE, salience="primary",
-    overrides={"surface": "surface-ink", "ink": "ink-inverse", "inset-block": "inset-hero-block"},
+    overrides={
+        "surface": "surface-hero-dots", "ink": "ink-inverse",
+        "inset-block": "inset-hero-block", "motion": "motion-ambient-surface",
+    },
 )
 node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
 node("hero-title", "heading", "Make the interface explicit before code gets the final word.", parent=HERO, salience="primary", overrides={"ink": "ink-inverse", "type": "type-display"})
@@ -984,7 +1076,10 @@ HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="second
 HERO_PRIMARY = node("hero-primary", "link", "Extract your interface", parent=HERO_ACTIONS, salience="primary")
 HERO_SECONDARY = node("hero-secondary", "link", "See the representation", parent=HERO_ACTIONS, salience="secondary")
 node("hero-command", "code", "python3 tool/extract_react.py --root <repo> --app <app/src> --change-set .uir/reading.json", parent=HERO, salience="supporting")
-node("install-gap", "paragraph", None, parent=HERO, salience="quiet", external_content_gap=True)
+node(
+    "install-gap", "paragraph", None, parent=HERO, salience="quiet",
+    overrides={"ink": "ink-inverse"}, external_content_gap=True,
+)
 
 PROBLEM = node("problem", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("problem-kicker", "paragraph", "THE PROBLEM", parent=PROBLEM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
