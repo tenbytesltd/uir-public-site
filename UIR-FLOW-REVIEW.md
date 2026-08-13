@@ -253,7 +253,7 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - User impact: every green run carried avoidable warning noise, making material annotations harder to see and leaving future runner compatibility implicit.
 - Root cause: the workflow began from older starter-era action major pins.
 - Change made: verified the current official releases through the GitHub API and moved all four actions to their current v7 major.
-- Verification: the superseding PR run must finish without the Node 20 deprecation annotation before merge.
+- Verification: the superseding PR run completed successfully in 32 seconds with v7 actions and no deprecated-runtime annotation.
 - Remaining risk: major tags are maintained upstream references rather than immutable SHAs; the UIR action itself remains pinned to an immutable commit because it defines the product contract.
 
 
