@@ -363,9 +363,9 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Evidence: the dark showcase region was immediately followed by a second full-width dark quickstart region, making two different product arguments read as one uninterrupted block.
 - User impact: section boundaries and narrative pacing weakened at the transition from proof to adoption.
 - Root cause: both region Nodes independently overrode the same dark surface without a sequence-level contrast review.
-- Change made: returned quickstart to the default light region surface and default ink roles while preserving its three dark action cards as local contrast anchors.
+- Change made: returned quickstart and its step text to the default light surface and ink roles while preserving only the three command blocks as dark local anchors.
 - Proposed tooling improvement: add a surface-sequence reading that reports adjacent primary regions with indistinguishable ground roles unless continuity is explicitly authored.
-- Verification: the regenerated interface shard contains no dark surface or inverse ink override on quickstart, while each step card retains its dark surface binding.
+- Verification: the regenerated interface shard contains no dark surface or inverse ink override on quickstart or its step cards; only the code Pieces retain their dark bindings.
 - Remaining risk: sequence rhythm is still reviewed visually rather than enforced by a formal gate.
 
 ### F31 — the hero provenance line competed with the product state
@@ -375,9 +375,9 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Evidence: the highest section opened with four labels: the expanded product name, creator credit, public-source status, and alpha state.
 - User impact: creator and repository context diluted the shortest recognition signal at the primary entry point even though both are explained elsewhere on the page.
 - Root cause: provenance and distribution facts were promoted into hero copy instead of remaining available in the showcase and inspector.
-- Change made: authored the hero kicker as UIR · ALPHA and regenerated the package.
+- Change made: authored the hero kicker as USER INTERFACE REPRESENTATION · ALPHA and regenerated the package.
 - Proposed tooling improvement: distinguish visible marketing copy from inspectable provenance so evidence can remain available without occupying the primary content hierarchy.
-- Verification: the emitted node.content value is exactly UIR · ALPHA; the removed phrases do not appear in the hero kicker.
+- Verification: the emitted node.content value is exactly USER INTERFACE REPRESENTATION · ALPHA; the removed phrases do not appear in the hero kicker.
 - Remaining risk: alpha remains a product-state claim and should be updated from one release authority when the public distribution changes.
 
 ### F32 — the Vite security update exposed future config-loader incompatibilities

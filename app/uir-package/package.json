@@ -15,7 +15,7 @@
     {
       "collection": "interface",
       "path": "model/interface.json",
-      "sha256": "30f7825cfc1af1238253ade86fc6facf96f8254920bde15471a06f4b39ed466a"
+      "sha256": "a8ec519a7ec6a6306981527313701a23898f621bf7a80d902a4d4246c9695af1"
     },
     {
       "collection": "package",
@@ -25,7 +25,7 @@
     {
       "collection": "provenance",
       "path": "model/provenance.json",
-      "sha256": "792b91be32c95346afd9fd3fca794fea41deb175949191ba5b83fe9901a91f92"
+      "sha256": "5c441b2a0febf0b9dd3d63b5d115cf825a2603969047bab0a180ba1779b197c0"
     }
   ],
   "packageId": "uir-site:package",
