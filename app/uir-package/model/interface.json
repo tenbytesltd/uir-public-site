@@ -3006,6 +3006,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:build:surface",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:build:surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:build",
+      "value": {
+        "groundRole": "uir-site:role:surface-muted",
+        "outcome": "role",
+        "slot": "surface",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:flow-input-title:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3182,22 +3198,6 @@
       }
     },
     {
-      "id": "uir-site:fact:node-projection:hero-lead:surface",
-      "kind": "presentation.binding",
-      "plane": "visible",
-      "provenance": "uir-site:fact:node-projection:hero-lead:surface:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:node:hero-lead",
-      "value": {
-        "groundRole": "uir-site:role:surface-ink",
-        "outcome": "role",
-        "slot": "surface",
-        "target": {
-          "kind": "self"
-        }
-      }
-    },
-    {
       "id": "uir-site:fact:node-projection:hero-lead:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3224,22 +3224,6 @@
         "groundRole": "uir-site:role:ink-inverse",
         "outcome": "role",
         "slot": "ink",
-        "target": {
-          "kind": "self"
-        }
-      }
-    },
-    {
-      "id": "uir-site:fact:node-projection:hero-title:surface",
-      "kind": "presentation.binding",
-      "plane": "visible",
-      "provenance": "uir-site:fact:node-projection:hero-title:surface:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:node:hero-title",
-      "value": {
-        "groundRole": "uir-site:role:surface-ink",
-        "outcome": "role",
-        "slot": "surface",
         "target": {
           "kind": "self"
         }
@@ -3966,22 +3950,6 @@
       }
     },
     {
-      "id": "uir-site:fact:node-projection:standard:surface",
-      "kind": "presentation.binding",
-      "plane": "visible",
-      "provenance": "uir-site:fact:node-projection:standard:surface:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:node:standard",
-      "value": {
-        "groundRole": "uir-site:role:surface-muted",
-        "outcome": "role",
-        "slot": "surface",
-        "target": {
-          "kind": "self"
-        }
-      }
-    },
-    {
       "id": "uir-site:fact:node-projection:status-copy:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -4024,6 +3992,22 @@
         "groundRole": "uir-site:role:type-label",
         "outcome": "role",
         "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:status:surface",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:status:surface:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:status",
+      "value": {
+        "groundRole": "uir-site:role:surface-muted",
+        "outcome": "role",
+        "slot": "surface",
         "target": {
           "kind": "self"
         }

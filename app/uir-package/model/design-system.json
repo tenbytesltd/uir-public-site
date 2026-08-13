@@ -237,17 +237,17 @@
       }
     },
     {
-      "id": "uir-site:fact:constraint:ambient-surface-drift",
+      "id": "uir-site:fact:constraint:pointer-dot-field",
       "kind": "design.constraint",
       "plane": "invisible",
-      "provenance": "uir-site:fact:constraint:ambient-surface-drift:provenance",
+      "provenance": "uir-site:fact:constraint:pointer-dot-field:provenance",
       "recordType": "Fact",
       "subject": "uir-site:ground",
       "value": {
         "allowedTransitions": [
           "uir-site:value:motion-ambient-surface"
         ],
-        "event": "ambient-surface-drift",
+        "event": "pointer-dot-field",
         "kind": "motion-event",
         "motionlessAllowed": true
       }
@@ -933,8 +933,8 @@
       "value": {
         "motionEvents": [
           {
-            "meaning": "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
-            "symbol": "ambient-surface-drift"
+            "meaning": "A decorative field of points moves by a small amount around pointer or touch proximity while preserving reading comfort.",
+            "symbol": "pointer-dot-field"
           }
         ],
         "name": "Executable editorial",
@@ -1673,7 +1673,7 @@
           "transition"
         ],
         "family": "motion",
-        "meaning": "The decorative hero surface may drift without changing content or meaning.",
+        "meaning": "The decorative hero points may respond gently to pointer or touch proximity without changing content or meaning.",
         "scopes": []
       }
     },
@@ -9155,8 +9155,8 @@
       "recordType": "Fact",
       "subject": "uir-site:role:motion-ambient-surface",
       "value": {
-        "name": "Ambient surface motion",
-        "purpose": "The decorative hero surface may drift without changing content or meaning.",
+        "name": "Responsive dot field motion",
+        "purpose": "The decorative hero points may respond gently to pointer or touch proximity without changing content or meaning.",
         "type": "transition"
       }
     },
@@ -9872,8 +9872,8 @@
       "recordType": "Fact",
       "subject": "uir-site:value:duration-ambient",
       "value": {
-        "name": "Ambient drift duration",
-        "purpose": "A visible but calm decorative drift cycle.",
+        "name": "Dot field phase duration",
+        "purpose": "A calm decorative phase cycle behind the hero content.",
         "type": "duration"
       }
     },
@@ -10496,8 +10496,8 @@
       "recordType": "Fact",
       "subject": "uir-site:value:motion-ambient-surface",
       "value": {
-        "name": "Ambient surface drift",
-        "purpose": "Slow decorative motion for the hero surface; motionless presentation remains allowed.",
+        "name": "Responsive dot field",
+        "purpose": "Small pointer- and touch-led displacement for the hero points; motionless presentation remains allowed.",
         "type": "transition"
       }
     },

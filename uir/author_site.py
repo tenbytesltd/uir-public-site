@@ -303,8 +303,8 @@ m.fact(
         "purpose": "Make the representation feel inspectable, rigorous, and immediately useful without imitating a generic dark developer tool.",
         "motionEvents": [
             {
-                "symbol": "ambient-surface-drift",
-                "meaning": "A decorative surface field drifts slowly enough to preserve reading while making authored motion visible.",
+                "symbol": "pointer-dot-field",
+                "meaning": "A decorative field of points moves by a small amount around pointer or touch proximity while preserving reading comfort.",
             },
         ],
     },
@@ -565,7 +565,7 @@ for args in (
     roles[args[0]] = role(*args)
 
 primitive["duration-ambient"] = value(
-    "duration-ambient", "Ambient drift duration", "A visible but calm decorative drift cycle.",
+    "duration-ambient", "Dot field phase duration", "A calm decorative phase cycle behind the hero content.",
     "duration", {"type": "duration", "value": 4, "unit": "s"}, sources=(SRC_USER, SRC_REPO),
 )
 primitive["duration-zero"] = value(
@@ -578,8 +578,8 @@ primitive["curve-linear"] = value(
     sources=(SRC_USER, SRC_REPO),
 )
 primitive["motion-ambient-surface"] = value(
-    "motion-ambient-surface", "Ambient surface drift",
-    "Slow decorative motion for the hero surface; motionless presentation remains allowed.",
+    "motion-ambient-surface", "Responsive dot field",
+    "Small pointer- and touch-led displacement for the hero points; motionless presentation remains allowed.",
     "transition",
     {
         "type": "transition",
@@ -591,16 +591,16 @@ primitive["motion-ambient-surface"] = value(
     sources=(SRC_USER, SRC_REPO),
 )
 roles["motion-ambient-surface"] = role(
-    "motion-ambient-surface", "Ambient surface motion", "motion", "transition",
-    "The decorative hero surface may drift without changing content or meaning.",
+    "motion-ambient-surface", "Responsive dot field motion", "motion", "transition",
+    "The decorative hero points may respond gently to pointer or touch proximity without changing content or meaning.",
     primitive["motion-ambient-surface"], sources=(SRC_USER, SRC_REPO),
 )
 m.fact(
-    "design-system", "uir-site:fact:constraint:ambient-surface-drift",
+    "design-system", "uir-site:fact:constraint:pointer-dot-field",
     "design.constraint", GROUND, "invisible",
     {
         "kind": "motion-event",
-        "event": "ambient-surface-drift",
+        "event": "pointer-dot-field",
         "allowedTransitions": [primitive["motion-ambient-surface"]],
         "motionlessAllowed": True,
     },
@@ -1073,13 +1073,13 @@ node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", paren
 node(
     "hero-title", "heading", "Write down what the interface means.",
     parent=HERO, salience="primary",
-    overrides={"surface": "surface-ink", "ink": "ink-inverse", "type": "type-display"},
+    overrides={"ink": "ink-inverse", "type": "type-display"},
 )
 node(
     "hero-lead", "paragraph",
     "UIR is a framework-independent representation of a screen: its structure, roles, behaviour, states, relationships, and unresolved gaps. A design system supplies the realization. Code is a target.",
     parent=HERO, salience="secondary",
-    overrides={"surface": "surface-ink", "ink": "ink-inverse", "type": "type-lead"},
+    overrides={"ink": "ink-inverse", "type": "type-lead"},
 )
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
 HERO_PRIMARY = node("hero-primary", "link", "Try it on existing UI", parent=HERO_ACTIONS, salience="primary")
@@ -1154,7 +1154,7 @@ for key, title, copy, command in (
     node(f"{key}-copy", "paragraph", copy, parent=card)
     node(f"{key}-command", "code", command, parent=card)
 
-BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary")
+BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("build-kicker", "paragraph", "NEW INTERFACE", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
 node("build-title", "heading", "For a new screen, author meaning before implementation.", parent=BUILD, salience="primary")
 node("build-copy", "paragraph", "Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
@@ -1167,7 +1167,7 @@ for index, copy in enumerate((
 ), start=1):
     node(f"build-step-{index}", "listitem", f"{index:02d} — {copy}", parent=BUILD_STEPS)
 
-STANDARD = node("standard", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
+STANDARD = node("standard", "region", None, parent=ROOT_NODE, salience="primary")
 node("standard-kicker", "paragraph", "WHY A REPRESENTATION", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
 node("standard-title", "heading", "Not a framework. Not a design tool. Not another markup language.", parent=STANDARD, salience="primary")
 node("standard-copy", "paragraph", "UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
@@ -1182,7 +1182,7 @@ for key, title, copy in (
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
 
-STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary")
+STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("status-kicker", "paragraph", "CURRENT STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
 node("status-title", "heading", "A definition under test.", parent=STATUS, salience="primary")
 node("status-copy", "paragraph", "UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
