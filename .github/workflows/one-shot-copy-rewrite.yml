@@ -29,8 +29,8 @@ jobs:
           path = Path('tool/apply_copy_rewrite.py')
           text = path.read_text(encoding='utf-8')
           text = text.replace(
-              '        test = replace_once(test, old, new, f"test: {old}")',
-              '        test = test.replace(old, new)',
+              '    test = replace_once(test, old, new, f"test: {old}")',
+              '    test = test.replace(old, new)',
           )
           path.write_text(text, encoding='utf-8')
           PY
