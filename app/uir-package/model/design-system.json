@@ -9873,7 +9873,7 @@
       "subject": "uir-site:value:duration-ambient",
       "value": {
         "name": "Ambient drift duration",
-        "purpose": "One deliberately slow decorative drift cycle.",
+        "purpose": "A visible but calm decorative drift cycle.",
         "type": "duration"
       }
     },
@@ -10922,7 +10922,7 @@
       "value": {
         "form": "literal",
         "literal": {
-          "alpha": 0.22,
+          "alpha": 0.1,
           "channels": [
             0.7843137254901961,
             1.0,
@@ -11039,7 +11039,7 @@
         "literal": {
           "type": "duration",
           "unit": "s",
-          "value": 12
+          "value": 4
         }
       }
     },

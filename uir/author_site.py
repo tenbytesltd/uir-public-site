@@ -389,7 +389,7 @@ for key, label, color in (
 
 primitive["accent-dot"] = value(
     "accent-dot", "Ambient dot", "Low-contrast accent used by the hero's decorative field.",
-    "color", rgba("#C8FF3D", 0.22), sources=(SRC_USER, SRC_REPO),
+    "color", rgba("#C8FF3D", 0.10), sources=(SRC_USER, SRC_REPO),
 )
 
 for key, label, px in (
@@ -565,8 +565,8 @@ for args in (
     roles[args[0]] = role(*args)
 
 primitive["duration-ambient"] = value(
-    "duration-ambient", "Ambient drift duration", "One deliberately slow decorative drift cycle.",
-    "duration", {"type": "duration", "value": 12, "unit": "s"}, sources=(SRC_USER, SRC_REPO),
+    "duration-ambient", "Ambient drift duration", "A visible but calm decorative drift cycle.",
+    "duration", {"type": "duration", "value": 4, "unit": "s"}, sources=(SRC_USER, SRC_REPO),
 )
 primitive["duration-zero"] = value(
     "duration-zero", "No motion delay", "The ambient drift begins without an artificial wait.",
@@ -1070,8 +1070,17 @@ HERO = node(
     },
 )
 node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
-node("hero-title", "heading", "Make the interface explicit before code gets the final word.", parent=HERO, salience="primary", overrides={"ink": "ink-inverse", "type": "type-display"})
-node("hero-lead", "paragraph", "UIR is one self-contained source for what an interface looks like, what it means, which design decisions realize it, and what remains unresolved.", parent=HERO, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"})
+node(
+    "hero-title", "heading", "Make the interface explicit before code gets the final word.",
+    parent=HERO, salience="primary",
+    overrides={"surface": "surface-ink", "ink": "ink-inverse", "type": "type-display"},
+)
+node(
+    "hero-lead", "paragraph",
+    "UIR is one self-contained source for what an interface looks like, what it means, which design decisions realize it, and what remains unresolved.",
+    parent=HERO, salience="secondary",
+    overrides={"surface": "surface-ink", "ink": "ink-inverse", "type": "type-lead"},
+)
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
 HERO_PRIMARY = node("hero-primary", "link", "Extract your interface", parent=HERO_ACTIONS, salience="primary")
 HERO_SECONDARY = node("hero-secondary", "link", "See the representation", parent=HERO_ACTIONS, salience="secondary")

@@ -440,6 +440,30 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: browser computed style now reports inverse ink for the gap on the radial dark hero surface.
 - Remaining risk: the official contrast gate remains one of the six known unchecked areas, so this still depends on browser evidence.
 
+### F37 — desktop QA overstated hero motion and text clarity on mobile
+
+- Status: fixed
+- Flow step: mobile visual validation
+- Evidence: the published 390-pixel view made the 22-percent dot field compete with body copy while a twelve-second one-cell drift was too slow to perceive.
+- User impact: the animation showcase looked static and the primary explanation required unnecessary visual effort.
+- Root cause: the UIR values were judged from desktop computed state and one still frame rather than from perceived motion and reading comfort on the target mobile viewport.
+- Change made: reduced the UIR dot colour alpha from 0.22 to 0.10, shortened the authored ambient transition from twelve to four seconds, and bound the headline and lead Nodes to the solid inverse surface so the pattern cannot pass through their reading area; the target renderer and selectors remain unchanged.
+- Proposed tooling improvement: motion review should include a minimum perceptible-displacement check over one second, while decorative-surface review should compare local contrast around every text line at mobile scale.
+- Verification: the 390-pixel browser run measures a clear position change over one second, retains the pattern, preserves inverse text colour, and disables motion under the reduced-motion preference.
+- Remaining risk: perception depends on display density and OS motion settings, so the live mobile screenshot remains part of the acceptance evidence.
+
+### F38 — concurrent target builds race on the shared output directory
+
+- Status: workflow limitation documented; sequential required path passes
+- Flow step: target verification
+- Evidence: running the runtime build and GitHub Pages export in parallel let one Vinext process replace the other's `dist` directory and the Pages prerender then reported no build output.
+- User impact: parallelizing two individually valid checks can create a false release failure unrelated to the UIR package or page.
+- Root cause: both scripts own the same mutable build directory and Vinext does not isolate their intermediate output.
+- Change made: kept the required verification order sequential and reran the Pages export after the runtime test completed.
+- Proposed tooling improvement: give each target build an isolated output root or make the workflow declare the build-output lock explicitly.
+- Verification: the same Pages command passes when run after the runtime build rather than concurrently with it.
+- Remaining risk: local ad-hoc parallel invocations can reproduce the race; GitHub Actions already executes these steps sequentially.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
