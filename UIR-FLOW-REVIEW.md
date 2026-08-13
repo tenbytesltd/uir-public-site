@@ -332,6 +332,18 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: GitHub now returns the corrected structured body for pull request 4 with no literal newline escapes or embedded logs.
 - Remaining risk: this safeguard belongs to the publishing workflow rather than the UIR model; other automation can reproduce the defect unless it follows the same transport rule.
 
+### F28 — the default scaffold favicon contradicted the UIR identity
+
+- Status: fixed
+- Flow step: public presentation and brand recognition
+- Evidence: the published tab used a generic blue four-tile scaffold mark that appeared nowhere in the UIR page and carried none of its lime, ink, container, or inspectable-fact language.
+- User impact: the browser chrome made the OSS showcase look templated at the smallest but most persistent brand touchpoint.
+- Root cause: the initial target retained its starter favicon after the page developed a distinct visual system.
+- Change made: replaced it with a compact SVG mark: an ink interface field, a lime U-shaped frame, and one light addressable node.
+- Proposed tooling improvement: UIR target review should include browser-chrome assets such as favicon, title, theme color, and social card in the visible identity evidence.
+- Verification: the SVG has an opaque high-contrast background and remains legible when rasterized to 16 by 16 pixels.
+- Remaining risk: the mark is now consistent and functional but has not yet been tested as a broader product identity beyond the website favicon.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
