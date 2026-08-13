@@ -201,6 +201,12 @@ function cssScalar(valueId: string | undefined): string | undefined {
   if (value.type === "number" || value.type === "font-weight") {
     return String(value.value);
   }
+  if (value.type === "duration") {
+    return String(value.value) + String(value.unit);
+  }
+  if (value.type === "cubic-bezier") {
+    return "cubic-bezier(" + [value.x1, value.y1, value.x2, value.y2].map(String).join(", ") + ")";
+  }
   if (value.type === "stroke-style") {
     return typeof value.style === "string" ? value.style : undefined;
   }
@@ -223,6 +229,32 @@ function cssScalar(valueId: string | undefined): string | undefined {
       .join(" ");
   }
   return undefined;
+}
+
+function normalizedPercent(valueId: string | undefined): string | undefined {
+  const value = literal(valueId);
+  if (value?.type !== "number" || typeof value.value !== "number") return undefined;
+  return String(value.value * 100) + "%";
+}
+
+function cssGradient(valueId: string | undefined): string | undefined {
+  const value = literal(valueId);
+  if (value?.type !== "gradient" || value.kind !== "radial") return undefined;
+  const centerInline = normalizedPercent(
+    typeof value.centerInline === "string" ? value.centerInline : undefined,
+  );
+  const centerBlock = normalizedPercent(
+    typeof value.centerBlock === "string" ? value.centerBlock : undefined,
+  );
+  if (!centerInline || !centerBlock || !Array.isArray(value.stops)) return undefined;
+  const stops = value.stops.map((entry) => {
+    const stop = entry as { color?: string; position?: string };
+    const color = cssScalar(stop.color);
+    const position = normalizedPercent(stop.position);
+    return color && position ? color + " " + position : undefined;
+  });
+  if (stops.some((stop) => !stop)) return undefined;
+  return "radial-gradient(circle at " + centerInline + " " + centerBlock + ", " + stops.join(", ") + ")";
 }
 
 function valueLabel(valueId: string | undefined) {
@@ -249,15 +281,25 @@ function typography(valueId: string | undefined): CSSProperties {
   };
 }
 
-function nodeStyle(node: NodeView): CSSProperties {
+function resolvedBindings(node: NodeView) {
   const bindings = bindingMap(resolutionPiece(node.role));
   for (const [slot, role] of bindingMap(node.id)) bindings.set(slot, role);
+  return bindings;
+}
 
+function nodeStyle(node: NodeView): CSSProperties {
+  const bindings = resolvedBindings(node);
   const token = (slot: string) => cssScalar(boundValue(bindings.get(slot) ?? ""));
   const typeValue = boundValue(bindings.get("type") ?? "");
+  const surfaceValue = boundValue(bindings.get("surface") ?? "");
+  const motionValue = boundValue(bindings.get("motion") ?? "");
+  const motion = literal(motionValue);
   return {
     ...typography(typeValue),
-    backgroundColor: token("surface"),
+    backgroundColor: literal(surfaceValue)?.type === "color"
+      ? cssScalar(surfaceValue)
+      : undefined,
+    backgroundImage: cssGradient(surfaceValue),
     color: token("ink"),
     paddingInline: token("inset-inline"),
     paddingBlock: token("inset-block"),
@@ -266,7 +308,33 @@ function nodeStyle(node: NodeView): CSSProperties {
     opacity: token("opacity"),
     "--uir-rule": token("rule"),
     "--uir-outline": token("outline"),
+    animationDuration:
+      motion?.type === "transition" && typeof motion.duration === "string"
+        ? cssScalar(motion.duration)
+        : undefined,
+    animationTimingFunction:
+      motion?.type === "transition" && typeof motion.curve === "string"
+        ? cssScalar(motion.curve)
+        : undefined,
+    animationDelay:
+      motion?.type === "transition" && typeof motion.delay === "string"
+        ? cssScalar(motion.delay)
+        : undefined,
   } as CSSProperties;
+}
+
+function nodePresentationData(node: NodeView) {
+  const bindings = resolvedBindings(node);
+  const surfaceValue = boundValue(bindings.get("surface") ?? "");
+  const surface = literal(surfaceValue);
+  const motionValue = boundValue(bindings.get("motion") ?? "");
+  return {
+    "data-uir-surface":
+      surface?.type === "gradient" && typeof surface.kind === "string"
+        ? surface.kind + "-gradient"
+        : undefined,
+    "data-uir-motion": motionValue ? nodeKey(motionValue) : undefined,
+  };
 }
 
 function themeStyle(): CSSProperties {
@@ -427,6 +495,7 @@ function RenderNode({ subject }: { subject: string }) {
     "data-node": node.key,
     "data-role": node.role,
     "data-salience": node.salience,
+    ...nodePresentationData(node),
     style: nodeStyle(node),
   };
 

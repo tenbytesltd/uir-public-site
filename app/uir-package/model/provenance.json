@@ -563,6 +563,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:constraint:ambient-surface-drift:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:context:desktop:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -1273,6 +1284,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:design-binding:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:design-binding:opacity-full:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -1370,6 +1392,22 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:design-binding:surface-code:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:design-binding:surface-hero-dots:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -2258,6 +2296,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:ground-role:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:ground-role:opacity-full:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -2355,6 +2404,22 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:ground-role:surface-code:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:ground-role:surface-hero-dots:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -5481,7 +5546,29 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:hero:motion:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-projection:hero:surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:install-gap:ink:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -15893,6 +15980,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:role-definition:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:role-definition:opacity-full:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -15990,6 +16088,22 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:role-definition:surface-code:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:role-definition:surface-hero-dots:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -16613,6 +16727,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:accent-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:value-definition:accent-ink:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -16689,6 +16814,39 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:curve-linear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:duration-ambient:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:duration-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -16785,6 +16943,50 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:fraction-center:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:fraction-clear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:fraction-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:fraction-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -17365,6 +17567,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:value-definition:one:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -17569,6 +17782,17 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-definition:surface-hero-dots:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -17829,6 +18053,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:accent-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:value-variant:accent-ink:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -17905,6 +18140,39 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:curve-linear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:duration-ambient:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:duration-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -18001,6 +18269,50 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:fraction-center:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:fraction-clear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:fraction-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:fraction-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -18581,6 +18893,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:value-variant:one:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -18785,6 +19108,17 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:value-variant:surface-hero-dots:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -24172,6 +24506,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:role:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:role:opacity-full:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -24269,6 +24614,22 @@
     {
       "confidence": 0.88,
       "id": "uir-site:role:surface-code:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:role:surface-hero-dots:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -25016,6 +25377,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:value:accent-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:value:accent-ink:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -25092,6 +25464,39 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:curve-linear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:duration-ambient:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:duration-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -25188,6 +25593,50 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:fraction-center:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:fraction-clear:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:fraction-dot:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:fraction-zero:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {
@@ -25768,6 +26217,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:value:motion-ambient-surface:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:value:one:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -25972,6 +26432,17 @@
         "uir-site:source:openfeature",
         "uir-site:source:opentelemetry",
         "uir-site:source:storybook"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:value:surface-hero-dots:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
       ]
     },
     {

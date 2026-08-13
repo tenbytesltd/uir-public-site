@@ -70,6 +70,25 @@ a {
   contain-intrinsic-size: auto 700px;
 }
 
+[data-uir-surface="radial-gradient"] {
+  background-size: 18px 18px;
+}
+
+[data-uir-surface="radial-gradient"][data-uir-motion] {
+  animation-name: uir-surface-drift;
+  animation-iteration-count: infinite;
+}
+
+@keyframes uir-surface-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 18px 18px;
+  }
+}
+
 [data-role="group"] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
@@ -211,13 +230,6 @@ a {
 
 #problem-grid > [data-role="region"] {
   min-height: 220px;
-}
-
-#showcase {
-  overflow: hidden;
-  background-image:
-    radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--uir-accent, #c8ff3d) 22%, transparent) 0 1px, transparent 2px);
-  background-size: 18px 18px;
 }
 
 #showcase-copy {
@@ -366,6 +378,10 @@ a {
 
   [data-role="link"] {
     transition: none;
+  }
+
+  [data-uir-surface="radial-gradient"][data-uir-motion] {
+    animation: none;
   }
 }
 
