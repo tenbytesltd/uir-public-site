@@ -59,3 +59,28 @@ jobs:
 
       - name: Rendered output tests
         run: npm test
+
+      - name: GitHub Pages export tests
+        run: npm run test:pages
+
+      - name: Upload the GitHub Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
+
+  deploy:
+    name: Publish GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish the verified static site
+        id: deployment
+        uses: actions/deploy-pages@v4

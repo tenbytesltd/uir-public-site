@@ -48,6 +48,7 @@ the checked UIR package is under `app/uir-package/`.
 python3 tool/public_site_ci.py
 npm run lint
 npm test
+npm run test:pages
 ```
 
 The public verifier:
@@ -92,14 +93,25 @@ Do not edit emitted files under `app/uir-package/` by hand.
 - `tests/rendered-html.test.mjs` - rendered contract tests
 - `UIR-FLOW-REVIEW.md` - Flow 2 findings and improvement proposals
 
+## Deployment
+
+The verified static export is published from protected `main` to GitHub Pages:
+
+https://tenbytesltd.github.io/uir-public-site/
+
+Pull requests run the same UIR evidence review, rendered-output tests, and Pages
+export tests without deploying. A production deployment starts only after the
+required check succeeds on `main`.
+
 ## Collaboration and release policy
 
 Anyone can read, fork, and propose a pull request. Direct write access remains
 limited to Tenbytes members. The protected `main` branch requires the public
 UIR/site check and disallows force-pushes and deletion.
 
-Repository visibility and hosted-site access are separate controls. Making this
-source public does not make the managed site preview publicly accessible.
+The repository and GitHub Pages production site are public. The site contains
+no application authentication layer; publishing authority remains limited to
+the protected `main` branch and its required check.
 
 ## License
 

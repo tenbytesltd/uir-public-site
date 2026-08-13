@@ -296,6 +296,30 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Verification: the official compiler accepts the 116-Node candidate with no failing gate or ungated error.
 - Remaining risk: other authoring helpers can still duplicate closed-vocabulary declarations unless the model API owns this synchronization.
 
+### F25 — the OSS showcase needed a static public lowering
+
+- Status: fixed
+- Flow step: public distribution and adoption proof
+- Evidence: the first production host exposed the page correctly but used a platform-specific hostname and server runtime. Anonymous verification also showed Open Graph image URLs resolving to localhost instead of a public canonical origin.
+- User impact: an OSS visitor could inspect the repository but the primary hosted proof looked vendor-bound, and social unfurls could not fetch the published card.
+- Root cause: the target was packaged for a Worker-style server even though this Surface has no server state, and host/base-path metadata lived outside the UIR target review.
+- Change made: added a Vinext static export with the GitHub project asset prefix, a deterministic Pages staging step, absolute public metadata, export contract tests, and a Pages deployment that runs only after the readable UIR/site check passes on protected main.
+- Proposed tooling improvement: UIR target lowering should declare hosting capabilities and canonical-origin/base-path requirements, then report whether a Surface can be emitted as static files or requires a runtime.
+- Verification: the Pages artifact must contain the checked UIR page, inspector client, prefixed assets, public repository CTA, canonical social image, and no localhost reference.
+- Remaining risk: future server actions, APIs, or persistent adoption demos will require a separately declared runtime instead of silently expanding the static site.
+
+### F26 — a successful static build did not mean a deployable Pages artifact
+
+- Status: fixed
+- Flow step: target lowering, verification, and public deployment
+- Evidence: the first export completed with exit code 0 while marking the homepage as dynamic and emitting only a 404 page. Forcing the route static then exposed a Vinext project-base-path failure, and using only the asset prefix placed the generated assets in a nested physical directory that did not match GitHub Pages URL mapping.
+- User impact: CI could publish a green artifact with no homepage or with every stylesheet and client chunk returning 404.
+- Root cause: build success, route prerendering, public URL prefixing, and artifact filesystem layout were treated as one implicit framework behavior even though they are separate hosting contracts.
+- Change made: declared the homepage force-static, kept the public project asset prefix without applying it to route discovery, staged the prefixed assets at artifact root, added .nojekyll, and made the contract test require the HTML, social metadata, client chunks, public assets, and absence of the incorrect nested directory.
+- Proposed tooling improvement: a UIR static target should verify both URL space and artifact space, including at least one fetched CSS and JavaScript asset, rather than accepting a compiler or bundler exit code as publication evidence.
+- Verification: npm run test:pages now prerenders the homepage with zero skipped routes and validates the complete staged out directory.
+- Remaining risk: the project currently uses a beta Vinext release, so the export contract remains an explicit CI gate instead of an assumed framework guarantee.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
