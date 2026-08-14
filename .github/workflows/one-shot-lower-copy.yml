@@ -28,101 +28,7 @@ jobs:
           node-version: '22'
 
       - name: Rewrite lower-page narrative
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          path = Path('uir/author_site.py')
-          text = path.read_text(encoding='utf-8')
-
-          label_replacements = {
-              'NAV_EXTRACT = node("nav-extract", "link", "Existing UI"': 'NAV_EXTRACT = node("nav-extract", "link", "What it captures"',
-              'NAV_BUILD = node("nav-build", "link", "New UI"': 'NAV_BUILD = node("nav-build", "link", "How it fits"',
-              'NAV_STANDARD = node("nav-standard", "link", "Why UIR"': 'NAV_STANDARD = node("nav-standard", "link", "Why it works"',
-              'NAV_SOURCE = node("nav-source", "link", "This site"': 'NAV_SOURCE = node("nav-source", "link", "Playground"',
-              'HERO_PRIMARY = node("hero-primary", "link", "Try it on existing UI"': 'HERO_PRIMARY = node("hero-primary", "link", "What UIR captures"',
-              'HERO_SECONDARY = node("hero-secondary", "link", "How UIR fits"': 'HERO_SECONDARY = node("hero-secondary", "link", "How it works"',
-          }
-          for old, new in label_replacements.items():
-              if old not in text:
-                  raise SystemExit(f'Missing expected label: {old}')
-              text = text.replace(old, new, 1)
-
-          start = text.index('QUICKSTART = node("quickstart"')
-          end = text.index('\n\ncontrols.extend((', start)
-
-          lower = r'''QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary")
-node("quickstart-kicker", "paragraph", "WHAT UIR CAPTURES", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
-node("quickstart-title", "heading", "Everything that makes the design the design.", parent=QUICKSTART, salience="primary")
-node("quickstart-copy", "paragraph", "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
-STEPS = node("quickstart-steps", "group", None, parent=QUICKSTART)
-for key, title, copy, command in (
-    ("quickstart-read", "Structure & content", "What exists, what it says, and how the parts are ordered and related.", "structure · content · roles · relationships"),
-    ("quickstart-see", "Behaviour & states", "What can happen, when it happens, and which states the interface must support.", "states · actions · conditions · navigation"),
-    ("quickstart-adopt", "Components & design system", "Which reusable pieces and design-system values realize the design.", "components · design values · bindings · reuse"),
-):
-    card = node(key, "region", None, parent=STEPS, salience="secondary")
-    node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
-    node(f"{key}-copy", "paragraph", copy, parent=card)
-    node(f"{key}-command", "code", command, parent=card)
-
-BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("build-kicker", "paragraph", "HOW IT FITS", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("build-title", "heading", "Start from design. Or start from code.", parent=BUILD, salience="primary")
-node("build-copy", "paragraph", "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
-BUILD_STEPS = node("build-steps", "list", None, parent=BUILD)
-for index, copy in enumerate((
-    "New UI — Capture approved design decisions as UIR.",
-    "Existing UI — Extract what the frontend can prove and keep the gaps explicit.",
-    "Any implementation — Use people, agents, frameworks, or any combination to produce the frontend.",
-    "Every change — Verify the result against the same specification.",
-), start=1):
-    node(f"build-step-{index}", "listitem", f"{index:02d} — {copy}", parent=BUILD_STEPS)
-
-STANDARD = node("standard", "region", None, parent=ROOT_NODE, salience="primary")
-node("standard-kicker", "paragraph", "WHY IT WORKS", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("standard-title", "heading", "Explicit decisions turn UI review into a test.", parent=STANDARD, salience="primary")
-node("standard-copy", "paragraph", "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
-STANDARD_GRID = node("standard-grid", "group", None, parent=STANDARD)
-for key, title, copy in (
-    ("standard-source", "One source", "Every required decision has one place to live."),
-    ("standard-evidence", "No guessing", "Unknown stays explicit instead of becoming a convenient default."),
-    ("standard-gaps", "Design-system aware", "Components and design values are part of the specification."),
-    ("standard-targets", "Implementation-independent", "Different frontends can be checked against the same definition."),
-):
-    card = node(key, "region", None, parent=STANDARD_GRID)
-    node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
-    node(f"{key}-copy", "paragraph", copy, parent=card)
-
-STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("status-kicker", "paragraph", "ALPHA STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("status-title", "heading", "Useful now. Still alpha.", parent=STATUS, salience="primary")
-node("status-copy", "paragraph", "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress.", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
-STATUS_LIST = node("status-list", "list", None, parent=STATUS)
-for index, copy in enumerate((
-    "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence.",
-    "In progress — full frontend-to-specification conformance and broader vocabulary coverage.",
-    "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem.",
-), start=1):
-    node(f"status-item-{index}", "listitem", copy, parent=STATUS_LIST)
-
-FOOTER = node("footer", "region", None, parent=ROOT_NODE, salience="quiet", overrides={"surface": "surface-ink", "ink": "ink-inverse"})
-node("footer-title", "heading", "Ship the UI you designed.", parent=FOOTER, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-node("footer-copy", "paragraph", "UIR by Tenbytes Ltd.", parent=FOOTER, salience="quiet", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-FOOTER_ACTION = node("footer-action", "link", "See what UIR captures", parent=FOOTER, salience="secondary")'''
-
-          text = text[:start] + lower + text[end:]
-          path.write_text(text, encoding='utf-8')
-
-          test_path = Path('tests/rendered-html.test.mjs')
-          tests = test_path.read_text(encoding='utf-8')
-          tests = tests.replace('"Use extraction to see what your current UI actually says.",', '"Everything that makes the design the design.",')
-          tests = tests.replace('"A definition under test.",', '"Useful now. Still alpha.",')
-          tests = tests.replace('"Created and stewarded by Tenbytes Ltd.",', '"UIR by Tenbytes Ltd.",')
-          tests = tests.replace('assert.match(html, /Created and stewarded by Tenbytes Ltd\\\./);', 'assert.match(html, /UIR by Tenbytes Ltd\\\./);')
-          test_path.write_text(tests, encoding='utf-8')
-          PY
+        run: python3 tool/one_shot_rewrite_lower.py
 
       - name: Rebuild checked package
         run: python3 tool/build_public_package.py
@@ -135,12 +41,11 @@ FOOTER_ACTION = node("footer-action", "link", "See what UIR captures", parent=FO
           npm run test:pages
 
       - name: Commit narrative rewrite
-        shell: bash
         run: |
-          rm -f .github/workflows/one-shot-lower-copy.yml
+          rm -f .github/workflows/one-shot-lower-copy.yml tool/one_shot_rewrite_lower.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add uir/author_site.py app/uir-package tests/rendered-html.test.mjs .github/workflows/one-shot-lower-copy.yml
+          git add uir/author_site.py app/uir-package tests/rendered-html.test.mjs .github/workflows/one-shot-lower-copy.yml tool/one_shot_rewrite_lower.py
           git diff --cached --check
           git commit -m "rewrite lower landing narrative around verification"
           git push origin HEAD:copy/ship-the-ui-you-designed
