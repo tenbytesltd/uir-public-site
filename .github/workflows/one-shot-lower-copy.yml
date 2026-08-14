@@ -1,0 +1,135 @@
+name: One-shot lower-page copy rewrite
+
+on:
+  push:
+    branches:
+      - copy/ship-the-ui-you-designed
+    paths:
+      - .github/workflows/one-shot-lower-copy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: copy/ship-the-ui-you-designed
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Rewrite copy only
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          author_path = Path('uir/author_site.py')
+          text = author_path.read_text(encoding='utf-8')
+
+          replacements = {
+              '"Existing UI"': '"What UIR captures"',
+              '"New UI"': '"How it fits"',
+              '"Why UIR"': '"Why it works"',
+              '"This site"': '"Playground"',
+              '"Try it on existing UI"': '"See what UIR captures"',
+              '"How UIR fits"': '"How it works"',
+
+              '"EXISTING INTERFACE"': '"WHAT UIR CAPTURES"',
+              '"Use extraction to see what your current UI actually says."': '"Everything that makes the design the design."',
+              '"The alpha extractor reads supported implementation evidence and emits UIR facts it can justify. What it cannot justify remains explicit instead of becoming a guess."': '"Structure, content, states, behaviour, components, and design-system decisions — made explicit enough to test an implementation against them."',
+              '"1 · Read"': '"Structure & content"',
+              '"Point the extractor at the app and the design-system sources you want it to inspect."': '"What exists, what it says, and how the parts are ordered and related."',
+              '"python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"': '"structure · content · roles · relationships"',
+              '"2 · Inspect"': '"Behaviour & states"',
+              '"Review the representation, the evidence behind each fact, and the gaps it could not resolve."': '"What can happen, when it happens, and which states the interface must support."',
+              '"python3 tool/uir_report.py --change-set .uir/reading.json"': '"states · actions · conditions · navigation"',
+              '"3 · Use"': '"Components & system"',
+              '"Put the representation beside the implementation and make drift a reviewable change."': '"Which reusable pieces and design-system values realize the design."',
+              '"# CI integration is alpha and remains an explicit adoption task"': '"components · design values · bindings · reuse"',
+
+              '"NEW INTERFACE"': '"HOW IT FITS"',
+              '"For a new screen, author meaning before implementation."': '"Start from design. Or start from code."',
+              '"Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth."': '"Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against."',
+              '"Describe the job, user, real content, and constraints."': '"New UI — Capture approved design decisions as UIR."',
+              '"Compile confirmed interface decisions into UIR."': '"Existing UI — Extract what the frontend can prove."',
+              '"Review the board and semantic inspector; correct the representation, not a second artifact."': '"Fill the gaps — Keep anything unresolved explicit instead of guessing."',
+              '"Choose a target only after the representation is accepted."': '"Verify — Test implementation changes against the same specification."',
+
+              '"WHY A REPRESENTATION"': '"WHY IT WORKS"',
+              '"Not a framework. Not a design tool. Not another markup language."': '"Explicit decisions turn UI review into a test."',
+              '"UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation."': '"When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check."',
+              '"Framework-independent"': '"One source"',
+              '"A UIR fact should remain true if React is replaced by Flutter, UIKit, or something else."': '"Every required decision has one place to live."',
+              '"Design-system backed"': '"No guessing"',
+              '"UIR names roles; the design system maps those roles to Pieces and values."': '"Unknown stays explicit instead of becoming a convenient default."',
+              '"Explicit gaps"': '"Design-system backed"',
+              '"Unknown meaning stays unknown. Silence is not converted into a convenient default."': '"UIR binds roles to the system’s components and values."',
+              '"One authority"': '"Implementation-independent"',
+              '"Boards and target implementations are projections of the representation, not parallel sources to keep in sync."': '"Different implementations can be checked against the same definition."',
+
+              '"CURRENT STATUS"': '"ALPHA STATUS"',
+              '"A definition under test."': '"The idea is testable now. The standard is still being proven."',
+              '"UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?"': '"UIR v0.1 is alpha. The current tools can author, inspect, check, and extract parts of the representation while the vocabulary and full conformance model are still being tested."',
+              '"Working now — deterministic authoring, package checking, extraction experiments, live boards, semantic inspection, and CI evidence."': '"Works today — authoring, reproducible packages, package checks, inspection, early extraction, and CI evidence."',
+              '"Still open — vocabulary and contract gaps that must be resolved before v0.1 can freeze."': '"In progress — broader vocabulary coverage and full frontend-to-specification conformance."',
+              '"Not claimed — a stable public install, production target compilers, or a mature adopter ecosystem."': '"Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem."',
+
+              '"UIR by Tenbytes Ltd"': '"Ship the UI you designed."',
+              '"Created and stewarded by Tenbytes Ltd. Describe the interface. Let the design system realize it. Treat code as a target."': '"UIR by Tenbytes Ltd."',
+              '"Try extraction"': '"See what UIR captures"',
+          }
+
+          missing = [old for old in replacements if old not in text]
+          if missing:
+              raise SystemExit('Missing expected copy strings:\n' + '\n'.join(missing))
+
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          author_path.write_text(text, encoding='utf-8')
+
+          test_path = Path('tests/rendered-html.test.mjs')
+          tests = test_path.read_text(encoding='utf-8')
+          test_replacements = {
+              '"Use extraction to see what your current UI actually says."': '"Everything that makes the design the design."',
+              '"A definition under test."': '"The idea is testable now. The standard is still being proven."',
+              '"Created and stewarded by Tenbytes Ltd."': '"UIR by Tenbytes Ltd."',
+              '/Created and stewarded by Tenbytes Ltd\\\./': '/UIR by Tenbytes Ltd\\\./',
+          }
+          for old, new in test_replacements.items():
+              if old not in tests:
+                  raise SystemExit(f'Missing expected test copy string: {old}')
+              tests = tests.replace(old, new)
+          test_path.write_text(tests, encoding='utf-8')
+          PY
+
+      - name: Rebuild checked package
+        run: python3 tool/build_public_package.py
+
+      - name: Verify renderer tests
+        run: |
+          npm ci
+          npm run lint
+          npm test
+          npm run test:pages
+
+      - name: Commit copy rewrite
+        shell: bash
+        run: |
+          rm -f .github/workflows/one-shot-lower-copy.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add uir/author_site.py app/uir-package tests/rendered-html.test.mjs .github/workflows/one-shot-lower-copy.yml
+          git diff --cached --check
+          git commit -m "rewrite lower landing copy around verification"
+          git push origin HEAD:copy/ship-the-ui-you-designed
