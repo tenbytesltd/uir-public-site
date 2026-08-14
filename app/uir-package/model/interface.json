@@ -1475,7 +1475,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth."
+        "value": "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against."
       }
     },
     {
@@ -1489,7 +1489,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "NEW INTERFACE"
+        "value": "HOW IT FITS"
       }
     },
     {
@@ -1503,7 +1503,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "01 — Describe the job, user, real content, and constraints."
+        "value": "01 — New UI — Capture approved design decisions as UIR."
       }
     },
     {
@@ -1517,7 +1517,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "02 — Compile confirmed interface decisions into UIR."
+        "value": "02 — Existing UI — Extract what the frontend can prove and keep the gaps explicit."
       }
     },
     {
@@ -1531,7 +1531,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "03 — Review the board and semantic inspector; correct the representation, not a second artifact."
+        "value": "03 — Any implementation — Use people, agents, frameworks, or any combination to produce the frontend."
       }
     },
     {
@@ -1545,7 +1545,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "04 — Choose a target only after the representation is accepted."
+        "value": "04 — Every change — Verify the result against the same specification."
       }
     },
     {
@@ -1570,7 +1570,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "For a new screen, author meaning before implementation."
+        "value": "Start from design. Or start from code."
       }
     },
     {
@@ -1712,7 +1712,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Try extraction"
+        "value": "See what UIR captures"
       }
     },
     {
@@ -1726,7 +1726,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Created and stewarded by Tenbytes Ltd. Describe the interface. Let the design system realize it. Treat code as a target."
+        "value": "UIR by Tenbytes Ltd."
       }
     },
     {
@@ -1740,7 +1740,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR by Tenbytes Ltd"
+        "value": "Ship the UI you designed."
       }
     },
     {
@@ -1818,7 +1818,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Try it on existing UI"
+        "value": "What UIR captures"
       }
     },
     {
@@ -1832,7 +1832,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "How UIR fits"
+        "value": "How it works"
       }
     },
     {
@@ -1924,7 +1924,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "New UI"
+        "value": "How it fits"
       }
     },
     {
@@ -1938,7 +1938,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Existing UI"
+        "value": "What it captures"
       }
     },
     {
@@ -1952,7 +1952,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "This site"
+        "value": "Playground"
       }
     },
     {
@@ -1966,7 +1966,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Why UIR"
+        "value": "Why it works"
       }
     },
     {
@@ -2194,7 +2194,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "# CI integration is alpha and remains an explicit adoption task"
+        "value": "components · design values · bindings · reuse"
       }
     },
     {
@@ -2208,7 +2208,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Put the representation beside the implementation and make drift a reviewable change."
+        "value": "Which reusable pieces and design-system values realize the design."
       }
     },
     {
@@ -2222,7 +2222,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "3 · Use"
+        "value": "Components & design system"
       }
     },
     {
@@ -2236,7 +2236,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The alpha extractor reads supported implementation evidence and emits UIR facts it can justify. What it cannot justify remains explicit instead of becoming a guess."
+        "value": "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them."
       }
     },
     {
@@ -2250,7 +2250,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "EXISTING INTERFACE"
+        "value": "WHAT UIR CAPTURES"
       }
     },
     {
@@ -2275,7 +2275,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"
+        "value": "structure · content · roles · relationships"
       }
     },
     {
@@ -2289,7 +2289,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Point the extractor at the app and the design-system sources you want it to inspect."
+        "value": "What exists, what it says, and how the parts are ordered and related."
       }
     },
     {
@@ -2303,7 +2303,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "1 · Read"
+        "value": "Structure & content"
       }
     },
     {
@@ -2328,7 +2328,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "python3 tool/uir_report.py --change-set .uir/reading.json"
+        "value": "states · actions · conditions · navigation"
       }
     },
     {
@@ -2342,7 +2342,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Review the representation, the evidence behind each fact, and the gaps it could not resolve."
+        "value": "What can happen, when it happens, and which states the interface must support."
       }
     },
     {
@@ -2356,7 +2356,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "2 · Inspect"
+        "value": "Behaviour & states"
       }
     },
     {
@@ -2381,7 +2381,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Use extraction to see what your current UI actually says."
+        "value": "Everything that makes the design the design."
       }
     },
     {
@@ -2637,7 +2637,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation."
+        "value": "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check."
       }
     },
     {
@@ -2662,7 +2662,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR names roles; the design system maps those roles to Pieces and values."
+        "value": "Unknown stays explicit instead of becoming a convenient default."
       }
     },
     {
@@ -2676,7 +2676,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Design-system backed"
+        "value": "No guessing"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Unknown meaning stays unknown. Silence is not converted into a convenient default."
+        "value": "Components and design values are part of the specification."
       }
     },
     {
@@ -2715,7 +2715,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Explicit gaps"
+        "value": "Design-system aware"
       }
     },
     {
@@ -2740,7 +2740,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "WHY A REPRESENTATION"
+        "value": "WHY IT WORKS"
       }
     },
     {
@@ -2765,7 +2765,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "A UIR fact should remain true if React is replaced by Flutter, UIKit, or something else."
+        "value": "Every required decision has one place to live."
       }
     },
     {
@@ -2779,7 +2779,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Framework-independent"
+        "value": "One source"
       }
     },
     {
@@ -2804,7 +2804,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Boards and target implementations are projections of the representation, not parallel sources to keep in sync."
+        "value": "Different frontends can be checked against the same definition."
       }
     },
     {
@@ -2818,7 +2818,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "One authority"
+        "value": "Implementation-independent"
       }
     },
     {
@@ -2832,7 +2832,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Not a framework. Not a design tool. Not another markup language."
+        "value": "Explicit decisions turn UI review into a test."
       }
     },
     {
@@ -2857,7 +2857,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?"
+        "value": "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress."
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Working now — deterministic authoring, package checking, extraction experiments, live boards, semantic inspection, and CI evidence."
+        "value": "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence."
       }
     },
     {
@@ -2885,7 +2885,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Still open — vocabulary and contract gaps that must be resolved before v0.1 can freeze."
+        "value": "In progress — full frontend-to-specification conformance and broader vocabulary coverage."
       }
     },
     {
@@ -2899,7 +2899,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Not claimed — a stable public install, production target compilers, or a mature adopter ecosystem."
+        "value": "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem."
       }
     },
     {
@@ -2913,7 +2913,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "CURRENT STATUS"
+        "value": "ALPHA STATUS"
       }
     },
     {
@@ -2938,7 +2938,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "A definition under test."
+        "value": "Useful now. Still alpha."
       }
     },
     {
@@ -6858,7 +6858,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "For a new screen, author meaning before implementation."
+          "value": "Start from design. Or start from code."
         },
         "operations": []
       }
@@ -7060,7 +7060,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Try extraction"
+          "value": "See what UIR captures"
         },
         "operations": [
           "navigate"
@@ -7099,7 +7099,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "UIR by Tenbytes Ltd"
+          "value": "Ship the UI you designed."
         },
         "operations": []
       }
@@ -7208,7 +7208,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Try it on existing UI"
+          "value": "What UIR captures"
         },
         "operations": [
           "navigate"
@@ -7229,7 +7229,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "How UIR fits"
+          "value": "How it works"
         },
         "operations": [
           "navigate"
@@ -7378,7 +7378,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "New UI"
+          "value": "How it fits"
         },
         "operations": [
           "navigate"
@@ -7399,7 +7399,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Existing UI"
+          "value": "What it captures"
         },
         "operations": [
           "navigate"
@@ -7420,7 +7420,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "This site"
+          "value": "Playground"
         },
         "operations": [
           "navigate"
@@ -7441,7 +7441,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Why UIR"
+          "value": "Why it works"
         },
         "operations": [
           "navigate"
@@ -7808,7 +7808,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "3 · Use"
+          "value": "Components & design system"
         },
         "operations": []
       }
@@ -7917,7 +7917,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "1 · Read"
+          "value": "Structure & content"
         },
         "operations": []
       }
@@ -7990,7 +7990,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "2 · Inspect"
+          "value": "Behaviour & states"
         },
         "operations": []
       }
@@ -8027,7 +8027,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Use extraction to see what your current UI actually says."
+          "value": "Everything that makes the design the design."
         },
         "operations": []
       }
@@ -8449,7 +8449,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Design-system backed"
+          "value": "No guessing"
         },
         "operations": []
       }
@@ -8504,7 +8504,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Explicit gaps"
+          "value": "Design-system aware"
         },
         "operations": []
       }
@@ -8595,7 +8595,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Framework-independent"
+          "value": "One source"
         },
         "operations": []
       }
@@ -8650,7 +8650,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "One authority"
+          "value": "Implementation-independent"
         },
         "operations": []
       }
@@ -8669,7 +8669,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Not a framework. Not a design tool. Not another markup language."
+          "value": "Explicit decisions turn UI review into a test."
         },
         "operations": []
       }
@@ -8814,7 +8814,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "A definition under test."
+          "value": "Useful now. Still alpha."
         },
         "operations": []
       }
@@ -12227,7 +12227,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:footer-action:quickstart",
       "value": {
-        "meaning": "The Try extraction action navigates to the quickstart section inside this Surface."
+        "meaning": "The See what UIR captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12246,7 +12246,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:hero-primary:quickstart",
       "value": {
-        "meaning": "The Try it on existing UI action navigates to the quickstart section inside this Surface."
+        "meaning": "The What UIR captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12265,7 +12265,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:hero-secondary:mechanism",
       "value": {
-        "meaning": "The How UIR fits action navigates to the mechanism section inside this Surface."
+        "meaning": "The How it works action navigates to the mechanism section inside this Surface."
       }
     },
     {
@@ -12284,7 +12284,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-build:build",
       "value": {
-        "meaning": "The New UI action navigates to the build section inside this Surface."
+        "meaning": "The How it fits action navigates to the build section inside this Surface."
       }
     },
     {
@@ -12303,7 +12303,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-extract:quickstart",
       "value": {
-        "meaning": "The Existing UI action navigates to the quickstart section inside this Surface."
+        "meaning": "The What it captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12322,7 +12322,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-source:showcase",
       "value": {
-        "meaning": "The This site action navigates to the showcase section inside this Surface."
+        "meaning": "The Playground action navigates to the showcase section inside this Surface."
       }
     },
     {
@@ -12341,7 +12341,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-standard:standard",
       "value": {
-        "meaning": "The Why UIR action navigates to the standard section inside this Surface."
+        "meaning": "The Why it works action navigates to the standard section inside this Surface."
       }
     },
     {

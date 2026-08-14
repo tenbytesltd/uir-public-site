@@ -1057,10 +1057,10 @@ ROOT_NODE = node("root", "document", None, parent=None, salience="primary")
 
 NAV = node("navigation", "navigation", None, parent=ROOT_NODE, salience="secondary")
 node("brand", "heading", "UIR", parent=NAV, salience="primary", overrides={"type": "type-label"})
-NAV_EXTRACT = node("nav-extract", "link", "Existing UI", parent=NAV, salience="secondary")
-NAV_BUILD = node("nav-build", "link", "New UI", parent=NAV, salience="secondary")
-NAV_STANDARD = node("nav-standard", "link", "Why UIR", parent=NAV, salience="secondary")
-NAV_SOURCE = node("nav-source", "link", "This site", parent=NAV, salience="secondary")
+NAV_EXTRACT = node("nav-extract", "link", "What it captures", parent=NAV, salience="secondary")
+NAV_BUILD = node("nav-build", "link", "How it fits", parent=NAV, salience="secondary")
+NAV_STANDARD = node("nav-standard", "link", "Why it works", parent=NAV, salience="secondary")
+NAV_SOURCE = node("nav-source", "link", "Playground", parent=NAV, salience="secondary")
 
 HERO = node(
     "hero", "region", None, parent=ROOT_NODE, salience="primary",
@@ -1082,8 +1082,8 @@ node(
     overrides={"ink": "ink-inverse", "type": "type-lead"},
 )
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
-HERO_PRIMARY = node("hero-primary", "link", "Try it on existing UI", parent=HERO_ACTIONS, salience="primary")
-HERO_SECONDARY = node("hero-secondary", "link", "How UIR fits", parent=HERO_ACTIONS, salience="secondary")
+HERO_PRIMARY = node("hero-primary", "link", "What UIR captures", parent=HERO_ACTIONS, salience="primary")
+HERO_SECONDARY = node("hero-secondary", "link", "How it works", parent=HERO_ACTIONS, salience="secondary")
 node("hero-command", "code", "python3 tool/extract_react.py --root <repo> --app <app/src> --change-set .uir/reading.json", parent=HERO, salience="supporting")
 node(
     "install-gap", "paragraph", None, parent=HERO, salience="quiet",
@@ -1140,14 +1140,14 @@ node("showcase-repository", "link", "Explore the repository", parent=SHOWCASE_AC
 node("showcase-path", "code", "github.com/tenbytesltd/uir-public-site", parent=SHOWCASE_ACTIONS, salience="supporting", sources=(SRC_SITE_REPO,))
 
 QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary")
-node("quickstart-kicker", "paragraph", "EXISTING INTERFACE", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
-node("quickstart-title", "heading", "Use extraction to see what your current UI actually says.", parent=QUICKSTART, salience="primary")
-node("quickstart-copy", "paragraph", "The alpha extractor reads supported implementation evidence and emits UIR facts it can justify. What it cannot justify remains explicit instead of becoming a guess.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
+node("quickstart-kicker", "paragraph", "WHAT UIR CAPTURES", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
+node("quickstart-title", "heading", "Everything that makes the design the design.", parent=QUICKSTART, salience="primary")
+node("quickstart-copy", "paragraph", "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
 STEPS = node("quickstart-steps", "group", None, parent=QUICKSTART)
 for key, title, copy, command in (
-    ("quickstart-read", "1 · Read", "Point the extractor at the app and the design-system sources you want it to inspect.", "python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"),
-    ("quickstart-see", "2 · Inspect", "Review the representation, the evidence behind each fact, and the gaps it could not resolve.", "python3 tool/uir_report.py --change-set .uir/reading.json"),
-    ("quickstart-adopt", "3 · Use", "Put the representation beside the implementation and make drift a reviewable change.", "# CI integration is alpha and remains an explicit adoption task"),
+    ("quickstart-read", "Structure & content", "What exists, what it says, and how the parts are ordered and related.", "structure · content · roles · relationships"),
+    ("quickstart-see", "Behaviour & states", "What can happen, when it happens, and which states the interface must support.", "states · actions · conditions · navigation"),
+    ("quickstart-adopt", "Components & design system", "Which reusable pieces and design-system values realize the design.", "components · design values · bindings · reuse"),
 ):
     card = node(key, "region", None, parent=STEPS, salience="secondary")
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
@@ -1155,49 +1155,49 @@ for key, title, copy, command in (
     node(f"{key}-command", "code", command, parent=card)
 
 BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("build-kicker", "paragraph", "NEW INTERFACE", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("build-title", "heading", "For a new screen, author meaning before implementation.", parent=BUILD, salience="primary")
-node("build-copy", "paragraph", "Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
+node("build-kicker", "paragraph", "HOW IT FITS", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("build-title", "heading", "Start from design. Or start from code.", parent=BUILD, salience="primary")
+node("build-copy", "paragraph", "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
 BUILD_STEPS = node("build-steps", "list", None, parent=BUILD)
 for index, copy in enumerate((
-    "Describe the job, user, real content, and constraints.",
-    "Compile confirmed interface decisions into UIR.",
-    "Review the board and semantic inspector; correct the representation, not a second artifact.",
-    "Choose a target only after the representation is accepted.",
+    "New UI — Capture approved design decisions as UIR.",
+    "Existing UI — Extract what the frontend can prove and keep the gaps explicit.",
+    "Any implementation — Use people, agents, frameworks, or any combination to produce the frontend.",
+    "Every change — Verify the result against the same specification.",
 ), start=1):
     node(f"build-step-{index}", "listitem", f"{index:02d} — {copy}", parent=BUILD_STEPS)
 
 STANDARD = node("standard", "region", None, parent=ROOT_NODE, salience="primary")
-node("standard-kicker", "paragraph", "WHY A REPRESENTATION", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("standard-title", "heading", "Not a framework. Not a design tool. Not another markup language.", parent=STANDARD, salience="primary")
-node("standard-copy", "paragraph", "UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
+node("standard-kicker", "paragraph", "WHY IT WORKS", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("standard-title", "heading", "Explicit decisions turn UI review into a test.", parent=STANDARD, salience="primary")
+node("standard-copy", "paragraph", "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
 STANDARD_GRID = node("standard-grid", "group", None, parent=STANDARD)
 for key, title, copy in (
-    ("standard-source", "Framework-independent", "A UIR fact should remain true if React is replaced by Flutter, UIKit, or something else."),
-    ("standard-evidence", "Design-system backed", "UIR names roles; the design system maps those roles to Pieces and values."),
-    ("standard-gaps", "Explicit gaps", "Unknown meaning stays unknown. Silence is not converted into a convenient default."),
-    ("standard-targets", "One authority", "Boards and target implementations are projections of the representation, not parallel sources to keep in sync."),
+    ("standard-source", "One source", "Every required decision has one place to live."),
+    ("standard-evidence", "No guessing", "Unknown stays explicit instead of becoming a convenient default."),
+    ("standard-gaps", "Design-system aware", "Components and design values are part of the specification."),
+    ("standard-targets", "Implementation-independent", "Different frontends can be checked against the same definition."),
 ):
     card = node(key, "region", None, parent=STANDARD_GRID)
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
 
 STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("status-kicker", "paragraph", "CURRENT STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("status-title", "heading", "A definition under test.", parent=STATUS, salience="primary")
-node("status-copy", "paragraph", "UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+node("status-kicker", "paragraph", "ALPHA STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("status-title", "heading", "Useful now. Still alpha.", parent=STATUS, salience="primary")
+node("status-copy", "paragraph", "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress.", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 STATUS_LIST = node("status-list", "list", None, parent=STATUS)
 for index, copy in enumerate((
-    "Working now — deterministic authoring, package checking, extraction experiments, live boards, semantic inspection, and CI evidence.",
-    "Still open — vocabulary and contract gaps that must be resolved before v0.1 can freeze.",
-    "Not claimed — a stable public install, production target compilers, or a mature adopter ecosystem.",
+    "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence.",
+    "In progress — full frontend-to-specification conformance and broader vocabulary coverage.",
+    "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem.",
 ), start=1):
     node(f"status-item-{index}", "listitem", copy, parent=STATUS_LIST)
 
 FOOTER = node("footer", "region", None, parent=ROOT_NODE, salience="quiet", overrides={"surface": "surface-ink", "ink": "ink-inverse"})
-node("footer-title", "heading", "UIR by Tenbytes Ltd", parent=FOOTER, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-node("footer-copy", "paragraph", "Created and stewarded by Tenbytes Ltd. Describe the interface. Let the design system realize it. Treat code as a target.", parent=FOOTER, salience="quiet", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-FOOTER_ACTION = node("footer-action", "link", "Try extraction", parent=FOOTER, salience="secondary")
+node("footer-title", "heading", "Ship the UI you designed.", parent=FOOTER, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
+node("footer-copy", "paragraph", "UIR by Tenbytes Ltd.", parent=FOOTER, salience="quiet", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
+FOOTER_ACTION = node("footer-action", "link", "See what UIR captures", parent=FOOTER, salience="secondary")
 
 controls.extend((
     (NAV_EXTRACT, QUICKSTART), (NAV_BUILD, BUILD), (NAV_STANDARD, STANDARD), (NAV_SOURCE, SHOWCASE),

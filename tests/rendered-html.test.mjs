@@ -75,7 +75,7 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(html, /From instructions to a verified page\./);
   assert.match(html, /href="https:\/\/github\.com\/tenbytesltd\/uir-public-site"/);
   assert.match(html, /Explore the repository/);
-  assert.match(html, /Created and stewarded by Tenbytes Ltd\./);
+  assert.match(html, /UIR by Tenbytes Ltd\./);
   assert.match(html, /id="install-gap"[^>]*color:rgb\(247 246 238 \/ 1\)/);
   assert.match(html, /The public install artifact is not published yet/);
   assert.match(html, /Inspect this page/);
@@ -95,12 +95,12 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
     "Ship the UI you designed",
     "A green build can still ship the wrong UI.",
     "From approved design to verified frontend.",
-    "Use extraction to see what your current UI actually says.",
-    "A definition under test.",
+    "Everything that makes the design the design.",
+    "Useful now. Still alpha.",
     "USER INTERFACE REPRESENTATION · ALPHA",
     "From instructions to a verified page.",
     "Explore the repository",
-    "Created and stewarded by Tenbytes Ltd.",
+    "UIR by Tenbytes Ltd.",
   ]) {
     assert.doesNotMatch(renderer, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
     assert.doesNotMatch(page, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));

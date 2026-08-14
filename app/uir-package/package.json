@@ -15,7 +15,7 @@
     {
       "collection": "interface",
       "path": "model/interface.json",
-      "sha256": "7f9d3977df9069478e0847659b187e58b49e963760a3eb246c713789f142fd2c"
+      "sha256": "f88e7bb98bac4ec176bf19b3cedf1a004ea018552608b43b2bd4d68a9a190536"
     },
     {
       "collection": "package",
