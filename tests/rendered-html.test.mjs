@@ -44,7 +44,12 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(html, new RegExp(`data-uir-package="${manifest.packageId}"`));
   assert.match(html, new RegExp(`data-uir-version="${manifest.packageVersion}"`));
   assert.equal((html.match(/data-node=/g) ?? []).length, nodeCount);
-  assert.match(html, /Write down what the interface means\./);
+  assert.match(html, /Ship the UI you designed/);
+  assert.match(html, /UIR turns your design into a machine-readable specification/);
+  assert.match(html, /A green build can still ship the wrong UI\./);
+  assert.match(html, /The wrong UI becomes the new baseline/);
+  assert.match(html, /From approved design to verified frontend\./);
+  assert.match(html, /03 · Verify every change/);
   assert.match(html, /id="hero-kicker"[^>]*>USER INTERFACE REPRESENTATION · ALPHA<\/p>/);
   const heroTag = html.match(/<section id="hero"[^>]*>/)?.[0] ?? "";
   assert.match(heroTag, /data-uir-surface="radial-gradient"/);
@@ -67,9 +72,9 @@ test("server-renders the checked UIR package as the marketing page", async () =>
   assert.match(html, /<section id="build"[^>]*background-color:rgb\(232 229 218 \/ 1\)/);
   assert.match(html, /<section id="standard"[^>]*background-color:rgb\(255 254 248 \/ 1\)/);
   assert.match(html, /<section id="status"[^>]*background-color:rgb\(232 229 218 \/ 1\)/);
-  assert.match(html, /The page you are reading is generated from its own representation\./);
+  assert.match(html, /From instructions to a verified page\./);
   assert.match(html, /href="https:\/\/github\.com\/tenbytesltd\/uir-public-site"/);
-  assert.match(html, /View the site source/);
+  assert.match(html, /Explore the repository/);
   assert.match(html, /Created and stewarded by Tenbytes Ltd\./);
   assert.match(html, /id="install-gap"[^>]*color:rgb\(247 246 238 \/ 1\)/);
   assert.match(html, /The public install artifact is not published yet/);
@@ -87,12 +92,14 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
   ]);
 
   for (const phrase of [
-    "Write down what the interface means.",
+    "Ship the UI you designed",
+    "A green build can still ship the wrong UI.",
+    "From approved design to verified frontend.",
     "Use extraction to see what your current UI actually says.",
     "A definition under test.",
     "USER INTERFACE REPRESENTATION · ALPHA",
-    "The page you are reading is generated from its own representation.",
-    "View the site source",
+    "From instructions to a verified page.",
+    "Explore the repository",
     "Created and stewarded by Tenbytes Ltd.",
   ]) {
     assert.doesNotMatch(renderer, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));

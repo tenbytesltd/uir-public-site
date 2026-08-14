@@ -1071,13 +1071,13 @@ HERO = node(
 )
 node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
 node(
-    "hero-title", "heading", "Write down what the interface means.",
+    "hero-title", "heading", "Ship the UI you designed",
     parent=HERO, salience="primary",
     overrides={"ink": "ink-inverse", "type": "type-display"},
 )
 node(
     "hero-lead", "paragraph",
-    "UIR is a framework-independent representation of a screen: its structure, roles, behaviour, states, relationships, and unresolved gaps. A design system supplies the realization. Code is a target.",
+    "UIR turns your design into a machine-readable specification — so you can build and verify your frontend against it.",
     parent=HERO, salience="secondary",
     overrides={"ink": "ink-inverse", "type": "type-lead"},
 )
@@ -1092,27 +1092,27 @@ node(
 
 PROBLEM = node("problem", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("problem-kicker", "paragraph", "THE PROBLEM", parent=PROBLEM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("problem-title", "heading", "Code can show how a screen was built. It cannot tell you what the screen means.", parent=PROBLEM, salience="primary")
-node("problem-lead", "paragraph", "Design captures appearance. Code captures one implementation. A design system captures reusable realization. The interface itself — its semantic structure and obligations — still has no canonical form.", parent=PROBLEM, salience="secondary", overrides={"type": "type-lead"})
+node("problem-title", "heading", "A green build can still ship the wrong UI.", parent=PROBLEM, salience="primary")
+node("problem-lead", "paragraph", "Functional tests prove that the frontend works. Visual regression shows that it changed. Neither proves that it matches the design.", parent=PROBLEM, salience="secondary", overrides={"type": "type-lead"})
 PROBLEM_GRID = node("problem-grid", "group", None, parent=PROBLEM)
 for key, title, copy in (
-    ("problem-design", "The design", "Appearance is explicit. Meaning is mostly inferred."),
-    ("problem-code", "The code", "Behaviour is executable, but intent is distributed through implementation details."),
-    ("problem-system", "The system", "Components and tokens define how roles are realized, not what this particular screen means."),
+    ("problem-design", "Handoff turns decisions into interpretation", "Developers have to infer which details are intentional and which are flexible."),
+    ("problem-code", "Design review stays manual", "Designers repeatedly inspect screens, states and breakpoints to find what drifted."),
+    ("problem-system", "The wrong UI becomes the new baseline", "Once a difference ships, future tests protect it — even if it never matched the design."),
 ):
     card = node(key, "region", None, parent=PROBLEM_GRID, salience="secondary")
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card, salience="supporting")
 
 MECHANISM = node("mechanism", "region", None, parent=ROOT_NODE, salience="primary")
-node("mechanism-kicker", "paragraph", "THE MISSING LAYER", parent=MECHANISM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("mechanism-title", "heading", "UIR describes the screen. The design system decides how to draw it.", parent=MECHANISM, salience="primary")
-node("mechanism-copy", "paragraph", "UIR owns the facts that should survive a framework change. The design system owns the pieces and values that realize those facts. Put them together and the implementation becomes replaceable.", parent=MECHANISM, salience="secondary", overrides={"type": "type-lead"})
+node("mechanism-kicker", "paragraph", "HOW IT WORKS", parent=MECHANISM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("mechanism-title", "heading", "From approved design to verified frontend.", parent=MECHANISM, salience="primary")
+node("mechanism-copy", "paragraph", "UIR carries the design decisions into implementation, then checks that the frontend keeps them.", parent=MECHANISM, salience="secondary", overrides={"type": "type-lead"})
 FLOW = node("mechanism-flow", "group", None, parent=MECHANISM)
 for key, title, copy in (
-    ("flow-input", "01 · The screen", "Structure, reading order, roles, behaviour, conditions, navigation, and data relationships."),
-    ("flow-package", "02 · The design system", "Pieces and design values that realize roles without leaking implementation details into UIR."),
-    ("flow-prototype", "03 · The result", "A board, a web app, a native app, or another target derived from the same meaning."),
+    ("flow-input", "01 · Capture the design", "Turn structure, content, states, behaviour and design-system decisions into a machine-readable specification."),
+    ("flow-package", "02 · Build against it", "Give developers and agents explicit requirements instead of asking them to interpret a mockup."),
+    ("flow-prototype", "03 · Verify every change", "Check the rendered frontend against the specification and catch mismatches before they ship."),
 ):
     card = node(key, "region", None, parent=FLOW)
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
@@ -1123,20 +1123,20 @@ SHOWCASE = node(
     overrides={"surface": "surface-ink", "ink": "ink-inverse"},
     sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO),
 )
-node("showcase-kicker", "paragraph", "THIS SITE IS UIR", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-title", "heading", "The page you are reading is generated from its own representation.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-copy", "paragraph", "Its content, structure, semantics, design bindings, provenance, and gaps live in the checked UIR package. React is only the renderer. The inspector reads the same package.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+node("showcase-kicker", "paragraph", "PLAYGROUND", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-title", "heading", "From instructions to a verified page.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-copy", "paragraph", "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes every step.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 SHOWCASE_GRID = node("showcase-grid", "group", None, parent=SHOWCASE, sources=(SRC_USER, SRC_SITE_REPO))
 for key, title, copy in (
-    ("showcase-source", "01 · Read the UIR", "The authoring source compiles to the checked package consumed by the page."),
-    ("showcase-review", "02 · Check the proof", "CI verifies that the package is reproducible and binds it to the reviewed UIR evidence."),
-    ("showcase-inspect", "03 · Inspect any node", "Select visible content to see the role, Piece, bindings, provenance, controls, and gaps behind it."),
+    ("showcase-source", "01 · The instructions", "Product intent, design direction, and constraints begin as instructions to the agent."),
+    ("showcase-review", "02 · The agent build", "The agent encodes confirmed decisions in UIR. For a static page, the representation is enough to produce the visualization."),
+    ("showcase-inspect", "03 · The verification", "Tests pin the agent-authored target to the package and fail when implementation and specification drift."),
 ):
     card = node(key, "region", None, parent=SHOWCASE_GRID, salience="secondary", sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
     node(f"{key}-copy", "paragraph", copy, parent=card, overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 SHOWCASE_ACTIONS = node("showcase-actions", "group", None, parent=SHOWCASE, salience="secondary", sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-repository", "link", "View the site source", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
+node("showcase-repository", "link", "Explore the repository", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
 node("showcase-path", "code", "github.com/tenbytesltd/uir-public-site", parent=SHOWCASE_ACTIONS, salience="supporting", sources=(SRC_SITE_REPO,))
 
 QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary")

@@ -533,6 +533,53 @@ Publish decision: eligible after the sequential public verifier, runtime build, 
 - Verification command and result: official UIR CI passed with 0 failing gates and 0 ungated errors; public verification reports 4,200 records and fingerprint `7cbe05c616f4cc7e7db612304b08417683c27de102e4e5f6abd14d50fb6eea8c`; mobile and desktop browser runs found no adjacent duplicate backgrounds, transparent hero title and lead backgrounds, no horizontal overflow, no overlays, and no console or page errors. Normal canvas samples changed three times and reduced-motion samples stayed identical.
 - Remaining risk: the official contrast gate remains unchecked, so painted canvas contrast still depends on runtime evidence.
 
+### F43 — category-first copy hid the product reason to exist
+
+- Status: fixed for the hero, problem, How, and Playground copy; remaining sections pending review
+- Flow step: UIR authoring and marketing hierarchy
+- Candidate revision: `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: the previous hero opened with representation vocabulary and framework independence before naming the user outcome. Research and user review established the actual Why: the shipped frontend should match the approved design and that parity needs verification.
+- User impact: visitors had to understand a new category before they could recognize the problem UIR solves.
+- Root cause: copy followed product ontology rather than Why, pain, mechanism, and proof.
+- Change made: authored the approved hero statement, `Ship the UI you designed`, and a single supporting sentence that connects machine-readable design specification to building and verifying frontend output. The problem section now states the design-parity failure, the manual review burden, and baseline drift without introducing the solution. The How section advances the approved narrative through capture, build, and continuous verification. The former showcase now presents the clean-start loop as a Playground with instructions, agent build, verification, and a repository path. The checked package was regenerated; no renderer copy was introduced.
+- Proposed tooling or workflow improvement: add an explicit positioning checkpoint before site authoring that records Why, pain, How, What, primary audience, and the one claim each page section must advance.
+- Verification command and result: official UIR CI passed with 4 unchanged deferrals, 0 failing gates, 6 unchanged unchecked gates, and 0 ungated errors; record count remained 4,200; public proof and all 5 rendered-site tests passed.
+- Remaining risk: the lower sections still follow the older category-first narrative and must be reduced and rewritten before this candidate is eligible to publish.
+
+| Signal | Baseline | After | Interpretation |
+|---|---|---|---|
+| Candidate revision | `16f3f3dfaa61a2d72896ad7be422417b3cba77c23f63411a47d69d3dbce073d8` | `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74` | Copy changed through UIR authoring. |
+| Records | 4,200 | 4,200 | Existing content Facts changed; no score-padding records were added. |
+| Gates | 0 fail, 6 unchecked, 0 ungated errors | unchanged | Positioning did not manufacture a semantic quality gain. |
+
+Publish decision: not eligible while the remaining section narrative is under review. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
+### F44 — the Playground claim needs an independent agent-target conformance gate
+
+- Status: deferred implementation handoff
+- Flow step: target implementation, interaction, and CI
+- Candidate revision: `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: the approved Playground copy says tests pin an agent-authored target to the package. Current CI reproduces the UIR package, checks reviewed evidence, and samples server-rendered output, but it does not independently derive and compare the complete static target contract.
+- User impact: publishing the claim before the conformance layer exists would turn the live proof into a marketing assertion rather than evidence that UIR works.
+- Root cause: existing target tests count rendered Nodes and check representative fragments; they do not compare every ordered Node, relationship, leaf value, destination, and binding against an independently derived package expectation.
+- Change made: authored only the final Playground copy in UIR and regenerated the checked package. The requested implementation was deliberately stopped to preserve the remaining task budget. This candidate is not eligible to publish.
+- Implementation handoff:
+  1. Add a versioned Playground brief in the site repository that exposes the original instructions, accepted copy decisions, UIR authoring path, target path, and verification command.
+  2. Run a clean agent against the checked UIR package and the target contract, without embedding marketing copy in target source. Preserve the agent brief and resulting target as reviewable repository evidence.
+  3. Add an independent conformance test that derives the expected depth-first Node order, identity, role, salience, leaf content or Gap, `contains` and `controls` relationships, link destinations, and required presentation bindings from `app/uir-package`; parse the rendered target and deep-compare those facts. Do not let the renderer emit its own expected manifest.
+  4. Run the conformance gate after package reproduction and before GitHub Pages export. The readable CI review must distinguish semantic/static conformance from pixel equality.
+  5. Keep static pages on the generic UIR visualization path. Add bespoke JSX only for behavior the representation or target profile cannot realize, and disclose each such lowering.
+  6. Author a Playground-entry emphasis as a UIR motion event and transition. When the section reaches about 35 percent visibility, pulse the inspector launcher for three restrained cycles; use a static highlight under reduced motion and do not repeat after the inspector has opened in that session.
+  7. While the inspector dialog is open, do not render the floating launcher. The dialog close control and Escape remain available; after close, the launcher returns without replaying the pulse.
+  8. Add browser tests for section entry, one-shot pulse state, reduced motion, launcher absence while open, close and Escape restoration, keyboard focus, and mobile viewport behavior.
+- Proposed tooling or workflow improvement: provide a reusable official UIR target-conformance CLI and action that compares an independently realized target with a checked package and publishes the exact mismatches.
+- Verification command and result: the copy-only official UIR CI passed with 4 unchanged deferrals, 0 failing gates, 6 unchanged unchecked gates, and 0 ungated errors; 4,200 records remain. No target, interaction, CSS, or CI implementation was made in this iteration.
+- Remaining risk: the Playground conformance and pulse claims are not publishable until every handoff item above is implemented and browser-verified.
+
+Publish decision: blocked by the explicit Playground implementation handoff. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
 ## Open review questions
 
 - What exact artifact counts as “value” immediately after extraction: a conformance degree, a checklist, a findings view, a live board, or a prioritized adoption queue?
