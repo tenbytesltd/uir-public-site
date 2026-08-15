@@ -26,7 +26,16 @@ jobs:
           python-version: '3.12'
 
       - name: Rewrite target
-        run: python3 tool/rewrite_public_target_to_react.py
+        run: |
+          python3 tool/rewrite_public_target_to_react.py
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('app/uir-data.ts')
+          text = path.read_text(encoding='utf-8')
+          start = text.index('const firstPrimaryHeading =')
+          end = text.index('\n\nconst sourceNames', start)
+          path.write_text(text[:start] + text[end + 2:], encoding='utf-8')
+          PY
 
       - name: Install
         run: npm ci
