@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
 
 import {
   verifyRenderedTarget,
@@ -73,4 +74,14 @@ test("the conformance gate catches design-system realization drift", async () =>
   const result = await verifyRenderedTarget(mutated);
   assert.equal(result.ok, false);
   assert.match(explain(result), /hero-title: style color expected .*got rgb\(1 2 3 \/ 1\)/);
+});
+
+
+test("Piece identity is owned by React design-system components, not copied from expected UIR", async () => {
+  const designSystem = await readFile(new URL("../app/design-system.tsx", import.meta.url), "utf8");
+  const data = await readFile(new URL("../app/uir-data.ts", import.meta.url), "utf8");
+  assert.match(designSystem, /heading: "uir-site:piece:heading"/);
+  assert.match(designSystem, /paragraph: "uir-site:piece:paragraph"/);
+  assert.doesNotMatch(designSystem, /resolutionPiece|expectedPiece/);
+  assert.match(data, /uirNodeProps\(key: string, actualRole: string, actualPiece: string\)/);
 });

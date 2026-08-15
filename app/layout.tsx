@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { uirMetadata } from "./uir";
+import { uirMetadata } from "./uir-data";
 
 const publicSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??

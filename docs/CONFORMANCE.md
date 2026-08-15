@@ -72,3 +72,20 @@ node tool/uir_conformance.mjs --verify-sources
 ```
 
 `--snapshot-sources` is an explicit re-baselining/bootstrap operation and must not run in normal CI.
+
+
+## Public target architecture
+
+The public site is deliberately **not** the generic UIR renderer. The designer-facing
+renderer is a visualization tool; the production target is a normal React component tree.
+
+`app/Site.tsx` contains explicit product components and section composition. It reads
+content and design facts from the checked UIR package through `app/uir-data.ts`, while
+`app/design-system.tsx` owns the concrete React Piece implementations. Piece identity is
+therefore reported by the component that actually rendered, not copied from the expected
+contract. Using `Paragraph` where the UIR requires `Heading` produces the wrong role,
+Piece and bindings and the conformance gate fails.
+
+This is the target loop the public site demonstrates:
+
+`design + design system → UIR → independently authored React target → deterministic verdict`
