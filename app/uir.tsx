@@ -568,12 +568,19 @@ function RenderNode({ subject }: { subject: string }) {
     </>
   );
   const body = node.gap ?? node.content;
-  const common = {
+const piece = resolutionPiece(node.role);
+const conformanceBindings = [...resolvedBindings(node).entries()]
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([slot, groundRole]) => `${slot}=${groundRole}`)
+  .join("|");
+const common = {
     id: node.key,
     "data-node": node.key,
     "data-role": node.role,
     "data-salience": node.salience,
-    ...nodePresentationData(node),
+  "data-uir-piece": piece,
+  "data-uir-bindings": conformanceBindings,
+  ...nodePresentationData(node),
     style: nodeStyle(node),
   };
 

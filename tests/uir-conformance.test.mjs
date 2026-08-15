@@ -52,6 +52,16 @@ test("the conformance gate catches semantic drift", async () => {
   assert.match(explain(result), /hero-title: role expected heading, got paragraph/);
 });
 
+test("the conformance gate catches wrong Piece selection even when appearance could match", async () => {
+  const response = await render();
+  const html = await response.text();
+  const mutated = html.replace(/data-uir-piece="[^"]+"/, 'data-uir-piece="uir-site:piece:wrong"');
+  assert.notEqual(mutated, html, "Piece mutation fixture did not match rendered HTML");
+  const result = await verifyRenderedTarget(mutated);
+  assert.equal(result.ok, false);
+  assert.match(explain(result), /Piece expected .* got uir-site:piece:wrong/);
+});
+
 test("the conformance gate catches design-system realization drift", async () => {
   const response = await render();
   const html = await response.text();

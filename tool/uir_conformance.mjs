@@ -587,6 +587,17 @@ export async function verifyRenderedTarget(html, packageRoot = "app/uir-package"
     if (actual.tag !== expectedTag) mismatches.push(`${key}: tag expected ${expectedTag}, got ${actual.tag}`);
     if (actual.attrs["data-role"] !== role) mismatches.push(`${key}: role expected ${role}, got ${actual.attrs["data-role"]}`);
     if (actual.attrs["data-salience"] !== salience) mismatches.push(`${key}: salience expected ${salience}, got ${actual.attrs["data-salience"]}`);
+    const expectedPiece = pkg.resolutionPiece(subject);
+    if (actual.attrs["data-uir-piece"] !== expectedPiece) {
+      mismatches.push(`${key}: Piece expected ${expectedPiece}, got ${actual.attrs["data-uir-piece"]}`);
+    }
+    const expectedBindings = [...pkg.resolvedBindings(subject).entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([slot, groundRole]) => `${slot}=${groundRole}`)
+      .join("|");
+    if (actual.attrs["data-uir-bindings"] !== expectedBindings) {
+      mismatches.push(`${key}: bindings expected ${expectedBindings}, got ${actual.attrs["data-uir-bindings"]}`);
+    }
     if (actual.parent !== expectedParent) mismatches.push(`${key}: parent expected ${expectedParent}, got ${actual.parent}`);
     if (actual.order !== expectedOrder) mismatches.push(`${key}: order expected ${expectedOrder}, got ${actual.order}`);
 
