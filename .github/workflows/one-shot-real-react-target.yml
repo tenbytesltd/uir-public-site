@@ -32,9 +32,13 @@ jobs:
           from pathlib import Path
           path = Path('app/uir-data.ts')
           text = path.read_text(encoding='utf-8')
+          start = text.index('function ancestorRoles(')
+          end = text.index('\n\nconst discoveredRootId', start)
+          text = text[:start] + text[end + 2:]
           start = text.index('const firstPrimaryHeading =')
           end = text.index('\n\nconst sourceNames', start)
-          path.write_text(text[:start] + text[end + 2:], encoding='utf-8')
+          text = text[:start] + text[end + 2:]
+          path.write_text(text, encoding='utf-8')
           PY
 
       - name: Install
