@@ -39,6 +39,12 @@ jobs:
           end = text.index('\n\nconst sourceNames', start)
           text = text[:start] + text[end + 2:]
           path.write_text(text, encoding='utf-8')
+
+          layout = Path('app/layout.tsx')
+          layout.write_text(
+              layout.read_text(encoding='utf-8').replace('from "./uir"', 'from "./uir-data"'),
+              encoding='utf-8',
+          )
           PY
 
       - name: Install
@@ -55,7 +61,7 @@ jobs:
           rm -f tool/rewrite_public_target_to_react.py .github/workflows/one-shot-real-react-target.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- app/Site.tsx app/design-system.tsx app/uir-data.ts app/page.tsx app/uir.tsx tests/rendered-html.test.mjs tests/uir-conformance.test.mjs docs/CONFORMANCE.md tool/rewrite_public_target_to_react.py .github/workflows/one-shot-real-react-target.yml
+          git add -- app/Site.tsx app/design-system.tsx app/uir-data.ts app/page.tsx app/layout.tsx app/uir.tsx tests/rendered-html.test.mjs tests/uir-conformance.test.mjs docs/CONFORMANCE.md tool/rewrite_public_target_to_react.py .github/workflows/one-shot-real-react-target.yml
           git diff --cached --check
           git commit -m "replace generic renderer with real React target"
           git push origin HEAD:feat/deterministic-uir-conformance-final
