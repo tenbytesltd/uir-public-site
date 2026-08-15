@@ -45,6 +45,14 @@ jobs:
               layout.read_text(encoding='utf-8').replace('from "./uir"', 'from "./uir-data"'),
               encoding='utf-8',
           )
+
+          tests = Path('tests/uir-conformance.test.mjs')
+          test_text = tests.read_text(encoding='utf-8')
+          test_text = test_text.replace(
+              r'/uirNodeProps\\(key: string, actualRole: string, actualPiece: string\\)/',
+              r'/uirNodeProps\(key: string, actualRole: string, actualPiece: string\)/',
+          )
+          tests.write_text(test_text, encoding='utf-8')
           PY
 
       - name: Install
