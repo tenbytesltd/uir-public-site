@@ -29,42 +29,30 @@ jobs:
 
           app = Path('app/uir.tsx')
           text = app.read_text(encoding='utf-8')
-          old = '''  const body = node.gap ?? node.content;
-          const common = {
-            id: node.key,
-            "data-node": node.key,
-            "data-role": node.role,
-            "data-salience": node.salience,
-            ...nodePresentationData(node),
-            style: nodeStyle(node),
-          };'''
-          new = '''  const body = node.gap ?? node.content;
+          needle = '  const body = node.gap ?? node.content;\n  const common = {'
+          replacement = '''  const body = node.gap ?? node.content;
           const piece = resolutionPiece(node.role);
           const conformanceBindings = [...resolvedBindings(node).entries()]
             .sort(([a], [b]) => a.localeCompare(b))
             .map(([slot, groundRole]) => `${slot}=${groundRole}`)
             .join("|");
-          const common = {
-            id: node.key,
-            "data-node": node.key,
-            "data-role": node.role,
-            "data-salience": node.salience,
+          const common = {'''
+          if needle not in text:
+              raise SystemExit('RenderNode insertion point not found')
+          text = text.replace(needle, replacement, 1)
+          needle = '    "data-salience": node.salience,\n    ...nodePresentationData(node),'
+          replacement = '''    "data-salience": node.salience,
             "data-uir-piece": piece,
             "data-uir-bindings": conformanceBindings,
-            ...nodePresentationData(node),
-            style: nodeStyle(node),
-          };'''
-          if old not in text:
-              raise SystemExit('RenderNode common block not found')
-          app.write_text(text.replace(old, new, 1), encoding='utf-8')
+            ...nodePresentationData(node),'''
+          if needle not in text:
+              raise SystemExit('RenderNode data hook point not found')
+          app.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
 
           verifier = Path('tool/uir_conformance.mjs')
           text = verifier.read_text(encoding='utf-8')
-          old = '''    if (actual.attrs["data-role"] !== role) mismatches.push(`${key}: role expected ${role}, got ${actual.attrs["data-role"]}`);
-              if (actual.attrs["data-salience"] !== salience) mismatches.push(`${key}: salience expected ${salience}, got ${actual.attrs["data-salience"]}`);
-              if (actual.parent !== expectedParent) mismatches.push(`${key}: parent expected ${expectedParent}, got ${actual.parent}`);'''
-          new = '''    if (actual.attrs["data-role"] !== role) mismatches.push(`${key}: role expected ${role}, got ${actual.attrs["data-role"]}`);
-              if (actual.attrs["data-salience"] !== salience) mismatches.push(`${key}: salience expected ${salience}, got ${actual.attrs["data-salience"]}`);
+          needle = '    if (actual.attrs["data-salience"] !== salience) mismatches.push(`${key}: salience expected ${salience}, got ${actual.attrs["data-salience"]}`);'
+          replacement = '''    if (actual.attrs["data-salience"] !== salience) mismatches.push(`${key}: salience expected ${salience}, got ${actual.attrs["data-salience"]}`);
               const expectedPiece = pkg.resolutionPiece(subject);
               if (actual.attrs["data-uir-piece"] !== expectedPiece) {
                 mismatches.push(`${key}: Piece expected ${expectedPiece}, got ${actual.attrs["data-uir-piece"]}`);
@@ -75,15 +63,14 @@ jobs:
                 .join("|");
               if (actual.attrs["data-uir-bindings"] !== expectedBindings) {
                 mismatches.push(`${key}: bindings expected ${expectedBindings}, got ${actual.attrs["data-uir-bindings"]}`);
-              }
-              if (actual.parent !== expectedParent) mismatches.push(`${key}: parent expected ${expectedParent}, got ${actual.parent}`);'''
-          if old not in text:
-              raise SystemExit('Verifier role/salience block not found')
-          verifier.write_text(text.replace(old, new, 1), encoding='utf-8')
+              }'''
+          if needle not in text:
+              raise SystemExit('Verifier salience insertion point not found')
+          verifier.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
 
           tests = Path('tests/uir-conformance.test.mjs')
           text = tests.read_text(encoding='utf-8')
-          marker = '''test("the conformance gate catches design-system realization drift", async () => {'''
+          marker = 'test("the conformance gate catches design-system realization drift", async () => {'
           addition = '''test("the conformance gate catches wrong Piece selection even when appearance could match", async () => {
             const response = await render();
             const html = await response.text();
