@@ -63,6 +63,12 @@ approved design.
 - **Temporary helper workflows.** A one-shot rewrite workflow once lived in
   `.github/workflows/` and reported failures next to the real gate. Anything
   added there is a permanent check until deleted.
+- **`claude-review.yml` is a VENDORED copy** of `tenbytesltd/playbooks@v1`,
+  because a public repository cannot call a private reusable workflow. Its body
+  is byte-identical to upstream so drift is a diff rather than a judgement, and
+  its header carries the command that produces that diff. An edit to it that
+  changes review behaviour is a finding: the change belongs in `playbooks`
+  first, and here only as a re-vendor.
 
 ## What is NOT worth raising
 

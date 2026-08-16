@@ -1,0 +1,63 @@
+name: Claude Code Review
+
+# The caller. The review itself is the VENDORED copy of
+# tenbytesltd/playbooks@v1 in claude-review.yml — read its header before
+# changing anything about how the review behaves.
+#
+# A WORKFLOW OF ITS OWN, and not a job inside `uir-site-ci.yml`, which is where
+# the other consumers put it. The reason is measured rather than stylistic: the
+# first attempt did put it there, the call could not resolve, and the run failed
+# at the workflow level with ZERO check-runs — so the GATE did not execute and
+# the pull request read as merely red rather than unverified. A review that
+# cannot run must not be able to stop the thing that verifies the code. The cost
+# of separating them is that the review races the gate instead of being ordered
+# ahead of it; on this repository the gate is under two minutes on free hosted
+# minutes, so there is nothing to protect it from.
+#
+# Both triggers are here because they answer different questions:
+#  - `pull_request` is the automatic review of each ready pull request.
+#  - `issue_comment` carrying `@claude-review` asks for a full re-read, and is
+#    also the only path that can review a pull request which edits the review
+#    itself: a comment event runs the DEFAULT BRANCH's workflow, so it is never
+#    the mismatched one.
+on:
+  pull_request:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    # `@claude-review`, with the hyphen, and the hyphen is not cosmetic: the
+    # action matches its trigger as a word boundary, `(^|\s)@claude([\s.,!?;:]|$)`,
+    # so `@claude-review` does not also wake a general-purpose `@claude`
+    # assistant while `@claude review` (a space) would. Do not tidy it away.
+    #
+    # The draft, dependabot and fork guards are NOT repeated here. They live in
+    # the reviewed workflow deliberately, so that a caller cannot forget one —
+    # which matters most in this repository, the only one of the consumers that
+    # can receive a fork pull request at all.
+    if: >-
+      github.event_name == 'pull_request' ||
+      (github.event.issue.pull_request &&
+       contains(github.event.comment.body, '@claude-review'))
+    uses: ./.github/workflows/claude-review.yml
+    # REQUIRED here rather than there: a called workflow can only NARROW
+    # GITHUB_TOKEN, never widen it, so these are what let the review post.
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    secrets: inherit
+    with:
+      # GitHub-hosted, unlike the private consumers: this repository is public,
+      # so hosted minutes are free and the org's exhausted allowance — which is
+      # why `tenbytesltd/uir` runs on self-hosted boxes — does not apply here.
+      runner_labels: '["ubuntu-latest"]'
+      # `full:` is deliberately NOT set. An issue_comment already means a human
+      # asked, and the reviewed workflow reads the event itself — a `full:` line
+      # testing `github.event_name` in every caller is exactly the duplication
+      # the shared workflow exists to remove. Its own documentation says so.
