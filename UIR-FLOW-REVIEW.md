@@ -9,7 +9,7 @@ This document records the authoring experience, not the product. Product meaning
 ## Session allowlist
 
 **Written without absolute paths, and it was not.** Five lines of this document
-carried `/home/<user>/…` — the machine's account name and where two PRIVATE
+carried an absolute home-directory path — the machine's account name and where two PRIVATE
 repositories sit on it — in a public repository that deploys on merge. Nothing
 checked it; `tool/public_site_ci.py` scanned generated artifacts only, and the
 first run of the widened scan failed on this file. A path is a fact about a

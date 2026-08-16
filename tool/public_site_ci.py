@@ -54,12 +54,27 @@ PACKAGE_PATH = "app/uir-package"
 #: a guard could not survive its own rule, and the reason the widening was worth
 #: doing rather than an argument against it.
 #:
+#: **A LOOKBEHIND and not a prefix class**, which is what caught one of the five
+#: paths this check was written after and left four.  The class was
+#: `[\s"'(=]` — good for JSON, where a quote precedes the value, and blind to
+#: how Markdown writes a path.  Four of those five were list items whose path
+#: sat inside a CODE SPAN, so the character before it was a backtick and the
+#: class did not match; they were found by reading and removed by hand while the
+#: guard reported green over them.  (Naming that shape with an example here is
+#: what the fourth attempt at this constant did, and this file is scanned: the
+#: example was itself an absolute path from outside this repository.)
+#:
+#: What the class was reaching for is "not a path continuation", so that is what
+#: is asked.  `https://example.com/opt/x` and `app/uir-package/var/y` still
+#: decline, because a word character precedes the segment in both, and the rule
+#: stops depending on which punctuation somebody happened to type.
+#:
 #: The trailing `?` on the backslash because both spellings reach a published
 #: file: a Markdown document carries a Windows path as written, JSON carries it
 #: escaped, and requiring two backslashes saw only the JSON half.
 OUTSIDE_ROOTS = ("home", "Users", "root", "var", "mnt", "srv", "opt")
 OUTSIDE_ROOT = re.compile(
-    r"(?:^|[\s\"'(=])(?:"
+    r"(?<![A-Za-z0-9_.\-/])(?:"
     + "|".join("/" + name + "/" for name in OUTSIDE_ROOTS)
     + r"|[A-Za-z]:\\\\?)")
 
@@ -73,9 +88,11 @@ OUTSIDE_ROOT = re.compile(
 #: The scanner scanning itself is fine and is the point: this constant holds
 #: DIGESTS, so this file can be read by the check it defines — which is a
 #: property the literal denylist it replaced did not have.
+#: `app/uir-package` is NOT listed beside `app`: it lies below it, so naming
+#: both read every file of the package model twice per run.
 PUBLISHED = ("uir/official-audit.json", "uir/evidence.json", "README.md",
-             "UIR-FLOW-REVIEW.md", "docs", "app/uir-package", "app", "tool",
-             "tests", "uir/author_site.py")
+             "UIR-FLOW-REVIEW.md", "docs", "app", "tool", "tests",
+             "uir/author_site.py")
 
 
 def word_tokens(text: str) -> set[str]:
@@ -281,12 +298,20 @@ def semantic_snapshot(
     # returned `[]`, the loop body never ran, every token and path check was
     # skipped, and the tool printed `passed`. Finding nothing and finding
     # nothing wrong were the same outcome.
-    scanned = published_files(root)
-    if not scanned:
+    # PER ENTRY and not in aggregate. An entry that resolves to neither a file
+    # nor a directory contributes nothing and says nothing, while `scanned`
+    # stays non-empty because the others are still there — so renaming
+    # `uir/author_site.py`, where all site copy is authored, silently stops
+    # covering it and the tool prints `passed` over a narrower scan than this
+    # tuple claims. Nothing else in the run depends on these strings: `--author`
+    # is a separate argument with its own default.
+    missing = [entry for entry in PUBLISHED if not (root / entry).exists()]
+    if missing:
         raise VerificationError(
-            f"no published artifact was found under {root}: the scan for a "
-            f"private subject's name covered nothing, which is not the same "
-            f"answer as covering everything and finding nothing")
+            f"artifacts this check is written to read are not under {root}: "
+            f"{', '.join(missing)} — a scan that covers nothing and a scan that "
+            f"covers everything and finds nothing are not the same answer")
+    scanned = published_files(root)
     for path in scanned:
         try:
             text = path.read_text(encoding="utf-8")
