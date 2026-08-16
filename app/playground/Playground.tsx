@@ -2,11 +2,7 @@
 
 import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  filesFromDrop,
-  filesFromInput,
-  loadPackageFromFiles,
-} from "./package-loader";
+import { filesFromDrop, filesFromInput, loadPackageFromFiles } from "./package-loader";
 import {
   UIRRuntime,
   type PackageDiagnostic,
@@ -102,7 +98,11 @@ function CanvasNode({
     case "paragraph":
       return <p {...common}>{badge}{body || node.key}</p>;
     case "link":
-      return <a {...common} href="#" aria-label={body || node.key}>{badge}{body || node.key}</a>;
+      return (
+        <a {...common} href={node.href ?? "./"} aria-label={body || node.key}>
+          {badge}{body || node.key}
+        </a>
+      );
     case "button":
       return <button {...common} type="button">{badge}{body || node.key}</button>;
     case "code":
@@ -114,6 +114,18 @@ function CanvasNode({
     default:
       return <div {...common}>{badge}{body ? <span>{body}</span> : null}{children}</div>;
   }
+}
+
+function treeMatches(runtime: UIRRuntime, id: string, query: string, filter: TreeFilter): boolean {
+  const node = runtime.node(id);
+  const search = !query || [node.id, node.key, node.role, node.content, node.pieceName]
+    .some((value) => value.toLowerCase().includes(query));
+  const filtered =
+    filter === "all" ||
+    (filter === "gaps" && Boolean(node.gap)) ||
+    (filter === "unresolved" && !node.piece) ||
+    (filter === "inferred" && node.modes.includes("inferred"));
+  return (search && filtered) || node.children.some((child) => treeMatches(runtime, child, query, filter));
 }
 
 function TreeNode({
@@ -190,18 +202,6 @@ function TreeNode({
   );
 }
 
-function treeMatches(runtime: UIRRuntime, id: string, query: string, filter: TreeFilter): boolean {
-  const node = runtime.node(id);
-  const search = !query || [node.id, node.key, node.role, node.content, node.pieceName]
-    .some((value) => value.toLowerCase().includes(query));
-  const filtered =
-    filter === "all" ||
-    (filter === "gaps" && Boolean(node.gap)) ||
-    (filter === "unresolved" && !node.piece) ||
-    (filter === "inferred" && node.modes.includes("inferred"));
-  return (search && filtered) || node.children.some((child) => treeMatches(runtime, child, query, filter));
-}
-
 function DefinitionRows({ rows }: { rows: [string, string | number | undefined][] }) {
   return (
     <dl className="uir-pg-definition-list">
@@ -245,9 +245,13 @@ function Inspector({
           <button
             key={item.id}
             type="button"
+            role="tab"
+            aria-selected={tab === item.id}
             className={tab === item.id ? "is-active" : ""}
             onClick={() => onTab(item.id)}
-          >{item.label}</button>
+          >
+            {item.label}
+          </button>
         ))}
       </div>
       <div className="uir-pg-inspector-body">
@@ -312,7 +316,7 @@ function Inspector({
           <>
             <p className="uir-pg-section-label">Provenance modes</p>
             <div className="uir-pg-chip-row">
-              {node.modes.length ? node.modes.map((mode) => <span key={mode}>{mode}</span>) : <em>none declared</em>}
+              {node.modes.length ? node.modes.map((item) => <span key={item}>{item}</span>) : <em>none declared</em>}
             </div>
             <p className="uir-pg-section-label">Sources</p>
             {node.sources.length ? (
@@ -370,10 +374,13 @@ function Diagnostics({
 }
 
 export function Playground({ initialPackage }: { initialPackage: UIRPackageData }) {
+  const initialRuntime = useMemo(() => new UIRRuntime(initialPackage), [initialPackage]);
   const [pkg, setPackage] = useState(initialPackage);
   const runtime = useMemo(() => new UIRRuntime(pkg), [pkg]);
-  const [selectedId, setSelectedId] = useState<string | undefined>(runtime.rootIds[0] ?? runtime.nodeIds[0]);
-  const [expanded, setExpanded] = useState<Set<string>>(() => new Set(runtime.rootIds));
+  const [selectedId, setSelectedId] = useState<string | undefined>(
+    initialRuntime.rootIds[0] ?? initialRuntime.nodeIds[0],
+  );
+  const [expanded, setExpanded] = useState<Set<string>>(() => new Set(initialRuntime.rootIds));
   const [mode, setMode] = useState<CanvasMode>("semantics");
   const [filter, setFilter] = useState<TreeFilter>("all");
   const [query, setQuery] = useState("");
@@ -389,17 +396,21 @@ export function Playground({ initialPackage }: { initialPackage: UIRPackageData 
     directoryInput.current?.setAttribute("directory", "");
   }, []);
 
-  useEffect(() => {
-    const next = runtime.rootIds[0] ?? runtime.nodeIds[0];
-    setSelectedId(next);
-    setExpanded(new Set(runtime.rootIds));
+  const applyPackage = (nextPackage: UIRPackageData) => {
+    const nextRuntime = new UIRRuntime(nextPackage);
+    setPackage(nextPackage);
+    setSelectedId(nextRuntime.rootIds[0] ?? nextRuntime.nodeIds[0]);
+    setExpanded(new Set(nextRuntime.rootIds));
     setQuery("");
     setFilter("all");
-  }, [runtime]);
+    setInspectorTab("semantic");
+  };
 
   const stats = runtime.stats();
   const metadata = runtime.packageMetadata();
-  const selected = selectedId ? runtime.node(selectedId) : undefined;
+  const selected = selectedId && runtime.nodeIds.includes(selectedId)
+    ? runtime.node(selectedId)
+    : undefined;
   const semanticDiagnostics: PackageDiagnostic[] = [
     {
       severity: runtime.rootIds.length ? "success" : "error",
@@ -431,20 +442,21 @@ export function Playground({ initialPackage }: { initialPackage: UIRPackageData 
 
   const selectNode = (id: string) => {
     setSelectedId(id);
-    const ancestors = new Set(expanded);
-    let current = runtime.parentByNode.get(id);
-    while (current) {
-      ancestors.add(current);
-      current = runtime.parentByNode.get(current);
-    }
-    setExpanded(ancestors);
+    setExpanded((current) => {
+      const next = new Set(current);
+      let parent = runtime.parentByNode.get(id);
+      while (parent) {
+        next.add(parent);
+        parent = runtime.parentByNode.get(parent);
+      }
+      return next;
+    });
   };
 
   const openFiles = async (files: ReturnType<typeof filesFromInput>) => {
     setLoadError(undefined);
     try {
-      const loaded = await loadPackageFromFiles(files);
-      setPackage(loaded);
+      applyPackage(await loadPackageFromFiles(files));
     } catch (error) {
       setLoadError(error instanceof Error ? error.message : "Could not read this UIR package.");
     }
@@ -455,9 +467,7 @@ export function Playground({ initialPackage }: { initialPackage: UIRPackageData 
     setDragging(false);
     setLoadError(undefined);
     try {
-      const files = await filesFromDrop(event.dataTransfer);
-      const loaded = await loadPackageFromFiles(files);
-      setPackage(loaded);
+      applyPackage(await loadPackageFromFiles(await filesFromDrop(event.dataTransfer)));
     } catch (error) {
       setLoadError(error instanceof Error ? error.message : "Could not read this UIR package.");
     }
@@ -478,7 +488,10 @@ export function Playground({ initialPackage }: { initialPackage: UIRPackageData 
         className="uir-pg-hidden-input"
         type="file"
         multiple
-        onChange={(event) => event.target.files && openFiles(filesFromInput(event.target.files))}
+        onChange={(event) => {
+          if (event.currentTarget.files) void openFiles(filesFromInput(event.currentTarget.files));
+          event.currentTarget.value = "";
+        }}
       />
 
       {dragging ? <div className="uir-pg-drop-overlay"><strong>Drop UIR package</strong><span>Read locally · nothing is uploaded</span></div> : null}
@@ -492,11 +505,19 @@ export function Playground({ initialPackage }: { initialPackage: UIRPackageData 
         <div className="uir-pg-top-actions">
           <span className="uir-pg-local-badge">● LOCAL ONLY</span>
           <button type="button" onClick={() => directoryInput.current?.click()}>Open package</button>
-          {pkg !== initialPackage ? <button type="button" className="is-secondary" onClick={() => setPackage(initialPackage)}>Use example</button> : null}
+          {pkg !== initialPackage ? (
+            <button type="button" className="is-secondary" onClick={() => applyPackage(initialPackage)}>Use example</button>
+          ) : null}
         </div>
       </header>
 
-      {loadError ? <div className="uir-pg-error-banner"><strong>Could not open package.</strong><span>{loadError}</span><button type="button" onClick={() => setLoadError(undefined)}>×</button></div> : null}
+      {loadError ? (
+        <div className="uir-pg-error-banner">
+          <strong>Could not open package.</strong>
+          <span>{loadError}</span>
+          <button type="button" aria-label="Dismiss error" onClick={() => setLoadError(undefined)}>×</button>
+        </div>
+      ) : null}
 
       <div className="uir-pg-workspace">
         <aside className="uir-pg-structure">
