@@ -28,11 +28,17 @@
 # redaction the next consumer forgets, and `tenbytesltd/uir-playground` was the
 # next consumer, four hours later.
 #
-# What copy 4 adds over copy 3 is the fix for a finding raised against copy 3 on
-# #20: the `::warning::` in the buffer-discard step printed two runs of eleven
-# spaces mid-sentence, a wrapped message joined by deleting its newlines. The
-# review could not tell whether this copy had drifted or the upstream carried it,
-# because `playbooks` is private and the job's token gets a 404; the drift
+# What copy 4 adds over copy 3 is the fix for a finding raised on #20 against
+# copy 2, at 09:02 UTC, when the branch head was `ba06b99` and this header read
+# `a6bca1f`. Copy 3 carried the defect too — it landed at 15:44, six and a half
+# hours later — but "raised against" is a claim about WHEN, and the copy the
+# reviewer was reading is the one that gets named. Both are true; only one is the
+# attribution.
+#
+# The finding: the `::warning::` in the buffer-discard step printed two runs of
+# eleven spaces mid-sentence, a wrapped message joined by deleting its newlines.
+# The review could not tell whether this copy had drifted or the upstream carried
+# it, because `playbooks` is private and the job's token gets a 404; the drift
 # command below settled it in one line, and it was fixed at the source rather
 # than tidied here.
 #
