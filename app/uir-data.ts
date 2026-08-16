@@ -149,14 +149,21 @@ function view(subject: string): NodeView {
 // and a binding set the page does not render, silently — and nothing upstream
 // would say so either, since `UIR-SEM-PARENT-ROLE-DEFERRED` is one of the four
 // compiler deferrals this package still carries.
-function nodeParentRole(subject: string | undefined) {
-  const parent = subject ? parentByNode.get(subject) : undefined;
+function nodeParentRole(subject: string) {
+  const parent = parentByNode.get(subject);
   return parent ? nodeRole(parent) : "$surface-root";
 }
 
-function resolutionPiece(node: NodeView | string) {
-  const subject = typeof node === "string" ? undefined : node.id;
-  const roleName = typeof node === "string" ? node : node.role;
+// `NodeView` and not `NodeView | string`. The union survived the change to
+// parent-role resolution and its string branch was dead in the way that reads
+// as supported: with no node there is no parent, so it answered
+// `"$surface-root"` — a role no Resolution in this package selects on — and
+// `resolutionPiece("paragraph")` returned `undefined` where before the change
+// it returned a Piece. Narrowing it makes the next caller that holds only a
+// role name a compile error instead of a silent `undefined`.
+function resolutionPiece(node: NodeView) {
+  const subject = node.id;
+  const roleName = node.role;
   const parentRoleName = nodeParentRole(subject);
   for (const selector of facts.filter(
     (record) =>

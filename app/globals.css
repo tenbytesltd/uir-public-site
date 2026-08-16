@@ -293,11 +293,16 @@ a {
    `code`. The frame is keyed off the class the target gives them rather than off
    `data-role`, because the role now says what they ARE and the role is what the
    conformance gate compares. */
+/* The frame, and NOT the family: `quickstart-*-captures` binds `type` to
+   `type-mono`, whose variant resolves `family` to `family-mono`, and the
+   adapter puts that on the element as an inline `fontFamily` — which beats a
+   class selector, so a `font-family` here would be inert today and would go on
+   asserting `monospace` the day the package changes that value. What the
+   package does not state is the frame, and that is what is left. */
 #quickstart-steps .capture-list {
   margin-top: auto;
   padding: 14px 18px;
   border-top: var(--uir-rule, 1px solid #b8b7ae);
-  font-family: monospace;
   min-height: 0;
 }
 

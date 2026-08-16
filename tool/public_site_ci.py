@@ -21,18 +21,68 @@ EVIDENCE_SCHEMA = "uir.public-site-evidence/v1"
 #: here: the field names ONE commit or it names nothing checkable.
 AUDIT_SOURCE = re.compile(r"^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+@[0-9a-f]{40}$")
 
-#: Words that make a measurement ATTRIBUTABLE to a private subject. The audit is
-#: produced by tooling that measures a client's codebase, and one of its
-#: constants carried that client's package name and four figures measured against
-#: it into every report it wrote — including this repository's, twice, the second
-#: time after a clean regeneration. It was fixed at its source in the private
-#: tree; this is the check that says so here, where the file is published.
+#: **A denylist of literal words cannot live in this repository, and the first
+#: version of this block put two of them here.**  The words in question are a
+#: private subject's, the repository is public, merging deploys — so a check
+#: written to keep an identifier out of a generated artifact wrote it into
+#: hand-authored source, under a docstring saying what it was.  Before that
+#: commit the working tree held zero occurrences; after it, exactly one, and it
+#: was the guard.
 #:
-#: It exists because the field that WOULD have said the audit came from a fixed
-#: revision was not validated by anything and was stale: `officialAuditSource`
-#: named a revision three days older than the fix while the audit content was
-#: the fixed tooling's. A provenance string nothing checks is not provenance.
-PRIVATE_SUBJECTS = ("exams", "testvai")
+#: So the tokens are stored as `sha256(token)`.  The check ships and the word
+#: does not, and a reader of this file learns nothing they did not bring.
+BANNED_TOKENS = frozenset({
+    "d6bd4331946ce8fac2f0df73692714005873ab45cc9e4bf2c60b8c42b29531eb",
+    "b91e031bb81b33d55d202906c9766dc1b058e75694ec56e21e4fca0e47b16674",
+})
+
+#: What the audit may say a package is.  An ALLOWLIST, because the instance this
+#: exists for was a filesystem root — `"package": "/home/…/app/uir-package"` —
+#: and a list of the two words that leaked would never have caught it.
+PACKAGE_PATH = "app/uir-package"
+
+#: A path outside this repository, in any string the audit carries.  This is the
+#: half that catches a subject nobody has thought of yet, which two hashed words
+#: by definition cannot.
+OUTSIDE_ROOT = re.compile(r"(?:^|[\s\"'(=])(?:/home/|/Users/|/root/|/var/|/mnt/|"
+                          r"/srv/|/opt/|[A-Za-z]:\\\\)")
+
+#: The published artifacts, not the audit alone.  The tooling constant that
+#: leaked reached a generated JSON file, and the same constant reaching the
+#: package model or a document under `docs/` was covered by nothing while the
+#: sentence above claimed a class rather than an instance.
+PUBLISHED = ("uir/official-audit.json", "uir/evidence.json", "README.md",
+             "docs", "app/uir-package")
+
+
+def word_tokens(text: str) -> set[str]:
+    """The lowercased words of a text, split on anything that is not one.
+
+    Split rather than matched, so a token is found wherever it is embedded: as a
+    scoped package name, as a hyphenated file name, and inside an absolute path.
+    A word-boundary regex that excludes the hyphen misses every hyphenated
+    continuation, which is the mistake the private tooling made in its own copy
+    of this audit and corrected by putting one matcher beside the words.
+    """
+    return {token for token in re.split(r"[^a-z0-9]+", text.lower()) if token}
+
+
+def banned_tokens_in(text: str) -> int:
+    """How many denied tokens this text carries.  The count, never the token."""
+    return sum(1 for token in word_tokens(text)
+               if hashlib.sha256(token.encode("utf-8")).hexdigest() in BANNED_TOKENS)
+
+
+def published_files(root: pathlib.Path) -> list[pathlib.Path]:
+    """Every file this repository publishes that the audit check covers."""
+    found: list[pathlib.Path] = []
+    for entry in PUBLISHED:
+        target = root / entry
+        if target.is_dir():
+            found.extend(sorted(path for path in target.rglob("*") if path.is_file()))
+        elif target.is_file():
+            found.append(target)
+    return found
 
 
 class VerificationError(RuntimeError):
@@ -190,13 +240,33 @@ def semantic_snapshot(
         raise VerificationError(
             f"officialAuditSource must be owner/repo@<40-hex sha> naming one "
             f"commit, and is {source!r}")
-    audit_text = audit_path.read_text(encoding="utf-8").lower()
-    named = sorted(word for word in PRIVATE_SUBJECTS if word in audit_text)
-    if named:
-        raise VerificationError(
-            f"the published audit names {', '.join(named)}: a private subject's "
-            f"name reached a file this repository serves, and the revision this "
-            f"evidence attributes it to cannot be checked from here")
+    # The ALLOWLIST first, because it is the half that catches a subject nobody
+    # has listed: the instance was `"package": "/home/…/app/uir-package"`, a
+    # filesystem root of the machine the private tooling ran on.
+    for field, value in (("package", audit.get("package")),
+                         ("report.root", audit.get("report", {}).get("root"))):
+        if value != PACKAGE_PATH:
+            raise VerificationError(
+                f"the published audit states {field} as {value!r} and not "
+                f"{PACKAGE_PATH!r}: an audit that names where it was produced "
+                f"names the machine that produced it")
+    for path in published_files(audit_path.parent.parent):
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        outside = OUTSIDE_ROOT.search(text)
+        if outside and path.name not in ("README.md",):
+            raise VerificationError(
+                f"{path} carries an absolute path from outside this repository "
+                f"({outside.group(0).strip()!r}): a published artifact states "
+                f"where it was produced")
+        count = banned_tokens_in(text)
+        if count:
+            raise VerificationError(
+                f"{path} carries {count} token(s) this repository does not "
+                f"publish; the check holds their digests and not the words, so "
+                f"compare against the private tooling's own audit list")
 
     report, status = audit.get("report", {}), audit.get("status", {})
     if report.get("packageId") != public["packageId"]:
