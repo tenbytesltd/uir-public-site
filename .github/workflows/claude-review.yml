@@ -2,7 +2,16 @@
 # VENDORED COPY. Do not edit below the marker.
 #
 # Source: tenbytesltd/playbooks/.github/workflows/claude-review.yml at tag `v1`
-# Commit: bf0df4c (playbooks#32, merged 2026-08-16 15:25 UTC; v1 moved onto it)
+# Commit: bf0df4c64a4a0819bb0d029dad72ea8be772765a
+#         (playbooks#32, merged 2026-08-16 15:25 UTC; `v1` moved onto it)
+#
+# THE FULL FORTY, not a prefix. `tool/public_site_ci.py` states the rule for the
+# audit's own revision field and enforces it in code — *a short sha is ambiguous
+# across a repository's lifetime and a branch name is not a revision at all* — and
+# this line does the same job under a looser standard, which is worse rather than
+# equal: the re-vendor command below resolves `?ref=v1`, a MOVING tag, so this
+# field is the only record of which commit the copy actually is. It is what a
+# reader compares the tag against to answer whether v1 has moved since.
 # Taken:  2026-08-16 (third vendoring in one day, and the reason is below)
 #
 # THE PREVIOUS TWO COPIES BOTH CARRIED A CLIENT'S REPOSITORY NAME, and this one

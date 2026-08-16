@@ -381,6 +381,64 @@ test("every ANCHOR is present in the tree the scan is rooted on", () => {
   });
 });
 
+test("the walk reads every tracked file and no fewer", () => {
+  // **The count, compared against git, and not against the tool's own idea of
+  // what it skipped.** Every case above seeds a path and asks whether the
+  // refusal comes; none of them can see a file the walk never reached, because
+  // an unreached file produces no refusal AND no evidence of its absence. This
+  // is the only assertion in the suite that fails when coverage NARROWS rather
+  // than when a check stops working, and it is the one that catches a prune
+  // that goes one directory too deep.
+  //
+  // Equality rather than `>=`: the copy is exactly the tracked files, and the
+  // only thing the run adds under the root is its own `.uir-ci/` output, which
+  // `.gitignore` anchors at the root and the walk skips there.
+  //
+  // **It does not currently catch the anchor bug the case below covers**, and
+  // saying so is the point: no tracked path in this repository has a component
+  // named `out`, `dist`, `work`, `coverage` or `outputs`, so the two counts
+  // agree by luck rather than by construction. Measured — reverting the anchor
+  // fix leaves this case green and turns the next one red. This one is the
+  // invariant for the day such a path exists; that one is the instance.
+  withCheckout((where) => {
+    const { code, said } = verify(where);
+    assert.equal(code, 0, said);
+    const walked = said.match(/Published boundary: (\d+) file\(s\) walked/);
+    assert.ok(walked, `the verifier printed no boundary line\n${said}`);
+    assert.equal(Number(walked[1]), trackedFiles().length,
+      `the walk read ${walked[1]} files and git tracks ${trackedFiles().length}`);
+  });
+});
+
+test("a root-anchored .gitignore entry is not pruned at every depth", () => {
+  // `entry.strip("/")` discarded git's anchor, so `/dist/`, `/out/`, `/work/`,
+  // `/coverage` and eight others pruned at ANY depth. A tracked
+  // `examples/d1/dist/bundle.js` is listed by `git ls-files` — the pattern
+  // matches the root only — and the walk skipped it: bytes never read, path
+  // never tokenised, `passed` printed over a published file.
+  //
+  // The seeded case above cannot see this. It iterates top-level components, so
+  // it seeds `examples` and never `examples/d1/dist`, and a nested over-prune is
+  // invisible to the oracle for the same reason it is invisible to the tool.
+  withCheckout((where) => {
+    const anchored = readFileSync(join(root, ".gitignore"), "utf8")
+      .split("\n").map((line) => line.trim())
+      .filter((line) => line.startsWith("/"))
+      .map((line) => line.replace(/^\/+|\/+$/g, ""))
+      .filter((name) => name && !name.includes("/"));
+    assert.ok(anchored.length,
+      "this repository's .gitignore has no root-anchored entry, so this case tests nothing");
+    const nested = join(where, "docs", "nested", anchored[0]);
+    mkdirSync(nested, { recursive: true });
+    writeFileSync(join(nested, "seeded-by-the-suite.md"),
+      `<!-- ${["", "home", "somebody", "seeded"].join("/")} -->\n`);
+    const { code, said } = verify(where);
+    assert.equal(code, 1,
+      `docs/nested/${anchored[0]}/ was pruned, and git tracks paths like it\n${said}`);
+    assert.match(said, /carries an absolute path/, said);
+  });
+});
+
 test("a denied token in a file's NAME is refused, and the refusal does not repeat it", () => {
   // The include list never looked at a file name, only at bytes it could
   // decode — so `<denied>-report.png` was published under a name that states

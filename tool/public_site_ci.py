@@ -170,34 +170,53 @@ def redacted(text: str) -> str:
         text)
 
 
-def not_published(root: pathlib.Path) -> frozenset[str]:
+def not_published(root: pathlib.Path) -> tuple[frozenset[str], frozenset[str]]:
     """The names this repository declares it does not carry, read out of its own
-    `.gitignore`.
+    `.gitignore`, split by the DEPTH git gives them.
 
-    Only the unambiguous half of that file is used: an entry that names ONE
+    Returns `(anywhere, at_root_only)`.
+
+    Only the unambiguous half of that file is used: an entry naming ONE
     component, with no `/` inside it and no glob character, is a name this walk
     can prune.  `.yarn/*`, `*.pem` and `!.yarn/patches` are left to git, because
     a half-understood pattern that prunes too much is a directory silently
     dropped from the audit — the failure this whole change is undoing.
 
+    **A LEADING SLASH IS AN ANCHOR, not punctuation to strip.**  The first
+    version wrote `entry.strip("/")` and put every survivor in one set, so the
+    twelve root-anchored entries in this repository's `.gitignore` — `/dist/`,
+    `/out/`, `/work/`, `/coverage`, `/outputs/` and the rest — pruned at EVERY
+    depth.  A tracked `examples/d1/dist/bundle.js` is listed by `git ls-files`,
+    because `/dist/` matches the root and nothing else; the walk skipped it, its
+    bytes were never read and its path was never tokenised, and the tool printed
+    `passed` over a published file it had not opened.
+
+    That is this commit's own failure with the sign flipped, and it is what the
+    paragraph above claims to have avoided — the reasoning there covers globs and
+    embedded slashes, and the anchor is a third ambiguity that was stripped
+    rather than declined.  Declining it wholesale would have been safe; widening
+    it was not.
+
     A `.gitignore` that is missing or says nothing leaves the floor, and the walk
     reads more than it needs to.  That is the correct direction to fail in: slow
     and complete, never fast and partial.
     """
-    names = set(ALWAYS_SKIPPED)
+    anywhere = set(ALWAYS_SKIPPED)
+    at_root_only: set[str] = set()
     try:
         declared = (root / ".gitignore").read_text(encoding="utf-8")
     except OSError:
-        return frozenset(names)
+        return frozenset(anywhere), frozenset(at_root_only)
     for line in declared.splitlines():
         entry = line.strip()
         if not entry or entry.startswith("#") or entry.startswith("!"):
             continue
+        anchored = entry.startswith("/")
         entry = entry.strip("/")
         if not entry or "/" in entry or any(c in entry for c in "*?[]"):
             continue
-        names.add(entry)
-    return frozenset(names)
+        (at_root_only if anchored else anywhere).add(entry)
+    return frozenset(anywhere), frozenset(at_root_only)
 
 
 def published_files(root: pathlib.Path) -> list[pathlib.Path]:
@@ -209,10 +228,16 @@ def published_files(root: pathlib.Path) -> list[pathlib.Path]:
     before anything gets to reject them, which on this repository is the
     difference between reading a few hundred files and reading a few hundred
     thousand.
+
+    The root-anchored half of `.gitignore` is applied ONLY at the root, which is
+    what the anchor means.  Applying it everywhere skipped a tracked
+    `examples/…/dist/` and reported `passed` over a file it had not opened.
     """
-    skipped = not_published(root)
+    anywhere, at_root_only = not_published(root)
     found: list[pathlib.Path] = []
     for directory, subdirectories, names in os.walk(root):
+        here = pathlib.Path(directory)
+        skipped = anywhere | at_root_only if here == root else anywhere
         subdirectories[:] = sorted(name for name in subdirectories
                                    if name not in skipped)
         found.extend(pathlib.Path(directory) / name
