@@ -66,15 +66,26 @@ PACKAGE_PATH = "app/uir-package"
 #:
 #: What the class was reaching for is "not a path continuation", so that is what
 #: is asked.  `https://example.com/opt/x` and `app/uir-package/var/y` still
-#: decline, because a word character precedes the segment in both, and the rule
-#: stops depending on which punctuation somebody happened to type.
+#: decline, because a LETTER precedes the segment in both — which is why `/` is
+#: NOT in the excluded set.  Putting it there buys neither of those two and
+#: costs the URL spelling that carries a doubled slash before the root segment:
+#: the character before it is then a slash, and a URL scheme is a delimiter
+#: rather than a path continuation.  Not hypothetical here —
+#: `tool/uir_conformance.mjs` already builds such a URL from a local path, so
+#: the resolved spelling is one README line away from a scanned file.
+#:
+#: **No example in this file spells one out, and that is a rule rather than a
+#: style.**  Five commits in a row put an illustrative path into a comment here
+#: and the check failed on itself each time, because this file is one of the
+#: files it reads and the illustration IS the thing being detected.  The
+#: examples that stay are the ones that must NOT match.
 #:
 #: The trailing `?` on the backslash because both spellings reach a published
 #: file: a Markdown document carries a Windows path as written, JSON carries it
 #: escaped, and requiring two backslashes saw only the JSON half.
 OUTSIDE_ROOTS = ("home", "Users", "root", "var", "mnt", "srv", "opt")
 OUTSIDE_ROOT = re.compile(
-    r"(?<![A-Za-z0-9_.\-/])(?:"
+    r"(?<![A-Za-z0-9_.\-])(?:"
     + "|".join("/" + name + "/" for name in OUTSIDE_ROOTS)
     + r"|[A-Za-z]:\\\\?)")
 
@@ -324,7 +335,7 @@ def semantic_snapshot(
         if outside and path != root / "README.md":
             raise VerificationError(
                 f"{path} carries an absolute path from outside this repository "
-                f"({outside.group(0).strip()!r}): a published artifact states "
+                f"({outside.group(0)!r}): a published artifact states "
                 f"where it was produced")
         count = banned_tokens_in(text)
         if count:
