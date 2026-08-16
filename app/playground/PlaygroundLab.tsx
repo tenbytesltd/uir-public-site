@@ -187,10 +187,28 @@ export function PlaygroundLab({ initialPackage }: { initialPackage: UIRPackageDa
     const params = new URLSearchParams(window.location.search);
     const sharedSource = params.get("source");
     const sharedCompare = params.get("compare");
-    if (sharedSource) void loadRemote(sharedSource);
-    if (sharedCompare) void loadRemote(sharedCompare, true);
-  // loadRemote intentionally resolves only the initial deep-link once.
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    if (sharedSource) {
+      void loadPackageFromUrl(sharedSource).then(({ pkg: sharedPackage, resolvedUrl }) => {
+        const nextSource: PackageSource = { kind: "remote", label: new URL(resolvedUrl).hostname, url: resolvedUrl };
+        setPackage(sharedPackage);
+        setSource(nextSource);
+        setRemoteInput(resolvedUrl);
+        setRevision((value) => value + 1);
+      }).catch((error: unknown) => {
+        setMessage(error instanceof Error ? error.message : "Could not load the shared UIR package.");
+      });
+    }
+
+    if (sharedCompare) {
+      void loadPackageFromUrl(sharedCompare).then(({ pkg: sharedPackage, resolvedUrl }) => {
+        const nextSource: PackageSource = { kind: "remote", label: new URL(resolvedUrl).hostname, url: resolvedUrl };
+        setBaseline(sharedPackage);
+        setBaselineSource(nextSource);
+      }).catch((error: unknown) => {
+        setMessage(error instanceof Error ? error.message : "Could not load the shared comparison package.");
+      });
+    }
   }, []);
 
   const openLocalFiles = async (files: ReturnType<typeof filesFromInput>) => {
@@ -231,9 +249,14 @@ export function PlaygroundLab({ initialPackage }: { initialPackage: UIRPackageDa
   };
 
   const useExample = () => {
+    const exampleSource: PackageSource = { kind: "example", label: "UIR public site" };
     setBaseline(initialPackage);
-    setBaselineSource({ kind: "example", label: "UIR public site" });
-    applyPackage(initialPackage, { kind: "example", label: "UIR public site" });
+    setBaselineSource(exampleSource);
+    setPackage(initialPackage);
+    setSource(exampleSource);
+    setRevision((value) => value + 1);
+    setMessage(undefined);
+    updateAddress(exampleSource, exampleSource);
   };
 
   const copyDeepLink = async () => {
