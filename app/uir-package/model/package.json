@@ -30,13 +30,6 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:condition:resolution:heading:navigation",
-      "kind": "Condition",
-      "owner": "uir-site:package",
-      "provenance": "uir-site:condition:resolution:heading:navigation:provenance",
-      "recordType": "Entity"
-    },
-    {
       "id": "uir-site:condition:resolution:heading:region",
       "kind": "Condition",
       "owner": "uir-site:package",
@@ -83,6 +76,13 @@
       "kind": "Condition",
       "owner": "uir-site:package",
       "provenance": "uir-site:condition:resolution:navigation:document:provenance",
+      "recordType": "Entity"
+    },
+    {
+      "id": "uir-site:condition:resolution:paragraph:navigation",
+      "kind": "Condition",
+      "owner": "uir-site:package",
+      "provenance": "uir-site:condition:resolution:paragraph:navigation:provenance",
       "recordType": "Entity"
     },
     {
@@ -280,19 +280,6 @@
       }
     },
     {
-      "id": "uir-site:fact:condition:resolution:heading:navigation",
-      "kind": "condition.expression",
-      "plane": "invisible",
-      "provenance": "uir-site:fact:condition:resolution:heading:navigation:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:condition:resolution:heading:navigation",
-      "value": {
-        "axis": "uir-site:fact:axis:parent-role",
-        "op": "eq",
-        "value": "navigation"
-      }
-    },
-    {
       "id": "uir-site:fact:condition:resolution:heading:region",
       "kind": "condition.expression",
       "plane": "invisible",
@@ -381,6 +368,19 @@
         "axis": "uir-site:fact:axis:parent-role",
         "op": "eq",
         "value": "document"
+      }
+    },
+    {
+      "id": "uir-site:fact:condition:resolution:paragraph:navigation",
+      "kind": "condition.expression",
+      "plane": "invisible",
+      "provenance": "uir-site:fact:condition:resolution:paragraph:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:condition:resolution:paragraph:navigation",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "op": "eq",
+        "value": "navigation"
       }
     },
     {

@@ -9429,21 +9429,6 @@
       }
     },
     {
-      "id": "uir-site:fact:selector:parent:heading:navigation",
-      "kind": "resolution.selector",
-      "plane": "visible",
-      "provenance": "uir-site:fact:selector:parent:heading:navigation:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:resolution:heading:navigation",
-      "value": {
-        "axis": "uir-site:fact:axis:parent-role",
-        "dimension": "parent-role",
-        "values": [
-          "navigation"
-        ]
-      }
-    },
-    {
       "id": "uir-site:fact:selector:parent:heading:region",
       "kind": "resolution.selector",
       "plane": "visible",
@@ -9549,6 +9534,21 @@
       }
     },
     {
+      "id": "uir-site:fact:selector:parent:paragraph:navigation",
+      "kind": "resolution.selector",
+      "plane": "visible",
+      "provenance": "uir-site:fact:selector:parent:paragraph:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:resolution:paragraph:navigation",
+      "value": {
+        "axis": "uir-site:fact:axis:parent-role",
+        "dimension": "parent-role",
+        "values": [
+          "navigation"
+        ]
+      }
+    },
+    {
       "id": "uir-site:fact:selector:parent:paragraph:region",
       "kind": "resolution.selector",
       "plane": "visible",
@@ -9642,18 +9642,6 @@
       }
     },
     {
-      "id": "uir-site:fact:selector:role:heading:navigation",
-      "kind": "resolution.selector",
-      "plane": "visible",
-      "provenance": "uir-site:fact:selector:role:heading:navigation:provenance",
-      "recordType": "Fact",
-      "subject": "uir-site:resolution:heading:navigation",
-      "value": {
-        "dimension": "role",
-        "role": "heading"
-      }
-    },
-    {
       "id": "uir-site:fact:selector:role:heading:region",
       "kind": "resolution.selector",
       "plane": "visible",
@@ -9735,6 +9723,18 @@
       "value": {
         "dimension": "role",
         "role": "navigation"
+      }
+    },
+    {
+      "id": "uir-site:fact:selector:role:paragraph:navigation",
+      "kind": "resolution.selector",
+      "plane": "visible",
+      "provenance": "uir-site:fact:selector:role:paragraph:navigation:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:resolution:paragraph:navigation",
+      "value": {
+        "dimension": "role",
+        "role": "paragraph"
       }
     },
     {
@@ -12577,15 +12577,6 @@
       "when": "uir-site:condition:resolution:group:region"
     },
     {
-      "id": "uir-site:resolution:heading:navigation",
-      "kind": "Resolution",
-      "outcome": "uir-site:piece:heading",
-      "owner": "uir-site:design-system",
-      "provenance": "uir-site:resolution:heading:navigation:provenance",
-      "recordType": "Entity",
-      "when": "uir-site:condition:resolution:heading:navigation"
-    },
-    {
       "id": "uir-site:resolution:heading:region",
       "kind": "Resolution",
       "outcome": "uir-site:piece:heading",
@@ -12647,6 +12638,15 @@
       "provenance": "uir-site:resolution:navigation:document:provenance",
       "recordType": "Entity",
       "when": "uir-site:condition:resolution:navigation:document"
+    },
+    {
+      "id": "uir-site:resolution:paragraph:navigation",
+      "kind": "Resolution",
+      "outcome": "uir-site:piece:paragraph",
+      "owner": "uir-site:design-system",
+      "provenance": "uir-site:resolution:paragraph:navigation:provenance",
+      "recordType": "Entity",
+      "when": "uir-site:condition:resolution:paragraph:navigation"
     },
     {
       "id": "uir-site:resolution:paragraph:region",
