@@ -7,6 +7,7 @@ import argparse
 import collections
 import hashlib
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -89,21 +90,48 @@ OUTSIDE_ROOT = re.compile(
     + "|".join("/" + name + "/" for name in OUTSIDE_ROOTS)
     + r"|[A-Za-z]:\\\\?)")
 
-#: **Everything this repository publishes, which is every tracked file.**  The
-#: first widening stopped at generated output plus `docs/` and the README, and
-#: left out the one category the leak actually landed in: `tool/public_site_ci.py`
-#: itself, where the identifier sat one commit ago, in hand-authored source.  The
-#: version of this check that shipped in `2cac775` would have passed under the
-#: check written to replace it.
+#: **What the scan skips.**  The third shape this decision has had, and the
+#: first that is not a list somebody has to keep complete.
 #:
-#: The scanner scanning itself is fine and is the point: this constant holds
-#: DIGESTS, so this file can be read by the check it defines — which is a
-#: property the literal denylist it replaced did not have.
-#: `app/uir-package` is NOT listed beside `app`: it lies below it, so naming
-#: both read every file of the package model twice per run.
-PUBLISHED = ("uir/official-audit.json", "uir/evidence.json", "README.md",
-             "UIR-FLOW-REVIEW.md", "docs", "app", "tool", "tests",
-             "uir/author_site.py")
+#: It was an include list — `README.md`, `docs`, `app`, `tool`, `tests` — under a
+#: docstring reading *"everything this repository publishes, which is every
+#: tracked file"*.  It was not.  `.github` was never on it, and on 2026-08-16 at
+#: 07:38 UTC a client's repository name was merged into
+#: `.github/workflows/claude-review.yml` and published, ten times, with two of
+#: that client's pull request numbers and a `file:line` from it.  This tool ran
+#: on that commit and printed `passed`.  It was never pointed at the directory.
+#:
+#: An include list is the shape the focus file calls *a hand-written list of
+#: places that must be complete*, and this is its fifth instance in the project.
+#: The two shapes fail in opposite directions and only one of them is survivable:
+#: a forgotten include is a file published unaudited and nothing says so, while a
+#: forgotten exclude is a build directory read for nothing and the run is slower.
+#:
+#: So the scan is now the repository, and what it skips is READ OUT OF
+#: `.gitignore` rather than restated here.  A second hand-written list would have
+#: been the same defect wearing the opposite sign: this repository already states
+#: what it does not carry, in a file it maintains for other reasons, and a copy
+#: of that statement is a copy that goes stale.  The tool's OWN output directory
+#: is the proof — `/.uir-ci/` is written by this very run, into the scan root,
+#: and the first exclude list written by hand did not have it.
+#:
+#: `.git` is the floor, because `.gitignore` never lists it.
+ALWAYS_SKIPPED = frozenset({".git"})
+
+#: Files whose ABSENCE means the scan root is wrong, not that the repository is
+#: clean.  `--audit /tmp/a.json` over a byte-identical copy once made the scan
+#: root `/`, where nothing resolved: the loop body never ran, every token and
+#: path check was skipped, and the tool printed `passed`.  Finding nothing and
+#: finding nothing wrong were the same outcome.
+#:
+#: Deliberately SHORT, and shorter than the list it replaces.  The old list did
+#: two jobs — it bounded the scan and it caught a wrong root — so every rename
+#: under it silently narrowed coverage and the existence check was the only thing
+#: standing between that and a green run.  A walk cannot be narrowed by a rename,
+#: so this half only has to answer *am I looking at the right tree*, and four
+#: files answer that as well as nine.
+ANCHORS = ("uir/official-audit.json", "uir/evidence.json", "README.md",
+           "tool/public_site_ci.py")
 
 
 def word_tokens(text: str) -> set[str]:
@@ -124,15 +152,96 @@ def banned_tokens_in(text: str) -> int:
                if hashlib.sha256(token.encode("utf-8")).hexdigest() in BANNED_TOKENS)
 
 
+def redacted(text: str) -> str:
+    """`text` with every denied token replaced, so a refusal can name WHERE
+    without republishing WHAT.
+
+    The refusal for a file's CONTENT can print a count and stop, because the
+    path already says where to look.  The refusal for a file's NAME cannot: the
+    name IS the finding, and printing it writes the denied word into a CI log
+    that is public on a public repository — the guard leaking the thing it
+    guards, which is how the literal denylist this check replaced went wrong.
+    """
+    return re.sub(
+        r"[A-Za-z0-9]+",
+        lambda match: ("<denied>" if hashlib.sha256(
+            match.group(0).lower().encode("utf-8")).hexdigest() in BANNED_TOKENS
+            else match.group(0)),
+        text)
+
+
+def not_published(root: pathlib.Path) -> tuple[frozenset[str], frozenset[str]]:
+    """The names this repository declares it does not carry, read out of its own
+    `.gitignore`, split by the DEPTH git gives them.
+
+    Returns `(anywhere, at_root_only)`.
+
+    Only the unambiguous half of that file is used: an entry naming ONE
+    component, with no `/` inside it and no glob character, is a name this walk
+    can prune.  `.yarn/*`, `*.pem` and `!.yarn/patches` are left to git, because
+    a half-understood pattern that prunes too much is a directory silently
+    dropped from the audit — the failure this whole change is undoing.
+
+    **A LEADING SLASH IS AN ANCHOR, not punctuation to strip.**  The first
+    version wrote `entry.strip("/")` and put every survivor in one set, so the
+    twelve root-anchored entries in this repository's `.gitignore` — `/dist/`,
+    `/out/`, `/work/`, `/coverage`, `/outputs/` and the rest — pruned at EVERY
+    depth.  A tracked `examples/d1/dist/bundle.js` is listed by `git ls-files`,
+    because `/dist/` matches the root and nothing else; the walk skipped it, its
+    bytes were never read and its path was never tokenised, and the tool printed
+    `passed` over a published file it had not opened.
+
+    That is this commit's own failure with the sign flipped, and it is what the
+    paragraph above claims to have avoided — the reasoning there covers globs and
+    embedded slashes, and the anchor is a third ambiguity that was stripped
+    rather than declined.  Declining it wholesale would have been safe; widening
+    it was not.
+
+    A `.gitignore` that is missing or says nothing leaves the floor, and the walk
+    reads more than it needs to.  That is the correct direction to fail in: slow
+    and complete, never fast and partial.
+    """
+    anywhere = set(ALWAYS_SKIPPED)
+    at_root_only: set[str] = set()
+    try:
+        declared = (root / ".gitignore").read_text(encoding="utf-8")
+    except OSError:
+        return frozenset(anywhere), frozenset(at_root_only)
+    for line in declared.splitlines():
+        entry = line.strip()
+        if not entry or entry.startswith("#") or entry.startswith("!"):
+            continue
+        anchored = entry.startswith("/")
+        entry = entry.strip("/")
+        if not entry or "/" in entry or any(c in entry for c in "*?[]"):
+            continue
+        (at_root_only if anchored else anywhere).add(entry)
+    return frozenset(anywhere), frozenset(at_root_only)
+
+
 def published_files(root: pathlib.Path) -> list[pathlib.Path]:
-    """Every file this repository publishes that the audit check covers."""
+    """Every file under `root` that is not part of a checkout rather than a
+    publication.
+
+    `os.walk` with the subdirectory list pruned IN PLACE, not `rglob` with a
+    filter after it: `rglob("*")` descends into `.git` and `node_modules` in full
+    before anything gets to reject them, which on this repository is the
+    difference between reading a few hundred files and reading a few hundred
+    thousand.
+
+    The root-anchored half of `.gitignore` is applied ONLY at the root, which is
+    what the anchor means.  Applying it everywhere skipped a tracked
+    `examples/…/dist/` and reported `passed` over a file it had not opened.
+    """
+    anywhere, at_root_only = not_published(root)
     found: list[pathlib.Path] = []
-    for entry in PUBLISHED:
-        target = root / entry
-        if target.is_dir():
-            found.extend(sorted(path for path in target.rglob("*") if path.is_file()))
-        elif target.is_file():
-            found.append(target)
+    for directory, subdirectories, names in os.walk(root):
+        here = pathlib.Path(directory)
+        skipped = anywhere | at_root_only if here == root else anywhere
+        subdirectories[:] = sorted(name for name in subdirectories
+                                   if name not in skipped)
+        found.extend(pathlib.Path(directory) / name
+                     for name in sorted(names) if name not in skipped)
     return found
 
 
@@ -264,6 +373,19 @@ def semantic_snapshot(
     public: dict[str, Any],
     root: pathlib.Path,
 ) -> dict[str, Any]:
+    # FIRST, before anything reads a file. The anchors answer *am I rooted on
+    # the right tree*, and every check below assumes that answer. Asked after
+    # the loads, a wrong root is reported as a missing JSON file — true, and the
+    # wrong diagnosis: the operator goes looking for a deleted artifact instead
+    # of a mis-set `--site-root`. It also matters more than it did under the
+    # include list, where a wrong root scanned nothing; the walk below a wrong
+    # root reads whatever is there.
+    missing = [entry for entry in ANCHORS if not (root / entry).exists()]
+    if missing:
+        raise VerificationError(
+            f"artifacts this check is written to read are not under {root}: "
+            f"{', '.join(missing)} — a scan that covers nothing and a scan that "
+            f"covers everything and finds nothing are not the same answer")
     audit = load_json(audit_path)
     evidence = load_json(evidence_path)
     baseline = load_json(baseline_path)
@@ -305,28 +427,36 @@ def semantic_snapshot(
     # `root`, and NOT `audit_path.parent.parent`. The two coincide only because
     # `--audit` defaults to a path exactly two components deep, and nothing
     # enforces that: `--audit /tmp/a.json` over a byte-identical copy made the
-    # scan root `/`, where none of `PUBLISHED` resolves — so `published_files`
-    # returned `[]`, the loop body never ran, every token and path check was
-    # skipped, and the tool printed `passed`. Finding nothing and finding
-    # nothing wrong were the same outcome.
-    # PER ENTRY and not in aggregate. An entry that resolves to neither a file
-    # nor a directory contributes nothing and says nothing, while `scanned`
-    # stays non-empty because the others are still there — so renaming
-    # `uir/author_site.py`, where all site copy is authored, silently stops
-    # covering it and the tool prints `passed` over a narrower scan than this
-    # tuple claims. Nothing else in the run depends on these strings: `--author`
-    # is a separate argument with its own default.
-    missing = [entry for entry in PUBLISHED if not (root / entry).exists()]
-    if missing:
-        raise VerificationError(
-            f"artifacts this check is written to read are not under {root}: "
-            f"{', '.join(missing)} — a scan that covers nothing and a scan that "
-            f"covers everything and finds nothing are not the same answer")
+    # scan root `/`. On the include list that emptied the scan; on a walk it does
+    # something worse and quieter — it reads the whole filesystem. The anchors at
+    # the top of this function are what refuse it, before any of that happens.
     scanned = published_files(root)
+    if not scanned:
+        raise VerificationError(
+            f"the walk of {root} found no file to read, which is not a clean "
+            f"repository and is not a result")
+    undecodable = 0
     for path in scanned:
+        # The NAME first, and for EVERY file including the ones no decoder will
+        # open. A file is published under its path as much as under its bytes,
+        # so a file named `<subject>-report.png` states the subject whether or
+        # not anything can read the image — and under the include list nothing
+        # looked at a file name at all.
+        #
+        # The illustration is a PLACEHOLDER, and that is the rule this file
+        # already carries: it is scanned by the check it defines, so spelling an
+        # example out makes the example the finding. Written the other way here
+        # first, and caught on the first run by the very check being added.
+        relative = path.relative_to(root).as_posix()
+        named = banned_tokens_in(relative)
+        if named:
+            raise VerificationError(
+                f"a published file's own PATH carries {named} token(s) this "
+                f"repository does not publish: {redacted(relative)}")
         try:
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
+            undecodable += 1
             continue
         outside = OUTSIDE_ROOT.search(text)
         # Scoped to the file meant, not to every `README.md` anywhere below the
@@ -343,6 +473,16 @@ def semantic_snapshot(
                 f"{path} carries {count} token(s) this repository does not "
                 f"publish; the check holds their digests and not the words, so "
                 f"compare against the private tooling's own audit list")
+
+    # Stated, not implied. A file no decoder opens is read by its PATH and by
+    # nothing else, and that is a narrower answer than the one the loop gives
+    # for everything above it — so the count goes on stdout rather than letting
+    # `passed` cover it. It is also the tell for a scan that walked the wrong
+    # tree: a repository of a few hundred text files does not produce hundreds
+    # of undecodable ones.
+    print(f"Published boundary: {len(scanned)} file(s) walked from {root}, "
+          f"of which {undecodable} were not decodable as UTF-8 and were read "
+          f"by path alone")
 
     report, status = audit.get("report", {}), audit.get("status", {})
     if report.get("packageId") != public["packageId"]:

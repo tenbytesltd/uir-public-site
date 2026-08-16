@@ -20,37 +20,43 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { spawnSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, renameSync,
-  writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync,
+  renameSync, statSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 
-// What a copy needs for the verifier to reach the checks under test: the
-// authoring program and the package it reproduces, the evidence pair, and every
-// entry of `PUBLISHED`. Derived from that constant rather than listed, so an
-// entry added there without a copy here fails loudly on the FIRST case instead
-// of silently narrowing every one of them.
-function publishedEntries() {
-  const source = readFileSync(join(root, "tool/public_site_ci.py"), "utf8");
-  const block = source.match(/PUBLISHED = \(([^)]*)\)/s);
-  assert.ok(block, "PUBLISHED is not a literal tuple any more; this fixture reads it");
-  return [...block[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
+// The copy used to be assembled from an INCLUDE list read out of the tool, and
+// it inherited that list's defect exactly: `.github` was on neither side, so the
+// directory that carried a client's repository name onto the open internet was
+// neither scanned by the tool nor present in the tree these cases run against.
+// A suite built from the same incomplete list as the thing it tests cannot find
+// what the list left out.
+//
+// So the copy is now the REPOSITORY — and it is built from `git ls-files`, not
+// from the tool's own exclude list. Reading that list here would make the oracle
+// call the thing it tests: the fixture and the tool would agree about coverage
+// by construction, including where both are wrong. What a repository publishes
+// is what it TRACKS, git is the authority on that, and the two derivations are
+// then independent. Where they disagree, the seeded case for that path fails
+// and says so.
+function trackedFiles() {
+  const listed = spawnSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" });
+  assert.equal(listed.status, 0,
+    `this fixture builds its tree from git; \`git ls-files\` exited ${listed.status}`);
+  const files = listed.stdout.split("\0").filter(Boolean);
+  assert.ok(files.length > 20, `only ${files.length} tracked files — wrong tree?`);
+  return files;
 }
-
-const NEEDED = ["uir", "app", "tool", "tests", "docs", "package.json",
-                "README.md", "UIR-FLOW-REVIEW.md"];
 
 function checkout() {
   const where = mkdtempSync(join(tmpdir(), "uir-public-site-ci-"));
-  for (const entry of new Set([...NEEDED, ...publishedEntries().map((e) => e.split("/")[0])])) {
-    try {
-      cpSync(join(root, entry), join(where, entry), { recursive: true });
-    } catch (error) {
-      if (error.code !== "ENOENT") throw error;
-    }
+  for (const entry of trackedFiles()) {
+    const target = join(where, entry);
+    mkdirSync(dirname(target), { recursive: true });
+    cpSync(join(root, entry), target);
   }
   return where;
 }
@@ -111,9 +117,12 @@ function seedAndExpectRefusal(where, entry, why = "") {
     writeFileSync(target, `${JSON.stringify({ ...parsed, note: seeded }, null, 2)}\n`);
     if (entry.endsWith("official-audit.json")) rebind(where);
   } else {
-    const target = entry.includes(".")
-      ? join(where, entry)
-      : join(where, entry, "seeded-by-the-suite.md");
+    // What is on DISK decides, not whether the name has a dot in it. The dot
+    // rule read `.github` as a file and tried to open a directory — and the
+    // directory it got wrong is the one this whole change exists for.
+    const target = statSync(join(where, entry)).isDirectory()
+      ? join(where, entry, "seeded-by-the-suite.md")
+      : join(where, entry);
     const before = existsSync(target) ? readFileSync(target, "utf8") : "";
     const marker = target.endsWith(".py") ? `# ${seeded}`
       : target.endsWith(".mjs") || target.endsWith(".ts") || target.endsWith(".tsx")
@@ -258,30 +267,39 @@ test("the README carve-out belongs to the README and is not inherited by name", 
   });
 });
 
-test("an entry this check names and cannot find is refused, one by one", () => {
-  // Not in aggregate: a single stale entry contributes no files and says
-  // nothing while the others keep the scan non-empty, so the tool would print
-  // `passed` over a narrower scan than `PUBLISHED` claims.
+test("an anchor this check names and cannot find is refused, one by one", () => {
+  // Not in aggregate. The anchors answer one question — *am I rooted on the
+  // right tree* — and a walk on the wrong root does something worse than the
+  // include list did there: an include list that resolves nothing scans nothing
+  // and prints `passed`, while a walk from `/` reads the filesystem. So the
+  // anchors are checked BEFORE the walk, and a single missing one is enough.
   withCheckout((where) => {
-    renameSync(join(where, "docs"), join(where, "docs-moved"));
+    renameSync(join(where, "uir/evidence.json"), join(where, "uir/evidence-moved.json"));
     const { code, said } = verify(where);
     assert.equal(code, 1, said);
-    assert.match(said, /are not under .*: docs\b/);
+    assert.match(said, /are not under .*uir\/evidence\.json/);
   });
 });
 
-test("every entry of PUBLISHED is actually scanned, one seeded path each", () => {
-  // **Derived from the constant, not one case per directory somebody
-  // remembered.** Dropping `tool` from `PUBLISHED` failed nothing before this
-  // test existed — and `tool/public_site_ci.py` is where the identifier sat
-  // when this whole guard was written, so that entry is the one with the
-  // history. A case per entry means an entry added tomorrow is covered without
-  // an edit here, and an entry removed is a red test rather than a silent gap.
-  // BOTH a path and a denied token, because the two checks have different
-  // scopes: the top-level README is deliberately exempt from the path rule and
-  // is not exempt from the token rule, so seeding only a path would report that
-  // entry as covering nothing when it covers half.
-  for (const entry of publishedEntries()) {
+test("every top-level entry of the tree is actually scanned, one seeded path each", () => {
+  // **Derived from the TREE, and that is the whole correction.** This case used
+  // to iterate `PUBLISHED`, so a place missing from the constant was a place
+  // missing from its own coverage test — the tautology this project has now
+  // corrected three times. `.github` was never on the list, so nothing here ever
+  // seeded it, and the directory that published a client's repository name was
+  // reported as covered by a suite that had never looked at it.
+  //
+  // Iterating what is actually on disk cannot have that failure mode: a
+  // directory added tomorrow is covered with no edit here, and a directory the
+  // tool stops walking is a red test rather than a silent gap.
+  //
+  // BOTH a path and a denied token are seeded, because the two checks have
+  // different scopes: the top-level README is deliberately exempt from the path
+  // rule and is not exempt from the token rule, so seeding only a path would
+  // report that entry as covering nothing when it covers half.
+  const entries = [...new Set(trackedFiles().map((path) => path.split("/")[0]))];
+  assert.ok(entries.length > 5, "the tree has too few entries for this to mean anything");
+  for (const entry of entries) {
     withCheckout((where) => seedAndExpectRefusal(where, entry));
   }
 });
@@ -306,6 +324,11 @@ const MUST_BE_SCANNED = [
                             + "the one that carried a client's name twice"],
   ["uir/evidence.json", "the binding, which is published beside it and which "
                       + "nothing else in this suite reads for content"],
+  [".github", "the directory the include list never named, and where a client's "
+            + "repository name was published for seven hours on 2026-08-16 while "
+            + "this tool ran on the commit and printed `passed`"],
+  ["package.json", "the manifest, which sits at the root and belonged to no "
+                 + "entry of the include list"],
 ];
 
 test("the places this repository requires to be scanned are all covered", () => {
@@ -340,15 +363,100 @@ Produced at ${["", "home", "somebody", "tree"].join("/")}
   });
 });
 
-test("every entry of PUBLISHED is present in the tree it is written for", () => {
-  // The constant is a hand-written list of places that must be complete, and
-  // this is the cheapest half of keeping it honest: an entry that names
-  // nothing here is one that covers nothing in CI either.
+test("every ANCHOR is present in the tree the scan is rooted on", () => {
+  // What is left of the old "every entry of PUBLISHED is present" case. That
+  // list did two jobs — it bounded the scan and it caught a wrong root — and
+  // this half is the one a walk still needs: an anchor that names nothing is a
+  // wrong-root guard that has stopped guarding.
+  const source = readFileSync(join(root, "tool/public_site_ci.py"), "utf8");
+  const block = source.match(/ANCHORS = \(([^)]*)\)/s);
+  assert.ok(block, "ANCHORS is not a literal tuple any more; this fixture reads it");
+  const anchors = [...block[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
+  assert.ok(anchors.length, "an empty anchor set refuses nothing");
   withCheckout((where) => {
-    for (const entry of publishedEntries()) {
+    for (const entry of anchors) {
       assert.ok(existsSync(join(where, entry)),
-        `PUBLISHED names ${entry}, which is not in this tree`);
+        `ANCHORS names ${entry}, which is not in this tree`);
     }
+  });
+});
+
+test("the walk reads every tracked file and no fewer", () => {
+  // **The count, compared against git, and not against the tool's own idea of
+  // what it skipped.** Every case above seeds a path and asks whether the
+  // refusal comes; none of them can see a file the walk never reached, because
+  // an unreached file produces no refusal AND no evidence of its absence. This
+  // is the only assertion in the suite that fails when coverage NARROWS rather
+  // than when a check stops working, and it is the one that catches a prune
+  // that goes one directory too deep.
+  //
+  // Equality rather than `>=`: the copy is exactly the tracked files, and the
+  // only thing the run adds under the root is its own `.uir-ci/` output, which
+  // `.gitignore` anchors at the root and the walk skips there.
+  //
+  // **It does not currently catch the anchor bug the case below covers**, and
+  // saying so is the point: no tracked path in this repository has a component
+  // named `out`, `dist`, `work`, `coverage` or `outputs`, so the two counts
+  // agree by luck rather than by construction. Measured — reverting the anchor
+  // fix leaves this case green and turns the next one red. This one is the
+  // invariant for the day such a path exists; that one is the instance.
+  withCheckout((where) => {
+    const { code, said } = verify(where);
+    assert.equal(code, 0, said);
+    const walked = said.match(/Published boundary: (\d+) file\(s\) walked/);
+    assert.ok(walked, `the verifier printed no boundary line\n${said}`);
+    assert.equal(Number(walked[1]), trackedFiles().length,
+      `the walk read ${walked[1]} files and git tracks ${trackedFiles().length}`);
+  });
+});
+
+test("a root-anchored .gitignore entry is not pruned at every depth", () => {
+  // `entry.strip("/")` discarded git's anchor, so `/dist/`, `/out/`, `/work/`,
+  // `/coverage` and eight others pruned at ANY depth. A tracked
+  // `examples/d1/dist/bundle.js` is listed by `git ls-files` — the pattern
+  // matches the root only — and the walk skipped it: bytes never read, path
+  // never tokenised, `passed` printed over a published file.
+  //
+  // The seeded case above cannot see this. It iterates top-level components, so
+  // it seeds `examples` and never `examples/d1/dist`, and a nested over-prune is
+  // invisible to the oracle for the same reason it is invisible to the tool.
+  withCheckout((where) => {
+    const anchored = readFileSync(join(root, ".gitignore"), "utf8")
+      .split("\n").map((line) => line.trim())
+      .filter((line) => line.startsWith("/"))
+      .map((line) => line.replace(/^\/+|\/+$/g, ""))
+      .filter((name) => name && !name.includes("/"));
+    assert.ok(anchored.length,
+      "this repository's .gitignore has no root-anchored entry, so this case tests nothing");
+    const nested = join(where, "docs", "nested", anchored[0]);
+    mkdirSync(nested, { recursive: true });
+    writeFileSync(join(nested, "seeded-by-the-suite.md"),
+      `<!-- ${["", "home", "somebody", "seeded"].join("/")} -->\n`);
+    const { code, said } = verify(where);
+    assert.equal(code, 1,
+      `docs/nested/${anchored[0]}/ was pruned, and git tracks paths like it\n${said}`);
+    assert.match(said, /carries an absolute path/, said);
+  });
+});
+
+test("a denied token in a file's NAME is refused, and the refusal does not repeat it", () => {
+  // The include list never looked at a file name, only at bytes it could
+  // decode — so `<denied>-report.png` was published under a name that states
+  // the subject, past a guard that opened it, failed to decode it, and moved
+  // on. A name is as published as a body.
+  withCheckout((where) => {
+    const token = ["ex", "ams"].join("");
+    writeFileSync(join(where, "docs", `${token}-notes.md`), "nothing in the body\n");
+    const { code, said } = verify(where);
+    assert.equal(code, 1, `a denied token in a path is not refused\n${said}`);
+    assert.match(said, /a published file's own PATH carries 1 token/, said);
+    // The guard must not become the leak. This is the defect the literal
+    // denylist had, one level out: a CI log on a public repository is published
+    // too, and printing the offending path to explain the refusal writes the
+    // denied word into it.
+    assert.ok(!said.includes(token),
+      "the refusal printed the denied token back into a public CI log");
+    assert.match(said, /<denied>-notes\.md/, said);
   });
 });
 
