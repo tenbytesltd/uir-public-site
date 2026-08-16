@@ -17,6 +17,9 @@ This repository makes the complete site proof inspectable:
 - a shared UIR runtime used by the public renderer and Playground;
 - the package-to-page renderer and self-inspector;
 - the browser-based UIR Playground under `/playground/`;
+- local folder and `.uir.zip` package testing;
+- public URL/GitHub package loading and shareable remote deep links;
+- semantic graph and semantic diff views;
 - a self-contained public CI verifier and readable GitHub Job Summary;
 - the maintainer-generated official semantic audit and its exact evidence
   binding;
@@ -28,11 +31,11 @@ that exact package to the latest official maintainer audit.
 
 ## UIR Playground
 
-The Playground is a local-first inspection tool for UIR packages. Open the
-public site and choose **Playground**, or navigate to `/playground/` while
-running the project locally.
+The Playground is a browser inspection and comparison tool for UIR packages.
+Open the public site and choose **Playground**, or navigate to `/playground/`
+while running the project locally.
 
-The first public version provides:
+The public Playground provides:
 
 - a semantic structure tree with search and filters;
 - synchronized tree, canvas, and inspector selection;
@@ -41,15 +44,31 @@ The first public version provides:
 - semantic, resolution, presentation, provenance, and raw-record inspection;
 - package diagnostics for manifest discovery, referenced model collections, and
   SHA-256 ledger verification;
-- local package-directory open and drag/drop.
+- local package-directory open and drag/drop;
+- local `.uir.zip` open and drag/drop;
+- public `package.json`, ZIP, and GitHub repository/tree/blob loading;
+- shareable deep links for public remote packages;
+- a deterministic semantic graph preview;
+- semantic package diff with added, removed, changed, and unchanged nodes.
 
-Package files are read in browser memory. The Playground does not upload UIR
-packages or require an account. The bundled example is the same checked UIR
-package that renders the public site.
+Local package files are read in browser memory and are never uploaded by the
+Playground. Remote loading is intentionally separate: the browser fetches only
+a URL the user explicitly enters (or a URL present in a shared deep link), and
+the remote host must allow CORS. No account, backend, storage service, or upload
+endpoint is required.
 
-`.uir.zip`, semantic diff, URL/GitHub loading, and shareable deep links are
-intentionally follow-up capabilities on top of the package-loader boundary; the
-first version does not add a backend or storage service just to support them.
+For comparing two custom versions, load version A, choose **Set baseline**, then
+load version B and open **diff**. The bundled example can also remain the
+baseline while a custom package is loaded.
+
+`.uir.zip` parsing is dependency-free in the browser. The loader supports normal
+stored/deflated ZIP entries, rejects encrypted/ZIP64 archives, blocks unsafe
+parent-directory paths, and caps archive entry count and expanded size before
+passing files to the same manifest/SHA-256 package loader used for directories.
+
+The bundled example is the same checked UIR package that renders the public
+site. Playground diagnostics are inspection diagnostics; they are not presented
+as the official UIR core audit.
 
 ## Requirements
 
@@ -121,10 +140,14 @@ Do not edit emitted files under `app/uir-package/` by hand.
 - `app/uir-package/` - checked application authority
 - `app/playground/runtime.ts` - generic UIR record/query/resolution runtime
 - `app/playground/package-loader.ts` - local browser package loading and hashes
-- `app/playground/Playground.tsx` - Playground workspace and inspector
+- `app/playground/source-layer.ts` - ZIP and explicit public remote/GitHub sources
+- `app/playground/semantic-diff.ts` - package-to-package semantic node diff
+- `app/playground/Playground.tsx` - core Playground workspace and inspector
+- `app/playground/PlaygroundLab.tsx` - custom source, graph, diff, and deep-link shell
 - `app/uir.tsx` - public-site view built on the shared runtime
 - `app/Inspector.tsx` - lightweight live inspector for the public page
 - `tests/rendered-html.test.mjs` - rendered contract tests
+- `tests/playground-custom.test.mjs` - custom package source boundary tests
 - `tests/pages-export.test.mjs` - static deployment contract tests
 - `UIR-FLOW-REVIEW.md` - Flow 2 findings and improvement proposals
 
@@ -134,9 +157,9 @@ The verified static export is published from protected `main` to GitHub Pages.
 The public site and Playground are deployed together from the same verified
 artifact.
 
-Pull requests run the same UIR evidence review, rendered-output tests, and Pages
-export tests without deploying. A production deployment starts only after the
-required check succeeds on `main`.
+Pull requests run the same UIR evidence review, rendered-output tests, custom
+Playground contract tests, and Pages export tests without deploying. A
+production deployment starts only after the required check succeeds on `main`.
 
 ## Collaboration and release policy
 
