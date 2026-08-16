@@ -8,12 +8,31 @@ import collections
 import hashlib
 import json
 import pathlib
+import re
 import subprocess
 import sys
 import tempfile
 from typing import Any
 
 EVIDENCE_SCHEMA = "uir.public-site-evidence/v1"
+
+#: `owner/repo@<full 40-hex sha>`. A short sha is ambiguous across a repository's
+#: lifetime and a branch name is not a revision at all, so neither is accepted
+#: here: the field names ONE commit or it names nothing checkable.
+AUDIT_SOURCE = re.compile(r"^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+@[0-9a-f]{40}$")
+
+#: Words that make a measurement ATTRIBUTABLE to a private subject. The audit is
+#: produced by tooling that measures a client's codebase, and one of its
+#: constants carried that client's package name and four figures measured against
+#: it into every report it wrote — including this repository's, twice, the second
+#: time after a clean regeneration. It was fixed at its source in the private
+#: tree; this is the check that says so here, where the file is published.
+#:
+#: It exists because the field that WOULD have said the audit came from a fixed
+#: revision was not validated by anything and was stale: `officialAuditSource`
+#: named a revision three days older than the fix while the audit content was
+#: the fixed tooling's. A provenance string nothing checks is not provenance.
+PRIVATE_SUBJECTS = ("exams", "testvai")
 
 
 class VerificationError(RuntimeError):
@@ -153,6 +172,32 @@ def semantic_snapshot(
     if evidence.get("packageFingerprint") != public["fingerprint"]:
         raise VerificationError("package changed without refreshed official evidence")
 
+    # `officialAuditSource` is printed verbatim into the published review and was
+    # validated by nothing at all, so it went stale without a single check going
+    # red: it attributed an audit produced by the FIXED tooling to the revision
+    # that emitted a client's package name into every report it wrote.
+    #
+    # What this CI can check and what it cannot are different things, and the
+    # difference is stated rather than papered over. It cannot resolve the
+    # revision — the tooling repository is private and this workflow holds no
+    # credential for it, which is the whole point of the evidence boundary. It
+    # CAN refuse a value that is not one commit, and it can check the thing the
+    # stale attribution was concealing: whether the published artifact carries a
+    # private subject's name. That second half is the class of defect, not the
+    # instance.
+    source = evidence.get("officialAuditSource")
+    if not isinstance(source, str) or not AUDIT_SOURCE.match(source):
+        raise VerificationError(
+            f"officialAuditSource must be owner/repo@<40-hex sha> naming one "
+            f"commit, and is {source!r}")
+    audit_text = audit_path.read_text(encoding="utf-8").lower()
+    named = sorted(word for word in PRIVATE_SUBJECTS if word in audit_text)
+    if named:
+        raise VerificationError(
+            f"the published audit names {', '.join(named)}: a private subject's "
+            f"name reached a file this repository serves, and the revision this "
+            f"evidence attributes it to cannot be checked from here")
+
     report, status = audit.get("report", {}), audit.get("status", {})
     if report.get("packageId") != public["packageId"]:
         raise VerificationError("official audit packageId differs")
@@ -203,7 +248,9 @@ def render_review(public: dict[str, Any], semantic: dict[str, Any]) -> str:
         "official UIR audit. It does **not** claim to rerun the private alpha compiler. "
         "A package change must refresh this evidence through the Tenbytes maintainer workflow.",
         "",
-        f"- Audit source: `{evidence['officialAuditSource']}`",
+        f"- Audit source: `{evidence['officialAuditSource']}` "
+        f"(a maintainer assertion: the tooling repository is private, so this "
+        f"workflow checks the shape of this revision and never resolves it)",
         f"- Reviewed at: `{evidence['reviewedAt']}`",
         f"- Runtime revision: `{status.get('revision', 'unknown')}`",
         "", "| Verdict | Gates |", "| --- | ---: |",

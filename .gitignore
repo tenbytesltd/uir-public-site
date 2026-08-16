@@ -44,3 +44,4 @@ yarn-error.log*
 /.uir-session/
 /.uir-ci/
 __pycache__/
+tsconfig.tsbuildinfo

@@ -744,12 +744,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-adopt-command",
+      "id": "uir-site:fact:node-composition:quickstart-adopt-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -816,12 +816,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-read-command",
+      "id": "uir-site:fact:node-composition:quickstart-read-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -864,12 +864,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-see-command",
+      "id": "uir-site:fact:node-composition:quickstart-see-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -2184,12 +2184,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-adopt-command",
+      "id": "uir-site:fact:node-content:quickstart-adopt-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
@@ -2265,12 +2265,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-read-command",
+      "id": "uir-site:fact:node-content:quickstart-read-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
@@ -2318,12 +2318,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-see-command",
+      "id": "uir-site:fact:node-content:quickstart-see-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
@@ -2428,7 +2428,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes every step."
+        "value": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other."
       }
     },
     {
@@ -3486,6 +3486,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:quickstart-adopt-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-adopt-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-adopt-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:quickstart-adopt-title:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3550,6 +3566,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:quickstart-read-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-read-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-read-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:quickstart-read-title:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3558,6 +3590,22 @@
       "subject": "uir-site:node:quickstart-read-title",
       "value": {
         "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:quickstart-see-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-see-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-see-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
         "outcome": "role",
         "slot": "type",
         "target": {
@@ -4022,7 +4070,7 @@
       "subject": "uir-site:node:brand",
       "value": {
         "primary": true,
-        "role": "heading"
+        "role": "paragraph"
       }
     },
     {
@@ -4710,15 +4758,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-adopt-command",
+      "id": "uir-site:fact:node-role:quickstart-adopt-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -4782,15 +4830,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-read-command",
+      "id": "uir-site:fact:node-role:quickstart-read-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -4830,15 +4878,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-see-command",
+      "id": "uir-site:fact:node-role:quickstart-see-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -6044,12 +6092,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-adopt-command",
+      "id": "uir-site:fact:node-salience:quickstart-adopt-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "level": "supporting"
       }
@@ -6110,12 +6158,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-read-command",
+      "id": "uir-site:fact:node-salience:quickstart-read-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "level": "supporting"
       }
@@ -6154,12 +6202,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-see-command",
+      "id": "uir-site:fact:node-salience:quickstart-see-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "level": "supporting"
       }
@@ -6694,8 +6742,7 @@
         },
         "focus": "none",
         "name": {
-          "type": "literal",
-          "value": "UIR"
+          "type": "none"
         },
         "operations": []
       }
@@ -7759,12 +7806,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-adopt-command",
+      "id": "uir-site:fact:node-semantics:quickstart-adopt-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "description": {
           "type": "none"
@@ -7868,12 +7915,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-read-command",
+      "id": "uir-site:fact:node-semantics:quickstart-read-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "description": {
           "type": "none"
@@ -7941,12 +7988,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-see-command",
+      "id": "uir-site:fact:node-semantics:quickstart-see-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "description": {
           "type": "none"
@@ -9506,10 +9553,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-adopt-command",
+      "id": "uir-site:node:quickstart-adopt-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:node:quickstart-adopt-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -9548,10 +9595,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-read-command",
+      "id": "uir-site:node:quickstart-read-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-read-command:provenance",
+      "provenance": "uir-site:node:quickstart-read-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -9576,10 +9623,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-see-command",
+      "id": "uir-site:node:quickstart-see-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-see-command:provenance",
+      "provenance": "uir-site:node:quickstart-see-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -11050,23 +11097,23 @@
       "target": "uir-site:node:quickstart-adopt"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-adopt-command",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-adopt-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-adopt",
-      "target": "uir-site:node:quickstart-adopt-command"
+      "target": "uir-site:node:quickstart-adopt-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-adopt-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-adopt-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-adopt-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-adopt-command",
+      "subject": "uir-site:relation:contains:quickstart-adopt-captures",
       "value": {
-        "meaning": "quickstart-adopt contains quickstart-adopt-command at this semantic reading position."
+        "meaning": "quickstart-adopt contains quickstart-adopt-captures at this semantic reading position."
       }
     },
     {
@@ -11170,23 +11217,23 @@
       "target": "uir-site:node:quickstart-read"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-read-command",
+      "id": "uir-site:relation:contains:quickstart-read-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-read-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-read-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-read",
-      "target": "uir-site:node:quickstart-read-command"
+      "target": "uir-site:node:quickstart-read-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-read-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-read-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-read-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-read-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-read-command",
+      "subject": "uir-site:relation:contains:quickstart-read-captures",
       "value": {
-        "meaning": "quickstart-read contains quickstart-read-command at this semantic reading position."
+        "meaning": "quickstart-read contains quickstart-read-captures at this semantic reading position."
       }
     },
     {
@@ -11250,23 +11297,23 @@
       "target": "uir-site:node:quickstart-see"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-see-command",
+      "id": "uir-site:relation:contains:quickstart-see-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-see-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-see-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-see",
-      "target": "uir-site:node:quickstart-see-command"
+      "target": "uir-site:node:quickstart-see-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-see-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-see-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-see-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-see-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-see-command",
+      "subject": "uir-site:relation:contains:quickstart-see-captures",
       "value": {
-        "meaning": "quickstart-see contains quickstart-see-command at this semantic reading position."
+        "meaning": "quickstart-see contains quickstart-see-captures at this semantic reading position."
       }
     },
     {

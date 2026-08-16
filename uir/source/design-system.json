@@ -1186,23 +1186,6 @@
       ]
     },
     {
-      "id": "uir-site:resolution:heading:navigation",
-      "outcome": "uir-site:piece:heading",
-      "selectors": [
-        {
-          "axis": "uir-site:fact:axis:parent-role",
-          "dimension": "parent-role",
-          "values": [
-            "navigation"
-          ]
-        },
-        {
-          "dimension": "role",
-          "role": "heading"
-        }
-      ]
-    },
-    {
       "id": "uir-site:resolution:heading:region",
       "outcome": "uir-site:piece:heading",
       "selectors": [
@@ -1318,6 +1301,23 @@
         {
           "dimension": "role",
           "role": "navigation"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:paragraph:navigation",
+      "outcome": "uir-site:piece:paragraph",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "navigation"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "paragraph"
         }
       ]
     },

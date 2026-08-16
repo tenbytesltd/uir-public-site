@@ -103,6 +103,22 @@ Pull requests run the same UIR evidence review, rendered-output tests, and Pages
 export tests without deploying. A production deployment starts only after the
 required check succeeds on `main`.
 
+## The esbuild override, and what is not verified about it
+
+`package.json` overrides `@esbuild-kit/core-utils` to `esbuild ^0.25.0`. The
+package declares `~0.18.20`, and esbuild treats every `0.x` bump as breaking, so
+the override forces it across seven of them. The advisory path is closed and the
+lockfile shows it: the nested resolution is `0.25.12`, the top level `0.28.1`,
+and no esbuild below `0.25` remains in the tree.
+
+**Nothing exercises the overridden path.** Its only consumer is `drizzle-kit
+generate` through `npm run db:generate`, and no CI step runs that command — so if
+the override breaks transpilation, this repository does not find out. The pin is
+the right trade, because the real cause is the D1 and Worker scaffold the site
+generator left behind, which `UIR-FLOW-REVIEW.md` preserves until its host is
+retired explicitly. It is unverified rather than verified-and-fine, and this
+paragraph exists so nobody has to reconstruct that from a lockfile.
+
 ## Collaboration and release policy
 
 Anyone can read, fork, and propose a pull request. Direct write access remains

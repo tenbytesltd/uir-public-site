@@ -194,7 +194,13 @@ test("builds the inspector from UIR facts instead of a parallel demo model", asy
   ]);
 
   assert.match(data, /provenanceModel/);
-  assert.match(data, /resolutionPiece\(node\.role\)/);
+  // The NODE and not its role: Resolution is selected from `(role,
+  // parent-role)`, and this adapter matched on the role alone while the
+  // conformance gate consulted both — two implementations of one rule
+  // feeding one page, agreeing today only because every Resolution pair in
+  // this package happens to share an outcome.
+  assert.match(data, /resolutionPiece\(node\)/);
+  assert.match(data, /dimension === "parent-role"/);
   assert.match(data, /inspectionBindings\(subject, piece\)/);
   assert.match(data, /fact\(source\.id, "source\.description"\)/);
   assert.match(data, /sourceHref\(subject\)/);
@@ -220,4 +226,73 @@ test("the public target is a hand-authored React component tree, not a generic U
   assert.match(designSystem, /heading: "uir-site:piece:heading"/);
   assert.match(designSystem, /uirNodeProps\(uirKey, "heading", PIECES\.heading\)/);
   assert.match(page, /<PublicSite \/>/);
+});
+
+test("every node UIR calls a heading renders a heading element, at a recorded level", async () => {
+  // **The document outline is chosen in React and UIR states none of it.**
+  // `heading → "div"` in the Piece table pins the OUTER element; the `<h1>`,
+  // `<h2>` and `<h3>` live inside it, and `parseObserved` strips inner tags
+  // before comparing text, so the conformance gate sees nothing of this.
+  //
+  // The demonstrated cost: a `Brand` component emitted the same role, salience,
+  // Piece, bindings and outer tag as `Heading` with no inner heading element at
+  // all, so replacing one `<Heading uirKey="problem-title" level={2} />` with
+  // `<Brand uirKey="problem-title" />` dropped an `<h2>` from the page and
+  // every other check stayed green. Changing every `level={2}` to `level={1}`
+  // is invisible the same way.
+  //
+  // The first thing this check found was not a hypothetical: `brand` was a
+  // `heading` in UIR and rendered no heading element on the live page. The
+  // wordmark is a navigation label, so the Fact was corrected and the component
+  // that could impersonate a heading is gone — a `Paragraph` with a class is a
+  // `Paragraph`.
+  //
+  // **This test pins the TARGET's choice and never claims the package made
+  // it.** The half that IS derived from the package is the first assertion —
+  // every node the package gives role `heading` must render some heading
+  // element — and it is the half that catches the component swap. The levels
+  // below are a recorded outline: they are the React tree's decision, they are
+  // pinned so a silent change fails, and `docs/CONFORMANCE.md` names the gap
+  // rather than letting this test stand in for closing it.
+  const [response, interfaceText] = await Promise.all([
+    render(),
+    readFile(new URL("../app/uir-package/model/interface.json", import.meta.url), "utf8"),
+  ]);
+  const html = await response.text();
+  const interfaceModel = JSON.parse(interfaceText);
+
+  // `node.role` is a Fact ABOUT a Node and never a field on it, which is what
+  // the conformance gate reads too — a filter on `record.role` matches nothing
+  // and would have made this test pass over an empty set.
+  const headings = interfaceModel.records
+    .filter((record) => record.recordType === "Fact" && record.kind === "node.role"
+      && record.value?.role === "heading")
+    .map((record) => String(record.subject).replace(/^uir-site:node:/, ""));
+  assert.ok(headings.length > 5, "the package states fewer heading nodes than this page has");
+
+  const levels = {};
+  const missing = [];
+  for (const key of headings) {
+    const opening = html.indexOf(`data-node="${key}"`);
+    assert.notEqual(opening, -1, `the rendered page carries no node ${key}`);
+    // The node's own element, up to the next node boundary: a heading Node has
+    // no Node children on this page, so its inner heading element is inside it.
+    const next = html.indexOf("data-node=", opening + 1);
+    const region = html.slice(opening, next === -1 ? undefined : next);
+    const found = region.match(/<h([1-6])\b/);
+    if (!found) {
+      missing.push(key);
+      continue;
+    }
+    levels[key] = Number(found[1]);
+  }
+  assert.deepEqual(missing, [],
+    "these nodes are headings in UIR and render no heading element, so the "
+    + "page's outline lost them while every other check stayed green");
+
+  const recorded = JSON.parse(
+    await readFile(new URL("./heading-outline.json", import.meta.url), "utf8"));
+  assert.deepEqual(levels, recorded,
+    "the document outline changed; it is the target's decision and not UIR's, "
+    + "so it is recorded here — update this file deliberately or fix the tree");
 });

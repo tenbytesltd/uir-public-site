@@ -27,7 +27,7 @@
       "key": "brand",
       "order": 0,
       "parent": "navigation",
-      "role": "heading",
+      "role": "paragraph",
       "salience": "primary"
     },
     {
@@ -471,7 +471,7 @@
       "salience": "primary"
     },
     {
-      "content": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes every step.",
+      "content": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other.",
       "controls": null,
       "id": "uir-site:node:showcase-copy",
       "key": "showcase-copy",
@@ -693,11 +693,11 @@
     {
       "content": "structure · content · roles · relationships",
       "controls": null,
-      "id": "uir-site:node:quickstart-read-command",
-      "key": "quickstart-read-command",
+      "id": "uir-site:node:quickstart-read-captures",
+      "key": "quickstart-read-captures",
       "order": 2,
       "parent": "quickstart-read",
-      "role": "code",
+      "role": "paragraph",
       "salience": "supporting"
     },
     {
@@ -733,11 +733,11 @@
     {
       "content": "states · actions · conditions · navigation",
       "controls": null,
-      "id": "uir-site:node:quickstart-see-command",
-      "key": "quickstart-see-command",
+      "id": "uir-site:node:quickstart-see-captures",
+      "key": "quickstart-see-captures",
       "order": 2,
       "parent": "quickstart-see",
-      "role": "code",
+      "role": "paragraph",
       "salience": "supporting"
     },
     {
@@ -773,11 +773,11 @@
     {
       "content": "components · design values · bindings · reuse",
       "controls": null,
-      "id": "uir-site:node:quickstart-adopt-command",
-      "key": "quickstart-adopt-command",
+      "id": "uir-site:node:quickstart-adopt-captures",
+      "key": "quickstart-adopt-captures",
       "order": 2,
       "parent": "quickstart-adopt",
-      "role": "code",
+      "role": "paragraph",
       "salience": "supporting"
     },
     {

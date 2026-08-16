@@ -78,14 +78,6 @@ export function Group({ uirKey, children, className }: ContainerProps) {
   );
 }
 
-export function Brand({ uirKey, className = "brand" }: LeafProps) {
-  return (
-    <div {...uirNodeProps(uirKey, "heading", PIECES.heading)} className={className}>
-      {uirText(uirKey)}
-    </div>
-  );
-}
-
 export function Heading({
   uirKey,
   level,

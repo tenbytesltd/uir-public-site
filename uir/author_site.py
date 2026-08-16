@@ -1056,7 +1056,15 @@ def node(
 ROOT_NODE = node("root", "document", None, parent=None, salience="primary")
 
 NAV = node("navigation", "navigation", None, parent=ROOT_NODE, salience="secondary")
-node("brand", "heading", "UIR", parent=NAV, salience="primary", overrides={"type": "type-label"})
+# `paragraph` in the label register, and NOT `heading`. The wordmark is a
+# navigation label; the page's one document heading of that rank is
+# `hero-title`. Declared a heading, it was the one node on this page whose
+# UIR role said heading and whose rendered output carried no heading element
+# at all — found by `every node UIR calls a heading renders a heading
+# element`, which is the check that exists because `Brand` and `Heading`
+# emitted an identical node signature and the outline was invisible to the
+# conformance gate. Every other label on this page is already this shape.
+node("brand", "paragraph", "UIR", parent=NAV, salience="primary", overrides={"type": "type-label"})
 NAV_EXTRACT = node("nav-extract", "link", "What it captures", parent=NAV, salience="secondary")
 NAV_BUILD = node("nav-build", "link", "How it fits", parent=NAV, salience="secondary")
 NAV_STANDARD = node("nav-standard", "link", "Why it works", parent=NAV, salience="secondary")
@@ -1125,7 +1133,7 @@ SHOWCASE = node(
 )
 node("showcase-kicker", "paragraph", "PLAYGROUND", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
 node("showcase-title", "heading", "From instructions to a verified page.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-copy", "paragraph", "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes every step.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+node("showcase-copy", "paragraph", "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 SHOWCASE_GRID = node("showcase-grid", "group", None, parent=SHOWCASE, sources=(SRC_USER, SRC_SITE_REPO))
 for key, title, copy in (
     ("showcase-source", "01 · The instructions", "Product intent, design direction, and constraints begin as instructions to the agent."),
@@ -1144,7 +1152,21 @@ node("quickstart-kicker", "paragraph", "WHAT UIR CAPTURES", parent=QUICKSTART, s
 node("quickstart-title", "heading", "Everything that makes the design the design.", parent=QUICKSTART, salience="primary")
 node("quickstart-copy", "paragraph", "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
 STEPS = node("quickstart-steps", "group", None, parent=QUICKSTART)
-for key, title, copy, command in (
+# `paragraph` in the mono register, and NOT `code`. These three values were shell
+# commands once and the loop kept the role after the copy became a taxonomy list,
+# so the package asserted that `structure · content · roles · relationships` is
+# code — and the gate faithfully realized it: a `<pre><code>` frame, and three
+# prose lists announced to assistive technology as code blocks.
+#
+# Nothing caught it and nothing should. The gate checks conformance TO the
+# specification, never the specification's truth, so an authored Fact that is
+# wrong makes a GREEN gate — which is the one failure mode this page's whole
+# claim depends on not having. The variable and the node key carried the old
+# meaning too, which is how it would come back.
+#
+# The monospace look is kept and is now STATED rather than inherited from the
+# role: `type-mono` is a declared typography value of this package's own Dress.
+for key, title, copy, captures in (
     ("quickstart-read", "Structure & content", "What exists, what it says, and how the parts are ordered and related.", "structure · content · roles · relationships"),
     ("quickstart-see", "Behaviour & states", "What can happen, when it happens, and which states the interface must support.", "states · actions · conditions · navigation"),
     ("quickstart-adopt", "Components & design system", "Which reusable pieces and design-system values realize the design.", "components · design values · bindings · reuse"),
@@ -1152,7 +1174,7 @@ for key, title, copy, command in (
     card = node(key, "region", None, parent=STEPS, salience="secondary")
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
-    node(f"{key}-command", "code", command, parent=card)
+    node(f"{key}-captures", "paragraph", captures, parent=card, salience="supporting", overrides={"type": "type-mono"})
 
 BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("build-kicker", "paragraph", "HOW IT FITS", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})

@@ -47,17 +47,6 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:condition:resolution:heading:navigation:provenance",
-      "mode": "inferred",
-      "rationale": "Required by the confirmed page structure.",
-      "recordType": "Provenance",
-      "sources": [
-        "uir-site:source:uir-repository",
-        "uir-site:source:user-session"
-      ]
-    },
-    {
-      "confidence": 0.88,
       "id": "uir-site:condition:resolution:heading:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -125,6 +114,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:condition:resolution:navigation:document:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:condition:resolution:paragraph:navigation:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -442,17 +442,6 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:condition:resolution:heading:navigation:provenance",
-      "mode": "inferred",
-      "rationale": "Required by the confirmed page meaning and sourced design direction.",
-      "recordType": "Provenance",
-      "sources": [
-        "uir-site:source:uir-repository",
-        "uir-site:source:user-session"
-      ]
-    },
-    {
-      "confidence": 0.88,
       "id": "uir-site:fact:condition:resolution:heading:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -520,6 +509,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:condition:resolution:navigation:document:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:condition:resolution:paragraph:navigation:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -3370,7 +3370,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-composition:quickstart-adopt-command:provenance",
+      "id": "uir-site:fact:node-composition:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -3436,7 +3436,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-composition:quickstart-read-command:provenance",
+      "id": "uir-site:fact:node-composition:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -3480,7 +3480,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-composition:quickstart-see-command:provenance",
+      "id": "uir-site:fact:node-composition:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -4649,7 +4649,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-content:quickstart-adopt-command:provenance",
+      "id": "uir-site:fact:node-content:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -4715,7 +4715,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-content:quickstart-read-command:provenance",
+      "id": "uir-site:fact:node-content:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -4759,7 +4759,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-content:quickstart-see-command:provenance",
+      "id": "uir-site:fact:node-content:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -5700,6 +5700,17 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:quickstart-adopt-captures:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-projection:quickstart-adopt-title:type:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -5744,7 +5755,29 @@
     },
     {
       "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:quickstart-read-captures:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
       "id": "uir-site:fact:node-projection:quickstart-read-title:type:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:node-projection:quickstart-see-captures:type:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -6697,7 +6730,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-role:quickstart-adopt-command:provenance",
+      "id": "uir-site:fact:node-role:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -6763,7 +6796,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-role:quickstart-read-command:provenance",
+      "id": "uir-site:fact:node-role:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -6807,7 +6840,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-role:quickstart-see-command:provenance",
+      "id": "uir-site:fact:node-role:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -7987,7 +8020,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-salience:quickstart-adopt-command:provenance",
+      "id": "uir-site:fact:node-salience:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -8053,7 +8086,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-salience:quickstart-read-command:provenance",
+      "id": "uir-site:fact:node-salience:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -8097,7 +8130,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-salience:quickstart-see-command:provenance",
+      "id": "uir-site:fact:node-salience:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -9277,7 +9310,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-semantics:quickstart-adopt-command:provenance",
+      "id": "uir-site:fact:node-semantics:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -9343,7 +9376,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-semantics:quickstart-read-command:provenance",
+      "id": "uir-site:fact:node-semantics:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -9387,7 +9420,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:node-semantics:quickstart-see-command:provenance",
+      "id": "uir-site:fact:node-semantics:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -16434,17 +16467,6 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:selector:parent:heading:navigation:provenance",
-      "mode": "inferred",
-      "rationale": "Required by the confirmed page meaning and sourced design direction.",
-      "recordType": "Provenance",
-      "sources": [
-        "uir-site:source:uir-repository",
-        "uir-site:source:user-session"
-      ]
-    },
-    {
-      "confidence": 0.88,
       "id": "uir-site:fact:selector:parent:heading:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -16512,6 +16534,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:selector:parent:navigation:document:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:selector:parent:paragraph:navigation:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -16599,17 +16632,6 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:fact:selector:role:heading:navigation:provenance",
-      "mode": "inferred",
-      "rationale": "Required by the confirmed page meaning and sourced design direction.",
-      "recordType": "Provenance",
-      "sources": [
-        "uir-site:source:uir-repository",
-        "uir-site:source:user-session"
-      ]
-    },
-    {
-      "confidence": 0.88,
       "id": "uir-site:fact:selector:role:heading:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
@@ -16677,6 +16699,17 @@
     {
       "confidence": 0.88,
       "id": "uir-site:fact:selector:role:navigation:document:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page meaning and sourced design direction.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:fact:selector:role:paragraph:navigation:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -20038,7 +20071,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:node:quickstart-adopt-command:provenance",
+      "id": "uir-site:node:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -20104,7 +20137,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:node:quickstart-read-command:provenance",
+      "id": "uir-site:node:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -20148,7 +20181,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:node:quickstart-see-command:provenance",
+      "id": "uir-site:node:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",
@@ -22219,7 +22252,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-adopt-command:meaning:provenance",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -22229,7 +22262,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-adopt-command:provenance",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures:provenance",
       "mode": "inferred",
       "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
       "recordType": "Provenance",
@@ -22339,7 +22372,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-read-command:meaning:provenance",
+      "id": "uir-site:relation:contains:quickstart-read-captures:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -22349,7 +22382,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-read-command:provenance",
+      "id": "uir-site:relation:contains:quickstart-read-captures:provenance",
       "mode": "inferred",
       "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
       "recordType": "Provenance",
@@ -22419,7 +22452,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-see-command:meaning:provenance",
+      "id": "uir-site:relation:contains:quickstart-see-captures:meaning:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page meaning and sourced design direction.",
       "recordType": "Provenance",
@@ -22429,7 +22462,7 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:relation:contains:quickstart-see-command:provenance",
+      "id": "uir-site:relation:contains:quickstart-see-captures:provenance",
       "mode": "inferred",
       "rationale": "Chosen for the confirmed adoption goal using the named current-session evidence.",
       "recordType": "Provenance",
@@ -23631,24 +23664,6 @@
     },
     {
       "confidence": 0.88,
-      "id": "uir-site:resolution:heading:navigation:provenance",
-      "mode": "inferred",
-      "rationale": "Required by the confirmed page structure.",
-      "recordType": "Provenance",
-      "sources": [
-        "uir-site:source:backstage",
-        "uir-site:source:dtcg",
-        "uir-site:source:open-ui",
-        "uir-site:source:openapi",
-        "uir-site:source:openfeature",
-        "uir-site:source:opentelemetry",
-        "uir-site:source:storybook",
-        "uir-site:source:uir-repository",
-        "uir-site:source:user-session"
-      ]
-    },
-    {
-      "confidence": 0.88,
       "id": "uir-site:resolution:heading:region:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
@@ -23758,6 +23773,24 @@
     {
       "confidence": 0.88,
       "id": "uir-site:resolution:navigation:document:provenance",
+      "mode": "inferred",
+      "rationale": "Required by the confirmed page structure.",
+      "recordType": "Provenance",
+      "sources": [
+        "uir-site:source:backstage",
+        "uir-site:source:dtcg",
+        "uir-site:source:open-ui",
+        "uir-site:source:openapi",
+        "uir-site:source:openfeature",
+        "uir-site:source:opentelemetry",
+        "uir-site:source:storybook",
+        "uir-site:source:uir-repository",
+        "uir-site:source:user-session"
+      ]
+    },
+    {
+      "confidence": 0.88,
+      "id": "uir-site:resolution:paragraph:navigation:provenance",
       "mode": "inferred",
       "rationale": "Required by the confirmed page structure.",
       "recordType": "Provenance",

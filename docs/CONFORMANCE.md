@@ -61,6 +61,17 @@ The target exposes stable conformance identities through `data-node`, role, Piec
 
 This is not screenshot comparison. A target conforms when every fact expressed by UIR, including its embedded design system, is realized by the implementation. If an approved design decision cannot be expressed in UIR, that is a model gap and must be made explicit rather than hidden behind pixel-diff tolerance.
 
+### What the gate does not cover, named rather than implied
+
+**The document outline is the target's decision and UIR states none of it.** The Piece table pins `heading` to the outer `div`; the `<h1>`, `<h2>` and `<h3>` live inside it, and the observer strips inner tags before comparing text — so the level a heading renders at is chosen in `app/Site.tsx`, is absent from the package, and is invisible to every assertion above. Setting every `level={2}` to `level={1}` conforms.
+
+Two things are done about it, and neither of them closes it:
+
+- the half that IS derivable from the package is checked — every node the package gives role `heading` must render some heading element. That is what catches a component swap that keeps the role and drops the element, and it found one on this page the first time it ran: `brand` was a `heading` in UIR and rendered no heading element at all. The wordmark is a navigation label, so the Fact was corrected;
+- the levels themselves are recorded in `tests/heading-outline.json` and compared exactly. That pins the target's own choice so it cannot change in silence. It is not a conformance check and is not counted as one — it holds the page against itself.
+
+Closing it needs the outline expressed in UIR, which is a decision about the model and not about this page.
+
 ## Tests
 
 The suite proves both the green path and that the gate actually rejects drift:
@@ -70,7 +81,10 @@ The suite proves both the green path and that the gate actually rejects drift:
 3. an intentional semantic mutation is rejected;
 4. a wrong Piece is rejected even when appearance could match;
 5. an intentional design-system realization mutation is rejected;
-6. source-level tests prove Piece identity belongs to React design-system components rather than being copied from the expected UIR contract.
+6. source-level tests prove Piece identity belongs to React design-system components rather than being copied from the expected UIR contract;
+7. every node UIR calls a heading renders a heading element, at a recorded level.
+
+**The Piece dimension of the gate cannot currently fail on its own.** Every Resolution in this package resolves to `uir-site:piece:<role>`, so the Piece table is the identity map and the Piece comparison can only fire where the role comparison already has. The mutation test edits the attribute string rather than swapping a component, which proves the attribute is compared and not that Piece selection is independently checked. The check starts earning its name the first time a role resolves to two Pieces; until then, role is the load-bearing half and this line says so.
 
 Run the full site and conformance suite with:
 

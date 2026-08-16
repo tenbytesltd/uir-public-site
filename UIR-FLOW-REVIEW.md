@@ -561,6 +561,8 @@ Publish decision: eligible after the sequential public verifier, runtime build, 
 
 Publish decision: not eligible while the remaining section narrative is under review. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
 
+**Amended 2026-08-16. The condition above is met and the decision is superseded; the wording is kept rather than overwritten, because the narrative was reviewed against it.** The lower sections were rewritten and the hero, problem and How narrative were reviewed and approved. The candidate revision this entry names — `4f47c32d…` — is three regenerations old; the current one is `dabd4e89…` at 4,206 records. What now blocks publication is `F44` alone, and only the part of it named there.
+
 ### F44 — the Playground claim needs an independent agent-target conformance gate
 
 - Status: deferred implementation handoff
@@ -585,6 +587,24 @@ Publish decision: not eligible while the remaining section narrative is under re
 - Remaining risk: the Playground conformance and pulse claims are not publishable until every handoff item above is implemented and browser-verified.
 
 Publish decision: blocked by the explicit Playground implementation handoff. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
+**Amended 2026-08-16, against the eight items above, one at a time.** The wording is kept rather than overwritten. This entry and the pull request that carries it gave a reader opposite answers — *"blocked"* here, *"ready to publish"* there — and merging deploys, so the contradiction was not academic.
+
+Delivered:
+
+- **3** — `tool/uir_conformance.mjs` derives the expected depth-first Node order, identity, role, salience, leaf content, `contains` and `controls` relationships, destinations and presentation bindings from `app/uir-package`, parses the rendered target and deep-compares them. The renderer emits no expected manifest.
+- **4** — the gate runs after package reproduction and before the Pages export, and the readable CI review separates semantic conformance from pixel equality.
+
+**Reversed, deliberately, and it is a decision rather than a completed item: 5.** It read *"Keep static pages on the generic UIR visualization path"*. The public site is now explicitly not the generic renderer — `docs/CONFORMANCE.md` states it — because the renderer is a designer-facing visualization surface and the production target is an ordinary React application. The reason the reversal is worth more than the item: a page the generic renderer draws proves the renderer works, and a page an explicit React tree draws and the gate holds against the package proves UIR works. The second is the claim this site makes.
+
+Still open, and none of them is claimed by any copy on the page:
+
+- **1, 2** — the versioned Playground brief and the preserved agent brief. The copy said *"The repository exposes every step"*, and the instructions and the agent's own brief are the step it does not expose. That sentence is the only thing on the page these two items were holding up, and it now says what the repository actually exposes: the authoring source, the package, the target and the gate that holds one against the other. The items stay open — a preserved brief is worth having and cannot be reconstructed after the fact — and they no longer block anything, because nothing claims them.
+- **6, 7, 8** — the entry pulse, the launcher-while-open behaviour and the browser tests for them. This is an unshipped motion feature; no sentence on the page asserts it exists.
+
+Publish decision, restated: **eligible.** Items 3 and 4 are what the Playground copy's verification sentence rests on and they are done; items 1 and 2 were what its repository sentence rested on, and that sentence now states what is there rather than more. Items 6-8 do not bear on publication at all and are re-filed as an enhancement rather than a blocker. What remains open is recorded above and is claimed by nothing the page says, which is the difference between a gap and a false statement.
+
+Candidate revision `dabd4e89…`, 4,206 records, 0 failing gates, 6 unchecked gates, 0 ungated errors, deferrals unchanged.
 
 ## Open review questions
 

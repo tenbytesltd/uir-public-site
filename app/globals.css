@@ -289,10 +289,16 @@ a {
   min-height: 116px;
 }
 
-#quickstart-steps [data-role="code"] {
+/* The three capture lines are `paragraph` Facts in the mono register, not
+   `code`. The frame is keyed off the class the target gives them rather than off
+   `data-role`, because the role now says what they ARE and the role is what the
+   conformance gate compares. */
+#quickstart-steps .capture-list {
   margin-top: auto;
-  border-width: 1px 0 0;
-  border-radius: 0 !important;
+  padding: 14px 18px;
+  border-top: var(--uir-rule, 1px solid #b8b7ae);
+  font-family: monospace;
+  min-height: 0;
 }
 
 #build-steps,

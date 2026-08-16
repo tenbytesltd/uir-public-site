@@ -1,6 +1,5 @@
 import { Inspector } from "./Inspector";
 import {
-  Brand,
   Code,
   Document,
   Group,
@@ -21,7 +20,7 @@ import {
 function Header() {
   return (
     <Navigation uirKey="navigation">
-      <Brand uirKey="brand" />
+      <Paragraph uirKey="brand" className="brand" />
       <Link uirKey="nav-extract" />
       <Link uirKey="nav-build" />
       <Link uirKey="nav-standard" />
@@ -113,12 +112,12 @@ function Playground() {
   );
 }
 
-function CaptureCard({ card, title, copy, command }: { card: string; title: string; copy: string; command: string }) {
+function CaptureCard({ card, title, copy, captures }: { card: string; title: string; copy: string; captures: string }) {
   return (
     <Region uirKey={card}>
       <Heading uirKey={title} level={3} />
       <Paragraph uirKey={copy} />
-      <Code uirKey={command} />
+      <Paragraph uirKey={captures} className="capture-list" />
     </Region>
   );
 }
@@ -130,9 +129,9 @@ function WhatItCaptures() {
       <Heading uirKey="quickstart-title" level={2} />
       <Paragraph uirKey="quickstart-copy" />
       <Group uirKey="quickstart-steps">
-        <CaptureCard card="quickstart-read" title="quickstart-read-title" copy="quickstart-read-copy" command="quickstart-read-command" />
-        <CaptureCard card="quickstart-see" title="quickstart-see-title" copy="quickstart-see-copy" command="quickstart-see-command" />
-        <CaptureCard card="quickstart-adopt" title="quickstart-adopt-title" copy="quickstart-adopt-copy" command="quickstart-adopt-command" />
+        <CaptureCard card="quickstart-read" title="quickstart-read-title" copy="quickstart-read-copy" captures="quickstart-read-captures" />
+        <CaptureCard card="quickstart-see" title="quickstart-see-title" copy="quickstart-see-copy" captures="quickstart-see-captures" />
+        <CaptureCard card="quickstart-adopt" title="quickstart-adopt-title" copy="quickstart-adopt-copy" captures="quickstart-adopt-captures" />
       </Group>
     </Region>
   );

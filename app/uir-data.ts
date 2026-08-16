@@ -135,16 +135,51 @@ function view(subject: string): NodeView {
   };
 }
 
-function resolutionPiece(role: string) {
+// **Resolution is selected from `(role, parent-role)` and takes the NODE, not
+// its role alone.** This function matched on the role selector and returned the
+// first Resolution it found; the conformance gate — `tool/uir_conformance.mjs`,
+// which decides whether the page conforms — consults the parent-role selector
+// as well. Two implementations of one rule, feeding one page.
+//
+// The package already carries both variants: `uir-site:resolution:code:group`
+// and `uir-site:resolution:code:region`, `heading:navigation` and
+// `heading:region`. They happen to share an outcome today, so the Inspector
+// showed the right Piece by coincidence. The first Resolution that resolves to
+// a DIFFERENT Piece per parent would have made the Inspector display a Piece
+// and a binding set the page does not render, silently — and nothing upstream
+// would say so either, since `UIR-SEM-PARENT-ROLE-DEFERRED` is one of the four
+// compiler deferrals this package still carries.
+function nodeParentRole(subject: string | undefined) {
+  const parent = subject ? parentByNode.get(subject) : undefined;
+  return parent ? nodeRole(parent) : "$surface-root";
+}
+
+function resolutionPiece(node: NodeView | string) {
+  const subject = typeof node === "string" ? undefined : node.id;
+  const roleName = typeof node === "string" ? node : node.role;
+  const parentRoleName = nodeParentRole(subject);
   for (const selector of facts.filter(
     (record) =>
       record.kind === "resolution.selector" &&
       record.value?.dimension === "role" &&
-      record.value?.role === role,
+      record.value?.role === roleName,
   )) {
     if (!selector.subject) continue;
     const resolution = byId.get(selector.subject);
-    if (resolution?.recordType === "Entity" && typeof resolution.outcome === "string") {
+    if (resolution?.recordType !== "Entity" || typeof resolution.outcome !== "string") {
+      continue;
+    }
+    const parentSelector = facts.find(
+      (record) =>
+        record.kind === "resolution.selector" &&
+        record.subject === selector.subject &&
+        record.value?.dimension === "parent-role",
+    );
+    if (
+      !parentSelector ||
+      !Array.isArray(parentSelector.value?.values) ||
+      parentSelector.value.values.includes(parentRoleName)
+    ) {
       return resolution.outcome;
     }
   }
@@ -297,13 +332,13 @@ function typography(valueId: string | undefined): CSSProperties {
   };
 }
 
-function resolvedBindings(node: NodeView, piece = resolutionPiece(node.role)) {
+function resolvedBindings(node: NodeView, piece = resolutionPiece(node)) {
   const bindings = bindingMap(piece);
   for (const [slot, role] of bindingMap(node.id)) bindings.set(slot, role);
   return bindings;
 }
 
-function nodeStyle(node: NodeView, piece = resolutionPiece(node.role)): CSSProperties {
+function nodeStyle(node: NodeView, piece = resolutionPiece(node)): CSSProperties {
   const bindings = resolvedBindings(node, piece);
   const token = (slot: string) => cssScalar(boundValue(bindings.get(slot) ?? ""));
   const typeValue = boundValue(bindings.get("type") ?? "");
@@ -339,7 +374,7 @@ function nodeStyle(node: NodeView, piece = resolutionPiece(node.role)): CSSPrope
   } as CSSProperties;
 }
 
-function nodePresentationData(node: NodeView, piece = resolutionPiece(node.role)) {
+function nodePresentationData(node: NodeView, piece = resolutionPiece(node)) {
   const bindings = resolvedBindings(node, piece);
   const surfaceValue = boundValue(bindings.get("surface") ?? "");
   const surface = literal(surfaceValue);
@@ -369,7 +404,7 @@ function durationMilliseconds(valueId: string | undefined) {
   return undefined;
 }
 
-function surfaceFieldConfig(node: NodeView, piece = resolutionPiece(node.role)): SurfaceFieldConfig | undefined {
+function surfaceFieldConfig(node: NodeView, piece = resolutionPiece(node)): SurfaceFieldConfig | undefined {
   const bindings = resolvedBindings(node, piece);
   const surfaceValueId = boundValue(bindings.get("surface") ?? "");
   const motionValueId = boundValue(bindings.get("motion") ?? "");
@@ -489,7 +524,7 @@ function inspectionManifest(): InspectionRecord[] {
     const node = view(subject);
     const entity = byId.get(subject);
     const nodeFacts = facts.filter((record) => record.subject === subject);
-    const piece = resolutionPiece(node.role);
+    const piece = resolutionPiece(node);
     const pieceIdentity = piece ? fact(piece, "piece.identity")?.value : undefined;
     const controlled = controls.get(subject);
     const provenance = provenanceFor([entity, ...nodeFacts].filter(Boolean) as UIRRecord[]);
