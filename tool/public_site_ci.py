@@ -37,22 +37,45 @@ BANNED_TOKENS = frozenset({
 })
 
 #: What the audit may say a package is.  An ALLOWLIST, because the instance this
-#: exists for was a filesystem root — `"package": "/home/…/app/uir-package"` —
-#: and a list of the two words that leaked would never have caught it.
+#: exists for was the `package` field carrying an absolute path on the machine
+#: the private tooling ran on rather than this relative one, and a list of the
+#: two words that leaked would never have caught it.
 PACKAGE_PATH = "app/uir-package"
 
-#: A path outside this repository, in any string the audit carries.  This is the
-#: half that catches a subject nobody has thought of yet, which two hashed words
-#: by definition cannot.
-OUTSIDE_ROOT = re.compile(r"(?:^|[\s\"'(=])(?:/home/|/Users/|/root/|/var/|/mnt/|"
-                          r"/srv/|/opt/|[A-Za-z]:\\\\)")
+#: A path outside this repository, in any string a published file carries. This
+#: is the half that catches a subject nobody has thought of yet, which a fixed
+#: set of hashed words by definition cannot.
+#:
+#: **Assembled from the directory names rather than written out**, for the same
+#: reason the tokens above are digests: this file is one of the files the scan
+#: reads, and a pattern spelled out IS an absolute path from outside this
+#: repository. The first version failed on itself the moment the scan was
+#: widened to cover hand-authored source — the third time in three commits that
+#: a guard could not survive its own rule, and the reason the widening was worth
+#: doing rather than an argument against it.
+#:
+#: The trailing `?` on the backslash because both spellings reach a published
+#: file: a Markdown document carries a Windows path as written, JSON carries it
+#: escaped, and requiring two backslashes saw only the JSON half.
+OUTSIDE_ROOTS = ("home", "Users", "root", "var", "mnt", "srv", "opt")
+OUTSIDE_ROOT = re.compile(
+    r"(?:^|[\s\"'(=])(?:"
+    + "|".join("/" + name + "/" for name in OUTSIDE_ROOTS)
+    + r"|[A-Za-z]:\\\\?)")
 
-#: The published artifacts, not the audit alone.  The tooling constant that
-#: leaked reached a generated JSON file, and the same constant reaching the
-#: package model or a document under `docs/` was covered by nothing while the
-#: sentence above claimed a class rather than an instance.
+#: **Everything this repository publishes, which is every tracked file.**  The
+#: first widening stopped at generated output plus `docs/` and the README, and
+#: left out the one category the leak actually landed in: `tool/public_site_ci.py`
+#: itself, where the identifier sat one commit ago, in hand-authored source.  The
+#: version of this check that shipped in `2cac775` would have passed under the
+#: check written to replace it.
+#:
+#: The scanner scanning itself is fine and is the point: this constant holds
+#: DIGESTS, so this file can be read by the check it defines — which is a
+#: property the literal denylist it replaced did not have.
 PUBLISHED = ("uir/official-audit.json", "uir/evidence.json", "README.md",
-             "docs", "app/uir-package")
+             "UIR-FLOW-REVIEW.md", "docs", "app/uir-package", "app", "tool",
+             "tests", "uir/author_site.py")
 
 
 def word_tokens(text: str) -> set[str]:
@@ -211,6 +234,7 @@ def semantic_snapshot(
     evidence_path: pathlib.Path,
     baseline_path: pathlib.Path,
     public: dict[str, Any],
+    root: pathlib.Path,
 ) -> dict[str, Any]:
     audit = load_json(audit_path)
     evidence = load_json(evidence_path)
@@ -241,8 +265,8 @@ def semantic_snapshot(
             f"officialAuditSource must be owner/repo@<40-hex sha> naming one "
             f"commit, and is {source!r}")
     # The ALLOWLIST first, because it is the half that catches a subject nobody
-    # has listed: the instance was `"package": "/home/…/app/uir-package"`, a
-    # filesystem root of the machine the private tooling ran on.
+    # has listed: the instance was the `package` field carrying an absolute path
+    # rooted on the machine the private tooling ran on.
     for field, value in (("package", audit.get("package")),
                          ("report.root", audit.get("report", {}).get("root"))):
         if value != PACKAGE_PATH:
@@ -250,13 +274,29 @@ def semantic_snapshot(
                 f"the published audit states {field} as {value!r} and not "
                 f"{PACKAGE_PATH!r}: an audit that names where it was produced "
                 f"names the machine that produced it")
-    for path in published_files(audit_path.parent.parent):
+    # `root`, and NOT `audit_path.parent.parent`. The two coincide only because
+    # `--audit` defaults to a path exactly two components deep, and nothing
+    # enforces that: `--audit /tmp/a.json` over a byte-identical copy made the
+    # scan root `/`, where none of `PUBLISHED` resolves — so `published_files`
+    # returned `[]`, the loop body never ran, every token and path check was
+    # skipped, and the tool printed `passed`. Finding nothing and finding
+    # nothing wrong were the same outcome.
+    scanned = published_files(root)
+    if not scanned:
+        raise VerificationError(
+            f"no published artifact was found under {root}: the scan for a "
+            f"private subject's name covered nothing, which is not the same "
+            f"answer as covering everything and finding nothing")
+    for path in scanned:
         try:
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
         outside = OUTSIDE_ROOT.search(text)
-        if outside and path.name not in ("README.md",):
+        # Scoped to the file meant, not to every `README.md` anywhere below the
+        # root: a basename carve-out is inherited by any file added under
+        # `docs/` or `app/uir-package/` with that name.
+        if outside and path != root / "README.md":
             raise VerificationError(
                 f"{path} carries an absolute path from outside this repository "
                 f"({outside.group(0).strip()!r}): a published artifact states "
@@ -374,7 +414,8 @@ def main(argv: list[str] | None = None) -> int:
     review.parent.mkdir(parents=True, exist_ok=True)
     try:
         public = reproduce(root, resolve(args.author), resolve(args.package))
-        semantic = semantic_snapshot(resolve(args.audit), resolve(args.evidence), resolve(args.baseline), public)
+        semantic = semantic_snapshot(resolve(args.audit), resolve(args.evidence),
+                                     resolve(args.baseline), public, root)
         review.write_text(render_review(public, semantic), encoding="utf-8")
     except VerificationError as exc:
         review.write_text(f"# UIR public showcase review\n\n> [!CAUTION]\n> **Blocked.** {exc}\n", encoding="utf-8")

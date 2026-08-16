@@ -8,12 +8,21 @@ This document records the authoring experience, not the product. Product meaning
 
 ## Session allowlist
 
+**Written without absolute paths, and it was not.** Five lines of this document
+carried `/home/<user>/…` — the machine's account name and where two PRIVATE
+repositories sit on it — in a public repository that deploys on merge. Nothing
+checked it; `tool/public_site_ci.py` scanned generated artifacts only, and the
+first run of the widened scan failed on this file. A path is a fact about a
+machine, and this document's whole subject is what may and may not cross that
+line.
+
+
 - The user's words in this conversation.
-- `/home/kvelikov/uir` as the authoritative source of UIR product facts and the current compiler, checker, prototype, and gates.
-- `/home/kvelikov/playbooks-uir/idea-to-uir/SKILL.md` as the current clean-start authoring procedure.
-- `/home/kvelikov/playbooks-uir/design-system/` as explicitly selected generic design-system method, never as a source of product-specific values.
+- The private `uir` tooling repository, checked out beside this one, as the authoritative source of UIR product facts and the current compiler, checker, prototype, and gates.
+- The `idea-to-uir` skill in the private playbooks checkout as the current clean-start authoring procedure.
+- The `design-system` playbook in that same checkout as explicitly selected generic design-system method, never as a source of product-specific values.
 - The official public pages of Storybook, Design Tokens Community Group, OpenTelemetry, Open UI, OpenFeature, OpenAPI, GraphQL, and Backstage as named market and UX evidence for this run.
-- The generated site workspace `/home/kvelikov/uir-public-site` as a target and test subject, never as an upstream source of product meaning.
+- This repository, the generated site workspace, as a target and test subject, never as an upstream source of product meaning.
 
 Everything else in the workspace remains out of scope.
 
@@ -481,7 +490,7 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Root cause: UIR deliberately carries framework-independent transition meaning and excludes handlers/effects, while the current web lowerer has no declared target profile for interactive decorative fields.
 - Change made: authored `pointer-dot-field` in the Dress, bound the existing typed radial surface and transition to the hero Node, and made the generic renderer activate a canvas lowering only when that exact UIR event and surface are present. The lowering draws only points, derives both colours, opacity, cycle duration, and motionless permission from UIR, caps the target-policy displacement at 8 px plus two 2 px waves, follows pointer/touch without blocking page scroll, and becomes static for reduced motion.
 - Proposed tooling or workflow improvement: add a target-profile extension for decorative fields with a closed effect kind, interaction trigger, influence measure, displacement measure, density, and reduced-motion result. Until that exists, surface repeat geometry and particle displacement must be disclosed as target policy rather than implied to be fully represented.
-- Verification command and result: `python3 tool/uir_site_ci.py --site-root /home/kvelikov/uir-public-site ...` passed with 11 passing, 2 vacuous, 6 unchanged unchecked, 0 failing gates, 0 ungated errors, and the same four compiler deferrals; mobile and desktop browser runs found one canvas exactly covering the hero, changing pixels over time, distinct results after touch/pointer moves, no runtime errors, and solid inverse title/lead surfaces.
+- Verification command and result: `python3 tool/uir_site_ci.py --site-root . ...` passed with 11 passing, 2 vacuous, 6 unchanged unchecked, 0 failing gates, 0 ungated errors, and the same four compiler deferrals; mobile and desktop browser runs found one canvas exactly covering the hero, changing pixels over time, distinct results after touch/pointer moves, no runtime errors, and solid inverse title/lead surfaces.
 - Remaining risk: the event identity, colours, opacity, duration, binding, and motionless allowance are inspectable UIR; point spacing, influence radius, displacement coefficients, and canvas realization are still web-target policy and do not appear in the inspector or official board.
 
 | Signal | Baseline | After | Interpretation |
