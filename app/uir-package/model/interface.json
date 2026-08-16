@@ -744,12 +744,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-adopt-command",
+      "id": "uir-site:fact:node-composition:quickstart-adopt-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -816,12 +816,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-read-command",
+      "id": "uir-site:fact:node-composition:quickstart-read-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -864,12 +864,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-composition:quickstart-see-command",
+      "id": "uir-site:fact:node-composition:quickstart-see-captures",
       "kind": "node.composition",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-composition:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-composition:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "kind": "leaf",
         "ownsChildren": false
@@ -1475,7 +1475,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth."
+        "value": "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against."
       }
     },
     {
@@ -1489,7 +1489,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "NEW INTERFACE"
+        "value": "HOW IT FITS"
       }
     },
     {
@@ -1503,7 +1503,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "01 — Describe the job, user, real content, and constraints."
+        "value": "01 — New UI — Capture approved design decisions as UIR."
       }
     },
     {
@@ -1517,7 +1517,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "02 — Compile confirmed interface decisions into UIR."
+        "value": "02 — Existing UI — Extract what the frontend can prove and keep the gaps explicit."
       }
     },
     {
@@ -1531,7 +1531,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "03 — Review the board and semantic inspector; correct the representation, not a second artifact."
+        "value": "03 — Any implementation — Use people, agents, frameworks, or any combination to produce the frontend."
       }
     },
     {
@@ -1545,7 +1545,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "04 — Choose a target only after the representation is accepted."
+        "value": "04 — Every change — Verify the result against the same specification."
       }
     },
     {
@@ -1570,7 +1570,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "For a new screen, author meaning before implementation."
+        "value": "Start from design. Or start from code."
       }
     },
     {
@@ -1595,7 +1595,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Structure, reading order, roles, behaviour, conditions, navigation, and data relationships."
+        "value": "Turn structure, content, states, behaviour and design-system decisions into a machine-readable specification."
       }
     },
     {
@@ -1609,7 +1609,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "01 · The screen"
+        "value": "01 · Capture the design"
       }
     },
     {
@@ -1634,7 +1634,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Pieces and design values that realize roles without leaking implementation details into UIR."
+        "value": "Give developers and agents explicit requirements instead of asking them to interpret a mockup."
       }
     },
     {
@@ -1648,7 +1648,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "02 · The design system"
+        "value": "02 · Build against it"
       }
     },
     {
@@ -1673,7 +1673,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "A board, a web app, a native app, or another target derived from the same meaning."
+        "value": "Check the rendered frontend against the specification and catch mismatches before they ship."
       }
     },
     {
@@ -1687,7 +1687,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "03 · The result"
+        "value": "03 · Verify every change"
       }
     },
     {
@@ -1712,7 +1712,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Try extraction"
+        "value": "See what UIR captures"
       }
     },
     {
@@ -1726,7 +1726,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Created and stewarded by Tenbytes Ltd. Describe the interface. Let the design system realize it. Treat code as a target."
+        "value": "UIR by Tenbytes Ltd."
       }
     },
     {
@@ -1740,7 +1740,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR by Tenbytes Ltd"
+        "value": "Ship the UI you designed."
       }
     },
     {
@@ -1804,7 +1804,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR is a framework-independent representation of a screen: its structure, roles, behaviour, states, relationships, and unresolved gaps. A design system supplies the realization. Code is a target."
+        "value": "UIR turns your design into a machine-readable specification — so you can build and verify your frontend against it."
       }
     },
     {
@@ -1818,7 +1818,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Try it on existing UI"
+        "value": "What UIR captures"
       }
     },
     {
@@ -1832,7 +1832,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "How UIR fits"
+        "value": "How it works"
       }
     },
     {
@@ -1846,7 +1846,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Write down what the interface means."
+        "value": "Ship the UI you designed"
       }
     },
     {
@@ -1871,7 +1871,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR owns the facts that should survive a framework change. The design system owns the pieces and values that realize those facts. Put them together and the implementation becomes replaceable."
+        "value": "UIR carries the design decisions into implementation, then checks that the frontend keeps them."
       }
     },
     {
@@ -1896,7 +1896,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "THE MISSING LAYER"
+        "value": "HOW IT WORKS"
       }
     },
     {
@@ -1910,7 +1910,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR describes the screen. The design system decides how to draw it."
+        "value": "From approved design to verified frontend."
       }
     },
     {
@@ -1924,7 +1924,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "New UI"
+        "value": "How it fits"
       }
     },
     {
@@ -1938,7 +1938,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Existing UI"
+        "value": "What it captures"
       }
     },
     {
@@ -1952,7 +1952,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "This site"
+        "value": "Playground"
       }
     },
     {
@@ -1966,7 +1966,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Why UIR"
+        "value": "Why it works"
       }
     },
     {
@@ -2013,7 +2013,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Behaviour is executable, but intent is distributed through implementation details."
+        "value": "Designers repeatedly inspect screens, states and breakpoints to find what drifted."
       }
     },
     {
@@ -2027,7 +2027,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The code"
+        "value": "Design review stays manual"
       }
     },
     {
@@ -2052,7 +2052,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Appearance is explicit. Meaning is mostly inferred."
+        "value": "Developers have to infer which details are intentional and which are flexible."
       }
     },
     {
@@ -2066,7 +2066,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The design"
+        "value": "Handoff turns decisions into interpretation"
       }
     },
     {
@@ -2105,7 +2105,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Design captures appearance. Code captures one implementation. A design system captures reusable realization. The interface itself — its semantic structure and obligations — still has no canonical form."
+        "value": "Functional tests prove that the frontend works. Visual regression shows that it changed. Neither proves that it matches the design."
       }
     },
     {
@@ -2130,7 +2130,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Components and tokens define how roles are realized, not what this particular screen means."
+        "value": "Once a difference ships, future tests protect it — even if it never matched the design."
       }
     },
     {
@@ -2144,7 +2144,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The system"
+        "value": "The wrong UI becomes the new baseline"
       }
     },
     {
@@ -2158,7 +2158,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Code can show how a screen was built. It cannot tell you what the screen means."
+        "value": "A green build can still ship the wrong UI."
       }
     },
     {
@@ -2184,17 +2184,17 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-adopt-command",
+      "id": "uir-site:fact:node-content:quickstart-adopt-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "# CI integration is alpha and remains an explicit adoption task"
+        "value": "components · design values · bindings · reuse"
       }
     },
     {
@@ -2208,7 +2208,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Put the representation beside the implementation and make drift a reviewable change."
+        "value": "Which reusable pieces and design-system values realize the design."
       }
     },
     {
@@ -2222,7 +2222,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "3 · Use"
+        "value": "Components & design system"
       }
     },
     {
@@ -2236,7 +2236,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The alpha extractor reads supported implementation evidence and emits UIR facts it can justify. What it cannot justify remains explicit instead of becoming a guess."
+        "value": "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them."
       }
     },
     {
@@ -2250,7 +2250,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "EXISTING INTERFACE"
+        "value": "WHAT UIR CAPTURES"
       }
     },
     {
@@ -2265,17 +2265,17 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-read-command",
+      "id": "uir-site:fact:node-content:quickstart-read-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"
+        "value": "structure · content · roles · relationships"
       }
     },
     {
@@ -2289,7 +2289,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Point the extractor at the app and the design-system sources you want it to inspect."
+        "value": "What exists, what it says, and how the parts are ordered and related."
       }
     },
     {
@@ -2303,7 +2303,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "1 · Read"
+        "value": "Structure & content"
       }
     },
     {
@@ -2318,17 +2318,17 @@
       }
     },
     {
-      "id": "uir-site:fact:node-content:quickstart-see-command",
+      "id": "uir-site:fact:node-content:quickstart-see-captures",
       "kind": "node.content",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-content:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-content:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "python3 tool/uir_report.py --change-set .uir/reading.json"
+        "value": "states · actions · conditions · navigation"
       }
     },
     {
@@ -2342,7 +2342,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Review the representation, the evidence behind each fact, and the gaps it could not resolve."
+        "value": "What can happen, when it happens, and which states the interface must support."
       }
     },
     {
@@ -2356,7 +2356,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "2 · Inspect"
+        "value": "Behaviour & states"
       }
     },
     {
@@ -2381,7 +2381,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Use extraction to see what your current UI actually says."
+        "value": "Everything that makes the design the design."
       }
     },
     {
@@ -2428,7 +2428,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Its content, structure, semantics, design bindings, provenance, and gaps live in the checked UIR package. React is only the renderer. The inspector reads the same package."
+        "value": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other."
       }
     },
     {
@@ -2464,7 +2464,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Select visible content to see the role, Piece, bindings, provenance, controls, and gaps behind it."
+        "value": "Tests pin the agent-authored target to the package and fail when implementation and specification drift."
       }
     },
     {
@@ -2478,7 +2478,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "03 · Inspect any node"
+        "value": "03 · The verification"
       }
     },
     {
@@ -2492,7 +2492,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "THIS SITE IS UIR"
+        "value": "PLAYGROUND"
       }
     },
     {
@@ -2520,7 +2520,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "View the site source"
+        "value": "Explore the repository"
       }
     },
     {
@@ -2545,7 +2545,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "CI verifies that the package is reproducible and binds it to the reviewed UIR evidence."
+        "value": "The agent encodes confirmed decisions in UIR. For a static page, the representation is enough to produce the visualization."
       }
     },
     {
@@ -2559,7 +2559,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "02 · Check the proof"
+        "value": "02 · The agent build"
       }
     },
     {
@@ -2584,7 +2584,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The authoring source compiles to the checked package consumed by the page."
+        "value": "Product intent, design direction, and constraints begin as instructions to the agent."
       }
     },
     {
@@ -2598,7 +2598,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "01 · Read the UIR"
+        "value": "01 · The instructions"
       }
     },
     {
@@ -2612,7 +2612,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "The page you are reading is generated from its own representation."
+        "value": "From instructions to a verified page."
       }
     },
     {
@@ -2637,7 +2637,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation."
+        "value": "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check."
       }
     },
     {
@@ -2662,7 +2662,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR names roles; the design system maps those roles to Pieces and values."
+        "value": "Unknown stays explicit instead of becoming a convenient default."
       }
     },
     {
@@ -2676,7 +2676,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Design-system backed"
+        "value": "No guessing"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Unknown meaning stays unknown. Silence is not converted into a convenient default."
+        "value": "Components and design values are part of the specification."
       }
     },
     {
@@ -2715,7 +2715,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Explicit gaps"
+        "value": "Design-system aware"
       }
     },
     {
@@ -2740,7 +2740,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "WHY A REPRESENTATION"
+        "value": "WHY IT WORKS"
       }
     },
     {
@@ -2765,7 +2765,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "A UIR fact should remain true if React is replaced by Flutter, UIKit, or something else."
+        "value": "Every required decision has one place to live."
       }
     },
     {
@@ -2779,7 +2779,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Framework-independent"
+        "value": "One source"
       }
     },
     {
@@ -2804,7 +2804,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Boards and target implementations are projections of the representation, not parallel sources to keep in sync."
+        "value": "Different frontends can be checked against the same definition."
       }
     },
     {
@@ -2818,7 +2818,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "One authority"
+        "value": "Implementation-independent"
       }
     },
     {
@@ -2832,7 +2832,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Not a framework. Not a design tool. Not another markup language."
+        "value": "Explicit decisions turn UI review into a test."
       }
     },
     {
@@ -2857,7 +2857,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?"
+        "value": "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress."
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Working now — deterministic authoring, package checking, extraction experiments, live boards, semantic inspection, and CI evidence."
+        "value": "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence."
       }
     },
     {
@@ -2885,7 +2885,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Still open — vocabulary and contract gaps that must be resolved before v0.1 can freeze."
+        "value": "In progress — full frontend-to-specification conformance and broader vocabulary coverage."
       }
     },
     {
@@ -2899,7 +2899,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "Not claimed — a stable public install, production target compilers, or a mature adopter ecosystem."
+        "value": "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem."
       }
     },
     {
@@ -2913,7 +2913,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "CURRENT STATUS"
+        "value": "ALPHA STATUS"
       }
     },
     {
@@ -2938,7 +2938,7 @@
         "direction": "ltr",
         "language": "en",
         "type": "text",
-        "value": "A definition under test."
+        "value": "Useful now. Still alpha."
       }
     },
     {
@@ -3486,6 +3486,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:quickstart-adopt-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-adopt-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-adopt-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:quickstart-adopt-title:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3550,6 +3566,22 @@
       }
     },
     {
+      "id": "uir-site:fact:node-projection:quickstart-read-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-read-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-read-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
       "id": "uir-site:fact:node-projection:quickstart-read-title:type",
       "kind": "presentation.binding",
       "plane": "visible",
@@ -3558,6 +3590,22 @@
       "subject": "uir-site:node:quickstart-read-title",
       "value": {
         "groundRole": "uir-site:role:type-lead",
+        "outcome": "role",
+        "slot": "type",
+        "target": {
+          "kind": "self"
+        }
+      }
+    },
+    {
+      "id": "uir-site:fact:node-projection:quickstart-see-captures:type",
+      "kind": "presentation.binding",
+      "plane": "visible",
+      "provenance": "uir-site:fact:node-projection:quickstart-see-captures:type:provenance",
+      "recordType": "Fact",
+      "subject": "uir-site:node:quickstart-see-captures",
+      "value": {
+        "groundRole": "uir-site:role:type-mono",
         "outcome": "role",
         "slot": "type",
         "target": {
@@ -4022,7 +4070,7 @@
       "subject": "uir-site:node:brand",
       "value": {
         "primary": true,
-        "role": "heading"
+        "role": "paragraph"
       }
     },
     {
@@ -4710,15 +4758,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-adopt-command",
+      "id": "uir-site:fact:node-role:quickstart-adopt-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -4782,15 +4830,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-read-command",
+      "id": "uir-site:fact:node-role:quickstart-read-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -4830,15 +4878,15 @@
       }
     },
     {
-      "id": "uir-site:fact:node-role:quickstart-see-command",
+      "id": "uir-site:fact:node-role:quickstart-see-captures",
       "kind": "node.role",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-role:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-role:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "primary": true,
-        "role": "code"
+        "role": "paragraph"
       }
     },
     {
@@ -6044,12 +6092,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-adopt-command",
+      "id": "uir-site:fact:node-salience:quickstart-adopt-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "level": "supporting"
       }
@@ -6110,12 +6158,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-read-command",
+      "id": "uir-site:fact:node-salience:quickstart-read-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "level": "supporting"
       }
@@ -6154,12 +6202,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-salience:quickstart-see-command",
+      "id": "uir-site:fact:node-salience:quickstart-see-captures",
       "kind": "node.salience",
       "plane": "visible",
-      "provenance": "uir-site:fact:node-salience:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-salience:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "level": "supporting"
       }
@@ -6694,8 +6742,7 @@
         },
         "focus": "none",
         "name": {
-          "type": "literal",
-          "value": "UIR"
+          "type": "none"
         },
         "operations": []
       }
@@ -6858,7 +6905,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "For a new screen, author meaning before implementation."
+          "value": "Start from design. Or start from code."
         },
         "operations": []
       }
@@ -6913,7 +6960,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "01 · The screen"
+          "value": "01 · Capture the design"
         },
         "operations": []
       }
@@ -6968,7 +7015,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "02 · The design system"
+          "value": "02 · Build against it"
         },
         "operations": []
       }
@@ -7023,7 +7070,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "03 · The result"
+          "value": "03 · Verify every change"
         },
         "operations": []
       }
@@ -7060,7 +7107,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Try extraction"
+          "value": "See what UIR captures"
         },
         "operations": [
           "navigate"
@@ -7099,7 +7146,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "UIR by Tenbytes Ltd"
+          "value": "Ship the UI you designed."
         },
         "operations": []
       }
@@ -7208,7 +7255,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Try it on existing UI"
+          "value": "What UIR captures"
         },
         "operations": [
           "navigate"
@@ -7229,7 +7276,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "How UIR fits"
+          "value": "How it works"
         },
         "operations": [
           "navigate"
@@ -7250,7 +7297,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Write down what the interface means."
+          "value": "Ship the UI you designed"
         },
         "operations": []
       }
@@ -7359,7 +7406,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "UIR describes the screen. The design system decides how to draw it."
+          "value": "From approved design to verified frontend."
         },
         "operations": []
       }
@@ -7378,7 +7425,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "New UI"
+          "value": "How it fits"
         },
         "operations": [
           "navigate"
@@ -7399,7 +7446,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Existing UI"
+          "value": "What it captures"
         },
         "operations": [
           "navigate"
@@ -7420,7 +7467,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "This site"
+          "value": "Playground"
         },
         "operations": [
           "navigate"
@@ -7441,7 +7488,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "Why UIR"
+          "value": "Why it works"
         },
         "operations": [
           "navigate"
@@ -7534,7 +7581,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "The code"
+          "value": "Design review stays manual"
         },
         "operations": []
       }
@@ -7589,7 +7636,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "The design"
+          "value": "Handoff turns decisions into interpretation"
         },
         "operations": []
       }
@@ -7698,7 +7745,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "The system"
+          "value": "The wrong UI becomes the new baseline"
         },
         "operations": []
       }
@@ -7717,7 +7764,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Code can show how a screen was built. It cannot tell you what the screen means."
+          "value": "A green build can still ship the wrong UI."
         },
         "operations": []
       }
@@ -7759,12 +7806,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-adopt-command",
+      "id": "uir-site:fact:node-semantics:quickstart-adopt-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-adopt-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-adopt-command",
+      "subject": "uir-site:node:quickstart-adopt-captures",
       "value": {
         "description": {
           "type": "none"
@@ -7808,7 +7855,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "3 · Use"
+          "value": "Components & design system"
         },
         "operations": []
       }
@@ -7868,12 +7915,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-read-command",
+      "id": "uir-site:fact:node-semantics:quickstart-read-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-read-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-read-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-read-command",
+      "subject": "uir-site:node:quickstart-read-captures",
       "value": {
         "description": {
           "type": "none"
@@ -7917,7 +7964,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "1 · Read"
+          "value": "Structure & content"
         },
         "operations": []
       }
@@ -7941,12 +7988,12 @@
       }
     },
     {
-      "id": "uir-site:fact:node-semantics:quickstart-see-command",
+      "id": "uir-site:fact:node-semantics:quickstart-see-captures",
       "kind": "node.semantics",
       "plane": "invisible",
-      "provenance": "uir-site:fact:node-semantics:quickstart-see-command:provenance",
+      "provenance": "uir-site:fact:node-semantics:quickstart-see-captures:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:node:quickstart-see-command",
+      "subject": "uir-site:node:quickstart-see-captures",
       "value": {
         "description": {
           "type": "none"
@@ -7990,7 +8037,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "2 · Inspect"
+          "value": "Behaviour & states"
         },
         "operations": []
       }
@@ -8027,7 +8074,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Use extraction to see what your current UI actually says."
+          "value": "Everything that makes the design the design."
         },
         "operations": []
       }
@@ -8172,7 +8219,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "03 · Inspect any node"
+          "value": "03 · The verification"
         },
         "operations": []
       }
@@ -8227,7 +8274,7 @@
         "focus": "single",
         "name": {
           "type": "literal",
-          "value": "View the site source"
+          "value": "Explore the repository"
         },
         "operations": [
           "navigate"
@@ -8284,7 +8331,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "02 · Check the proof"
+          "value": "02 · The agent build"
         },
         "operations": []
       }
@@ -8339,7 +8386,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "01 · Read the UIR"
+          "value": "01 · The instructions"
         },
         "operations": []
       }
@@ -8358,7 +8405,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "The page you are reading is generated from its own representation."
+          "value": "From instructions to a verified page."
         },
         "operations": []
       }
@@ -8449,7 +8496,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Design-system backed"
+          "value": "No guessing"
         },
         "operations": []
       }
@@ -8504,7 +8551,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Explicit gaps"
+          "value": "Design-system aware"
         },
         "operations": []
       }
@@ -8595,7 +8642,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Framework-independent"
+          "value": "One source"
         },
         "operations": []
       }
@@ -8650,7 +8697,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "One authority"
+          "value": "Implementation-independent"
         },
         "operations": []
       }
@@ -8669,7 +8716,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "Not a framework. Not a design tool. Not another markup language."
+          "value": "Explicit decisions turn UI review into a test."
         },
         "operations": []
       }
@@ -8814,7 +8861,7 @@
         "focus": "none",
         "name": {
           "type": "literal",
-          "value": "A definition under test."
+          "value": "Useful now. Still alpha."
         },
         "operations": []
       }
@@ -9506,10 +9553,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-adopt-command",
+      "id": "uir-site:node:quickstart-adopt-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:node:quickstart-adopt-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -9548,10 +9595,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-read-command",
+      "id": "uir-site:node:quickstart-read-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-read-command:provenance",
+      "provenance": "uir-site:node:quickstart-read-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -9576,10 +9623,10 @@
       "recordType": "Entity"
     },
     {
-      "id": "uir-site:node:quickstart-see-command",
+      "id": "uir-site:node:quickstart-see-captures",
       "kind": "Node",
       "owner": "uir-site:package",
-      "provenance": "uir-site:node:quickstart-see-command:provenance",
+      "provenance": "uir-site:node:quickstart-see-captures:provenance",
       "recordType": "Entity"
     },
     {
@@ -11050,23 +11097,23 @@
       "target": "uir-site:node:quickstart-adopt"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-adopt-command",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-adopt-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-adopt-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-adopt",
-      "target": "uir-site:node:quickstart-adopt-command"
+      "target": "uir-site:node:quickstart-adopt-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-adopt-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-adopt-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-adopt-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-adopt-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-adopt-command",
+      "subject": "uir-site:relation:contains:quickstart-adopt-captures",
       "value": {
-        "meaning": "quickstart-adopt contains quickstart-adopt-command at this semantic reading position."
+        "meaning": "quickstart-adopt contains quickstart-adopt-captures at this semantic reading position."
       }
     },
     {
@@ -11170,23 +11217,23 @@
       "target": "uir-site:node:quickstart-read"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-read-command",
+      "id": "uir-site:relation:contains:quickstart-read-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-read-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-read-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-read",
-      "target": "uir-site:node:quickstart-read-command"
+      "target": "uir-site:node:quickstart-read-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-read-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-read-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-read-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-read-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-read-command",
+      "subject": "uir-site:relation:contains:quickstart-read-captures",
       "value": {
-        "meaning": "quickstart-read contains quickstart-read-command at this semantic reading position."
+        "meaning": "quickstart-read contains quickstart-read-captures at this semantic reading position."
       }
     },
     {
@@ -11250,23 +11297,23 @@
       "target": "uir-site:node:quickstart-see"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-see-command",
+      "id": "uir-site:relation:contains:quickstart-see-captures",
       "kind": "contains",
       "order": 2,
-      "provenance": "uir-site:relation:contains:quickstart-see-command:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-see-captures:provenance",
       "recordType": "Relation",
       "source": "uir-site:node:quickstart-see",
-      "target": "uir-site:node:quickstart-see-command"
+      "target": "uir-site:node:quickstart-see-captures"
     },
     {
-      "id": "uir-site:relation:contains:quickstart-see-command:meaning",
+      "id": "uir-site:relation:contains:quickstart-see-captures:meaning",
       "kind": "relation.meaning",
       "plane": "invisible",
-      "provenance": "uir-site:relation:contains:quickstart-see-command:meaning:provenance",
+      "provenance": "uir-site:relation:contains:quickstart-see-captures:meaning:provenance",
       "recordType": "Fact",
-      "subject": "uir-site:relation:contains:quickstart-see-command",
+      "subject": "uir-site:relation:contains:quickstart-see-captures",
       "value": {
-        "meaning": "quickstart-see contains quickstart-see-command at this semantic reading position."
+        "meaning": "quickstart-see contains quickstart-see-captures at this semantic reading position."
       }
     },
     {
@@ -12227,7 +12274,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:footer-action:quickstart",
       "value": {
-        "meaning": "The Try extraction action navigates to the quickstart section inside this Surface."
+        "meaning": "The See what UIR captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12246,7 +12293,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:hero-primary:quickstart",
       "value": {
-        "meaning": "The Try it on existing UI action navigates to the quickstart section inside this Surface."
+        "meaning": "The What UIR captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12265,7 +12312,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:hero-secondary:mechanism",
       "value": {
-        "meaning": "The How UIR fits action navigates to the mechanism section inside this Surface."
+        "meaning": "The How it works action navigates to the mechanism section inside this Surface."
       }
     },
     {
@@ -12284,7 +12331,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-build:build",
       "value": {
-        "meaning": "The New UI action navigates to the build section inside this Surface."
+        "meaning": "The How it fits action navigates to the build section inside this Surface."
       }
     },
     {
@@ -12303,7 +12350,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-extract:quickstart",
       "value": {
-        "meaning": "The Existing UI action navigates to the quickstart section inside this Surface."
+        "meaning": "The What it captures action navigates to the quickstart section inside this Surface."
       }
     },
     {
@@ -12322,7 +12369,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-source:showcase",
       "value": {
-        "meaning": "The This site action navigates to the showcase section inside this Surface."
+        "meaning": "The Playground action navigates to the showcase section inside this Surface."
       }
     },
     {
@@ -12341,7 +12388,7 @@
       "recordType": "Fact",
       "subject": "uir-site:relation:controls:nav-standard:standard",
       "value": {
-        "meaning": "The Why UIR action navigates to the standard section inside this Surface."
+        "meaning": "The Why it works action navigates to the standard section inside this Surface."
       }
     },
     {

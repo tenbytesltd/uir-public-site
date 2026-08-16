@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { UIRPage, uirMetadata } from "./uir";
+import { PublicSite } from "./Site";
+import { uirMetadata } from "./uir-data";
 
 export const dynamic = "force-static";
 
@@ -20,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <UIRPage />;
+  return <PublicSite />;
 }

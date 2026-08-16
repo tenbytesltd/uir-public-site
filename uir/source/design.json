@@ -1,0 +1,1167 @@
+{
+  "nodes": [
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:root",
+      "key": "root",
+      "order": 0,
+      "parent": null,
+      "role": "document",
+      "salience": "primary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:navigation",
+      "key": "navigation",
+      "order": 0,
+      "parent": "root",
+      "role": "navigation",
+      "salience": "secondary"
+    },
+    {
+      "content": "UIR",
+      "controls": null,
+      "id": "uir-site:node:brand",
+      "key": "brand",
+      "order": 0,
+      "parent": "navigation",
+      "role": "paragraph",
+      "salience": "primary"
+    },
+    {
+      "content": "What it captures",
+      "controls": "quickstart",
+      "id": "uir-site:node:nav-extract",
+      "key": "nav-extract",
+      "order": 1,
+      "parent": "navigation",
+      "role": "link",
+      "salience": "secondary"
+    },
+    {
+      "content": "How it fits",
+      "controls": "build",
+      "id": "uir-site:node:nav-build",
+      "key": "nav-build",
+      "order": 2,
+      "parent": "navigation",
+      "role": "link",
+      "salience": "secondary"
+    },
+    {
+      "content": "Why it works",
+      "controls": "standard",
+      "id": "uir-site:node:nav-standard",
+      "key": "nav-standard",
+      "order": 3,
+      "parent": "navigation",
+      "role": "link",
+      "salience": "secondary"
+    },
+    {
+      "content": "Playground",
+      "controls": "showcase",
+      "id": "uir-site:node:nav-source",
+      "key": "nav-source",
+      "order": 4,
+      "parent": "navigation",
+      "role": "link",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:hero",
+      "key": "hero",
+      "order": 1,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "USER INTERFACE REPRESENTATION · ALPHA",
+      "controls": null,
+      "id": "uir-site:node:hero-kicker",
+      "key": "hero-kicker",
+      "order": 0,
+      "parent": "hero",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "Ship the UI you designed",
+      "controls": null,
+      "id": "uir-site:node:hero-title",
+      "key": "hero-title",
+      "order": 1,
+      "parent": "hero",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "UIR turns your design into a machine-readable specification — so you can build and verify your frontend against it.",
+      "controls": null,
+      "id": "uir-site:node:hero-lead",
+      "key": "hero-lead",
+      "order": 2,
+      "parent": "hero",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:hero-actions",
+      "key": "hero-actions",
+      "order": 3,
+      "parent": "hero",
+      "role": "group",
+      "salience": "secondary"
+    },
+    {
+      "content": "What UIR captures",
+      "controls": "quickstart",
+      "id": "uir-site:node:hero-primary",
+      "key": "hero-primary",
+      "order": 0,
+      "parent": "hero-actions",
+      "role": "link",
+      "salience": "primary"
+    },
+    {
+      "content": "How it works",
+      "controls": "mechanism",
+      "id": "uir-site:node:hero-secondary",
+      "key": "hero-secondary",
+      "order": 1,
+      "parent": "hero-actions",
+      "role": "link",
+      "salience": "secondary"
+    },
+    {
+      "content": "python3 tool/extract_react.py --root <repo> --app <app/src> --change-set .uir/reading.json",
+      "controls": null,
+      "id": "uir-site:node:hero-command",
+      "key": "hero-command",
+      "order": 4,
+      "parent": "hero",
+      "role": "code",
+      "salience": "supporting"
+    },
+    {
+      "content": "The public install artifact is not published yet; current tooling runs from an authorized source checkout.",
+      "controls": null,
+      "id": "uir-site:node:install-gap",
+      "key": "install-gap",
+      "order": 5,
+      "parent": "hero",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:problem",
+      "key": "problem",
+      "order": 2,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "THE PROBLEM",
+      "controls": null,
+      "id": "uir-site:node:problem-kicker",
+      "key": "problem-kicker",
+      "order": 0,
+      "parent": "problem",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "A green build can still ship the wrong UI.",
+      "controls": null,
+      "id": "uir-site:node:problem-title",
+      "key": "problem-title",
+      "order": 1,
+      "parent": "problem",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "Functional tests prove that the frontend works. Visual regression shows that it changed. Neither proves that it matches the design.",
+      "controls": null,
+      "id": "uir-site:node:problem-lead",
+      "key": "problem-lead",
+      "order": 2,
+      "parent": "problem",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:problem-grid",
+      "key": "problem-grid",
+      "order": 3,
+      "parent": "problem",
+      "role": "group",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:problem-design",
+      "key": "problem-design",
+      "order": 0,
+      "parent": "problem-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "Handoff turns decisions into interpretation",
+      "controls": null,
+      "id": "uir-site:node:problem-design-title",
+      "key": "problem-design-title",
+      "order": 0,
+      "parent": "problem-design",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Developers have to infer which details are intentional and which are flexible.",
+      "controls": null,
+      "id": "uir-site:node:problem-design-copy",
+      "key": "problem-design-copy",
+      "order": 1,
+      "parent": "problem-design",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:problem-code",
+      "key": "problem-code",
+      "order": 1,
+      "parent": "problem-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "Design review stays manual",
+      "controls": null,
+      "id": "uir-site:node:problem-code-title",
+      "key": "problem-code-title",
+      "order": 0,
+      "parent": "problem-code",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Designers repeatedly inspect screens, states and breakpoints to find what drifted.",
+      "controls": null,
+      "id": "uir-site:node:problem-code-copy",
+      "key": "problem-code-copy",
+      "order": 1,
+      "parent": "problem-code",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:problem-system",
+      "key": "problem-system",
+      "order": 2,
+      "parent": "problem-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "The wrong UI becomes the new baseline",
+      "controls": null,
+      "id": "uir-site:node:problem-system-title",
+      "key": "problem-system-title",
+      "order": 0,
+      "parent": "problem-system",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Once a difference ships, future tests protect it — even if it never matched the design.",
+      "controls": null,
+      "id": "uir-site:node:problem-system-copy",
+      "key": "problem-system-copy",
+      "order": 1,
+      "parent": "problem-system",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:mechanism",
+      "key": "mechanism",
+      "order": 3,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "HOW IT WORKS",
+      "controls": null,
+      "id": "uir-site:node:mechanism-kicker",
+      "key": "mechanism-kicker",
+      "order": 0,
+      "parent": "mechanism",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "From approved design to verified frontend.",
+      "controls": null,
+      "id": "uir-site:node:mechanism-title",
+      "key": "mechanism-title",
+      "order": 1,
+      "parent": "mechanism",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "UIR carries the design decisions into implementation, then checks that the frontend keeps them.",
+      "controls": null,
+      "id": "uir-site:node:mechanism-copy",
+      "key": "mechanism-copy",
+      "order": 2,
+      "parent": "mechanism",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:mechanism-flow",
+      "key": "mechanism-flow",
+      "order": 3,
+      "parent": "mechanism",
+      "role": "group",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:flow-input",
+      "key": "flow-input",
+      "order": 0,
+      "parent": "mechanism-flow",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "01 · Capture the design",
+      "controls": null,
+      "id": "uir-site:node:flow-input-title",
+      "key": "flow-input-title",
+      "order": 0,
+      "parent": "flow-input",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Turn structure, content, states, behaviour and design-system decisions into a machine-readable specification.",
+      "controls": null,
+      "id": "uir-site:node:flow-input-copy",
+      "key": "flow-input-copy",
+      "order": 1,
+      "parent": "flow-input",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:flow-package",
+      "key": "flow-package",
+      "order": 1,
+      "parent": "mechanism-flow",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "02 · Build against it",
+      "controls": null,
+      "id": "uir-site:node:flow-package-title",
+      "key": "flow-package-title",
+      "order": 0,
+      "parent": "flow-package",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Give developers and agents explicit requirements instead of asking them to interpret a mockup.",
+      "controls": null,
+      "id": "uir-site:node:flow-package-copy",
+      "key": "flow-package-copy",
+      "order": 1,
+      "parent": "flow-package",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:flow-prototype",
+      "key": "flow-prototype",
+      "order": 2,
+      "parent": "mechanism-flow",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "03 · Verify every change",
+      "controls": null,
+      "id": "uir-site:node:flow-prototype-title",
+      "key": "flow-prototype-title",
+      "order": 0,
+      "parent": "flow-prototype",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Check the rendered frontend against the specification and catch mismatches before they ship.",
+      "controls": null,
+      "id": "uir-site:node:flow-prototype-copy",
+      "key": "flow-prototype-copy",
+      "order": 1,
+      "parent": "flow-prototype",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase",
+      "key": "showcase",
+      "order": 4,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "PLAYGROUND",
+      "controls": null,
+      "id": "uir-site:node:showcase-kicker",
+      "key": "showcase-kicker",
+      "order": 0,
+      "parent": "showcase",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "From instructions to a verified page.",
+      "controls": null,
+      "id": "uir-site:node:showcase-title",
+      "key": "showcase-title",
+      "order": 1,
+      "parent": "showcase",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other.",
+      "controls": null,
+      "id": "uir-site:node:showcase-copy",
+      "key": "showcase-copy",
+      "order": 2,
+      "parent": "showcase",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase-grid",
+      "key": "showcase-grid",
+      "order": 3,
+      "parent": "showcase",
+      "role": "group",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase-source",
+      "key": "showcase-source",
+      "order": 0,
+      "parent": "showcase-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "01 · The instructions",
+      "controls": null,
+      "id": "uir-site:node:showcase-source-title",
+      "key": "showcase-source-title",
+      "order": 0,
+      "parent": "showcase-source",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Product intent, design direction, and constraints begin as instructions to the agent.",
+      "controls": null,
+      "id": "uir-site:node:showcase-source-copy",
+      "key": "showcase-source-copy",
+      "order": 1,
+      "parent": "showcase-source",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase-review",
+      "key": "showcase-review",
+      "order": 1,
+      "parent": "showcase-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "02 · The agent build",
+      "controls": null,
+      "id": "uir-site:node:showcase-review-title",
+      "key": "showcase-review-title",
+      "order": 0,
+      "parent": "showcase-review",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "The agent encodes confirmed decisions in UIR. For a static page, the representation is enough to produce the visualization.",
+      "controls": null,
+      "id": "uir-site:node:showcase-review-copy",
+      "key": "showcase-review-copy",
+      "order": 1,
+      "parent": "showcase-review",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase-inspect",
+      "key": "showcase-inspect",
+      "order": 2,
+      "parent": "showcase-grid",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "03 · The verification",
+      "controls": null,
+      "id": "uir-site:node:showcase-inspect-title",
+      "key": "showcase-inspect-title",
+      "order": 0,
+      "parent": "showcase-inspect",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Tests pin the agent-authored target to the package and fail when implementation and specification drift.",
+      "controls": null,
+      "id": "uir-site:node:showcase-inspect-copy",
+      "key": "showcase-inspect-copy",
+      "order": 1,
+      "parent": "showcase-inspect",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:showcase-actions",
+      "key": "showcase-actions",
+      "order": 4,
+      "parent": "showcase",
+      "role": "group",
+      "salience": "secondary"
+    },
+    {
+      "content": "Explore the repository",
+      "controls": null,
+      "id": "uir-site:node:showcase-repository",
+      "key": "showcase-repository",
+      "order": 0,
+      "parent": "showcase-actions",
+      "role": "link",
+      "salience": "primary"
+    },
+    {
+      "content": "github.com/tenbytesltd/uir-public-site",
+      "controls": null,
+      "id": "uir-site:node:showcase-path",
+      "key": "showcase-path",
+      "order": 1,
+      "parent": "showcase-actions",
+      "role": "code",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:quickstart",
+      "key": "quickstart",
+      "order": 5,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "WHAT UIR CAPTURES",
+      "controls": null,
+      "id": "uir-site:node:quickstart-kicker",
+      "key": "quickstart-kicker",
+      "order": 0,
+      "parent": "quickstart",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "Everything that makes the design the design.",
+      "controls": null,
+      "id": "uir-site:node:quickstart-title",
+      "key": "quickstart-title",
+      "order": 1,
+      "parent": "quickstart",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them.",
+      "controls": null,
+      "id": "uir-site:node:quickstart-copy",
+      "key": "quickstart-copy",
+      "order": 2,
+      "parent": "quickstart",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:quickstart-steps",
+      "key": "quickstart-steps",
+      "order": 3,
+      "parent": "quickstart",
+      "role": "group",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:quickstart-read",
+      "key": "quickstart-read",
+      "order": 0,
+      "parent": "quickstart-steps",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "Structure & content",
+      "controls": null,
+      "id": "uir-site:node:quickstart-read-title",
+      "key": "quickstart-read-title",
+      "order": 0,
+      "parent": "quickstart-read",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "What exists, what it says, and how the parts are ordered and related.",
+      "controls": null,
+      "id": "uir-site:node:quickstart-read-copy",
+      "key": "quickstart-read-copy",
+      "order": 1,
+      "parent": "quickstart-read",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "structure · content · roles · relationships",
+      "controls": null,
+      "id": "uir-site:node:quickstart-read-captures",
+      "key": "quickstart-read-captures",
+      "order": 2,
+      "parent": "quickstart-read",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:quickstart-see",
+      "key": "quickstart-see",
+      "order": 1,
+      "parent": "quickstart-steps",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "Behaviour & states",
+      "controls": null,
+      "id": "uir-site:node:quickstart-see-title",
+      "key": "quickstart-see-title",
+      "order": 0,
+      "parent": "quickstart-see",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "What can happen, when it happens, and which states the interface must support.",
+      "controls": null,
+      "id": "uir-site:node:quickstart-see-copy",
+      "key": "quickstart-see-copy",
+      "order": 1,
+      "parent": "quickstart-see",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "states · actions · conditions · navigation",
+      "controls": null,
+      "id": "uir-site:node:quickstart-see-captures",
+      "key": "quickstart-see-captures",
+      "order": 2,
+      "parent": "quickstart-see",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:quickstart-adopt",
+      "key": "quickstart-adopt",
+      "order": 2,
+      "parent": "quickstart-steps",
+      "role": "region",
+      "salience": "secondary"
+    },
+    {
+      "content": "Components & design system",
+      "controls": null,
+      "id": "uir-site:node:quickstart-adopt-title",
+      "key": "quickstart-adopt-title",
+      "order": 0,
+      "parent": "quickstart-adopt",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Which reusable pieces and design-system values realize the design.",
+      "controls": null,
+      "id": "uir-site:node:quickstart-adopt-copy",
+      "key": "quickstart-adopt-copy",
+      "order": 1,
+      "parent": "quickstart-adopt",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "components · design values · bindings · reuse",
+      "controls": null,
+      "id": "uir-site:node:quickstart-adopt-captures",
+      "key": "quickstart-adopt-captures",
+      "order": 2,
+      "parent": "quickstart-adopt",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:build",
+      "key": "build",
+      "order": 6,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "HOW IT FITS",
+      "controls": null,
+      "id": "uir-site:node:build-kicker",
+      "key": "build-kicker",
+      "order": 0,
+      "parent": "build",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "Start from design. Or start from code.",
+      "controls": null,
+      "id": "uir-site:node:build-title",
+      "key": "build-title",
+      "order": 1,
+      "parent": "build",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against.",
+      "controls": null,
+      "id": "uir-site:node:build-copy",
+      "key": "build-copy",
+      "order": 2,
+      "parent": "build",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:build-steps",
+      "key": "build-steps",
+      "order": 3,
+      "parent": "build",
+      "role": "list",
+      "salience": "supporting"
+    },
+    {
+      "content": "01 — New UI — Capture approved design decisions as UIR.",
+      "controls": null,
+      "id": "uir-site:node:build-step-1",
+      "key": "build-step-1",
+      "order": 0,
+      "parent": "build-steps",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "02 — Existing UI — Extract what the frontend can prove and keep the gaps explicit.",
+      "controls": null,
+      "id": "uir-site:node:build-step-2",
+      "key": "build-step-2",
+      "order": 1,
+      "parent": "build-steps",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "03 — Any implementation — Use people, agents, frameworks, or any combination to produce the frontend.",
+      "controls": null,
+      "id": "uir-site:node:build-step-3",
+      "key": "build-step-3",
+      "order": 2,
+      "parent": "build-steps",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "04 — Every change — Verify the result against the same specification.",
+      "controls": null,
+      "id": "uir-site:node:build-step-4",
+      "key": "build-step-4",
+      "order": 3,
+      "parent": "build-steps",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard",
+      "key": "standard",
+      "order": 7,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "WHY IT WORKS",
+      "controls": null,
+      "id": "uir-site:node:standard-kicker",
+      "key": "standard-kicker",
+      "order": 0,
+      "parent": "standard",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "Explicit decisions turn UI review into a test.",
+      "controls": null,
+      "id": "uir-site:node:standard-title",
+      "key": "standard-title",
+      "order": 1,
+      "parent": "standard",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check.",
+      "controls": null,
+      "id": "uir-site:node:standard-copy",
+      "key": "standard-copy",
+      "order": 2,
+      "parent": "standard",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard-grid",
+      "key": "standard-grid",
+      "order": 3,
+      "parent": "standard",
+      "role": "group",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard-source",
+      "key": "standard-source",
+      "order": 0,
+      "parent": "standard-grid",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "One source",
+      "controls": null,
+      "id": "uir-site:node:standard-source-title",
+      "key": "standard-source-title",
+      "order": 0,
+      "parent": "standard-source",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Every required decision has one place to live.",
+      "controls": null,
+      "id": "uir-site:node:standard-source-copy",
+      "key": "standard-source-copy",
+      "order": 1,
+      "parent": "standard-source",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard-evidence",
+      "key": "standard-evidence",
+      "order": 1,
+      "parent": "standard-grid",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "No guessing",
+      "controls": null,
+      "id": "uir-site:node:standard-evidence-title",
+      "key": "standard-evidence-title",
+      "order": 0,
+      "parent": "standard-evidence",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Unknown stays explicit instead of becoming a convenient default.",
+      "controls": null,
+      "id": "uir-site:node:standard-evidence-copy",
+      "key": "standard-evidence-copy",
+      "order": 1,
+      "parent": "standard-evidence",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard-gaps",
+      "key": "standard-gaps",
+      "order": 2,
+      "parent": "standard-grid",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "Design-system aware",
+      "controls": null,
+      "id": "uir-site:node:standard-gaps-title",
+      "key": "standard-gaps-title",
+      "order": 0,
+      "parent": "standard-gaps",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Components and design values are part of the specification.",
+      "controls": null,
+      "id": "uir-site:node:standard-gaps-copy",
+      "key": "standard-gaps-copy",
+      "order": 1,
+      "parent": "standard-gaps",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:standard-targets",
+      "key": "standard-targets",
+      "order": 3,
+      "parent": "standard-grid",
+      "role": "region",
+      "salience": "supporting"
+    },
+    {
+      "content": "Implementation-independent",
+      "controls": null,
+      "id": "uir-site:node:standard-targets-title",
+      "key": "standard-targets-title",
+      "order": 0,
+      "parent": "standard-targets",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "Different frontends can be checked against the same definition.",
+      "controls": null,
+      "id": "uir-site:node:standard-targets-copy",
+      "key": "standard-targets-copy",
+      "order": 1,
+      "parent": "standard-targets",
+      "role": "paragraph",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:status",
+      "key": "status",
+      "order": 8,
+      "parent": "root",
+      "role": "region",
+      "salience": "primary"
+    },
+    {
+      "content": "ALPHA STATUS",
+      "controls": null,
+      "id": "uir-site:node:status-kicker",
+      "key": "status-kicker",
+      "order": 0,
+      "parent": "status",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "Useful now. Still alpha.",
+      "controls": null,
+      "id": "uir-site:node:status-title",
+      "key": "status-title",
+      "order": 1,
+      "parent": "status",
+      "role": "heading",
+      "salience": "primary"
+    },
+    {
+      "content": "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress.",
+      "controls": null,
+      "id": "uir-site:node:status-copy",
+      "key": "status-copy",
+      "order": 2,
+      "parent": "status",
+      "role": "paragraph",
+      "salience": "secondary"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:status-list",
+      "key": "status-list",
+      "order": 3,
+      "parent": "status",
+      "role": "list",
+      "salience": "supporting"
+    },
+    {
+      "content": "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence.",
+      "controls": null,
+      "id": "uir-site:node:status-item-1",
+      "key": "status-item-1",
+      "order": 0,
+      "parent": "status-list",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "In progress — full frontend-to-specification conformance and broader vocabulary coverage.",
+      "controls": null,
+      "id": "uir-site:node:status-item-2",
+      "key": "status-item-2",
+      "order": 1,
+      "parent": "status-list",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem.",
+      "controls": null,
+      "id": "uir-site:node:status-item-3",
+      "key": "status-item-3",
+      "order": 2,
+      "parent": "status-list",
+      "role": "listitem",
+      "salience": "supporting"
+    },
+    {
+      "content": "",
+      "controls": null,
+      "id": "uir-site:node:footer",
+      "key": "footer",
+      "order": 9,
+      "parent": "root",
+      "role": "region",
+      "salience": "quiet"
+    },
+    {
+      "content": "Ship the UI you designed.",
+      "controls": null,
+      "id": "uir-site:node:footer-title",
+      "key": "footer-title",
+      "order": 0,
+      "parent": "footer",
+      "role": "heading",
+      "salience": "secondary"
+    },
+    {
+      "content": "UIR by Tenbytes Ltd.",
+      "controls": null,
+      "id": "uir-site:node:footer-copy",
+      "key": "footer-copy",
+      "order": 1,
+      "parent": "footer",
+      "role": "paragraph",
+      "salience": "quiet"
+    },
+    {
+      "content": "See what UIR captures",
+      "controls": "quickstart",
+      "id": "uir-site:node:footer-action",
+      "key": "footer-action",
+      "order": 2,
+      "parent": "footer",
+      "role": "link",
+      "salience": "secondary"
+    }
+  ],
+  "root": "root",
+  "schemaVersion": "uir.design-source/v1",
+  "surface": "uir-site:surface:home"
+}

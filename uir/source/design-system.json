@@ -1,0 +1,3142 @@
+{
+  "bindings": [
+    {
+      "groundRole": "uir-site:role:canvas",
+      "value": "uir-site:value:canvas"
+    },
+    {
+      "groundRole": "uir-site:role:corner-control",
+      "value": "uir-site:value:radius-2"
+    },
+    {
+      "groundRole": "uir-site:role:frame-desktop-block",
+      "value": "uir-site:value:frame-desktop-block"
+    },
+    {
+      "groundRole": "uir-site:role:frame-desktop-content",
+      "value": "uir-site:value:frame-desktop-content"
+    },
+    {
+      "groundRole": "uir-site:role:frame-desktop-inline",
+      "value": "uir-site:value:frame-desktop-inline"
+    },
+    {
+      "groundRole": "uir-site:role:frame-mobile-block",
+      "value": "uir-site:value:frame-mobile-block"
+    },
+    {
+      "groundRole": "uir-site:role:frame-mobile-content",
+      "value": "uir-site:value:frame-mobile-content"
+    },
+    {
+      "groundRole": "uir-site:role:frame-mobile-inline",
+      "value": "uir-site:value:frame-mobile-inline"
+    },
+    {
+      "groundRole": "uir-site:role:ink-accent",
+      "value": "uir-site:value:accent"
+    },
+    {
+      "groundRole": "uir-site:role:ink-action",
+      "value": "uir-site:value:accent-ink"
+    },
+    {
+      "groundRole": "uir-site:role:ink-code",
+      "value": "uir-site:value:ink-code"
+    },
+    {
+      "groundRole": "uir-site:role:ink-inverse",
+      "value": "uir-site:value:ink-inverse"
+    },
+    {
+      "groundRole": "uir-site:role:ink-muted",
+      "value": "uir-site:value:ink-muted"
+    },
+    {
+      "groundRole": "uir-site:role:ink",
+      "value": "uir-site:value:ink"
+    },
+    {
+      "groundRole": "uir-site:role:inset-control-block",
+      "value": "uir-site:value:space-8"
+    },
+    {
+      "groundRole": "uir-site:role:inset-control-inline",
+      "value": "uir-site:value:space-12"
+    },
+    {
+      "groundRole": "uir-site:role:inset-hero-block",
+      "value": "uir-site:value:space-64"
+    },
+    {
+      "groundRole": "uir-site:role:inset-page-block",
+      "value": "uir-site:value:space-48"
+    },
+    {
+      "groundRole": "uir-site:role:inset-page-inline",
+      "value": "uir-site:value:space-24"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-block-max",
+      "value": "uir-site:value:measure-collection-block-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-block-min",
+      "value": "uir-site:value:measure-collection-block-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-block-pref",
+      "value": "uir-site:value:measure-collection-block-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-inline-max",
+      "value": "uir-site:value:measure-collection-inline-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-inline-min",
+      "value": "uir-site:value:measure-collection-inline-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-collection-inline-pref",
+      "value": "uir-site:value:measure-collection-inline-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-block-max",
+      "value": "uir-site:value:measure-container-block-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-block-min",
+      "value": "uir-site:value:measure-container-block-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-block-pref",
+      "value": "uir-site:value:measure-container-block-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-inline-max",
+      "value": "uir-site:value:measure-container-inline-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-inline-min",
+      "value": "uir-site:value:measure-container-inline-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-container-inline-pref",
+      "value": "uir-site:value:measure-container-inline-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-block-max",
+      "value": "uir-site:value:measure-content-block-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-block-min",
+      "value": "uir-site:value:measure-content-block-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-block-pref",
+      "value": "uir-site:value:measure-content-block-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-inline-max",
+      "value": "uir-site:value:measure-content-inline-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-inline-min",
+      "value": "uir-site:value:measure-content-inline-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-content-inline-pref",
+      "value": "uir-site:value:measure-content-inline-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-block-max",
+      "value": "uir-site:value:measure-control-block-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-block-min",
+      "value": "uir-site:value:measure-control-block-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-block-pref",
+      "value": "uir-site:value:measure-control-block-pref"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-inline-max",
+      "value": "uir-site:value:measure-control-inline-max"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-inline-min",
+      "value": "uir-site:value:measure-control-inline-min"
+    },
+    {
+      "groundRole": "uir-site:role:measure-control-inline-pref",
+      "value": "uir-site:value:measure-control-inline-pref"
+    },
+    {
+      "groundRole": "uir-site:role:motion-ambient-surface",
+      "value": "uir-site:value:motion-ambient-surface"
+    },
+    {
+      "groundRole": "uir-site:role:opacity-full",
+      "value": "uir-site:value:opacity-full"
+    },
+    {
+      "groundRole": "uir-site:role:outline-focus",
+      "value": "uir-site:value:border-focus"
+    },
+    {
+      "groundRole": "uir-site:role:rule",
+      "value": "uir-site:value:border-rule"
+    },
+    {
+      "groundRole": "uir-site:role:space-inline",
+      "value": "uir-site:value:space-16"
+    },
+    {
+      "groundRole": "uir-site:role:space-stack",
+      "value": "uir-site:value:space-24"
+    },
+    {
+      "groundRole": "uir-site:role:surface-action",
+      "value": "uir-site:value:accent"
+    },
+    {
+      "groundRole": "uir-site:role:surface-code",
+      "value": "uir-site:value:surface-code"
+    },
+    {
+      "groundRole": "uir-site:role:surface-hero-dots",
+      "value": "uir-site:value:surface-hero-dots"
+    },
+    {
+      "groundRole": "uir-site:role:surface-ink",
+      "value": "uir-site:value:surface-ink"
+    },
+    {
+      "groundRole": "uir-site:role:surface-muted",
+      "value": "uir-site:value:surface-muted"
+    },
+    {
+      "groundRole": "uir-site:role:surface",
+      "value": "uir-site:value:surface"
+    },
+    {
+      "groundRole": "uir-site:role:type-body",
+      "value": "uir-site:value:type-body"
+    },
+    {
+      "groundRole": "uir-site:role:type-display",
+      "value": "uir-site:value:type-display"
+    },
+    {
+      "groundRole": "uir-site:role:type-label",
+      "value": "uir-site:value:type-label"
+    },
+    {
+      "groundRole": "uir-site:role:type-lead",
+      "value": "uir-site:value:type-lead"
+    },
+    {
+      "groundRole": "uir-site:role:type-mono",
+      "value": "uir-site:value:type-mono"
+    }
+  ],
+  "constraints": [
+    {
+      "subject": "uir-site:ground",
+      "value": {
+        "allowedTransitions": [
+          "uir-site:value:motion-ambient-surface"
+        ],
+        "event": "pointer-dot-field",
+        "kind": "motion-event",
+        "motionlessAllowed": true
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": "uir-site:role:corner-control",
+          "outcome": "role",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink-code",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": "uir-site:role:inset-control-block",
+          "outcome": "role",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": "uir-site:role:inset-control-inline",
+          "outcome": "role",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": "uir-site:role:rule",
+          "outcome": "role",
+          "slot": "rule"
+        },
+        {
+          "groundRole": "uir-site:role:surface-code",
+          "outcome": "role",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-mono",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:code",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-code",
+        "name": "code realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": "uir-site:role:space-stack",
+          "outcome": "role",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:document",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-document",
+        "name": "document realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": "uir-site:role:space-inline",
+          "outcome": "role",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": "uir-site:role:space-inline",
+          "outcome": "role",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:group",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-group",
+        "name": "group realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-display",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:heading",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-heading",
+        "name": "heading realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": "uir-site:role:corner-control",
+          "outcome": "role",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink-action",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": "uir-site:role:inset-control-block",
+          "outcome": "role",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": "uir-site:role:inset-control-inline",
+          "outcome": "role",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": "uir-site:role:outline-focus",
+          "outcome": "role",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": "uir-site:role:surface-action",
+          "outcome": "role",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-label",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:link",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-link",
+        "name": "link realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": "uir-site:role:space-inline",
+          "outcome": "role",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:list",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-list",
+        "name": "list realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:listitem",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-listitem",
+        "name": "listitem realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": "uir-site:role:space-inline",
+          "outcome": "role",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": "uir-site:role:rule",
+          "outcome": "role",
+          "slot": "rule"
+        },
+        {
+          "groundRole": "uir-site:role:surface",
+          "outcome": "role",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-label",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:navigation",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-navigation",
+        "name": "navigation realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "rule"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:paragraph",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-paragraph",
+        "name": "paragraph realization",
+        "revision": "0.1.0"
+      }
+    },
+    {
+      "bindings": [
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "canvas"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "corner"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "elevation"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "icon-size"
+        },
+        {
+          "groundRole": "uir-site:role:ink",
+          "outcome": "role",
+          "slot": "ink"
+        },
+        {
+          "groundRole": "uir-site:role:inset-page-block",
+          "outcome": "role",
+          "slot": "inset-block"
+        },
+        {
+          "groundRole": "uir-site:role:inset-page-inline",
+          "outcome": "role",
+          "slot": "inset-inline"
+        },
+        {
+          "groundRole": "uir-site:role:space-stack",
+          "outcome": "role",
+          "slot": "inter-item-block"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "inter-item-inline"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "motion"
+        },
+        {
+          "groundRole": "uir-site:role:opacity-full",
+          "outcome": "role",
+          "slot": "opacity"
+        },
+        {
+          "groundRole": null,
+          "outcome": "none",
+          "slot": "outline"
+        },
+        {
+          "groundRole": "uir-site:role:rule",
+          "outcome": "role",
+          "slot": "rule"
+        },
+        {
+          "groundRole": "uir-site:role:surface",
+          "outcome": "role",
+          "slot": "surface"
+        },
+        {
+          "groundRole": "uir-site:role:type-body",
+          "outcome": "role",
+          "slot": "type"
+        }
+      ],
+      "id": "uir-site:piece:region",
+      "identity": {
+        "compatibility": "compatible",
+        "kind": "marketing-region",
+        "name": "region realization",
+        "revision": "0.1.0"
+      }
+    }
+  ],
+  "resolutions": [
+    {
+      "id": "uir-site:resolution:code:group",
+      "outcome": "uir-site:piece:code",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "group"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "code"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:code:region",
+      "outcome": "uir-site:piece:code",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "code"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:document:surface-root",
+      "outcome": "uir-site:piece:document",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "$surface-root"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "document"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:group:region",
+      "outcome": "uir-site:piece:group",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "group"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:heading:region",
+      "outcome": "uir-site:piece:heading",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "heading"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:link:group",
+      "outcome": "uir-site:piece:link",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "group"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "link"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:link:navigation",
+      "outcome": "uir-site:piece:link",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "navigation"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "link"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:link:region",
+      "outcome": "uir-site:piece:link",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "link"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:list:region",
+      "outcome": "uir-site:piece:list",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "list"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:listitem:list",
+      "outcome": "uir-site:piece:listitem",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "list"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "listitem"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:navigation:document",
+      "outcome": "uir-site:piece:navigation",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "document"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "navigation"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:paragraph:navigation",
+      "outcome": "uir-site:piece:paragraph",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "navigation"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "paragraph"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:paragraph:region",
+      "outcome": "uir-site:piece:paragraph",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "region"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "paragraph"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:region:document",
+      "outcome": "uir-site:piece:region",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "document"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "region"
+        }
+      ]
+    },
+    {
+      "id": "uir-site:resolution:region:group",
+      "outcome": "uir-site:piece:region",
+      "selectors": [
+        {
+          "axis": "uir-site:fact:axis:parent-role",
+          "dimension": "parent-role",
+          "values": [
+            "group"
+          ]
+        },
+        {
+          "dimension": "role",
+          "role": "region"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": "uir.design-system-source/v1",
+  "values": [
+    {
+      "definition": {
+        "name": "Page canvas",
+        "purpose": "The page's furthest background.",
+        "type": "color"
+      },
+      "id": "uir-site:role:canvas",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Technical corner",
+        "purpose": "Small radius that keeps the page precise rather than soft.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:corner-control",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Desktop block frame",
+        "purpose": "Desktop preview height.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-desktop-block",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Desktop content frame",
+        "purpose": "Desktop readable content width.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-desktop-content",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Desktop inline frame",
+        "purpose": "Desktop preview width.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-desktop-inline",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Mobile block frame",
+        "purpose": "Mobile preview height.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-mobile-block",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Mobile content frame",
+        "purpose": "Mobile readable content width.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-mobile-content",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Mobile inline frame",
+        "purpose": "Mobile preview width.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:frame-mobile-inline",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Primary ink",
+        "purpose": "Primary readable content.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Accent ink",
+        "purpose": "Small adoption and status signals.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink-accent",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Action ink",
+        "purpose": "Readable content on the action signal.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink-action",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Code ink",
+        "purpose": "Executable examples on the code plane.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink-code",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Inverse ink",
+        "purpose": "Readable content on the inverted surface.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink-inverse",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Muted ink",
+        "purpose": "Supporting explanation.",
+        "type": "color"
+      },
+      "id": "uir-site:role:ink-muted",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control block inset",
+        "purpose": "Vertical text-to-edge distance inside an action.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:inset-control-block",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control inline inset",
+        "purpose": "Text-to-edge distance inside an action.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:inset-control-inline",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Hero block inset",
+        "purpose": "The opening argument receives extra vertical space.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:inset-hero-block",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Page block inset",
+        "purpose": "The page's standard vertical breathing room.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:inset-page-block",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Page inline inset",
+        "purpose": "The page's stable horizontal breathing room.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:inset-page-inline",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection block max",
+        "purpose": "The max block extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-block-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection block min",
+        "purpose": "The min block extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-block-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection block pref",
+        "purpose": "The pref block extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-block-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection inline max",
+        "purpose": "The max inline extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-inline-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection inline min",
+        "purpose": "The min inline extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-inline-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Collection inline pref",
+        "purpose": "The pref inline extent for collection realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-collection-inline-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container block max",
+        "purpose": "The max block extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-block-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container block min",
+        "purpose": "The min block extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-block-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container block pref",
+        "purpose": "The pref block extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-block-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container inline max",
+        "purpose": "The max inline extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-inline-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container inline min",
+        "purpose": "The min inline extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-inline-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Container inline pref",
+        "purpose": "The pref inline extent for container realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-container-inline-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content block max",
+        "purpose": "The max block extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-block-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content block min",
+        "purpose": "The min block extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-block-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content block pref",
+        "purpose": "The pref block extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-block-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content inline max",
+        "purpose": "The max inline extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-inline-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content inline min",
+        "purpose": "The min inline extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-inline-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Content inline pref",
+        "purpose": "The pref inline extent for content realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-content-inline-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control block max",
+        "purpose": "The max block extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-block-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control block min",
+        "purpose": "The min block extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-block-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control block pref",
+        "purpose": "The pref block extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-block-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control inline max",
+        "purpose": "The max inline extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-inline-max",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control inline min",
+        "purpose": "The min inline extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-inline-min",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Control inline pref",
+        "purpose": "The pref inline extent for control realizations.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:measure-control-inline-pref",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Responsive dot field motion",
+        "purpose": "The decorative hero points may respond gently to pointer or touch proximity without changing content or meaning.",
+        "type": "transition"
+      },
+      "id": "uir-site:role:motion-ambient-surface",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Full opacity",
+        "purpose": "Base content remains fully visible.",
+        "type": "number"
+      },
+      "id": "uir-site:role:opacity-full",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Action focus",
+        "purpose": "Visible keyboard focus on interactive content.",
+        "type": "border"
+      },
+      "id": "uir-site:role:outline-focus",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Evidence rule",
+        "purpose": "Separates claims without creating card chrome.",
+        "type": "border"
+      },
+      "id": "uir-site:role:rule",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Inline rhythm",
+        "purpose": "Separation between adjacent controls and facts.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:space-inline",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Stack rhythm",
+        "purpose": "Separation between sequential statements.",
+        "type": "dimension"
+      },
+      "id": "uir-site:role:space-stack",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Primary surface",
+        "purpose": "The normal content plane.",
+        "type": "color"
+      },
+      "id": "uir-site:role:surface",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Action surface",
+        "purpose": "The primary adoption action.",
+        "type": "color"
+      },
+      "id": "uir-site:role:surface-action",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Code surface",
+        "purpose": "The executable example plane.",
+        "type": "color"
+      },
+      "id": "uir-site:role:surface-code",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Hero dot field",
+        "purpose": "The opening surface carries the product's low-contrast dot field.",
+        "type": "gradient"
+      },
+      "id": "uir-site:role:surface-hero-dots",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Inverted surface",
+        "purpose": "A high-contrast explanatory plane.",
+        "type": "color"
+      },
+      "id": "uir-site:role:surface-ink",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Muted surface",
+        "purpose": "A secondary evidence plane.",
+        "type": "color"
+      },
+      "id": "uir-site:role:surface-muted",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Body type",
+        "purpose": "Long-form technical explanation.",
+        "type": "typography"
+      },
+      "id": "uir-site:role:type-body",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Display type",
+        "purpose": "The primary category-defining statement.",
+        "type": "typography"
+      },
+      "id": "uir-site:role:type-display",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Label type",
+        "purpose": "Compact navigation, status, and actions.",
+        "type": "typography"
+      },
+      "id": "uir-site:role:type-label",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Lead type",
+        "purpose": "Introductory product explanation.",
+        "type": "typography"
+      },
+      "id": "uir-site:role:type-lead",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Code type",
+        "purpose": "Commands, records, and measured evidence.",
+        "type": "typography"
+      },
+      "id": "uir-site:role:type-mono",
+      "literal": null
+    },
+    {
+      "definition": {
+        "name": "Action signal",
+        "purpose": "Sourced page colour for action signal.",
+        "type": "color"
+      },
+      "id": "uir-site:value:accent",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.7843137254901961,
+          1,
+          0.23921568627450981
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Ambient dot",
+        "purpose": "Low-contrast accent used by the hero's decorative field.",
+        "type": "color"
+      },
+      "id": "uir-site:value:accent-dot",
+      "literal": {
+        "alpha": 0.1,
+        "channels": [
+          0.7843137254901961,
+          1,
+          0.23921568627450981
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Action ink",
+        "purpose": "Sourced page colour for action ink.",
+        "type": "color"
+      },
+      "id": "uir-site:value:accent-ink",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.08235294117647059,
+          0.09019607843137255,
+          0.07450980392156863
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Focus outline",
+        "purpose": "Visible two-pixel action focus boundary.",
+        "type": "border"
+      },
+      "id": "uir-site:value:border-focus",
+      "literal": {
+        "color": "uir-site:value:accent",
+        "style": "uir-site:value:stroke-solid",
+        "type": "border",
+        "width": "uir-site:value:two"
+      }
+    },
+    {
+      "definition": {
+        "name": "Technical rule",
+        "purpose": "One-pixel evidence boundary.",
+        "type": "border"
+      },
+      "id": "uir-site:value:border-rule",
+      "literal": {
+        "color": "uir-site:value:rule",
+        "style": "uir-site:value:stroke-solid",
+        "type": "border",
+        "width": "uir-site:value:one"
+      }
+    },
+    {
+      "definition": {
+        "name": "Warm paper canvas",
+        "purpose": "Sourced page colour for warm paper canvas.",
+        "type": "color"
+      },
+      "id": "uir-site:value:canvas",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.9529411764705882,
+          0.9450980392156862,
+          0.9098039215686274
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Continuous drift curve",
+        "purpose": "A constant-speed curve avoids a visible loop seam.",
+        "type": "cubic-bezier"
+      },
+      "id": "uir-site:value:curve-linear",
+      "literal": {
+        "type": "cubic-bezier",
+        "x1": 0,
+        "x2": 1,
+        "y1": 0,
+        "y2": 1
+      }
+    },
+    {
+      "definition": {
+        "name": "Dot field phase duration",
+        "purpose": "A calm decorative phase cycle behind the hero content.",
+        "type": "duration"
+      },
+      "id": "uir-site:value:duration-ambient",
+      "literal": {
+        "type": "duration",
+        "unit": "s",
+        "value": 4
+      }
+    },
+    {
+      "definition": {
+        "name": "No motion delay",
+        "purpose": "The ambient drift begins without an artificial wait.",
+        "type": "duration"
+      },
+      "id": "uir-site:value:duration-zero",
+      "literal": {
+        "type": "duration",
+        "unit": "ms",
+        "value": 0
+      }
+    },
+    {
+      "definition": {
+        "name": "System mono family",
+        "purpose": "Portable code and record family.",
+        "type": "font-family"
+      },
+      "id": "uir-site:value:family-mono",
+      "literal": {
+        "families": [
+          {
+            "family": "monospace",
+            "kind": "generic"
+          }
+        ],
+        "type": "font-family"
+      }
+    },
+    {
+      "definition": {
+        "name": "System sans family",
+        "purpose": "Portable interface and editorial family.",
+        "type": "font-family"
+      },
+      "id": "uir-site:value:family-sans",
+      "literal": {
+        "families": [
+          {
+            "family": "system-ui",
+            "kind": "generic"
+          }
+        ],
+        "type": "font-family"
+      }
+    },
+    {
+      "definition": {
+        "name": "Label text size",
+        "purpose": "Sourced dimensional decision for label text size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:font-14",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 14
+      }
+    },
+    {
+      "definition": {
+        "name": "Body text size",
+        "purpose": "Sourced dimensional decision for body text size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:font-16",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 16
+      }
+    },
+    {
+      "definition": {
+        "name": "Lead text size",
+        "purpose": "Sourced dimensional decision for lead text size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:font-18",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 18
+      }
+    },
+    {
+      "definition": {
+        "name": "Display text size",
+        "purpose": "Sourced dimensional decision for display text size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:font-64",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 64
+      }
+    },
+    {
+      "definition": {
+        "name": "Gradient centre",
+        "purpose": "Unitless radial-gradient coordinate for gradient centre.",
+        "type": "number"
+      },
+      "id": "uir-site:value:fraction-center",
+      "literal": {
+        "type": "number",
+        "value": 0.5
+      }
+    },
+    {
+      "definition": {
+        "name": "Dot fade edge",
+        "purpose": "Unitless radial-gradient coordinate for dot fade edge.",
+        "type": "number"
+      },
+      "id": "uir-site:value:fraction-clear",
+      "literal": {
+        "type": "number",
+        "value": 0.11
+      }
+    },
+    {
+      "definition": {
+        "name": "Dot edge",
+        "purpose": "Unitless radial-gradient coordinate for dot edge.",
+        "type": "number"
+      },
+      "id": "uir-site:value:fraction-dot",
+      "literal": {
+        "type": "number",
+        "value": 0.06
+      }
+    },
+    {
+      "definition": {
+        "name": "Gradient origin",
+        "purpose": "Unitless radial-gradient coordinate for gradient origin.",
+        "type": "number"
+      },
+      "id": "uir-site:value:fraction-zero",
+      "literal": {
+        "type": "number",
+        "value": 0
+      }
+    },
+    {
+      "definition": {
+        "name": "Desktop frame block size",
+        "purpose": "Sourced dimensional decision for desktop frame block size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-desktop-block",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 900
+      }
+    },
+    {
+      "definition": {
+        "name": "Desktop content inline size",
+        "purpose": "Sourced dimensional decision for desktop content inline size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-desktop-content",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1180
+      }
+    },
+    {
+      "definition": {
+        "name": "Desktop frame inline size",
+        "purpose": "Sourced dimensional decision for desktop frame inline size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-desktop-inline",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1440
+      }
+    },
+    {
+      "definition": {
+        "name": "Mobile frame block size",
+        "purpose": "Sourced dimensional decision for mobile frame block size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-mobile-block",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 844
+      }
+    },
+    {
+      "definition": {
+        "name": "Mobile content inline size",
+        "purpose": "Sourced dimensional decision for mobile content inline size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-mobile-content",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 358
+      }
+    },
+    {
+      "definition": {
+        "name": "Mobile frame inline size",
+        "purpose": "Sourced dimensional decision for mobile frame inline size.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:frame-mobile-inline",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 390
+      }
+    },
+    {
+      "definition": {
+        "name": "Primary ink",
+        "purpose": "Sourced page colour for primary ink.",
+        "type": "color"
+      },
+      "id": "uir-site:value:ink",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.09019607843137255,
+          0.09803921568627451,
+          0.08235294117647059
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Code ink",
+        "purpose": "Sourced page colour for code ink.",
+        "type": "color"
+      },
+      "id": "uir-site:value:ink-code",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.8980392156862745,
+          1,
+          0.6039215686274509
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Inverse ink",
+        "purpose": "Sourced page colour for inverse ink.",
+        "type": "color"
+      },
+      "id": "uir-site:value:ink-inverse",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.9686274509803922,
+          0.9647058823529412,
+          0.9333333333333333
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Secondary ink",
+        "purpose": "Sourced page colour for secondary ink.",
+        "type": "color"
+      },
+      "id": "uir-site:value:ink-muted",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.3843137254901961,
+          0.4,
+          0.36470588235294116
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Body line height",
+        "purpose": "Readable technical prose rhythm.",
+        "type": "number"
+      },
+      "id": "uir-site:value:line-body",
+      "literal": {
+        "type": "number",
+        "value": 1.55
+      }
+    },
+    {
+      "definition": {
+        "name": "Display line height",
+        "purpose": "Compact editorial display rhythm.",
+        "type": "number"
+      },
+      "id": "uir-site:value:line-display",
+      "literal": {
+        "type": "number",
+        "value": 1.02
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection block maximum",
+        "purpose": "Sourced dimensional decision for collection block maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-block-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 2000
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection block minimum",
+        "purpose": "Sourced dimensional decision for collection block minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-block-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 48
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection block preference",
+        "purpose": "Sourced dimensional decision for collection block preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-block-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 320
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection inline maximum",
+        "purpose": "Sourced dimensional decision for collection inline maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-inline-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1180
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection inline minimum",
+        "purpose": "Sourced dimensional decision for collection inline minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-inline-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 280
+      }
+    },
+    {
+      "definition": {
+        "name": "Collection inline preference",
+        "purpose": "Sourced dimensional decision for collection inline preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-collection-inline-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 960
+      }
+    },
+    {
+      "definition": {
+        "name": "Container block maximum",
+        "purpose": "Sourced dimensional decision for container block maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-block-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 4000
+      }
+    },
+    {
+      "definition": {
+        "name": "Container block minimum",
+        "purpose": "Sourced dimensional decision for container block minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-block-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 160
+      }
+    },
+    {
+      "definition": {
+        "name": "Container block preference",
+        "purpose": "Sourced dimensional decision for container block preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-block-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 720
+      }
+    },
+    {
+      "definition": {
+        "name": "Container inline maximum",
+        "purpose": "Sourced dimensional decision for container inline maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-inline-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1200
+      }
+    },
+    {
+      "definition": {
+        "name": "Container inline minimum",
+        "purpose": "Sourced dimensional decision for container inline minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-inline-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 320
+      }
+    },
+    {
+      "definition": {
+        "name": "Container inline preference",
+        "purpose": "Sourced dimensional decision for container inline preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-container-inline-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1180
+      }
+    },
+    {
+      "definition": {
+        "name": "Content block maximum",
+        "purpose": "Sourced dimensional decision for content block maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-block-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 800
+      }
+    },
+    {
+      "definition": {
+        "name": "Content block minimum",
+        "purpose": "Sourced dimensional decision for content block minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-block-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 24
+      }
+    },
+    {
+      "definition": {
+        "name": "Content block preference",
+        "purpose": "Sourced dimensional decision for content block preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-block-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 96
+      }
+    },
+    {
+      "definition": {
+        "name": "Content inline maximum",
+        "purpose": "Sourced dimensional decision for content inline maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-inline-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 920
+      }
+    },
+    {
+      "definition": {
+        "name": "Content inline minimum",
+        "purpose": "Sourced dimensional decision for content inline minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-inline-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 40
+      }
+    },
+    {
+      "definition": {
+        "name": "Content inline preference",
+        "purpose": "Sourced dimensional decision for content inline preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-content-inline-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 760
+      }
+    },
+    {
+      "definition": {
+        "name": "Control block maximum",
+        "purpose": "Sourced dimensional decision for control block maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-block-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 160
+      }
+    },
+    {
+      "definition": {
+        "name": "Control block minimum",
+        "purpose": "Sourced dimensional decision for control block minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-block-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 40
+      }
+    },
+    {
+      "definition": {
+        "name": "Control block preference",
+        "purpose": "Sourced dimensional decision for control block preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-block-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 48
+      }
+    },
+    {
+      "definition": {
+        "name": "Control inline maximum",
+        "purpose": "Sourced dimensional decision for control inline maximum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-inline-max",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 480
+      }
+    },
+    {
+      "definition": {
+        "name": "Control inline minimum",
+        "purpose": "Sourced dimensional decision for control inline minimum.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-inline-min",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 80
+      }
+    },
+    {
+      "definition": {
+        "name": "Control inline preference",
+        "purpose": "Sourced dimensional decision for control inline preference.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:measure-control-inline-pref",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 240
+      }
+    },
+    {
+      "definition": {
+        "name": "Responsive dot field",
+        "purpose": "Small pointer- and touch-led displacement for the hero points; motionless presentation remains allowed.",
+        "type": "transition"
+      },
+      "id": "uir-site:value:motion-ambient-surface",
+      "literal": {
+        "curve": "uir-site:value:curve-linear",
+        "delay": "uir-site:value:duration-zero",
+        "duration": "uir-site:value:duration-ambient",
+        "propertyRoles": [
+          "uir-site:role:surface-hero-dots"
+        ],
+        "type": "transition"
+      }
+    },
+    {
+      "definition": {
+        "name": "One pixel",
+        "purpose": "Sourced dimensional decision for one pixel.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:one",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 1
+      }
+    },
+    {
+      "definition": {
+        "name": "Full opacity",
+        "purpose": "All base content is fully opaque.",
+        "type": "number"
+      },
+      "id": "uir-site:value:opacity-full",
+      "literal": {
+        "type": "number",
+        "value": 1
+      }
+    },
+    {
+      "definition": {
+        "name": "Technical corner",
+        "purpose": "Sourced dimensional decision for technical corner.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:radius-2",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 2
+      }
+    },
+    {
+      "definition": {
+        "name": "Evidence rule",
+        "purpose": "Sourced page colour for evidence rule.",
+        "type": "color"
+      },
+      "id": "uir-site:value:rule",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.7215686274509804,
+          0.7176470588235294,
+          0.6823529411764706
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Control inline inset",
+        "purpose": "Sourced dimensional decision for control inline inset.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-12",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 12
+      }
+    },
+    {
+      "definition": {
+        "name": "Compact rhythm",
+        "purpose": "Sourced dimensional decision for compact rhythm.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-16",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 16
+      }
+    },
+    {
+      "definition": {
+        "name": "Page rhythm",
+        "purpose": "Sourced dimensional decision for page rhythm.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-24",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 24
+      }
+    },
+    {
+      "definition": {
+        "name": "Mobile page inset",
+        "purpose": "Sourced dimensional decision for mobile page inset.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-32",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 32
+      }
+    },
+    {
+      "definition": {
+        "name": "Section rhythm",
+        "purpose": "Sourced dimensional decision for section rhythm.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-48",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 48
+      }
+    },
+    {
+      "definition": {
+        "name": "Hero rhythm",
+        "purpose": "Sourced dimensional decision for hero rhythm.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-64",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 64
+      }
+    },
+    {
+      "definition": {
+        "name": "Control block inset",
+        "purpose": "Sourced dimensional decision for control block inset.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:space-8",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 8
+      }
+    },
+    {
+      "definition": {
+        "name": "Solid technical stroke",
+        "purpose": "Rules and focus remain explicit and unornamented.",
+        "type": "stroke-style"
+      },
+      "id": "uir-site:value:stroke-solid",
+      "literal": {
+        "lineCap": "butt",
+        "style": "solid",
+        "type": "stroke-style"
+      }
+    },
+    {
+      "definition": {
+        "name": "Paper surface",
+        "purpose": "Sourced page colour for paper surface.",
+        "type": "color"
+      },
+      "id": "uir-site:value:surface",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          1,
+          0.996078431372549,
+          0.9725490196078431
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Code surface",
+        "purpose": "Sourced page colour for code surface.",
+        "type": "color"
+      },
+      "id": "uir-site:value:surface-code",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.12549019607843137,
+          0.13725490196078433,
+          0.11764705882352941
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Hero dot field",
+        "purpose": "A low-contrast radial accent field over the inverted hero surface.",
+        "type": "gradient"
+      },
+      "id": "uir-site:value:surface-hero-dots",
+      "literal": {
+        "centerBlock": "uir-site:value:fraction-center",
+        "centerInline": "uir-site:value:fraction-center",
+        "kind": "radial",
+        "stops": [
+          {
+            "color": "uir-site:value:accent-dot",
+            "position": "uir-site:value:fraction-zero"
+          },
+          {
+            "color": "uir-site:value:accent-dot",
+            "position": "uir-site:value:fraction-dot"
+          },
+          {
+            "color": "uir-site:value:surface-ink",
+            "position": "uir-site:value:fraction-clear"
+          }
+        ],
+        "type": "gradient"
+      }
+    },
+    {
+      "definition": {
+        "name": "Inverted ink surface",
+        "purpose": "Sourced page colour for inverted ink surface.",
+        "type": "color"
+      },
+      "id": "uir-site:value:surface-ink",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.08235294117647059,
+          0.09019607843137255,
+          0.07450980392156863
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Muted evidence surface",
+        "purpose": "Sourced page colour for muted evidence surface.",
+        "type": "color"
+      },
+      "id": "uir-site:value:surface-muted",
+      "literal": {
+        "alpha": 1,
+        "channels": [
+          0.9098039215686274,
+          0.8980392156862745,
+          0.8549019607843137
+        ],
+        "space": "srgb",
+        "type": "color"
+      }
+    },
+    {
+      "definition": {
+        "name": "Two-times text scale",
+        "purpose": "Text remains usable when enlarged to twice its authored size.",
+        "type": "number"
+      },
+      "id": "uir-site:value:text-scale-200",
+      "literal": {
+        "type": "number",
+        "value": 2
+      }
+    },
+    {
+      "definition": {
+        "name": "Neutral tracking",
+        "purpose": "Sourced dimensional decision for neutral tracking.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:tracking-0",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 0
+      }
+    },
+    {
+      "definition": {
+        "name": "Display tracking",
+        "purpose": "Sourced dimensional decision for display tracking.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:tracking-tight",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": -2
+      }
+    },
+    {
+      "definition": {
+        "name": "Two pixel focus",
+        "purpose": "Sourced dimensional decision for two pixel focus.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:two",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 2
+      }
+    },
+    {
+      "definition": {
+        "name": "Body register",
+        "purpose": "Complete typography decision for body register.",
+        "type": "typography"
+      },
+      "id": "uir-site:value:type-body",
+      "literal": {
+        "family": "uir-site:value:family-sans",
+        "features": [],
+        "lineHeight": "uir-site:value:line-body",
+        "size": "uir-site:value:font-16",
+        "tracking": "uir-site:value:tracking-0",
+        "type": "typography",
+        "weight": "uir-site:value:weight-400"
+      }
+    },
+    {
+      "definition": {
+        "name": "Display register",
+        "purpose": "Complete typography decision for display register.",
+        "type": "typography"
+      },
+      "id": "uir-site:value:type-display",
+      "literal": {
+        "family": "uir-site:value:family-sans",
+        "features": [],
+        "lineHeight": "uir-site:value:line-display",
+        "size": "uir-site:value:font-64",
+        "tracking": "uir-site:value:tracking-tight",
+        "type": "typography",
+        "weight": "uir-site:value:weight-700"
+      }
+    },
+    {
+      "definition": {
+        "name": "Label register",
+        "purpose": "Complete typography decision for label register.",
+        "type": "typography"
+      },
+      "id": "uir-site:value:type-label",
+      "literal": {
+        "family": "uir-site:value:family-sans",
+        "features": [],
+        "lineHeight": "uir-site:value:line-body",
+        "size": "uir-site:value:font-14",
+        "tracking": "uir-site:value:tracking-0",
+        "type": "typography",
+        "weight": "uir-site:value:weight-600"
+      }
+    },
+    {
+      "definition": {
+        "name": "Lead register",
+        "purpose": "Complete typography decision for lead register.",
+        "type": "typography"
+      },
+      "id": "uir-site:value:type-lead",
+      "literal": {
+        "family": "uir-site:value:family-sans",
+        "features": [],
+        "lineHeight": "uir-site:value:line-body",
+        "size": "uir-site:value:font-18",
+        "tracking": "uir-site:value:tracking-0",
+        "type": "typography",
+        "weight": "uir-site:value:weight-400"
+      }
+    },
+    {
+      "definition": {
+        "name": "Code register",
+        "purpose": "Complete typography decision for code register.",
+        "type": "typography"
+      },
+      "id": "uir-site:value:type-mono",
+      "literal": {
+        "family": "uir-site:value:family-mono",
+        "features": [],
+        "lineHeight": "uir-site:value:line-body",
+        "size": "uir-site:value:font-14",
+        "tracking": "uir-site:value:tracking-0",
+        "type": "typography",
+        "weight": "uir-site:value:weight-400"
+      }
+    },
+    {
+      "definition": {
+        "name": "Regular weight",
+        "purpose": "Body reading weight.",
+        "type": "font-weight"
+      },
+      "id": "uir-site:value:weight-400",
+      "literal": {
+        "type": "font-weight",
+        "value": 400
+      }
+    },
+    {
+      "definition": {
+        "name": "Semibold weight",
+        "purpose": "Label and action weight.",
+        "type": "font-weight"
+      },
+      "id": "uir-site:value:weight-600",
+      "literal": {
+        "type": "font-weight",
+        "value": 600
+      }
+    },
+    {
+      "definition": {
+        "name": "Bold weight",
+        "purpose": "Display hierarchy weight.",
+        "type": "font-weight"
+      },
+      "id": "uir-site:value:weight-700",
+      "literal": {
+        "type": "font-weight",
+        "value": 700
+      }
+    },
+    {
+      "definition": {
+        "name": "Zero extent",
+        "purpose": "Sourced dimensional decision for zero extent.",
+        "type": "dimension"
+      },
+      "id": "uir-site:value:zero",
+      "literal": {
+        "type": "dimension",
+        "unit": "px",
+        "value": 0
+      }
+    }
+  ]
+}

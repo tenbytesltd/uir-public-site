@@ -1056,11 +1056,19 @@ def node(
 ROOT_NODE = node("root", "document", None, parent=None, salience="primary")
 
 NAV = node("navigation", "navigation", None, parent=ROOT_NODE, salience="secondary")
-node("brand", "heading", "UIR", parent=NAV, salience="primary", overrides={"type": "type-label"})
-NAV_EXTRACT = node("nav-extract", "link", "Existing UI", parent=NAV, salience="secondary")
-NAV_BUILD = node("nav-build", "link", "New UI", parent=NAV, salience="secondary")
-NAV_STANDARD = node("nav-standard", "link", "Why UIR", parent=NAV, salience="secondary")
-NAV_SOURCE = node("nav-source", "link", "This site", parent=NAV, salience="secondary")
+# `paragraph` in the label register, and NOT `heading`. The wordmark is a
+# navigation label; the page's one document heading of that rank is
+# `hero-title`. Declared a heading, it was the one node on this page whose
+# UIR role said heading and whose rendered output carried no heading element
+# at all — found by `every node UIR calls a heading renders a heading
+# element`, which is the check that exists because `Brand` and `Heading`
+# emitted an identical node signature and the outline was invisible to the
+# conformance gate. Every other label on this page is already this shape.
+node("brand", "paragraph", "UIR", parent=NAV, salience="primary", overrides={"type": "type-label"})
+NAV_EXTRACT = node("nav-extract", "link", "What it captures", parent=NAV, salience="secondary")
+NAV_BUILD = node("nav-build", "link", "How it fits", parent=NAV, salience="secondary")
+NAV_STANDARD = node("nav-standard", "link", "Why it works", parent=NAV, salience="secondary")
+NAV_SOURCE = node("nav-source", "link", "Playground", parent=NAV, salience="secondary")
 
 HERO = node(
     "hero", "region", None, parent=ROOT_NODE, salience="primary",
@@ -1071,19 +1079,19 @@ HERO = node(
 )
 node("hero-kicker", "paragraph", "USER INTERFACE REPRESENTATION · ALPHA", parent=HERO, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO, SRC_SITE_REPO))
 node(
-    "hero-title", "heading", "Write down what the interface means.",
+    "hero-title", "heading", "Ship the UI you designed",
     parent=HERO, salience="primary",
     overrides={"ink": "ink-inverse", "type": "type-display"},
 )
 node(
     "hero-lead", "paragraph",
-    "UIR is a framework-independent representation of a screen: its structure, roles, behaviour, states, relationships, and unresolved gaps. A design system supplies the realization. Code is a target.",
+    "UIR turns your design into a machine-readable specification — so you can build and verify your frontend against it.",
     parent=HERO, salience="secondary",
     overrides={"ink": "ink-inverse", "type": "type-lead"},
 )
 HERO_ACTIONS = node("hero-actions", "group", None, parent=HERO, salience="secondary")
-HERO_PRIMARY = node("hero-primary", "link", "Try it on existing UI", parent=HERO_ACTIONS, salience="primary")
-HERO_SECONDARY = node("hero-secondary", "link", "How UIR fits", parent=HERO_ACTIONS, salience="secondary")
+HERO_PRIMARY = node("hero-primary", "link", "What UIR captures", parent=HERO_ACTIONS, salience="primary")
+HERO_SECONDARY = node("hero-secondary", "link", "How it works", parent=HERO_ACTIONS, salience="secondary")
 node("hero-command", "code", "python3 tool/extract_react.py --root <repo> --app <app/src> --change-set .uir/reading.json", parent=HERO, salience="supporting")
 node(
     "install-gap", "paragraph", None, parent=HERO, salience="quiet",
@@ -1092,27 +1100,27 @@ node(
 
 PROBLEM = node("problem", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
 node("problem-kicker", "paragraph", "THE PROBLEM", parent=PROBLEM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("problem-title", "heading", "Code can show how a screen was built. It cannot tell you what the screen means.", parent=PROBLEM, salience="primary")
-node("problem-lead", "paragraph", "Design captures appearance. Code captures one implementation. A design system captures reusable realization. The interface itself — its semantic structure and obligations — still has no canonical form.", parent=PROBLEM, salience="secondary", overrides={"type": "type-lead"})
+node("problem-title", "heading", "A green build can still ship the wrong UI.", parent=PROBLEM, salience="primary")
+node("problem-lead", "paragraph", "Functional tests prove that the frontend works. Visual regression shows that it changed. Neither proves that it matches the design.", parent=PROBLEM, salience="secondary", overrides={"type": "type-lead"})
 PROBLEM_GRID = node("problem-grid", "group", None, parent=PROBLEM)
 for key, title, copy in (
-    ("problem-design", "The design", "Appearance is explicit. Meaning is mostly inferred."),
-    ("problem-code", "The code", "Behaviour is executable, but intent is distributed through implementation details."),
-    ("problem-system", "The system", "Components and tokens define how roles are realized, not what this particular screen means."),
+    ("problem-design", "Handoff turns decisions into interpretation", "Developers have to infer which details are intentional and which are flexible."),
+    ("problem-code", "Design review stays manual", "Designers repeatedly inspect screens, states and breakpoints to find what drifted."),
+    ("problem-system", "The wrong UI becomes the new baseline", "Once a difference ships, future tests protect it — even if it never matched the design."),
 ):
     card = node(key, "region", None, parent=PROBLEM_GRID, salience="secondary")
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card, salience="supporting")
 
 MECHANISM = node("mechanism", "region", None, parent=ROOT_NODE, salience="primary")
-node("mechanism-kicker", "paragraph", "THE MISSING LAYER", parent=MECHANISM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("mechanism-title", "heading", "UIR describes the screen. The design system decides how to draw it.", parent=MECHANISM, salience="primary")
-node("mechanism-copy", "paragraph", "UIR owns the facts that should survive a framework change. The design system owns the pieces and values that realize those facts. Put them together and the implementation becomes replaceable.", parent=MECHANISM, salience="secondary", overrides={"type": "type-lead"})
+node("mechanism-kicker", "paragraph", "HOW IT WORKS", parent=MECHANISM, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("mechanism-title", "heading", "From approved design to verified frontend.", parent=MECHANISM, salience="primary")
+node("mechanism-copy", "paragraph", "UIR carries the design decisions into implementation, then checks that the frontend keeps them.", parent=MECHANISM, salience="secondary", overrides={"type": "type-lead"})
 FLOW = node("mechanism-flow", "group", None, parent=MECHANISM)
 for key, title, copy in (
-    ("flow-input", "01 · The screen", "Structure, reading order, roles, behaviour, conditions, navigation, and data relationships."),
-    ("flow-package", "02 · The design system", "Pieces and design values that realize roles without leaking implementation details into UIR."),
-    ("flow-prototype", "03 · The result", "A board, a web app, a native app, or another target derived from the same meaning."),
+    ("flow-input", "01 · Capture the design", "Turn structure, content, states, behaviour and design-system decisions into a machine-readable specification."),
+    ("flow-package", "02 · Build against it", "Give developers and agents explicit requirements instead of asking them to interpret a mockup."),
+    ("flow-prototype", "03 · Verify every change", "Check the rendered frontend against the specification and catch mismatches before they ship."),
 ):
     card = node(key, "region", None, parent=FLOW)
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
@@ -1123,81 +1131,95 @@ SHOWCASE = node(
     overrides={"surface": "surface-ink", "ink": "ink-inverse"},
     sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO),
 )
-node("showcase-kicker", "paragraph", "THIS SITE IS UIR", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-title", "heading", "The page you are reading is generated from its own representation.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-copy", "paragraph", "Its content, structure, semantics, design bindings, provenance, and gaps live in the checked UIR package. React is only the renderer. The inspector reads the same package.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+node("showcase-kicker", "paragraph", "PLAYGROUND", parent=SHOWCASE, salience="quiet", overrides={"ink": "ink-accent", "type": "type-label"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-title", "heading", "From instructions to a verified page.", parent=SHOWCASE, salience="primary", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_SITE_REPO))
+node("showcase-copy", "paragraph", "This site is a clean-start test: an agent received the instructions, authored the UIR package, and produced the public page. The repository exposes the authoring source, the package, the target and the gate that holds one against the other.", parent=SHOWCASE, salience="secondary", overrides={"ink": "ink-inverse", "type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 SHOWCASE_GRID = node("showcase-grid", "group", None, parent=SHOWCASE, sources=(SRC_USER, SRC_SITE_REPO))
 for key, title, copy in (
-    ("showcase-source", "01 · Read the UIR", "The authoring source compiles to the checked package consumed by the page."),
-    ("showcase-review", "02 · Check the proof", "CI verifies that the package is reproducible and binds it to the reviewed UIR evidence."),
-    ("showcase-inspect", "03 · Inspect any node", "Select visible content to see the role, Piece, bindings, provenance, controls, and gaps behind it."),
+    ("showcase-source", "01 · The instructions", "Product intent, design direction, and constraints begin as instructions to the agent."),
+    ("showcase-review", "02 · The agent build", "The agent encodes confirmed decisions in UIR. For a static page, the representation is enough to produce the visualization."),
+    ("showcase-inspect", "03 · The verification", "Tests pin the agent-authored target to the package and fail when implementation and specification drift."),
 ):
     card = node(key, "region", None, parent=SHOWCASE_GRID, salience="secondary", sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
     node(f"{key}-copy", "paragraph", copy, parent=card, overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 SHOWCASE_ACTIONS = node("showcase-actions", "group", None, parent=SHOWCASE, salience="secondary", sources=(SRC_USER, SRC_SITE_REPO))
-node("showcase-repository", "link", "View the site source", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
+node("showcase-repository", "link", "Explore the repository", parent=SHOWCASE_ACTIONS, salience="primary", sources=(SRC_SITE_REPO,))
 node("showcase-path", "code", "github.com/tenbytesltd/uir-public-site", parent=SHOWCASE_ACTIONS, salience="supporting", sources=(SRC_SITE_REPO,))
 
 QUICKSTART = node("quickstart", "region", None, parent=ROOT_NODE, salience="primary")
-node("quickstart-kicker", "paragraph", "EXISTING INTERFACE", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
-node("quickstart-title", "heading", "Use extraction to see what your current UI actually says.", parent=QUICKSTART, salience="primary")
-node("quickstart-copy", "paragraph", "The alpha extractor reads supported implementation evidence and emits UIR facts it can justify. What it cannot justify remains explicit instead of becoming a guess.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
+node("quickstart-kicker", "paragraph", "WHAT UIR CAPTURES", parent=QUICKSTART, salience="quiet", overrides={"ink": "ink-muted", "type": "type-label"})
+node("quickstart-title", "heading", "Everything that makes the design the design.", parent=QUICKSTART, salience="primary")
+node("quickstart-copy", "paragraph", "UIR makes structure, content, states, behaviour, components, and design-system decisions explicit enough to test an implementation against them.", parent=QUICKSTART, salience="secondary", overrides={"type": "type-lead"})
 STEPS = node("quickstart-steps", "group", None, parent=QUICKSTART)
-for key, title, copy, command in (
-    ("quickstart-read", "1 · Read", "Point the extractor at the app and the design-system sources you want it to inspect.", "python3 tool/extract_react.py --root <repo> --app <app/src> --design-system-source <system/src> --change-set .uir/reading.json"),
-    ("quickstart-see", "2 · Inspect", "Review the representation, the evidence behind each fact, and the gaps it could not resolve.", "python3 tool/uir_report.py --change-set .uir/reading.json"),
-    ("quickstart-adopt", "3 · Use", "Put the representation beside the implementation and make drift a reviewable change.", "# CI integration is alpha and remains an explicit adoption task"),
+# `paragraph` in the mono register, and NOT `code`. These three values were shell
+# commands once and the loop kept the role after the copy became a taxonomy list,
+# so the package asserted that `structure · content · roles · relationships` is
+# code — and the gate faithfully realized it: a `<pre><code>` frame, and three
+# prose lists announced to assistive technology as code blocks.
+#
+# Nothing caught it and nothing should. The gate checks conformance TO the
+# specification, never the specification's truth, so an authored Fact that is
+# wrong makes a GREEN gate — which is the one failure mode this page's whole
+# claim depends on not having. The variable and the node key carried the old
+# meaning too, which is how it would come back.
+#
+# The monospace look is kept and is now STATED rather than inherited from the
+# role: `type-mono` is a declared typography value of this package's own Dress.
+for key, title, copy, captures in (
+    ("quickstart-read", "Structure & content", "What exists, what it says, and how the parts are ordered and related.", "structure · content · roles · relationships"),
+    ("quickstart-see", "Behaviour & states", "What can happen, when it happens, and which states the interface must support.", "states · actions · conditions · navigation"),
+    ("quickstart-adopt", "Components & design system", "Which reusable pieces and design-system values realize the design.", "components · design values · bindings · reuse"),
 ):
     card = node(key, "region", None, parent=STEPS, salience="secondary")
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
-    node(f"{key}-command", "code", command, parent=card)
+    node(f"{key}-captures", "paragraph", captures, parent=card, salience="supporting", overrides={"type": "type-mono"})
 
 BUILD = node("build", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("build-kicker", "paragraph", "NEW INTERFACE", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("build-title", "heading", "For a new screen, author meaning before implementation.", parent=BUILD, salience="primary")
-node("build-copy", "paragraph", "Describe the product intent in ordinary language. An agent can compile confirmed decisions into UIR, while the board makes those decisions reviewable before any framework becomes the source of truth.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
+node("build-kicker", "paragraph", "HOW IT FITS", parent=BUILD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("build-title", "heading", "Start from design. Or start from code.", parent=BUILD, salience="primary")
+node("build-copy", "paragraph", "Author UIR from an approved design, or extract what can be proven from an existing frontend. Either way, you get the same kind of specification to inspect and verify against.", parent=BUILD, salience="secondary", overrides={"type": "type-lead"})
 BUILD_STEPS = node("build-steps", "list", None, parent=BUILD)
 for index, copy in enumerate((
-    "Describe the job, user, real content, and constraints.",
-    "Compile confirmed interface decisions into UIR.",
-    "Review the board and semantic inspector; correct the representation, not a second artifact.",
-    "Choose a target only after the representation is accepted.",
+    "New UI — Capture approved design decisions as UIR.",
+    "Existing UI — Extract what the frontend can prove and keep the gaps explicit.",
+    "Any implementation — Use people, agents, frameworks, or any combination to produce the frontend.",
+    "Every change — Verify the result against the same specification.",
 ), start=1):
     node(f"build-step-{index}", "listitem", f"{index:02d} — {copy}", parent=BUILD_STEPS)
 
 STANDARD = node("standard", "region", None, parent=ROOT_NODE, salience="primary")
-node("standard-kicker", "paragraph", "WHY A REPRESENTATION", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("standard-title", "heading", "Not a framework. Not a design tool. Not another markup language.", parent=STANDARD, salience="primary")
-node("standard-copy", "paragraph", "UIR is the layer between design and code where interface meaning can live independently of either. The format is strict about meaning and deliberately silent about implementation.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
+node("standard-kicker", "paragraph", "WHY IT WORKS", parent=STANDARD, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("standard-title", "heading", "Explicit decisions turn UI review into a test.", parent=STANDARD, salience="primary")
+node("standard-copy", "paragraph", "When the specification says what must be true, conformance stops being a visual opinion and becomes something tools can check.", parent=STANDARD, salience="secondary", overrides={"type": "type-lead"})
 STANDARD_GRID = node("standard-grid", "group", None, parent=STANDARD)
 for key, title, copy in (
-    ("standard-source", "Framework-independent", "A UIR fact should remain true if React is replaced by Flutter, UIKit, or something else."),
-    ("standard-evidence", "Design-system backed", "UIR names roles; the design system maps those roles to Pieces and values."),
-    ("standard-gaps", "Explicit gaps", "Unknown meaning stays unknown. Silence is not converted into a convenient default."),
-    ("standard-targets", "One authority", "Boards and target implementations are projections of the representation, not parallel sources to keep in sync."),
+    ("standard-source", "One source", "Every required decision has one place to live."),
+    ("standard-evidence", "No guessing", "Unknown stays explicit instead of becoming a convenient default."),
+    ("standard-gaps", "Design-system aware", "Components and design values are part of the specification."),
+    ("standard-targets", "Implementation-independent", "Different frontends can be checked against the same definition."),
 ):
     card = node(key, "region", None, parent=STANDARD_GRID)
     node(f"{key}-title", "heading", title, parent=card, salience="secondary", overrides={"type": "type-lead"})
     node(f"{key}-copy", "paragraph", copy, parent=card)
 
 STATUS = node("status", "region", None, parent=ROOT_NODE, salience="primary", overrides={"surface": "surface-muted"})
-node("status-kicker", "paragraph", "CURRENT STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
-node("status-title", "heading", "A definition under test.", parent=STATUS, salience="primary")
-node("status-copy", "paragraph", "UIR v0.1 is still being discovered through implementation. The current tools exist to test the model: can real interfaces be expressed without smuggling framework or layout decisions into the representation?", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
+node("status-kicker", "paragraph", "ALPHA STATUS", parent=STATUS, salience="quiet", overrides={"type": "type-label", "ink": "ink-muted"})
+node("status-title", "heading", "Useful now. Still alpha.", parent=STATUS, salience="primary")
+node("status-copy", "paragraph", "UIR v0.1 can already author, inspect, and validate the specification. Full automatic frontend-to-specification conformance is still in progress.", parent=STATUS, salience="secondary", overrides={"type": "type-lead"}, sources=(SRC_USER, SRC_REPO, SRC_SITE_REPO))
 STATUS_LIST = node("status-list", "list", None, parent=STATUS)
 for index, copy in enumerate((
-    "Working now — deterministic authoring, package checking, extraction experiments, live boards, semantic inspection, and CI evidence.",
-    "Still open — vocabulary and contract gaps that must be resolved before v0.1 can freeze.",
-    "Not claimed — a stable public install, production target compilers, or a mature adopter ecosystem.",
+    "Works today — authoring, reproducible packages, package validation, inspection, early extraction, and CI evidence.",
+    "In progress — full frontend-to-specification conformance and broader vocabulary coverage.",
+    "Not claimed — a stable public install, production-ready compilers, or a mature adopter ecosystem.",
 ), start=1):
     node(f"status-item-{index}", "listitem", copy, parent=STATUS_LIST)
 
 FOOTER = node("footer", "region", None, parent=ROOT_NODE, salience="quiet", overrides={"surface": "surface-ink", "ink": "ink-inverse"})
-node("footer-title", "heading", "UIR by Tenbytes Ltd", parent=FOOTER, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-node("footer-copy", "paragraph", "Created and stewarded by Tenbytes Ltd. Describe the interface. Let the design system realize it. Treat code as a target.", parent=FOOTER, salience="quiet", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
-FOOTER_ACTION = node("footer-action", "link", "Try extraction", parent=FOOTER, salience="secondary")
+node("footer-title", "heading", "Ship the UI you designed.", parent=FOOTER, salience="secondary", overrides={"type": "type-lead", "ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
+node("footer-copy", "paragraph", "UIR by Tenbytes Ltd.", parent=FOOTER, salience="quiet", overrides={"ink": "ink-inverse"}, sources=(SRC_USER, SRC_TENBYTES, SRC_REPO))
+FOOTER_ACTION = node("footer-action", "link", "See what UIR captures", parent=FOOTER, salience="secondary")
 
 controls.extend((
     (NAV_EXTRACT, QUICKSTART), (NAV_BUILD, BUILD), (NAV_STANDARD, STANDARD), (NAV_SOURCE, SHOWCASE),

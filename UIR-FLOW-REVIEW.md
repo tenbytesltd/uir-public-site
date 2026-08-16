@@ -8,28 +8,43 @@ This document records the authoring experience, not the product. Product meaning
 
 ## Session allowlist
 
+**Written without absolute paths, and it was not.** Five lines of this document
+carried an absolute home-directory path — the machine's account name and where two PRIVATE
+repositories sit on it — in a public repository that deploys on merge. Nothing
+checked it; `tool/public_site_ci.py` scanned generated artifacts only, and the
+first run of the widened scan failed on this file. A path is a fact about a
+machine, and this document's whole subject is what may and may not cross that
+line.
+
+
 - The user's words in this conversation.
-- `/home/kvelikov/uir` as the authoritative source of UIR product facts and the current compiler, checker, prototype, and gates.
-- `/home/kvelikov/playbooks-uir/idea-to-uir/SKILL.md` as the current clean-start authoring procedure.
-- `/home/kvelikov/playbooks-uir/design-system/` as explicitly selected generic design-system method, never as a source of product-specific values.
+- The private `uir` tooling repository, checked out beside this one, as the authoritative source of UIR product facts and the current compiler, checker, prototype, and gates.
+- The `idea-to-uir` skill in the private playbooks checkout as the current clean-start authoring procedure.
+- The `design-system` playbook in that same checkout as explicitly selected generic design-system method, never as a source of product-specific values.
 - The official public pages of Storybook, Design Tokens Community Group, OpenTelemetry, Open UI, OpenFeature, OpenAPI, GraphQL, and Backstage as named market and UX evidence for this run.
-- The generated site workspace `/home/kvelikov/uir-public-site` as a target and test subject, never as an upstream source of product meaning.
+- This repository, the generated site workspace, as a target and test subject, never as an upstream source of product meaning.
 
 Everything else in the workspace remains out of scope.
 
 ## Confirmed product decisions
 
-### D1 — adoption begins with extraction
+### D1 — the primary path is authored; extraction is the shortest path, and a lesser one
 
-Confirmed by the user. The primary job of the public page is to help a team install and adopt the tooling. The shortest path to value begins from an existing interface:
+Amended by the user on 2026-08-16. **This entry previously read "adoption begins with extraction" and named authoring the secondary path. That ordering was wrong and is recorded here rather than overwritten**, because the page was built on it and the hero was reviewed against it.
+
+The **primary** path is the one the hero states, and it has always been the product's reason to exist:
+
+`approved design → UIR → build the frontend from it → verify every change against it`
+
+Extraction is the **secondary** path. It is genuinely the shortest route to value — point the reader at a codebase that already exists and it reveals decisions, drift and silence in one run — and its cost is exactly what makes it secondary:
 
 `existing code → extract UIR → reveal decisions, drift and silence → adopt the check`
 
-Building a new interface from ordinary-language intent is a secondary path:
+**An extracted package is not an authored package.** It is a reading rather than a decision, and the measurements say so plainly: extraction may not emit a `declared` Fact at all (`EXT-04` — a source that does something has not thereby decided it), the reading reaches 194 of 372 demanded positions on a real application, and no extractor emits the projection facts a package needs to be drawn. `F05` in this ledger already records the same thing from the tooling side: *"extract UIR" and "create an active UIR package" are different outcomes today*.
 
-`product intent → build UIR from zero → inspect → later lower to code`
+So extraction answers "what does your code remember?" — a real and immediately useful question — and never "what was decided?". The page may lead a visitor in through the short path, but it must not present the artifact it produces as the thing the primary path builds.
 
-The primary conversion is therefore an extraction quickstart, not a community signup or an abstract invitation to read a specification.
+Consequence for the page: the hero, the problem section and the How narrative stand as written, and the ordering of the two paths in any adoption or quickstart material follows this entry rather than the superseded one.
 
 ## Research synthesis
 
@@ -475,7 +490,7 @@ Proposed improvement: make the review UI place `statesNothing`, repeated-claim u
 - Root cause: UIR deliberately carries framework-independent transition meaning and excludes handlers/effects, while the current web lowerer has no declared target profile for interactive decorative fields.
 - Change made: authored `pointer-dot-field` in the Dress, bound the existing typed radial surface and transition to the hero Node, and made the generic renderer activate a canvas lowering only when that exact UIR event and surface are present. The lowering draws only points, derives both colours, opacity, cycle duration, and motionless permission from UIR, caps the target-policy displacement at 8 px plus two 2 px waves, follows pointer/touch without blocking page scroll, and becomes static for reduced motion.
 - Proposed tooling or workflow improvement: add a target-profile extension for decorative fields with a closed effect kind, interaction trigger, influence measure, displacement measure, density, and reduced-motion result. Until that exists, surface repeat geometry and particle displacement must be disclosed as target policy rather than implied to be fully represented.
-- Verification command and result: `python3 tool/uir_site_ci.py --site-root /home/kvelikov/uir-public-site ...` passed with 11 passing, 2 vacuous, 6 unchanged unchecked, 0 failing gates, 0 ungated errors, and the same four compiler deferrals; mobile and desktop browser runs found one canvas exactly covering the hero, changing pixels over time, distinct results after touch/pointer moves, no runtime errors, and solid inverse title/lead surfaces.
+- Verification command and result: `python3 tool/uir_site_ci.py --site-root . ...` passed with 11 passing, 2 vacuous, 6 unchanged unchecked, 0 failing gates, 0 ungated errors, and the same four compiler deferrals; mobile and desktop browser runs found one canvas exactly covering the hero, changing pixels over time, distinct results after touch/pointer moves, no runtime errors, and solid inverse title/lead surfaces.
 - Remaining risk: the event identity, colours, opacity, duration, binding, and motionless allowance are inspectable UIR; point spacing, influence radius, displacement coefficients, and canvas realization are still web-target policy and do not appear in the inspector or official board.
 
 | Signal | Baseline | After | Interpretation |
@@ -532,6 +547,73 @@ Publish decision: eligible after the sequential public verifier, runtime build, 
 - Proposed tooling or workflow improvement: add a board or browser rule that emits the realized surface sequence for ordered sibling regions and flags adjacent equivalent surfaces when alternation is an accepted page constraint.
 - Verification command and result: official UIR CI passed with 0 failing gates and 0 ungated errors; public verification reports 4,200 records and fingerprint `7cbe05c616f4cc7e7db612304b08417683c27de102e4e5f6abd14d50fb6eea8c`; mobile and desktop browser runs found no adjacent duplicate backgrounds, transparent hero title and lead backgrounds, no horizontal overflow, no overlays, and no console or page errors. Normal canvas samples changed three times and reduced-motion samples stayed identical.
 - Remaining risk: the official contrast gate remains unchecked, so painted canvas contrast still depends on runtime evidence.
+
+### F43 — category-first copy hid the product reason to exist
+
+- Status: fixed for the hero, problem, How, and Playground copy; remaining sections pending review
+- Flow step: UIR authoring and marketing hierarchy
+- Candidate revision: `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: the previous hero opened with representation vocabulary and framework independence before naming the user outcome. Research and user review established the actual Why: the shipped frontend should match the approved design and that parity needs verification.
+- User impact: visitors had to understand a new category before they could recognize the problem UIR solves.
+- Root cause: copy followed product ontology rather than Why, pain, mechanism, and proof.
+- Change made: authored the approved hero statement, `Ship the UI you designed`, and a single supporting sentence that connects machine-readable design specification to building and verifying frontend output. The problem section now states the design-parity failure, the manual review burden, and baseline drift without introducing the solution. The How section advances the approved narrative through capture, build, and continuous verification. The former showcase now presents the clean-start loop as a Playground with instructions, agent build, verification, and a repository path. The checked package was regenerated; no renderer copy was introduced.
+- Proposed tooling or workflow improvement: add an explicit positioning checkpoint before site authoring that records Why, pain, How, What, primary audience, and the one claim each page section must advance.
+- Verification command and result: official UIR CI passed with 4 unchanged deferrals, 0 failing gates, 6 unchanged unchecked gates, and 0 ungated errors; record count remained 4,200; public proof and all 5 rendered-site tests passed.
+- Remaining risk: the lower sections still follow the older category-first narrative and must be reduced and rewritten before this candidate is eligible to publish.
+
+| Signal | Baseline | After | Interpretation |
+|---|---|---|---|
+| Candidate revision | `16f3f3dfaa61a2d72896ad7be422417b3cba77c23f63411a47d69d3dbce073d8` | `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74` | Copy changed through UIR authoring. |
+| Records | 4,200 | 4,200 | Existing content Facts changed; no score-padding records were added. |
+| Gates | 0 fail, 6 unchecked, 0 ungated errors | unchanged | Positioning did not manufacture a semantic quality gain. |
+
+Publish decision: not eligible while the remaining section narrative is under review. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
+**Amended 2026-08-16. The condition above is met and the decision is superseded; the wording is kept rather than overwritten, because the narrative was reviewed against it.** The lower sections were rewritten and the hero, problem and How narrative were reviewed and approved. The candidate revision this entry names — `4f47c32d…` — is three regenerations old; the current one is `dabd4e89…` at 4,206 records. What now blocks publication is `F44` alone, and only the part of it named there.
+
+### F44 — the Playground claim needs an independent agent-target conformance gate
+
+- Status: deferred implementation handoff
+- Flow step: target implementation, interaction, and CI
+- Candidate revision: `4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74`
+- Contexts: `uir-site:context:desktop`, `uir-site:context:mobile`
+- Evidence: the approved Playground copy says tests pin an agent-authored target to the package. Current CI reproduces the UIR package, checks reviewed evidence, and samples server-rendered output, but it does not independently derive and compare the complete static target contract.
+- User impact: publishing the claim before the conformance layer exists would turn the live proof into a marketing assertion rather than evidence that UIR works.
+- Root cause: existing target tests count rendered Nodes and check representative fragments; they do not compare every ordered Node, relationship, leaf value, destination, and binding against an independently derived package expectation.
+- Change made: authored only the final Playground copy in UIR and regenerated the checked package. The requested implementation was deliberately stopped to preserve the remaining task budget. This candidate is not eligible to publish.
+- Implementation handoff:
+  1. Add a versioned Playground brief in the site repository that exposes the original instructions, accepted copy decisions, UIR authoring path, target path, and verification command.
+  2. Run a clean agent against the checked UIR package and the target contract, without embedding marketing copy in target source. Preserve the agent brief and resulting target as reviewable repository evidence.
+  3. Add an independent conformance test that derives the expected depth-first Node order, identity, role, salience, leaf content or Gap, `contains` and `controls` relationships, link destinations, and required presentation bindings from `app/uir-package`; parse the rendered target and deep-compare those facts. Do not let the renderer emit its own expected manifest.
+  4. Run the conformance gate after package reproduction and before GitHub Pages export. The readable CI review must distinguish semantic/static conformance from pixel equality.
+  5. Keep static pages on the generic UIR visualization path. Add bespoke JSX only for behavior the representation or target profile cannot realize, and disclose each such lowering.
+  6. Author a Playground-entry emphasis as a UIR motion event and transition. When the section reaches about 35 percent visibility, pulse the inspector launcher for three restrained cycles; use a static highlight under reduced motion and do not repeat after the inspector has opened in that session.
+  7. While the inspector dialog is open, do not render the floating launcher. The dialog close control and Escape remain available; after close, the launcher returns without replaying the pulse.
+  8. Add browser tests for section entry, one-shot pulse state, reduced motion, launcher absence while open, close and Escape restoration, keyboard focus, and mobile viewport behavior.
+- Proposed tooling or workflow improvement: provide a reusable official UIR target-conformance CLI and action that compares an independently realized target with a checked package and publishes the exact mismatches.
+- Verification command and result: the copy-only official UIR CI passed with 4 unchanged deferrals, 0 failing gates, 6 unchanged unchecked gates, and 0 ungated errors; 4,200 records remain. No target, interaction, CSS, or CI implementation was made in this iteration.
+- Remaining risk: the Playground conformance and pulse claims are not publishable until every handoff item above is implemented and browser-verified.
+
+Publish decision: blocked by the explicit Playground implementation handoff. Known deferrals remain `UIR-SEM-CONTRAST-DEFERRED`, `UIR-SEM-PARENT-ROLE-DEFERRED`, `UIR-SEM-RESOLUTION-DEFERRED`, and `UIR-SEM-SLOT-CARDINALITY-DEFERRED`.
+
+**Amended 2026-08-16, against the eight items above, one at a time.** The wording is kept rather than overwritten. This entry and the pull request that carries it gave a reader opposite answers — *"blocked"* here, *"ready to publish"* there — and merging deploys, so the contradiction was not academic.
+
+Delivered:
+
+- **3** — `tool/uir_conformance.mjs` derives the expected depth-first Node order, identity, role, salience, leaf content, `contains` and `controls` relationships, destinations and presentation bindings from `app/uir-package`, parses the rendered target and deep-compares them. The renderer emits no expected manifest.
+- **4** — the gate runs after package reproduction and before the Pages export, and the readable CI review separates semantic conformance from pixel equality.
+
+**Reversed, deliberately, and it is a decision rather than a completed item: 5.** It read *"Keep static pages on the generic UIR visualization path"*. The public site is now explicitly not the generic renderer — `docs/CONFORMANCE.md` states it — because the renderer is a designer-facing visualization surface and the production target is an ordinary React application. The reason the reversal is worth more than the item: a page the generic renderer draws proves the renderer works, and a page an explicit React tree draws and the gate holds against the package proves UIR works. The second is the claim this site makes.
+
+Still open, and none of them is claimed by any copy on the page:
+
+- **1, 2** — the versioned Playground brief and the preserved agent brief. The copy said *"The repository exposes every step"*, and the instructions and the agent's own brief are the step it does not expose. That sentence is the only thing on the page these two items were holding up, and it now says what the repository actually exposes: the authoring source, the package, the target and the gate that holds one against the other. The items stay open — a preserved brief is worth having and cannot be reconstructed after the fact — and they no longer block anything, because nothing claims them.
+- **6, 7, 8** — the entry pulse, the launcher-while-open behaviour and the browser tests for them. This is an unshipped motion feature; no sentence on the page asserts it exists.
+
+Publish decision, restated: **eligible.** Items 3 and 4 are what the Playground copy's verification sentence rests on and they are done; items 1 and 2 were what its repository sentence rested on, and that sentence now states what is there rather than more. Items 6-8 do not bear on publication at all and are re-filed as an enhancement rather than a blocker. What remains open is recorded above and is claimed by nothing the page says, which is the difference between a gap and a false statement.
+
+Candidate revision `dabd4e89…`, 4,206 records, 0 failing gates, 6 unchecked gates, 0 ungated errors, deferrals unchanged.
 
 ## Open review questions
 
