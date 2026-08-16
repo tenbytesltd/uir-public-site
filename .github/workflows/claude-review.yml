@@ -2,8 +2,21 @@
 # VENDORED COPY. Do not edit below the marker.
 #
 # Source: tenbytesltd/playbooks/.github/workflows/claude-review.yml at tag `v1`
-# Commit: a6bca1f18a9cc75e268eb88be003bc8d92835a11
-# Taken:  2026-08-16 (re-vendored the same day: v1 moved)
+# Commit: bf0df4c (playbooks#32, merged 2026-08-16 15:25 UTC; v1 moved onto it)
+# Taken:  2026-08-16 (third vendoring in one day, and the reason is below)
+#
+# THE PREVIOUS TWO COPIES BOTH CARRIED A CLIENT'S REPOSITORY NAME, and this one
+# is the first that does not. `b8f231cf` published it here on 2026-08-16 at
+# 07:38 UTC; `a6bca1f` re-published it hours later while fixing something else.
+# `playbooks#32` removed the identity at the source — `consumer A`, `consumer B`,
+# `A#288` — keeping every run ID, cost and count, because those are the evidence
+# and none of them attributes to anyone alone.
+#
+# The rule is now stated upstream: the shared review names no consumer, BECAUSE
+# it is copied byte-for-byte into public repositories. That is why the fix went
+# there and not into a redaction applied here — a redaction in each copy is a
+# redaction the next consumer forgets, and `tenbytesltd/uir-playground` was the
+# next consumer, four hours later.
 #
 # WHY a copy at all, since the whole point of that file is that the review lives
 # ONCE: this repository is PUBLIC and `playbooks` is PRIVATE, and a public
@@ -37,8 +50,22 @@ name: Claude review (reusable)
 
 # ONE Claude PR review, shared by every TenBytes repo.
 #
-# WHY this exists: the review lived twice — once in exams-design-system, once in
-# Tervo — and the two drifted in ways nobody could see. Neither stated a model,
+# THIS FILE NAMES NO CONSUMER, and that is a rule rather than a style. `playbooks`
+# is private and could name whoever it likes — but a PUBLIC repository cannot call
+# a private reusable workflow, so every public consumer VENDORS this file
+# byte-for-byte. Whatever is written here is therefore published, and the first
+# repository to vendor it put a client's repository name on the open internet ten
+# times over, in a repository whose own release guard was written to prevent
+# exactly that and did not scan `.github/`.
+#
+# So: the two long-standing consumers are **consumer A** (self-hosted runner with
+# no `gh`) and **consumer B**. `A#288` means pull request 288 in consumer A. Run
+# IDs, costs, turn counts and file counts stay — they are the evidence, and none
+# of them is attributable on its own. Only the identity goes. A new consumer gets
+# the next letter; it does not get its name.
+#
+# WHY this exists: the review lived twice, in two consumer repositories, and the
+# two drifted in ways nobody could see. Neither stated a model,
 # so one repo silently reviewed on `claude-sonnet-5` while the other resolved to
 # `opus[1m]`; one pinned the action's commit SHA and the other tracked a moving
 # `@v1` tag; one deduped by narrowing scope and the other by re-reading its own
@@ -81,7 +108,7 @@ on:
           workflow and that made every tuning of the review blind its own PR:
           the action refuses to run whenever a PR's review workflow differs from
           the default branch's copy, so editing `focus` there produced a green
-          check that reviewed nothing. Two Tervo PRs did exactly that on
+          check that reviewed nothing. Two of consumer B's PRs did exactly that on
           2026-07-30 (#72 and #73, six empty runs between them) — one of them
           only correcting "the six checkers" to "the checkers".
 
@@ -139,8 +166,8 @@ on:
           variant — a full-PR diff on a monorepo needs it.
 
           NOT the `opus` class alias. The alias looked better (it would follow the
-          newest Opus with no edit here) but measurement says it does not: two
-          Tervo runs an hour apart both requested `opus[1m]` and were served
+          newest Opus with no edit here) but measurement says it does not: two of
+          consumer B's runs an hour apart both requested `opus[1m]` and were served
           `claude-opus-5[1m]` at 05:50 and `claude-opus-4-8[1m]` at 07:10
           (runs 30519581623 and 30521556374, same `init` block field). The alias
           can drop a tier silently, and a review is exactly the job where you do
@@ -156,7 +183,7 @@ on:
           Reasoning effort. Stated here on purpose: it was running at `xhigh`
           because the self-hosted runner's own settings.json says so, not because
           anyone chose it — the same class of bug as the unstated model, and a
-          large part of why a single review on Tervo#69 reported $8.08 of usage.
+          large part of why a single review on B#69 reported $8.08 of usage.
           `xhigh` is a deliberate choice for a reviewer (it is what found the
           two-Pulse-surfaces accent mismatch); the point is that it is now the
           workflow's decision and cannot be changed by editing a runner.
@@ -166,7 +193,7 @@ on:
         description: >-
           EXCLUSIVE allowlist — anything omitted is DENIED, and a denial is not
           merely a lost capability: the action reports `is_error: true` and the
-          whole check goes RED. Tervo#69 run 30526098269 finished 44 turns and
+          whole check goes RED. B#69 run 30526098269 finished 44 turns and
           failed on `permission_denials_count: 8`. So this list must cover the
           read-only plumbing a reviewer actually reaches for, not just the
           obvious tools — hence the git plumbing (`merge-base` for the base-diff,
@@ -174,13 +201,13 @@ on:
 
           `mcp__github_comment__update_claude_comment` is BACK, and it is now the
           primary way the summary is posted. Removing it was my mistake, and the
-          reasoning was a bad comparison: exams-design-system had zero summaries
-          with it and Tervo had four with `gh pr comment`, so I blamed the tool.
-          The runners differ. **The exams-design-system runner has no `gh` at
+          reasoning was a bad comparison: consumer A had zero summaries
+          with it and consumer B had four with `gh pr comment`, so I blamed the
+          tool. The runners differ. **Consumer A's runner has no `gh` at
           all** (`gh: command not found`; the container ships curl/jq/python3/node
           and not the GitHub CLI). Every `gh`-based summary path was therefore
           dead on that box the moment I made `gh` the only one — which is exactly
-          what happened on #288: the review ran, found nothing new, and had
+          what happened on A#288: the review ran, found nothing new, and had
           nowhere to say so.
 
           The MCP tool needs no binary on the runner. `gh` stays as a second
@@ -191,8 +218,8 @@ on:
           is an exfiltration channel for anything an injected prompt talks it into.
           What HAS changed is the price. That refusal used to cost the thread memory
           on a gh-less runner, accepted as "the cheaper failure"; it was not cheap.
-          exams-design-system's runner has no `gh`, so its review ran blind on every
-          pass and re-raised settled findings for weeks — DEPLOY.md:69 on #321 five
+          Consumer A's runner has no `gh`, so its review ran blind on every
+          pass and re-raised settled findings for weeks — DEPLOY.md:69 on A#321 five
           times over nine hours. The memory is now read in a STEP (see "Read prior
           review threads") and handed to the model as text, so the model needs no
           fetching tool of any kind and no runner has to have `gh` for dedupe to
@@ -238,7 +265,7 @@ jobs:
     #    gate an arbitrary GitHub user gets code execution on that box. The token
     #    would not reach a fork PR anyway, so the job could only fail — skipping
     #    is both safer and more honest. Caught by an architecture review on
-    #    exams-design-system#288, which added it to its own caller; it belongs
+    #    A#288, which added it to its own caller; it belongs
     #    here, so no repo carries the hole while waiting for its own PR. The
     #    `event_name` half keeps it correct if a non-PR trigger is ever added.
     #  - comment author: the same hole as the fork gate, through a different door.
@@ -264,7 +291,7 @@ jobs:
                   && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'),
                               github.event.comment.author_association))) }}
     runs-on: ${{ fromJSON(inputs.runner_labels) }}
-    # 20 was too short and cost a whole review: Tervo#69 (75 files, 3744 lines,
+    # 20 was too short and cost a whole review: B#69 (75 files, 3744 lines,
     # 29 existing threads) ran 20m24s and was cancelled mid-flight, publishing one
     # comment and no summary. The scope is now the delta rather than the whole PR,
     # so a typical pass should be far under this — 45 is headroom for the two cases
@@ -295,7 +322,7 @@ jobs:
         # The prompt tells the review to diff "against the base branch" in three
         # places, and until now never said WHICH — leaving it to work the answer
         # out. On a runner with `gh` it can (`gh pr view`); the
-        # exams-design-system runner has no `gh`, so there it was guessing, and a
+        # consumer A runner has no `gh`, so there it was guessing, and a
         # wrong guess silently produces a diff against the wrong branch rather
         # than an error. That guess is survivable on an incremental pass, which
         # diffs against a SHA the summary records. It is not survivable on a first
@@ -364,11 +391,12 @@ jobs:
       # the previous review left there — and the "Post buffered inline comments" step
       # posts it, to a different pull request, in a different repository.
       #
-      # Measured on tenbytesltd/uir#1 on 2026-08-16, on the box Tervo also builds on:
+      # Measured on tenbytesltd/uir#1 on 2026-08-16, on a box a second consumer
+      # also builds on:
       #
       #   Found 2 buffered inline comment(s)
       #   Posting 2 classified-as-real comment(s)
-      #   failed apps/train/test/i18n_test.dart:123: pull_request_review_thread.path
+      #   failed apps/<app>/test/i18n_test.dart:123: pull_request_review_thread.path
       #                                              could not be resolved
       #   Posted 0/2
       #
@@ -390,12 +418,12 @@ jobs:
 
       # The four dedupe rules in section 1 are worth exactly what the reviewer's
       # ability to READ its own past comments is worth — and on a host without the
-      # GitHub CLI that was nothing. The exams-design-system runner ships
+      # GitHub CLI that was nothing. Consumer A's runner ships
       # curl/jq/python3/node and no `gh`, so the `gh api graphql` those rules depended
       # on exited 127 and every pass there ran with no memory at all. Measured on
-      # exams-design-system#321: the SAME comment on DEPLOY.md:69 five times across
-      # nine hours, on a file only two of its thirteen pushes touched. Also ×3 on #325
-      # and ×2 on #322. The rules were never the problem; their only input channel was
+      # A#321: the SAME comment on DEPLOY.md:69 five times across
+      # nine hours, on a file only two of its thirteen pushes touched. Also ×3 on A#325
+      # and ×2 on A#322. The rules were never the problem; their only input channel was
       # missing on one of the two consumers, silently.
       #
       # Fetching HERE settles it without reopening what the `curl` note above decided.
@@ -457,7 +485,7 @@ jobs:
           #
           # `update_claude_comment` UPDATES a tracking comment; it does not create
           # one. Without track_progress there is no such comment, so the tool has
-          # nothing to update and posts nothing — silently. exams-design-system
+          # nothing to update and posts nothing — silently. Consumer A
           # had zero summaries with the tool both allowed AND explicitly asked for
           # in the prompt, which I first misread as "the tool is broken" and then
           # as "the runner has no gh". Neither was the cause; this was.
@@ -611,7 +639,7 @@ jobs:
             it lands on code that has nothing to do with it, it cannot be found
             later, and it teaches the reader that inline comments are not about
             the line they sit on. This has happened once
-            (exams-design-system#288, a summary on line 65 of a generated icon
+            (A#288, a summary on line 65 of a generated icon
             data file) and it is the reason this paragraph exists.
 
             **If a capability is missing, degrade loudly and narrowly.** Losing
