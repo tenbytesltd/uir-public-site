@@ -85,6 +85,52 @@ function rebind(where) {
   writeFileSync(evidence, `${JSON.stringify(parsed, null, 2)}\n`);
 }
 
+// **A marker each file's own language accepts, and an assertion on the REASON.**
+//
+// `assert.equal(code, 1)` is satisfied by any non-zero exit, and `reproduce()`
+// runs before the scan — so a marker that BREAKS a file counts as proof that
+// the file is scanned. That was live: appending an HTML comment to
+// `uir/author_site.py`, which opens with `from __future__` and is executed as a
+// script, is a `SyntaxError`, the verifier exits 1 with `authoring program
+// exited 1`, and the scan is never reached. Delete that entry from `PUBLISHED`
+// and the derived loop loses its case with it while the requirements loop stays
+// green on a broken tree.
+//
+// So the marker is chosen per language and the failure must name the scan.
+function seedAndExpectRefusal(where, entry, why = "") {
+  const seeded = `${["", "home", "somebody", "seeded"].join("/")} `
+    + `@${["ex", "ams"].join("")}/ui`;
+  // JSON carries no comments, and the sibling trick the first version used
+  // meant the entry under test was never seeded at all — what failed was
+  // whichever entry the sibling belonged to. `uir/evidence.json` is validated
+  // for `officialAuditSource`'s shape and nothing else, so an extra member is a
+  // real case for it.
+  if (entry.endsWith(".json")) {
+    const target = join(where, entry);
+    const parsed = JSON.parse(readFileSync(target, "utf8"));
+    writeFileSync(target, `${JSON.stringify({ ...parsed, note: seeded }, null, 2)}\n`);
+    if (entry.endsWith("official-audit.json")) rebind(where);
+  } else {
+    const target = entry.includes(".")
+      ? join(where, entry)
+      : join(where, entry, "seeded-by-the-suite.md");
+    const before = existsSync(target) ? readFileSync(target, "utf8") : "";
+    const marker = target.endsWith(".py") ? `# ${seeded}`
+      : target.endsWith(".mjs") || target.endsWith(".ts") || target.endsWith(".tsx")
+        ? `// ${seeded}`
+        : `<!-- ${seeded} -->`;
+    writeFileSync(target, `${before}\n${marker}\n`);
+  }
+  const { code, said } = verify(where);
+  const because = why ? ` — ${why}` : "";
+  assert.equal(code, 1,
+    `${entry} is not scanned${because}\n${said}`);
+  assert.match(said,
+    /carries an absolute path|token\(s\) this repository does not publish/,
+    `${entry}: the run failed, but on something other than the scan${because}`
+    + `\n${said}`);
+}
+
 test("the verifier passes over the tree as it stands", () => {
   withCheckout((where) => {
     const { code, said } = verify(where);
@@ -235,29 +281,8 @@ test("every entry of PUBLISHED is actually scanned, one seeded path each", () =>
   // scopes: the top-level README is deliberately exempt from the path rule and
   // is not exempt from the token rule, so seeding only a path would report that
   // entry as covering nothing when it covers half.
-  const seeded = `${["", "home", "somebody", "seeded"].join("/")} @${["ex", "ams"].join("")}/ui`;
   for (const entry of publishedEntries()) {
-    withCheckout((where) => {
-      const target = existsSync(join(where, entry)) && !entry.includes(".")
-        ? join(where, entry, "seeded-by-the-suite.md")
-        : join(where, entry);
-      const before = existsSync(target) ? readFileSync(target, "utf8") : "";
-      // Appended so a Python module stays parseable and a JSON artifact does
-      // not: for the two files that must stay valid, the marker goes in a
-      // sibling of the directory they live in instead.
-      if (entry.endsWith(".json")) {
-        writeFileSync(join(where, "docs", "seeded-by-the-suite.md"), seeded);
-        const { code } = verify(where);
-        assert.equal(code, 1, `${entry}: a JSON entry cannot carry a comment; `
-          + `the sibling case stands in and must still fail`);
-        return;
-      }
-      writeFileSync(target, `${before}\n<!-- ${seeded} -->\n`);
-      const { code, said } = verify(where);
-      assert.equal(code, 1,
-        `PUBLISHED names ${entry} and a path seeded there was not found: `
-        + `that entry covers nothing\n${said}`);
-    });
+    withCheckout((where) => seedAndExpectRefusal(where, entry));
   }
 });
 
@@ -277,22 +302,15 @@ const MUST_BE_SCANNED = [
   ["docs", "what the repository publishes about itself"],
   ["README.md", "the first page a reader of the repository sees"],
   ["UIR-FLOW-REVIEW.md", "the ledger, which carried five machine paths"],
+  ["uir/official-audit.json", "the artifact the private tooling produces, and "
+                            + "the one that carried a client's name twice"],
+  ["uir/evidence.json", "the binding, which is published beside it and which "
+                      + "nothing else in this suite reads for content"],
 ];
 
 test("the places this repository requires to be scanned are all covered", () => {
-  const seeded = `${["", "home", "somebody", "required"].join("/")} `
-    + `@${["ex", "ams"].join("")}/ui`;
   for (const [entry, why] of MUST_BE_SCANNED) {
-    withCheckout((where) => {
-      const target = entry.includes(".")
-        ? join(where, entry)
-        : join(where, entry, "seeded-by-the-suite.md");
-      const before = existsSync(target) ? readFileSync(target, "utf8") : "";
-      writeFileSync(target, `${before}\n<!-- ${seeded} -->\n`);
-      const { code, said } = verify(where);
-      assert.equal(code, 1,
-        `${entry} is not scanned, and it must be — ${why}\n${said}`);
-    });
+    withCheckout((where) => seedAndExpectRefusal(where, entry, why));
   }
 });
 
