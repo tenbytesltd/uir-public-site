@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PlaygroundShortcut } from "./PlaygroundShortcut";
 import { UIRPage, uirMetadata } from "./uir";
 
 export const dynamic = "force-static";
@@ -20,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <UIRPage />;
+  return (
+    <>
+      <UIRPage />
+      <PlaygroundShortcut />
+    </>
+  );
 }
