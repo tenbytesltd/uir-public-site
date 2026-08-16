@@ -84,3 +84,36 @@ jobs:
       - name: Publish the verified static site
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # ── Claude review ───────────────────────────────────────────────────────────
+  # The review lives ONCE, in tenbytesltd/playbooks@v1, with the model, the
+  # pinned action SHA, the fork guard and the dedup rules shared by every
+  # consumer. What is ours is `.github/claude-review-focus.md`, which is
+  # ordinary repo content on purpose: the action refuses to run whenever a pull
+  # request's review WORKFLOW differs from the default branch's copy, so a focus
+  # kept in here would blind the very pull request that tunes it.
+  #
+  # A JOB here rather than its own workflow, for the reason exams-design-system
+  # found the hard way: a separate workflow RACES this one, and a review that
+  # posts after the gate has finished is a review nobody waited for.
+  #
+  # Requires the repository secret CLAUDE_CODE_OAUTH_TOKEN.
+  review:
+    name: Claude review
+    # Pull requests only, and never a fork's code. The shared workflow gates
+    # forks too; this is the near half of the same door, and it matters more
+    # here than in the private repositories because this one accepts them.
+    if: >-
+      ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft
+          && github.event.pull_request.head.repo.full_name == github.repository }}
+    uses: tenbytesltd/playbooks/.github/workflows/claude-review.yml@v1
+    # REQUIRED here rather than there: a called workflow can only NARROW
+    # GITHUB_TOKEN, never widen it, so these are what let the review post.
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    secrets: inherit
+    with:
+      runner_labels: '["ubuntu-latest"]'

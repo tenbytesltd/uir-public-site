@@ -1,0 +1,39 @@
+name: Claude Code Review
+
+# The MANUAL path only. The automatic review is a job in `uir-site-ci.yml`,
+# called from the same shared workflow, so a pull request is not reviewed twice.
+#
+# This file exists for the one thing the CI job cannot do: review a pull request
+# that EDITS the review setup. The action refuses to run whenever a pull
+# request's workflow differs from the default branch's copy
+# (`workflow_not_found_on_default_branch`), and a comment event runs the DEFAULT
+# BRANCH's workflow — so it is never the mismatched one.
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  review:
+    # `@claude-review`, with the hyphen, and the hyphen is not cosmetic: the
+    # action matches its trigger as a word boundary, `(^|\s)@claude([\s.,!?;:]|$)`,
+    # so `@claude-review` does not also wake a general-purpose `@claude`
+    # assistant while `@claude review` (a space) would. Do not tidy it away.
+    #
+    # A cheap early filter and NOT the security boundary — the shared workflow
+    # owns that, deliberately, so a repository adding this trigger cannot forget
+    # the guard that makes it safe.
+    if: >-
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude-review')
+    uses: tenbytesltd/playbooks/.github/workflows/claude-review.yml@v1
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    secrets: inherit
+    with:
+      # GitHub-hosted, unlike the private consumers: this repository is public,
+      # so hosted minutes are free and the org's exhausted allowance — which is
+      # why `tenbytesltd/uir` runs on self-hosted boxes — does not apply.
+      runner_labels: '["ubuntu-latest"]'
