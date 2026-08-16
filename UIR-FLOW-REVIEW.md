@@ -19,17 +19,23 @@ Everything else in the workspace remains out of scope.
 
 ## Confirmed product decisions
 
-### D1 — adoption begins with extraction
+### D1 — the primary path is authored; extraction is the shortest path, and a lesser one
 
-Confirmed by the user. The primary job of the public page is to help a team install and adopt the tooling. The shortest path to value begins from an existing interface:
+Amended by the user on 2026-08-16. **This entry previously read "adoption begins with extraction" and named authoring the secondary path. That ordering was wrong and is recorded here rather than overwritten**, because the page was built on it and the hero was reviewed against it.
+
+The **primary** path is the one the hero states, and it has always been the product's reason to exist:
+
+`approved design → UIR → build the frontend from it → verify every change against it`
+
+Extraction is the **secondary** path. It is genuinely the shortest route to value — point the reader at a codebase that already exists and it reveals decisions, drift and silence in one run — and its cost is exactly what makes it secondary:
 
 `existing code → extract UIR → reveal decisions, drift and silence → adopt the check`
 
-Building a new interface from ordinary-language intent is a secondary path:
+**An extracted package is not an authored package.** It is a reading rather than a decision, and the measurements say so plainly: extraction may not emit a `declared` Fact at all (`EXT-04` — a source that does something has not thereby decided it), the reading reaches 194 of 372 demanded positions on a real application, and no extractor emits the projection facts a package needs to be drawn. `F05` in this ledger already records the same thing from the tooling side: *"extract UIR" and "create an active UIR package" are different outcomes today*.
 
-`product intent → build UIR from zero → inspect → later lower to code`
+So extraction answers "what does your code remember?" — a real and immediately useful question — and never "what was decided?". The page may lead a visitor in through the short path, but it must not present the artifact it produces as the thing the primary path builds.
 
-The primary conversion is therefore an extraction quickstart, not a community signup or an abstract invitation to read a specification.
+Consequence for the page: the hero, the problem section and the How narrative stand as written, and the ordering of the two paths in any adoption or quickstart material follows this entry rather than the superseded one.
 
 ## Research synthesis
 
