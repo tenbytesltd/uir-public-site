@@ -2,8 +2,8 @@
 # VENDORED COPY. Do not edit below the marker.
 #
 # Source: tenbytesltd/playbooks/.github/workflows/claude-review.yml at tag `v1`
-# Commit: b8f231cf5c8c2c54f2f57be2134a007a62934516
-# Taken:  2026-08-16
+# Commit: a6bca1f18a9cc75e268eb88be003bc8d92835a11
+# Taken:  2026-08-16 (re-vendored the same day: v1 moved)
 #
 # WHY a copy at all, since the whole point of that file is that the review lives
 # ONCE: this repository is PUBLIC and `playbooks` is PRIVATE, and a public
@@ -355,6 +355,38 @@ jobs:
         # On a self-hosted runner the workspace is owned by a different user than
         # the job, so git refuses to touch it until the path is trusted.
         run: git config --global --add safe.directory '*'
+
+      # The action buffers the inline comments the model asks for and posts them
+      # in a later step, from a path it HARDCODES as `/tmp/inline-comments-buffer.jsonl`
+      # rather than `$RUNNER_TEMP`. On a GitHub-hosted runner /tmp is new for every
+      # job and nobody ever sees this. On a SELF-HOSTED runner /tmp outlives the job
+      # and is shared by every repository that box builds, so a review reads whatever
+      # the previous review left there — and the "Post buffered inline comments" step
+      # posts it, to a different pull request, in a different repository.
+      #
+      # Measured on tenbytesltd/uir#1 on 2026-08-16, on the box Tervo also builds on:
+      #
+      #   Found 2 buffered inline comment(s)
+      #   Posting 2 classified-as-real comment(s)
+      #   failed apps/train/test/i18n_test.dart:123: pull_request_review_thread.path
+      #                                              could not be resolved
+      #   Posted 0/2
+      #
+      # Nothing landed only because a Flutter test path does not exist in a Python
+      # repository. A file both repositories DO have — `README.md`, `package.json` —
+      # resolves, and one repository's review comment is published on another's pull
+      # request. That is a cross-repository disclosure, not an annoyance, and it is
+      # the reason this runs BEFORE the review rather than after it: cleaning up
+      # afterwards still leaves the window open for a job that crashes.
+      #
+      # Upstream fix is `$RUNNER_TEMP`; until the action ships it, this is the guard.
+      - name: Discard any inline-comment buffer left by another repository
+        run: |
+          BUF=/tmp/inline-comments-buffer.jsonl
+          if [ -f "$BUF" ]; then
+            echo "::warning::a stale inline-comment buffer was present before this           review ran ($(wc -l < "$BUF") entries) and has been discarded; on a shared           self-hosted runner it belongs to whichever repository built here last"
+            rm -f "$BUF"
+          fi
 
       # The four dedupe rules in section 1 are worth exactly what the reviewer's
       # ability to READ its own past comments is worth — and on a host without the
