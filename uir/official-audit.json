@@ -204,7 +204,7 @@
           }
         ],
         "lowered": true,
-        "revision": "4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74",
+        "revision": "07f2723baef18afe3585a5d70aa31334374004a36bc8b8dc394f46ecc74075fd",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -423,7 +423,7 @@
           }
         ],
         "lowered": true,
-        "revision": "4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74",
+        "revision": "07f2723baef18afe3585a5d70aa31334374004a36bc8b8dc394f46ecc74075fd",
         "surfaceId": "",
         "targetCounts": {
           "arrangementsThisBoardCannotExpress": 4,
@@ -439,7 +439,7 @@
       }
     }
   ],
-  "package": "/home/kvelikov/uir-public-site/app/uir-package",
+  "package": "app/uir-package",
   "report": {
     "accessibilityNote": "The accessibility half is reported separately because it is the part with a compliance driver and therefore the part most easily overstated. A gate in this half that the compiler does not execute reports `unchecked`; it is never counted as a pass, and this reading does not cover it.",
     "byRecord": {},
@@ -710,7 +710,7 @@
     "publicationRule": "NO RATIO IS COMPUTED OVER AN AUTHORED PACKAGE \u2014 no headline, no per-class share, none over the reference profile's demands, none over the accessibility half, in no presenter and nowhere in the payload. A ratio over an authored package is free, because a record costs nothing to write and no measurer can read what it says: the blended headline read a well-decided package with every component deleted as most of a design system; split by subject class, 2,000 `Register` Entities answering their own two demanded members read that class as wholly decided; and moved onto the reference profile's fixed demands, a package the compiler ACCEPTS read 48 of its 48 units as decided with every intent-bearing prose member replaced by the string 'x'. What is published instead is a CHECKLIST \u2014 for each thing the reference profile expects, stated or not stated, and where, by record id and address \u2014 beside counts and the lists under them. Junk passes a checklist too. The difference is that a checklist never CLAIMED to be a quality measure, which is exactly what a percentage claims and cannot support. WHAT THIS IS NOT is a claim that a reader cannot compose one. Both sides of a ledger have to be published, and two counts in one unit divide; so every count here travels with the statement of which denominator it stands over, and there are exactly two \u2014 one this package's own author moves, and one the language fixes before the package is opened, which is the width of one Fact of a kind and the reference profile's own minima. The one ratio this toolchain does sell is the conformance DEGREE, which is grounded on both sides: both come from reading real files, and nobody can invent a class name that is not in the source.",
     "recordKeepingNote": "A Fact about where a statement came from, or about where a decision is absent, is record-keeping and not a decision about the design. It is counted apart and enters neither the debt nor the holdings, because a headline made of the reader's own bookkeeping says nothing about the design system it claims to measure.",
     "rejectedNote": "An answer this reading REFUSED answers nothing \u2014 presence was never the question. The refusal attaches to the DEMAND the diagnostic addresses and to no other, so a finding about one member never costs the credit for another and a finding about a record that is NOT there costs nothing at all; a position the package left empty is undecided rather than refused, because nothing was stated there to refuse. What a reading refused weighs exactly what it always weighed, stays on the undecided side because a developer must still invent it and must now repair the record as well, and is named as its own class so that 'nobody wrote it' and 'somebody wrote something invalid' are never one number. A demand is joined to what this reading said about it by the record's ADDRESS, which every record has, and never by an `id`, which a package can omit. WHICH demands one finding refuses is declared by the code that raised it wherever an address cannot say \u2014 a finding anchored on a record and naming nothing inside it is either about that record's own standing, and then no position of it answers anything, or about a demand the record merely raises, and then it costs nothing at all; those two wear one address and are never told apart by its shape. No count in this report can be raised by authoring a record the compiler rejects.",
-    "root": "/home/kvelikov/uir-public-site/app/uir-package",
+    "root": "app/uir-package",
     "score": {
       "accessibilityLines": [
         {
@@ -2949,7 +2949,7 @@
     ],
     "errorCount": 0,
     "recordCount": 4200,
-    "revision": "4f47c32d2712b4e11faf7f23f7e58e01356f6655ca9f71a013cb2b8230dfca74",
+    "revision": "07f2723baef18afe3585a5d70aa31334374004a36bc8b8dc394f46ecc74075fd",
     "semanticExtension": "T2.5-executable-vocabulary",
     "semanticsReady": false,
     "structurallyValid": true,
