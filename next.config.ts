@@ -11,11 +11,10 @@ const nextConfig: NextConfig = isGitHubPages
   ? {
       output: "export",
       assetPrefix,
-      trailingSlash: true,
-      // vinext's exporter requests the canonical route without a trailing slash.
-      // Keep subfolder output while preventing that internal request from turning
-      // into a 308 before it can be prerendered.
-      skipTrailingSlashRedirect: true,
+      // vinext 1.0.0-beta.2 treats its own /playground -> /playground/
+      // canonical redirect as a failed prerender. Export flat first; the Pages
+      // staging step converts nested HTML routes to directory indexes.
+      trailingSlash: false,
       images: { unoptimized: true },
     }
   : {};
