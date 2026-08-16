@@ -24,7 +24,7 @@ async function render() {
   );
 }
 
-test("server-renders the checked UIR package as the marketing page", async () => {
+test("server-renders the real React site from the checked UIR package", async () => {
   const [response, interfaceText, manifestText] = await Promise.all([
     render(),
     readFile(new URL("../app/uir-package/model/interface.json", import.meta.url), "utf8"),
@@ -85,8 +85,10 @@ test("server-renders the checked UIR package as the marketing page", async () =>
 });
 
 test("keeps marketing copy in UIR rather than in the target renderer", async () => {
-  const [renderer, page, layout] = await Promise.all([
-    readFile(new URL("../app/uir.tsx", import.meta.url), "utf8"),
+  const [site, designSystem, data, page, layout] = await Promise.all([
+    readFile(new URL("../app/Site.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/design-system.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/uir-data.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
@@ -102,9 +104,12 @@ test("keeps marketing copy in UIR rather than in the target renderer", async () 
     "Explore the repository",
     "UIR by Tenbytes Ltd.",
   ]) {
-    assert.doesNotMatch(renderer, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
-    assert.doesNotMatch(page, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
-    assert.doesNotMatch(layout, new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&")));
+    const pattern = new RegExp(phrase.replace(/[.*+?^$()|[\]{}\\]/g, "\\$&"));
+    assert.doesNotMatch(site, pattern);
+    assert.doesNotMatch(designSystem, pattern);
+    assert.doesNotMatch(data, pattern);
+    assert.doesNotMatch(page, pattern);
+    assert.doesNotMatch(layout, pattern);
   }
 
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
@@ -183,18 +188,36 @@ test("records Tenbytes as the creator source in UIR provenance", async () => {
 });
 
 test("builds the inspector from UIR facts instead of a parallel demo model", async () => {
-  const [inspector, renderer] = await Promise.all([
+  const [inspector, data] = await Promise.all([
     readFile(new URL("../app/Inspector.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/uir.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/uir-data.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(renderer, /provenanceModel/);
-  assert.match(renderer, /resolutionPiece\(node\.role\)/);
-  assert.match(renderer, /inspectionBindings\(subject, piece\)/);
-  assert.match(renderer, /fact\(source\.id, "source\.description"\)/);
-  assert.match(renderer, /sourceHref\(subject\)/);
-  assert.doesNotMatch(renderer, /github\.com\/tenbytesltd\/uir-public-site/);
+  assert.match(data, /provenanceModel/);
+  assert.match(data, /resolutionPiece\(node\.role\)/);
+  assert.match(data, /inspectionBindings\(subject, piece\)/);
+  assert.match(data, /fact\(source\.id, "source\.description"\)/);
+  assert.match(data, /sourceHref\(subject\)/);
+  assert.doesNotMatch(data, /github\.com\/tenbytesltd\/uir-public-site/);
   assert.match(inspector, /\.uir-target \[data-node\]/);
   assert.match(inspector, /Viewer chrome — outside the inspected Surface/);
   assert.doesNotMatch(inspector, /mock|fixture|sampleNode|demoData/i);
+});
+
+test("the public target is a hand-authored React component tree, not a generic UIR renderer", async () => {
+  const [site, designSystem, page] = await Promise.all([
+    readFile(new URL("../app/Site.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/design-system.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(site, /function Hero\(\)/);
+  assert.match(site, /function Problem\(\)/);
+  assert.match(site, /function Playground\(\)/);
+  assert.match(site, /<Heading uirKey="hero-title" level=\{1\} \/>/);
+  assert.doesNotMatch(site, /RenderNode|walk\(|switch \(.*role/);
+  assert.doesNotMatch(designSystem, /resolutionPiece/);
+  assert.match(designSystem, /heading: "uir-site:piece:heading"/);
+  assert.match(designSystem, /uirNodeProps\(uirKey, "heading", PIECES\.heading\)/);
+  assert.match(page, /<PublicSite \/>/);
 });

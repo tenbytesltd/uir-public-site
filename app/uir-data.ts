@@ -1,11 +1,11 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties } from "react";
 import designSystemModel from "./uir-package/model/design-system.json";
 import interfaceModel from "./uir-package/model/interface.json";
 import packageModel from "./uir-package/model/package.json";
 import provenanceModel from "./uir-package/model/provenance.json";
 import manifest from "./uir-package/package.json";
-import { Inspector, type InspectionRecord } from "./Inspector";
-import { SurfaceField, type SurfaceFieldConfig } from "./SurfaceField";
+import type { InspectionRecord } from "./Inspector";
+import type { SurfaceFieldConfig } from "./SurfaceField";
 
 type UIRRecord = {
   id: string;
@@ -297,14 +297,14 @@ function typography(valueId: string | undefined): CSSProperties {
   };
 }
 
-function resolvedBindings(node: NodeView) {
-  const bindings = bindingMap(resolutionPiece(node.role));
+function resolvedBindings(node: NodeView, piece = resolutionPiece(node.role)) {
+  const bindings = bindingMap(piece);
   for (const [slot, role] of bindingMap(node.id)) bindings.set(slot, role);
   return bindings;
 }
 
-function nodeStyle(node: NodeView): CSSProperties {
-  const bindings = resolvedBindings(node);
+function nodeStyle(node: NodeView, piece = resolutionPiece(node.role)): CSSProperties {
+  const bindings = resolvedBindings(node, piece);
   const token = (slot: string) => cssScalar(boundValue(bindings.get(slot) ?? ""));
   const typeValue = boundValue(bindings.get("type") ?? "");
   const surfaceValue = boundValue(bindings.get("surface") ?? "");
@@ -339,8 +339,8 @@ function nodeStyle(node: NodeView): CSSProperties {
   } as CSSProperties;
 }
 
-function nodePresentationData(node: NodeView) {
-  const bindings = resolvedBindings(node);
+function nodePresentationData(node: NodeView, piece = resolutionPiece(node.role)) {
+  const bindings = resolvedBindings(node, piece);
   const surfaceValue = boundValue(bindings.get("surface") ?? "");
   const surface = literal(surfaceValue);
   const motionValue = boundValue(bindings.get("motion") ?? "");
@@ -369,8 +369,8 @@ function durationMilliseconds(valueId: string | undefined) {
   return undefined;
 }
 
-function surfaceFieldConfig(node: NodeView): SurfaceFieldConfig | undefined {
-  const bindings = resolvedBindings(node);
+function surfaceFieldConfig(node: NodeView, piece = resolutionPiece(node.role)): SurfaceFieldConfig | undefined {
+  const bindings = resolvedBindings(node, piece);
   const surfaceValueId = boundValue(bindings.get("surface") ?? "");
   const motionValueId = boundValue(bindings.get("motion") ?? "");
   const surface = literal(surfaceValueId);
@@ -426,16 +426,6 @@ function themeStyle(): CSSProperties {
   } as CSSProperties;
 }
 
-function ancestorRoles(subject: string) {
-  const roles: string[] = [];
-  let current = parentByNode.get(subject);
-  while (current) {
-    roles.push(nodeRole(current));
-    current = parentByNode.get(current);
-  }
-  return roles;
-}
-
 const discoveredRootId = contains.find(
   (relation) => relation.source === "uir-site:surface:home",
 )?.target;
@@ -449,15 +439,6 @@ const rootId = discoveredRootId;
 function walk(subject: string): string[] {
   return [subject, ...(childrenByParent.get(subject) ?? []).flatMap(walk)];
 }
-
-const firstPrimaryHeading = walk(rootId).find((subject) => {
-  const node = view(subject);
-  return (
-    node.role === "heading" &&
-    node.salience === "primary" &&
-    !ancestorRoles(subject).includes("navigation")
-  );
-});
 
 const sourceNames = new Map(
   records
@@ -545,95 +526,59 @@ function inspectionManifest(): InspectionRecord[] {
 
 const inspectionNodes = inspectionManifest();
 
-function renderHeading(node: NodeView, body: ReactNode) {
-  const ancestors = ancestorRoles(node.id);
-  if (ancestors.includes("navigation")) return <div className="brand">{body}</div>;
-  if (node.id === firstPrimaryHeading) return <h1>{body}</h1>;
-  if (ancestors.filter((role) => role === "region").length > 1) {
-    return <h3>{body}</h3>;
-  }
-  return <h2>{body}</h2>;
+
+function subjectForKey(key: string) {
+  const subject = key.startsWith("uir-site:node:") ? key : `uir-site:node:${key}`;
+  if (!byId.has(subject)) throw new Error(`Unknown UIR node: ${key}`);
+  return subject;
 }
 
-function RenderNode({ subject }: { subject: string }) {
-  const node = view(subject);
-  const field = surfaceFieldConfig(node);
-  const childNodes = node.children.map((child) => (
-    <RenderNode key={child} subject={child} />
-  ));
-  const children = (
-    <>
-      {field ? <SurfaceField config={field} /> : null}
-      {childNodes}
-    </>
-  );
-  const body = node.gap ?? node.content;
-  const common = {
+export function uirNode(key: string) {
+  return view(subjectForKey(key));
+}
+
+export function uirText(key: string) {
+  const node = uirNode(key);
+  return node.gap ?? node.content;
+}
+
+export function uirHref(key: string) {
+  return uirNode(key).href;
+}
+
+export function uirHasGap(key: string) {
+  return Boolean(uirNode(key).gap);
+}
+
+export function uirNodeProps(key: string, actualRole: string, actualPiece: string) {
+  const node = uirNode(key);
+  const bindings = resolvedBindings(node, actualPiece);
+  const conformanceBindings = [...bindings.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([slot, groundRole]) => `${slot}=${groundRole}`)
+    .join("|");
+  return {
     id: node.key,
     "data-node": node.key,
-    "data-role": node.role,
+    "data-role": actualRole,
     "data-salience": node.salience,
-    ...nodePresentationData(node),
-    style: nodeStyle(node),
+    "data-uir-piece": actualPiece,
+    "data-uir-bindings": conformanceBindings,
+    ...nodePresentationData(node, actualPiece),
+    style: nodeStyle(node, actualPiece),
   };
-
-  switch (node.role) {
-    case "document":
-      return <main {...common}>{children}</main>;
-    case "navigation":
-      return <nav {...common}>{children}</nav>;
-    case "region":
-      return <section {...common}>{children}</section>;
-    case "group":
-      return <div {...common}>{children}</div>;
-    case "heading":
-      return <div {...common}>{renderHeading(node, body)}</div>;
-    case "paragraph":
-      return <p {...common} data-gap={node.gap ? "true" : undefined}>{body}</p>;
-    case "link": {
-      const external = node.href?.startsWith("https://");
-      return (
-        <a
-          {...common}
-          href={node.href}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noreferrer" : undefined}
-        >
-          {body}
-        </a>
-      );
-    }
-    case "code":
-      return <pre {...common}><code>{body}</code></pre>;
-    case "list":
-      return <ul {...common}>{children}</ul>;
-    case "listitem":
-      return <li {...common}>{body}</li>;
-    default:
-      return <div {...common}>{body}{childNodes}</div>;
-  }
 }
 
-export function UIRPage() {
-  return (
-    <>
-      <div
-        className="uir-target"
-        data-uir-package={manifest.packageId}
-        data-uir-version={manifest.packageVersion}
-        style={themeStyle()}
-      >
-        <RenderNode subject={rootId} />
-      </div>
-      <Inspector
-        nodes={inspectionNodes}
-        packageId={manifest.packageId}
-        packageVersion={manifest.packageVersion}
-        recordCount={records.length}
-      />
-    </>
-  );
+export function uirSurfaceFieldConfig(key: string, actualPiece: string) {
+  return surfaceFieldConfig(uirNode(key), actualPiece);
 }
+
+export function uirThemeStyle() {
+  return themeStyle();
+}
+
+export const uirInspectionNodes = inspectionNodes;
+export const uirManifest = manifest;
 
 export function uirMetadata() {
   const metadata = fact("uir-site:package", "package.metadata")?.value;
