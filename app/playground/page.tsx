@@ -5,16 +5,17 @@ import interfaceModel from "../uir-package/model/interface.json";
 import packageModel from "../uir-package/model/package.json";
 import provenanceModel from "../uir-package/model/provenance.json";
 import manifest from "../uir-package/package.json";
-import { Playground } from "./Playground";
+import { PlaygroundLab } from "./PlaygroundLab";
 import type { UIRManifest, UIRPackageData, UIRShard } from "./runtime";
 import "./playground.css";
+import "./playground-lab.css";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "UIR Playground — Inspect what the interface means",
+  title: "UIR Playground — Inspect and compare custom UIR packages",
   description:
-    "Open a UIR package locally, inspect its semantic tree, resolution, presentation bindings, provenance, and package diagnostics.",
+    "Open local folders or .uir.zip files, load public URL/GitHub packages, inspect semantics, graph structure, compare versions, and share remote package deep links.",
 };
 
 const initialPackage: UIRPackageData = {
@@ -37,5 +38,5 @@ const initialPackage: UIRPackageData = {
 };
 
 export default function PlaygroundPage() {
-  return <Playground initialPackage={initialPackage} />;
+  return <PlaygroundLab initialPackage={initialPackage} />;
 }
